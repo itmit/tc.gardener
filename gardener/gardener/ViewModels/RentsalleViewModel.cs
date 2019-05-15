@@ -41,9 +41,13 @@ namespace gardener.ViewModels
             set
             {
                 _selectedItem = value;
-                OnPropertyChanged(nameof(SelectedItem));
+                if (value != null)
+                {
+                    _navigation.PushAsync(new ListSale(value));
+                    _selectedItem = null;
+                }
 
-                _navigation.PushAsync(new ListSale(value));
+                OnPropertyChanged(nameof(SelectedItem));
             }
         }
 

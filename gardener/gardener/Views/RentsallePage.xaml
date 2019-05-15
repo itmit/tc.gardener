@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout>
                 <Image Source="pict_6.png" />
-                <ListView x:Name="blocksList" ItemsSource="{Binding Blocks}" RowHeight="100" SelectedItem="{Binding SelectedItem}">
+                <ListView x:Name="blocksList" ItemsSource="{Binding Blocks}" RowHeight="100" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Cell:BlockViewCell/>
