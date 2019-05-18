@@ -8,7 +8,6 @@ namespace gardener
 {
     public partial class App : Application
     {
-        public Color Barbackgroundcolor { get; }
 
         public App()
         {
@@ -16,9 +15,7 @@ namespace gardener
 
 
             MainPage = new MainPage();
-            {
-                Barbackgroundcolor = Color.FromRgb(252,247,241);
-            }
+  
         }
 
         protected override void OnStart()

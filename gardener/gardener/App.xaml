@@ -5,10 +5,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#fcf7f1</Color>
+            <Color x:Key="NavigationGardener">#ffba66</Color>
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationGardener}" />
+                <Setter Property="BarTextColor" Value="#9e4819" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
