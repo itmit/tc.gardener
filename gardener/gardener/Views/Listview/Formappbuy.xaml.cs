@@ -17,4 +17,5 @@ namespace gardener.Views.Rent
 			InitializeComponent ();
 		}
 	}
+    
 }

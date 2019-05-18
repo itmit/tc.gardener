@@ -1,20 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gardener.Views.Rent.Formappbuy">
+             x:Class="gardener.Views.Rent.Formappbuy"
+             xmlns:local="clr-namespace:gardener.Models">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Форма заявки покупки" HeightRequest="50" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Форма заявки покупки" HeightRequest="50" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                <Entry x:Name="number" FontSize="Large" TextColor="#9e4819" 
+                <local:MyEntry x:Name="number" FontSize="Large" TextColor="#9e4819" 
                Placeholder="Номер" PlaceholderColor="#7a7a7a"/>
-                <Entry x:Name="place" FontSize="Large" TextColor="#9e4819" 
+                <local:MyEntry x:Name="place" FontSize="Large" TextColor="#9e4819" 
                Placeholder="Место" PlaceholderColor="#7a7a7a" />
-                <Entry x:Name="name" FontSize="Large" TextColor="#9e4819"
+                <local:MyEntry x:Name="name" FontSize="Large" TextColor="#9e4819"
                Placeholder="Имя" PlaceholderColor="#7a7a7a" />
-                <Entry x:Name="tel" FontSize="Large" TextColor="#9e4819" 
+                <local:MyEntry x:Name="tel" FontSize="Large" TextColor="#9e4819" 
                Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
-                <Entry x:Name="cost" FontSize="Large" TextColor="#9e4819" 
+                <local:MyEntry x:Name="cost" FontSize="Large" TextColor="#9e4819" 
                Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
             </StackLayout>
         </StackLayout>
