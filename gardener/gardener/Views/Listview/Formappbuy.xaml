@@ -18,6 +18,10 @@
                 <local:MyEntry x:Name="cost" FontSize="Large" TextColor="#9e4819" 
                Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
             </StackLayout>
+            <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                    BorderRadius="15" WidthRequest="250"  BackgroundColor="Transparent">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

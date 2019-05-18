@@ -7,15 +7,15 @@
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Button Text="Аренда помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60" 
-                    BorderRadius="15" BackgroundColor="Transparent"  Clicked="Button_rent">
+                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent"  Clicked="Button_rent">
             </Button>
             <Button Text="Продажа помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60" 
-                    BorderRadius="15" BackgroundColor="Transparent" Clicked="Button_sale">
+                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_sale">
             </Button>
             <Button Text="Купить помещение" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
-                    BorderRadius="15" BackgroundColor="Transparent" Clicked="Button_buy">
+                    BorderRadius="15" WidthRequest="250"  BackgroundColor="Transparent" Clicked="Button_buy">
             </Button>
         </StackLayout>
     </ContentPage.Content>
