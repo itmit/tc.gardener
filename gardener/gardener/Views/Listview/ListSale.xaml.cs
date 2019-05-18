@@ -8,7 +8,7 @@ namespace gardener.Views.Rent
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListSale : ContentPage
 	{
-		public ListSale (Place place)
+		public ListSale (Block block)
 		{
 			InitializeComponent ();
 		}

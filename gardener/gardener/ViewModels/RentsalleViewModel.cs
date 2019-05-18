@@ -11,19 +11,19 @@ namespace gardener.ViewModels
         public RentsalleViewModel(INavigation navigation)
         {
             _navigation = navigation;
-            _blocks = new ObservableCollection<Place>
+            _blocks = new ObservableCollection<Block>
             {
-                new Place()
+                new Block()
                 {
                     ImagePath = "pict_3.png",
                     Title = "Вещевые ряды"
                 },
-                new Place()
+                new Block()
                 {
                     ImagePath = "pict_4.png",
                     Title = "ТЦ Садовод"
                 },
-                new Place()
+                new Block()
                 {
                     ImagePath = "pict_5.png",
                     Title = "Меха и кожа"
@@ -32,10 +32,10 @@ namespace gardener.ViewModels
         }
 
         private INavigation _navigation;
-        private ObservableCollection<Place> _blocks;
-        private Place _selectedItem;
+        private ObservableCollection<Block> _blocks;
+        private Block _selectedItem;
 
-        public Place SelectedItem
+        public Block SelectedItem
         {
             get => _selectedItem;
             set
@@ -51,7 +51,7 @@ namespace gardener.ViewModels
             }
         }
 
-        public ObservableCollection<Place> Blocks
+        public ObservableCollection<Block> Blocks
         {
             get => _blocks;
             set
