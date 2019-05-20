@@ -1,12 +1,14 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Threading.Tasks;
 using gardener.Models;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 
 namespace gardener.ViewModels
 {
-	internal class FormappViewModel : BaseViewModel
+	internal class FormAppViewModel : BaseViewModel
 	{
 		#region Data
 		#region Fields
@@ -15,33 +17,47 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region .ctor
+		public FormAppViewModel()
+		{
+			_placeCollection = new ObservableCollection<Place>();
+		}
 		#endregion
 
 		#region Properties
 		public ObservableCollection<Place> PlaceCollection
 		{
 			get => _placeCollection;
-			set
-			{
-				_placeCollection = value;
-				OnPropertyChanged(nameof(PlaceCollection));
-			}
+			set => SetProperty(ref _placeCollection, value);
 		}
 		#endregion
 
 		#region Public
 		public async void SetSerializedJsonData(string url)
 		{
-			JsonDataResponse<ObservableCollection<Place>> response;
-			await Task.Run(() =>
+			if (CrossConnectivity.Current.IsConnected)
 			{
-				response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
-
-				if (response.Success)
+				IsBusy = true;
+				JsonDataResponse<ObservableCollection<Place>> response;
+				await Task.Run(() =>
 				{
-					PlaceCollection = response.Data;
-				}
-			});
+					response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
+
+#if (DEBUG)
+					Console.WriteLine(response.Message);
+#endif
+
+					IsBusy = false;
+
+					if (response.Success && response.Data != null)
+					{
+						PlaceCollection = response.Data;
+					}
+				});
+			}
+			else
+			{
+				// TODO: Показать сообщение о том, что нет сети.
+			}
 		}
 		#endregion
 

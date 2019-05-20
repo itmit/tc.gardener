@@ -45,11 +45,7 @@ namespace gardener.ViewModels
 		public ObservableCollection<Block> Blocks
 		{
 			get => _blocks;
-			set
-			{
-				_blocks = value;
-				OnPropertyChanged(nameof(Blocks));
-			}
+			set => SetProperty(ref _blocks, value);
 		}
 
 		public Block SelectedItem

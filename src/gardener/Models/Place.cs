@@ -36,6 +36,12 @@ namespace gardener.Models
 			set;
 		}
 
+		public int Row
+		{
+			get;
+			set;
+		}
+
 		public string Status
 		{
 			get;
