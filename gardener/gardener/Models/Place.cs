@@ -8,17 +8,6 @@ namespace gardener.Models
 {
 	class Place
 	{
-		private static T _download_serialized_json_data<T>(string url) where T : new()
-		{
-			using (var w = new WebClient())
-			{
-				var jsonData = w.DownloadString(url);
-
-				// if string with JSON data is not empty, deserialize it to class and return its instance 
-				return !string.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
-			}
-		}
-
 		public int Id
 		{
 			get;
@@ -37,6 +26,7 @@ namespace gardener.Models
 			set;
 		}
 
+		[JsonProperty("place_number")]
 		public string PlaceNumber
 		{
 			get;

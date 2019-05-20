@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using gardener.Annotations;
 using gardener.Models;
 using Newtonsoft.Json;
@@ -17,6 +18,31 @@ namespace gardener.ViewModels
 
 		public FormappViewModel()
 		{
+		}
+
+		public async void SetSerializedJsonData(string url)
+		{
+			JsonDataResponse<ObservableCollection<Place>> response = null;
+			await Task.Run(() =>
+			{
+				response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
+
+				if (response.Success)
+				{
+					PlaceCollection = response.Data;
+				}
+			});
+		}
+
+		private T _download_serialized_json_data<T>(string url) where T : new()
+		{
+			using (var w = new WebClient())
+			{
+				var jsonData = w.DownloadString(url);
+
+				// if string with JSON data is not empty, deserialize it to class and return its instance 
+				return !String.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
+			}
 		}
 
 		public ObservableCollection<Place> PlaceCollection

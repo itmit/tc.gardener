@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using gardener.ViewModels;
+﻿using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace gardener.Views.Rent
+namespace gardener.Views.Listview
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Formapp : ContentPage
@@ -16,7 +11,11 @@ namespace gardener.Views.Rent
 		{
 			InitializeComponent ();
 
-			BindingContext = new FormappViewModel();
+			var viewModel = new FormappViewModel();
+
+			BindingContext = viewModel;
+
+			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/place");
 		}
 	}
 }
