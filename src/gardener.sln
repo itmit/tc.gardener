@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.Android", "gardener\gardener.Android\gardener.Android.csproj", "{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.Android", "gardener.Android\gardener.Android.csproj", "{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.iOS", "gardener\gardener.iOS\gardener.iOS.csproj", "{3C223EFA-05F9-416F-AD98-5CA6C0792258}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.iOS", "gardener.iOS\gardener.iOS.csproj", "{3C223EFA-05F9-416F-AD98-5CA6C0792258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener", "gardener\gardener\gardener.csproj", "{808AD66E-3E73-4346-A342-6A92A7F574C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener", "gardener\gardener.csproj", "{808AD66E-3E73-4346-A342-6A92A7F574C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
