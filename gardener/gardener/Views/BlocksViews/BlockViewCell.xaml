@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<customControls:ExtendedViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-          xmlns:customControls="clr-namespace:gardener"
-          x:Class="gardener.Views.BlockViewCell"
-             SelectedBackgroundColor="WhiteSmoke">
+
+<customControls:ExtendedViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+                                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                 xmlns:customControls="clr-namespace:gardener"
+                                 x:Class="gardener.Views.BlocksViews.BlockViewCell"
+                                 SelectedBackgroundColor="WhiteSmoke">
     <ViewCell.View>
         <StackLayout Orientation="Horizontal" StyleClass="item-block">
             <StackLayout WidthRequest="100" Margin="10,0,10,0">
-                <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1" >
-                    <Image Source="{Binding ImagePath}" Aspect="AspectFill" VerticalOptions="Center"/>
+                <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1">
+                    <Image Source="{Binding ImagePath}" Aspect="AspectFill" VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
-            <Label Grid.Column="1" Text="{Binding Title}" Margin="10, 0" FontSize="Medium" TextColor="#9e4819" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+            <Label Text="{Binding Title}" Margin="10, 0" FontSize="Medium" TextColor="#9e4819"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
         </StackLayout>
     </ViewCell.View>
 </customControls:ExtendedViewCell>

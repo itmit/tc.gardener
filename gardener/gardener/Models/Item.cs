@@ -1,11 +1,25 @@
-﻿using System;
-
-namespace gardener.Models
+﻿namespace gardener.Models
 {
-    public class Item
-    {
-        public string Id { get; set; }
-        public string Text { get; set; }
-        public string Description { get; set; }
-    }
+	public class Item
+	{
+		#region Properties
+		public string Description
+		{
+			get;
+			set;
+		}
+
+		public string Id
+		{
+			get;
+			set;
+		}
+
+		public string Text
+		{
+			get;
+			set;
+		}
+		#endregion
+	}
 }

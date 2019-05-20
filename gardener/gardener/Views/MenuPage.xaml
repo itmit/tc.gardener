@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gardener.Views.MenuPage"
@@ -6,18 +7,19 @@
     <StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" HeightRequest="230" BackgroundColor="#fcf7f1">
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                <Image Source="pict_1.png" Margin="10"/>
+                <Image Source="pict_1.png" Margin="10" />
                 <Label Text="САДОВОД" TextColor="#9e4819" FontSize="20" />
             </StackLayout>
         </StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f7ecdd" Padding="0, 70, 0, 0">
             <ListView x:Name="ListViewMenu"
-                        HasUnevenRows="True">
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HeightRequest="60" Padding="20, 0, 0, 0">
-                                <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" FontSize="20" TextColor="#9e4819" />
+                                <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" FontSize="20"
+                                       TextColor="#9e4819" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

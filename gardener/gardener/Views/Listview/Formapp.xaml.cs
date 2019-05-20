@@ -2,14 +2,15 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace gardener.Views.Listview
+namespace gardener.Views.ListView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Formapp : ContentPage
+	public partial class FormApp : ContentPage
 	{
-		public Formapp ()
+		#region .ctor
+		public FormApp()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 
 			var viewModel = new FormappViewModel();
 
@@ -17,5 +18,6 @@ namespace gardener.Views.Listview
 
 			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/place");
 		}
+		#endregion
 	}
 }

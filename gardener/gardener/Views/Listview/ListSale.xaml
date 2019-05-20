@@ -1,22 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gardener.Views.Rent.ListSale"
+             x:Class="gardener.Views.ListView.ListSale"
              Title="Страница 2">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Button Text="Аренда помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
-                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60" 
-                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent"  Clicked="Button_rent">
-            </Button>
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_rent" />
             <Button Text="Продажа помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
-                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60" 
-                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_sale">
-            </Button>
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_sale" />
             <Button Text="Купить помещение" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
-                    BorderRadius="15" WidthRequest="250"  BackgroundColor="Transparent" Clicked="Button_buy">
-            </Button>
+                    BorderRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_buy" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

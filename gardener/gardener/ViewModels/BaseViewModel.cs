@@ -2,55 +2,62 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
-using Xamarin.Forms;
-
 using gardener.Models;
 using gardener.Services;
+using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
-    {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+	public class BaseViewModel : INotifyPropertyChanged
+	{
+		#region Data
+		#region Fields
+		private bool _isBusy;
 
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
+		private string _title = string.Empty;
+		#endregion
+		#endregion
 
-        string title = string.Empty;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
+		#region Properties
+		public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName]string propertyName = "",
-            Action onChanged = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
+		public bool IsBusy
+		{
+			get => _isBusy;
+			set => SetProperty(ref _isBusy, value);
+		}
 
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
-        }
+		public string Title
+		{
+			get => _title;
+			set => SetProperty(ref _title, value);
+		}
+		#endregion
 
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
+		#region Protected
+		protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName] string propertyName = "", Action onChanged = null)
+		{
+			if (EqualityComparer<T>.Default.Equals(backingStore, value))
+			{
+				return false;
+			}
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
-    }
+			backingStore = value;
+			onChanged?.Invoke();
+			OnPropertyChanged(propertyName);
+			return true;
+		}
+		#endregion
+
+		#region INotifyPropertyChanged
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+		{
+			var changed = PropertyChanged;
+
+			changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
+		#endregion
+	}
 }

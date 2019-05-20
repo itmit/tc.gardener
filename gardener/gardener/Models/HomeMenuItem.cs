@@ -1,21 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace gardener.Models
+﻿namespace gardener.Models
 {
-    public enum MenuItemType
-    {
-        Rent,
-        Selling,
-        Rentsell,
-        Challengemphous,
-        Callsecurity
-    }
-    public class HomeMenuItem
-    {
-        public MenuItemType Id { get; set; }
+	public enum MenuItemType
+	{
+		Rent,
+		Selling,
+		Rentsell,
+		Challengemphous,
+		Callsecurity
+	}
 
-        public string Title { get; set; }
-    }
+	public class HomeMenuItem
+	{
+		#region Properties
+		public MenuItemType Id
+		{
+			get;
+			set;
+		}
+
+		public string Title
+		{
+			get;
+			set;
+		}
+		#endregion
+	}
 }

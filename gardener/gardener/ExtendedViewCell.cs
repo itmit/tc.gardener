@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace gardener
 {
-    public class ExtendedViewCell : ViewCell
-    {
-        public static readonly BindableProperty SelectedBackgroundColorProperty =
-        BindableProperty.Create("SelectedBackgroundColor",
-                                typeof(Color),
-                                typeof(ExtendedViewCell),
-                                Color.Default);
+	public class ExtendedViewCell : ViewCell
+	{
+		#region Data
+		#region Static
+		public static readonly BindableProperty SelectedBackgroundColorProperty =
+			BindableProperty.Create("SelectedBackgroundColor", typeof(Color), typeof(ExtendedViewCell), Color.Default);
+		#endregion
+		#endregion
 
-        public Color SelectedBackgroundColor
-        {
-            get { return (Color)GetValue(SelectedBackgroundColorProperty); }
-            set { SetValue(SelectedBackgroundColorProperty, value); }
-        }
-    }
+		#region Properties
+		public Color SelectedBackgroundColor
+		{
+			get => (Color) GetValue(SelectedBackgroundColorProperty);
+			set => SetValue(SelectedBackgroundColorProperty, value);
+		}
+		#endregion
+	}
 }

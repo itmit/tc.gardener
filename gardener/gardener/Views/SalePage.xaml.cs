@@ -4,10 +4,10 @@ using Xamarin.Forms.Xaml;
 namespace gardener.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RentPage : TabbedPage
+	public partial class SalePage : ContentPage
 	{
 		#region .ctor
-		public RentPage()
+		public SalePage()
 		{
 			InitializeComponent();
 		}

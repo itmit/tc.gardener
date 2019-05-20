@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace gardener.Models
 {
-	class Place
+	internal class Place
 	{
-		public int Id
-		{
-			get;
-			set;
-		}
-
+		#region Properties
 		public string Block
 		{
 			get;
 			set;
 		}
-		
+
 		public int Floor
+		{
+			get;
+			set;
+		}
+
+		public int Id
 		{
 			get;
 			set;
@@ -33,16 +30,17 @@ namespace gardener.Models
 			set;
 		}
 
-		public string Status
-		{
-			get;
-			set;
-		}
-
 		public int Price
 		{
 			get;
 			set;
 		}
+
+		public string Status
+		{
+			get;
+			set;
+		}
+		#endregion
 	}
 }

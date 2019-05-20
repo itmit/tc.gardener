@@ -1,28 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
 using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
-using gardener.Annotations;
 using gardener.Models;
 using Newtonsoft.Json;
 
 namespace gardener.ViewModels
 {
-	class FormappViewModel : INotifyPropertyChanged
+	internal class FormappViewModel : BaseViewModel
 	{
+		#region Data
+		#region Fields
 		private ObservableCollection<Place> _placeCollection;
+		#endregion
+		#endregion
 
-		public FormappViewModel()
+		#region .ctor
+		#endregion
+
+		#region Properties
+		public ObservableCollection<Place> PlaceCollection
 		{
+			get => _placeCollection;
+			set
+			{
+				_placeCollection = value;
+				OnPropertyChanged(nameof(PlaceCollection));
+			}
 		}
+		#endregion
 
+		#region Public
 		public async void SetSerializedJsonData(string url)
 		{
-			JsonDataResponse<ObservableCollection<Place>> response = null;
+			JsonDataResponse<ObservableCollection<Place>> response;
 			await Task.Run(() =>
 			{
 				response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
@@ -33,7 +43,9 @@ namespace gardener.ViewModels
 				}
 			});
 		}
+		#endregion
 
+		#region Private
 		private T _download_serialized_json_data<T>(string url) where T : new()
 		{
 			using (var w = new WebClient())
@@ -41,26 +53,9 @@ namespace gardener.ViewModels
 				var jsonData = w.DownloadString(url);
 
 				// if string with JSON data is not empty, deserialize it to class and return its instance 
-				return !String.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
+				return !string.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
 			}
 		}
-
-		public ObservableCollection<Place> PlaceCollection
-		{
-			get => _placeCollection;
-			set
-			{
-				_placeCollection = value;
-				OnPropertyChanged(nameof(PlaceCollection));
-			}
-		}
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		[NotifyPropertyChangedInvocator]
-		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
+		#endregion
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace gardener.Models
 {
-    public class MyEntry: Entry
-    {
-    }
+	public class MyEntry : Entry
+	{
+	}
 }

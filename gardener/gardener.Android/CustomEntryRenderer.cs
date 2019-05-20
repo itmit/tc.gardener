@@ -1,28 +1,33 @@
 ﻿using Android.Content;
-using Xamarin.Forms;
-using gardener.Models;
 using gardener.Droid;
+using gardener.Models;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Color = Android.Graphics.Color;
 
 [assembly: ExportRenderer(typeof(MyEntry), typeof(CustomEntryRenderer))]
+
 namespace gardener.Droid
 {
-    class CustomEntryRenderer : EntryRenderer
-    {
-        public CustomEntryRenderer(Context context) : base(context)
-        {
-        }
+	internal class CustomEntryRenderer : EntryRenderer
+	{
+		#region .ctor
+		public CustomEntryRenderer(Context context)
+			: base(context)
+		{
+		}
+		#endregion
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
-        {
-            base.OnElementChanged(e);
+		#region Overrided
+		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+		{
+			base.OnElementChanged(e);
 
-            if (Control != null)
-            {
-                Control.SetBackgroundColor(global::Android.Graphics.Color.Rgb(255, 236, 209));
-            }
-        }
-
-    }
-
+			if (Control != null)
+			{
+				Control.SetBackgroundColor(Color.Rgb(255, 236, 209));
+			}
+		}
+		#endregion
+	}
 }

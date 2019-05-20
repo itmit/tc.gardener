@@ -2,16 +2,18 @@
 {
 	public class JsonDataResponse<T>
 	{
-		public bool Success
-		{
-			get;
-			set;
-		}
-
+		#region Properties
 		public T Data
 		{
 			get;
 			set;
 		}
+
+		public bool Success
+		{
+			get;
+			set;
+		}
+		#endregion
 	}
 }

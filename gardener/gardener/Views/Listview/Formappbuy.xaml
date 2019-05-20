@@ -1,26 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gardener.Views.Rent.Formappbuy"
+             x:Class="gardener.Views.ListView.FormAppBuy"
              xmlns:local="clr-namespace:gardener.Models">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Форма заявки покупки" HeightRequest="50" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Форма заявки покупки" HeightRequest="50" FontSize="Large" HorizontalOptions="Center"
+                   VerticalOptions="Center" />
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                <local:MyEntry x:Name="number" FontSize="Large" TextColor="#9e4819" 
-               Placeholder="Номер" PlaceholderColor="#7a7a7a"/>
-                <local:MyEntry x:Name="place" FontSize="Large" TextColor="#9e4819" 
-               Placeholder="Место" PlaceholderColor="#7a7a7a" />
-                <local:MyEntry x:Name="name" FontSize="Large" TextColor="#9e4819"
-               Placeholder="Имя" PlaceholderColor="#7a7a7a" />
-                <local:MyEntry x:Name="tel" FontSize="Large" TextColor="#9e4819" 
-               Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
-                <local:MyEntry x:Name="cost" FontSize="Large" TextColor="#9e4819" 
-               Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
+                <local:MyEntry x:Name="Number" FontSize="Large" TextColor="#9e4819"
+                               Placeholder="Номер" PlaceholderColor="#7a7a7a" />
+                <local:MyEntry x:Name="Place" FontSize="Large" TextColor="#9e4819"
+                               Placeholder="Место" PlaceholderColor="#7a7a7a" />
+                <local:MyEntry x:Name="Name" FontSize="Large" TextColor="#9e4819"
+                               Placeholder="Имя" PlaceholderColor="#7a7a7a" />
+                <local:MyEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
+                               Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
+                <local:MyEntry x:Name="Cost" FontSize="Large" TextColor="#9e4819"
+                               Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
             </StackLayout>
             <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
-                    BorderRadius="15" WidthRequest="250"  BackgroundColor="Transparent">
+                    WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15">
             </Button>
         </StackLayout>
     </ContentPage.Content>

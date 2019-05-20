@@ -15,11 +15,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Listview\Formappbuy.xaml.cs">
-      <DependentUpon>Formappbuy.xaml</DependentUpon>
+    <Compile Update="Views\CallSecurityPage.xaml.cs">
+      <DependentUpon>CallSecurityPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Listview\Formappsale.xaml.cs">
-      <DependentUpon>Formappsale.xaml</DependentUpon>
+    <Compile Update="Views\EmployCallPage.xaml.cs">
+      <DependentUpon>EmployCallPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListView\Formapp.xaml.cs">
+      <DependentUpon>FormApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListView\Formappbuy.xaml.cs">
+      <DependentUpon>FormAppBuy.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListView\Formappsale.xaml.cs">
+      <DependentUpon>FormAppSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RentSalePage.xaml.cs">
+      <DependentUpon>RentSalePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SalePage.xaml.cs">
+      <DependentUpon>SalePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -27,25 +42,25 @@
     <EmbeddedResource Update="Views\BlocksViews\BlockViewCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Callsecurity.xaml">
+    <EmbeddedResource Update="Views\CallSecurityPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Challengemphous.xaml">
+    <EmbeddedResource Update="Views\EmployCallPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RentsallePage.xaml">
+    <EmbeddedResource Update="Views\RentSalePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Listview\Formapp.xaml">
+    <EmbeddedResource Update="Views\ListView\FormApp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Listview\ListSale.xaml">
+    <EmbeddedResource Update="Views\ListView\ListSale.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SallePage.xaml">
+    <EmbeddedResource Update="Views\SalePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

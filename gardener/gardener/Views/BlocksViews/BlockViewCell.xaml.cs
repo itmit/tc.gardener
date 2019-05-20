@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xamarin.Forms.Xaml;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace gardener.Views
+namespace gardener.Views.BlocksViews
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BlockViewCell : ExtendedViewCell
 	{
-        public BlockViewCell()
-        {
-            InitializeComponent();
-
-
-        }
+		#region .ctor
+		public BlockViewCell()
+		{
+			InitializeComponent();
+		}
+		#endregion
 	}
 }

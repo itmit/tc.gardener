@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace gardener.Views.Rent
+namespace gardener.Views.ListView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Formappbuy : ContentPage
+	public partial class FormAppBuy : ContentPage
 	{
-		public Formappbuy ()
+		#region .ctor
+		public FormAppBuy()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
+		#endregion
 	}
-    
 }
