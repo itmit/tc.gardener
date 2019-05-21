@@ -2,9 +2,11 @@
 {
 	public enum MenuItemType
 	{
+		CurrencyQuotes,
 		Rent,
 		Selling,
 		EmployCall,
+		EmployCallLyon,
 		CallSecurity,
 		Purchase
 	}

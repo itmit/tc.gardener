@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using gardener.Models;
+using gardener.Views;
 using gardener.Views.ListView;
 using Xamarin.Forms;
 
@@ -18,6 +19,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public RentSaleViewModel(INavigation navigation)
 		{
+			Title = "Главная";
 			_blocks = Market.Blocks;
 			_navigation = navigation;
 		}
@@ -46,7 +48,14 @@ namespace gardener.ViewModels
 				_selectedItem = value;
 				if (value != null)
 				{
-					_navigation.PushAsync(new ListSale(value));
+					if (value.Floors.Count > 1)
+					{
+						_navigation.PushAsync(new SelectFloorPage(value));
+					}
+					else
+					{
+						_navigation.PushAsync(new ListSale(value, value.Floors[0].Value));
+					}
 					_selectedItem = null;
 				}
 

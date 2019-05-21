@@ -9,6 +9,14 @@ namespace gardener.Models
 {
 	public class Block
 	{
+		public Block()
+		{
+			Floors = new List<Floor>
+			{
+				new Floor{ Value = 1 }
+			};
+		}
+
 		#region Properties
 		public string ImagePath
 		{
@@ -31,6 +39,12 @@ namespace gardener.Models
 		{
 			get;
 			private set;
+		}
+
+		public List<Floor> Floors
+		{
+			get;
+			set;
 		}
 		#endregion
 

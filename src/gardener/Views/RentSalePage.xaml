@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:blocksViews="clr-namespace:gardener.Views.BlocksViews"
-             x:Class="gardener.Views.RentSalePage">
+             x:Class="gardener.Views.RentSalePage"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

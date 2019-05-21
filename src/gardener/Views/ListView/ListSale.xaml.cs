@@ -11,7 +11,7 @@ namespace gardener.Views.ListView
 		private readonly Block _block;
 
 		#region .ctor
-		public ListSale(Block block)
+		public ListSale(Block block, int floor)
 		{
 			InitializeComponent();
 

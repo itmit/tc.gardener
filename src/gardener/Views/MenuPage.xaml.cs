@@ -18,22 +18,12 @@ namespace gardener.Views
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Rent,
-					Title = "Аренда"
+					Title = "Главная"
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Selling,
-					Title = "Продажа"
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.Purchase,
-					Title = "Покупка"
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.EmployCall,
-					Title = "Вызов сотрудника ЖКХ"
+					Title = "Вызов мастера (лайон)"
 				},
 				new HomeMenuItem
 				{
@@ -42,7 +32,17 @@ namespace gardener.Views
 				},
 				new HomeMenuItem
 				{
+					Id = MenuItemType.EmployCall,
+					Title = "Вызов врача"
+				},
+				new HomeMenuItem
+				{
 					Id = MenuItemType.CallSecurity,
+					Title = "Котировки валют"
+				},
+				new HomeMenuItem
+				{
+					Id = MenuItemType.Purchase,
 					Title = "Новости рынка"
 				}
 			};

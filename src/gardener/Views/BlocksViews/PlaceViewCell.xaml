@@ -4,21 +4,21 @@
              xmlns:gardener="clr-namespace:gardener"
              x:Class="gardener.Views.BlocksViews.PlaceViewCell">
     <ViewCell.View>
-        <StackLayout VerticalOptions="Fill">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Место" FontSize="Medium" TextColor="#9e4819"/>
+        <StackLayout Margin="10, 0">
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Место:" FontSize="Medium" TextColor="#9e4819"/>
                 <Label Text="{Binding PlaceNumber}" FontSize="Medium" TextColor="#9e4819" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Этаж" FontSize="Medium" TextColor="#9e4819" />
+                <Label Text="Этаж:" FontSize="Medium" TextColor="#9e4819" />
                 <Label Text="{Binding Floor}" FontSize="Medium" TextColor="#9e4819" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Ряд" FontSize="Medium" TextColor="#9e4819" />
+                <Label Text="Ряд:" FontSize="Medium" TextColor="#9e4819" />
                 <Label Text="{Binding Row}" FontSize="Medium" TextColor="#9e4819" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Цена" FontSize="Medium" TextColor="#9e4819" />
+                <Label Text="Цена:" FontSize="Medium" TextColor="#9e4819" />
                 <Label Text="{Binding Price}" FontSize="Medium" TextColor="#9e4819" />
             </StackLayout>
         </StackLayout>

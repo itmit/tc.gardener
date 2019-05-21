@@ -4,7 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:gardener.Models"
              xmlns:gardener="clr-namespace:gardener"
-             x:Class="gardener.Views.ListView.FormAppSale">
+             x:Class="gardener.Views.ListView.FormAppSale"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout HeightRequest="50">
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
@@ -14,6 +15,8 @@
                                Placeholder="Имя" PlaceholderColor="#7a7a7a" />
                 <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
                                Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
+                <gardener:ExtendedEntry x:Name="Cost" FontSize="Large" TextColor="#9e4819"
+                                        Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
                 <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" />

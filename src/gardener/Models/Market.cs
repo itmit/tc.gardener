@@ -22,7 +22,12 @@ namespace gardener.Models
 				new Block
 				{
 					ImagePath = "pict_4.png",
-					Title = "ТЦ Садовод"
+					Title = "ТЦ Садовод",
+					Floors = new List<Floor>
+					{
+						new Floor {Value = 1},
+						new Floor {Value = 2}
+					}
 				},
 				new Block
 				{

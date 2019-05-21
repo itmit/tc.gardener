@@ -12,7 +12,7 @@
             <Button Text="Продажа помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                     CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_sale" />
-            <Button Text="Купить помещение" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+            <Button Text="Покупка помещения" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                     CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" Clicked="Button_buy" />
         </StackLayout>
