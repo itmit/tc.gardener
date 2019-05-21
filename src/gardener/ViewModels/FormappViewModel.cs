@@ -21,7 +21,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public FormAppViewModel(Block block)
 		{
-			Title = "Форма заявки аренды";
+			Title = "Свободные места";
 			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
 		}
