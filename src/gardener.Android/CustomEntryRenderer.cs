@@ -1,11 +1,12 @@
 ﻿using Android.Content;
+using gardener;
 using gardener.Droid;
 using gardener.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;
 
-[assembly: ExportRenderer(typeof(MyEntry), typeof(CustomEntryRenderer))]
+[assembly: ExportRenderer(typeof(ExtendedEntry), typeof(CustomEntryRenderer))]
 
 namespace gardener.Droid
 {
@@ -23,10 +24,7 @@ namespace gardener.Droid
 		{
 			base.OnElementChanged(e);
 
-			if (Control != null)
-			{
-				Control.SetBackgroundColor(Color.Rgb(255, 236, 209));
-			}
+			Control?.SetBackgroundColor(Color.Rgb(255, 236, 209));
 		}
 		#endregion
 	}

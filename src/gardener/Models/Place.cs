@@ -2,7 +2,7 @@
 
 namespace gardener.Models
 {
-	internal class Place
+	public class Place
 	{
 		#region Properties
 		public string Block

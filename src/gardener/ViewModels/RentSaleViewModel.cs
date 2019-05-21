@@ -9,35 +9,17 @@ namespace gardener.ViewModels
 	{
 		#region Data
 		#region Fields
-		private ObservableCollection<Block> _blocks;
-
 		private readonly INavigation _navigation;
 		private Block _selectedItem;
+		private ObservableCollection<Block> _blocks;
 		#endregion
 		#endregion
 
 		#region .ctor
 		public RentSaleViewModel(INavigation navigation)
 		{
+			_blocks = Market.Blocks;
 			_navigation = navigation;
-			_blocks = new ObservableCollection<Block>
-			{
-				new Block
-				{
-					ImagePath = "pict_3.png",
-					Title = "Вещевые ряды"
-				},
-				new Block
-				{
-					ImagePath = "pict_4.png",
-					Title = "ТЦ Садовод"
-				},
-				new Block
-				{
-					ImagePath = "pict_5.png",
-					Title = "Меха и кожа"
-				}
-			};
 		}
 		#endregion
 
@@ -53,6 +35,14 @@ namespace gardener.ViewModels
 			get => _selectedItem;
 			set
 			{
+				if (value != null)
+				{
+					if (value.Title == "Новый ТЦ")
+					{
+						return;
+					}
+				}
+
 				_selectedItem = value;
 				if (value != null)
 				{

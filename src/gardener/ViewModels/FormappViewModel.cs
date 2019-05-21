@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using gardener.Models;
@@ -13,12 +14,15 @@ namespace gardener.ViewModels
 		#region Data
 		#region Fields
 		private ObservableCollection<Place> _placeCollection;
+		private Block _block;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppViewModel()
+		public FormAppViewModel(Block block)
 		{
+			Title = "Форма заявки аренды";
+			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
 		}
 		#endregion
@@ -34,44 +38,31 @@ namespace gardener.ViewModels
 		#region Public
 		public async void SetSerializedJsonData(string url)
 		{
-			if (CrossConnectivity.Current.IsConnected)
+			if (_block.Places == null)
 			{
-				IsBusy = true;
-				JsonDataResponse<ObservableCollection<Place>> response;
-				await Task.Run(() =>
+				if (CrossConnectivity.Current.IsConnected)
 				{
-					response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
-
-#if (DEBUG)
-					Console.WriteLine(response.Message);
-#endif
-
-					IsBusy = false;
-
-					if (response.Success && response.Data != null)
+					IsBusy = true;
+					await Task.Run(() =>
 					{
-						PlaceCollection = response.Data;
-					}
-				});
+						_block.SetPlaceFromApi(url);
+						PlaceCollection = _block.Places;
+						IsBusy = false;
+
+					});
+				}
+				else
+				{
+					Title = "Ожидание сети";
+				}
 			}
 			else
 			{
-				// TODO: Показать сообщение о том, что нет сети.
+				PlaceCollection = _block.Places;
 			}
 		}
+
 		#endregion
 
-		#region Private
-		private T _download_serialized_json_data<T>(string url) where T : new()
-		{
-			using (var w = new WebClient())
-			{
-				var jsonData = w.DownloadString(url);
-
-				// if string with JSON data is not empty, deserialize it to class and return its instance 
-				return !string.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
-			}
-		}
-		#endregion
 	}
 }

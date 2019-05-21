@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using gardener.Models;
+using gardener.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace gardener.Views.ListView
@@ -7,9 +9,15 @@ namespace gardener.Views.ListView
 	public partial class FormAppSale : ContentPage
 	{
 		#region .ctor
-		public FormAppSale()
+		public FormAppSale(Block block)
 		{
 			InitializeComponent();
+			// TODO: Создать VM для Формы заявки продажи.
+			var viewModel = new BaseViewModel
+			{
+				Title = "Форма заявки продажи"
+			};
+			BindingContext = viewModel;
 		}
 		#endregion
 	}

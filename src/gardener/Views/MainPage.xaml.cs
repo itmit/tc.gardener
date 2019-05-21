@@ -39,13 +39,15 @@ namespace gardener.Views
 					case (int) MenuItemType.Selling:
 						MenuPages.Add(id, new NavigationPage(new SalePage()));
 						break;
-					case (int) MenuItemType.Rentsell:
+					case (int) MenuItemType.Purchase:
+
+						// TODO: Переименовать или удалить и создать новую страницу.
 						MenuPages.Add(id, new NavigationPage(new RentPage()));
 						break;
-					case (int) MenuItemType.Challengemphous:
+					case (int) MenuItemType.EmployCall:
 						MenuPages.Add(id, new NavigationPage(new EmployCallPage()));
 						break;
-					case (int) MenuItemType.Callsecurity:
+					case (int) MenuItemType.CallSecurity:
 						MenuPages.Add(id, new NavigationPage(new CallSecurityPage()));
 						break;
 				}

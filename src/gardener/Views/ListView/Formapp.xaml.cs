@@ -1,4 +1,5 @@
-﻿using gardener.ViewModels;
+﻿using gardener.Models;
+using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,15 +9,15 @@ namespace gardener.Views.ListView
 	public partial class FormApp : ContentPage
 	{
 		#region .ctor
-		public FormApp()
+		public FormApp(Block block)
 		{
 			InitializeComponent();
 
-			var viewModel = new FormAppViewModel();
+			var viewModel = new FormAppViewModel(block);
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/place");
+			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
 		}
 		#endregion
 	}

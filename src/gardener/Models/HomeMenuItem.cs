@@ -4,9 +4,9 @@
 	{
 		Rent,
 		Selling,
-		Rentsell,
-		Challengemphous,
-		Callsecurity
+		EmployCall,
+		CallSecurity,
+		Purchase
 	}
 
 	public class HomeMenuItem

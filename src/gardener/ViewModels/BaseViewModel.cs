@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using gardener.Models;
@@ -18,6 +19,14 @@ namespace gardener.ViewModels
 		#endregion
 		#endregion
 
+		public BaseViewModel()
+		{
+			if (Market == null)
+			{
+				Market = new Market();
+			}
+		}
+
 		#region Properties
 		public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
@@ -31,6 +40,12 @@ namespace gardener.ViewModels
 		{
 			get => _title;
 			set => SetProperty(ref _title, value);
+		}
+
+		public static Market Market
+		{
+			get;
+			private set;
 		}
 		#endregion
 

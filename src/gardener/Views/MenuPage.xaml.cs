@@ -27,18 +27,23 @@ namespace gardener.Views
 				},
 				new HomeMenuItem
 				{
-					Id = MenuItemType.Rentsell,
-					Title = "Аренда"
+					Id = MenuItemType.Purchase,
+					Title = "Покупка"
 				},
 				new HomeMenuItem
 				{
-					Id = MenuItemType.Challengemphous,
+					Id = MenuItemType.EmployCall,
 					Title = "Вызов сотрудника ЖКХ"
 				},
 				new HomeMenuItem
 				{
-					Id = MenuItemType.Callsecurity,
+					Id = MenuItemType.CallSecurity,
 					Title = "Вызов охраны"
+				},
+				new HomeMenuItem
+				{
+					Id = MenuItemType.CallSecurity,
+					Title = "Новости рынка"
 				}
 			};
 
