@@ -7,7 +7,6 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Image Source="pict_6.png" />
                 <ListView ItemsSource="{Binding Blocks}" RowHeight="100" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>

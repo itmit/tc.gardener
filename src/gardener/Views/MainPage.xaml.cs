@@ -50,6 +50,9 @@ namespace gardener.Views
 					case (int) MenuItemType.CallSecurity:
 						MenuPages.Add(id, new NavigationPage(new CallSecurityPage()));
 						break;
+                    case (int)MenuItemType.Map:
+                        MenuPages.Add(id, new NavigationPage(new MapPage()));
+                        break;
 				}
 			}
 

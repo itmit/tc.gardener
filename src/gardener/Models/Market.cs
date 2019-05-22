@@ -25,8 +25,8 @@ namespace gardener.Models
 					Title = "ТЦ Садовод",
 					Floors = new List<Floor>
 					{
-						new Floor {Value = 1},
-						new Floor {Value = 2}
+						new Floor {Value = "1 Этаж"},
+						new Floor {Value = "2 Этаж"}
 					}
 				},
 				new Block

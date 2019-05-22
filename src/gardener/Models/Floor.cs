@@ -2,7 +2,7 @@
 {
 	public class Floor
 	{
-		public int Value
+		public string Value
 		{
 			get;
 			set;

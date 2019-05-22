@@ -5,7 +5,7 @@
              x:Class="gardener.Views.SelectFloorPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
             <ListView ItemsSource="{Binding Floors}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -8,7 +8,8 @@
 		EmployCall,
 		EmployCallLyon,
 		CallSecurity,
-		Purchase
+		Purchase,
+        Map
 	}
 
 	public class HomeMenuItem

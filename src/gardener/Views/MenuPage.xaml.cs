@@ -18,8 +18,13 @@ namespace gardener.Views
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Rent,
-					Title = "Главная"
-				},
+					Title = "Аренда торговых помещений"
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Map,
+                    Title = "Схема рынка"
+                },
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Selling,

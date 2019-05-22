@@ -13,7 +13,7 @@ namespace gardener.Models
 		{
 			Floors = new List<Floor>
 			{
-				new Floor{ Value = 1 }
+				new Floor{ Value = "1" }
 			};
 		}
 
