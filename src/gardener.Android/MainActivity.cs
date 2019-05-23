@@ -7,7 +7,7 @@ using Xamarin.Forms.Platform.Android;
 namespace gardener.Droid
 {
 	[Activity(Label = "gardener",
-		Icon = "@mipmap/icon",
+		Icon = "@mipmap/pict_1",
 		Theme = "@style/MainTheme",
 		MainLauncher = true,
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

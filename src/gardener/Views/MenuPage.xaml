@@ -11,7 +11,7 @@
                 <Label Text="САДОВОД" TextColor="#9e4819" FontSize="20" />
             </StackLayout>
         </StackLayout>
-        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f7ecdd" Padding="0, 70, 0, 0">
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f7ecdd">
             <ListView x:Name="ListViewMenu"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>

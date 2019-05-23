@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace gardener.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]

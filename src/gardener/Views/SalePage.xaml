@@ -5,9 +5,7 @@
              x:Class="gardener.Views.SalePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Страница продажи находиться в разработке. Для связи почта: info@itmit-studio.ru"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

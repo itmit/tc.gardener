@@ -28,7 +28,7 @@ namespace gardener.Views
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Selling,
-					Title = "Вызов мастера (лайон)"
+					Title = "Вызов мастера (Лайон)"
 				},
 				new HomeMenuItem
 				{

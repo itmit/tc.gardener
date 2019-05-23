@@ -6,7 +6,7 @@
              SelectedBackgroundColor="WhiteSmoke">
   <ViewCell.View>
       <StackLayout>
-            <Label Text="{Binding Value}" HorizontalOptions="Center" FontSize="Large" TextColor="#9e4819"/>
+            <Label Text="{Binding Value}" FontSize="Large" TextColor="#9e4819"/>
       </StackLayout>
   </ViewCell.View>
 </gardener:ExtendedViewCell>
