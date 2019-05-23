@@ -4,8 +4,14 @@
              x:Class="gardener.Views.MapPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center">
-            <Image Source="logo.jpeg" VerticalOptions="Center" />
+        <StackLayout VerticalOptions="Center">
+            <Image Source="logo.jpeg" />
+           <!-- <AbsoluteLayout AbsoluteLayout.LayoutBounds="70, 0, 0, 0">
+                <Image Source="tc6.png" />
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="70, 0, 40, 0">
+                <Image Source="tc4.png" />
+            </AbsoluteLayout>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
