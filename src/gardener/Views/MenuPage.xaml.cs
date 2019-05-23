@@ -63,6 +63,7 @@ namespace gardener.Views
 				}
 
 				var id = (int) ((HomeMenuItem) e.SelectedItem).Id;
+                
 				await RootPage.NavigateFromMenu(id);
 			};
 		}
