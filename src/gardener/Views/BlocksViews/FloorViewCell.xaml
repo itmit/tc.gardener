@@ -5,8 +5,8 @@
              x:Class="gardener.Views.BlocksViews.FloorViewCell"
              SelectedBackgroundColor="WhiteSmoke">
   <ViewCell.View>
-      <StackLayout>
-            <Label Text="{Binding Value}" FontSize="Large" TextColor="#9e4819"/>
-      </StackLayout>
+      <Grid>
+            <Label Text="{Binding Value, StringFormat=\{0\} Этаж}" FontSize="Large" TextColor="#9e4819" HorizontalOptions="Center" VerticalOptions="Center"/>
+      </Grid>
   </ViewCell.View>
 </gardener:ExtendedViewCell>

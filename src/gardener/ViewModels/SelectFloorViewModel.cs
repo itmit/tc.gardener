@@ -33,7 +33,7 @@ namespace gardener.ViewModels
 				_selectedItem = value;
 				if (value != null)
 				{
-					_navigation.PushAsync(new ListSale(_block, value.Value));
+					_navigation.PushAsync(new ListSalePage(_block, value.Value));
 					_selectedItem = null;
 				}
 				OnPropertyChanged(nameof(SelectedItem));

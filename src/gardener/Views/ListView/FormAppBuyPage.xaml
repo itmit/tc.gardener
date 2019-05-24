@@ -2,25 +2,23 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:gardener.Models"
+             x:Class="gardener.Views.ListView.FormAppBuyPage"
              xmlns:gardener="clr-namespace:gardener"
-             x:Class="gardener.Views.ListView.FormAppSale"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout HeightRequest="50">
+        <StackLayout>
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
                 <gardener:ExtendedEntry x:Name="PlaceNumber" FontSize="Large" TextColor="#9e4819"
-                               Placeholder="Место" PlaceholderColor="#7a7a7a" />
+                                        Placeholder="Место" PlaceholderColor="#7a7a7a" />
                 <gardener:ExtendedEntry x:Name="Name" FontSize="Large" TextColor="#9e4819"
                                Placeholder="Имя" PlaceholderColor="#7a7a7a" />
                 <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
                                Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
-                <gardener:ExtendedEntry x:Name="Cost" FontSize="Large" TextColor="#9e4819"
-                                        Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
-                <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
-                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
-                        CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" />
             </StackLayout>
+            <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                    WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

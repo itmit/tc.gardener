@@ -54,7 +54,7 @@ namespace gardener.ViewModels
 					}
 					else
 					{
-						_navigation.PushAsync(new ListSale(value, value.Floors[0].Value));
+						_navigation.PushAsync(new ListSalePage(value, value.Floors[0].Value));
 					}
 					_selectedItem = null;
 				}

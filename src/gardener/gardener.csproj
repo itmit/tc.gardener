@@ -22,14 +22,17 @@
     <Compile Update="Views\EmployCallPage.xaml.cs">
       <DependentUpon>EmployCallPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ListView\Formapp.xaml.cs">
-      <DependentUpon>FormApp.xaml</DependentUpon>
+    <Compile Update="Views\ListView\FormAppPage.xaml.cs">
+      <DependentUpon>FormAppPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ListView\Formappbuy.xaml.cs">
-      <DependentUpon>FormAppBuy.xaml</DependentUpon>
+    <Compile Update="Views\ListView\FormAppBuyPage.xaml.cs">
+      <DependentUpon>FormAppBuyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ListView\Formappsale.xaml.cs">
-      <DependentUpon>FormAppSale.xaml</DependentUpon>
+    <Compile Update="Views\ListView\FormAppSalePage.xaml.cs">
+      <DependentUpon>FormAppSalePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListView\ListSalePage.xaml.cs">
+      <DependentUpon>ListSalePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\RentSalePage.xaml.cs">
       <DependentUpon>RentSalePage.xaml</DependentUpon>
@@ -64,10 +67,10 @@
     <EmbeddedResource Update="Views\RentSalePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ListView\FormApp.xaml">
+    <EmbeddedResource Update="Views\ListView\FormAppPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ListView\ListSale.xaml">
+    <EmbeddedResource Update="Views\ListView\ListSalePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SalePage.xaml">

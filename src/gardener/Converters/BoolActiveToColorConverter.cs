@@ -4,13 +4,23 @@ using Xamarin.Forms;
 
 namespace gardener.Converters
 {
+	/// <summary>
+	/// Представляет механизм для перевода активности в цвет обозначающий активность.
+	/// </summary>
 	public class BoolActiveToColorConverter : IValueConverter
 	{
+		/// <summary>
+		/// Возвращает или устанавливает цвет активного блока.
+		/// </summary>
 		public Color ActiveColor
 		{
 			get;
 			set;
 		}
+
+		/// <summary>
+		/// Возвращает или устанавливает цвет не активного блока.
+		/// </summary>
 		public Color NoActiveColor
 		{
 			get;

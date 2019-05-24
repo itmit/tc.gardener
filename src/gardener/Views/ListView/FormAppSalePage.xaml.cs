@@ -6,10 +6,10 @@ using Xamarin.Forms.Xaml;
 namespace gardener.Views.ListView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FormAppSale : ContentPage
+	public partial class FormAppSalePage : ContentPage
 	{
 		#region .ctor
-		public FormAppSale(Block block)
+		public FormAppSalePage(Block block)
 		{
 			InitializeComponent();
 			// TODO: Создать VM для Формы заявки продажи.

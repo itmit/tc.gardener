@@ -3,13 +3,22 @@ using System.Collections.ObjectModel;
 
 namespace gardener.Models
 {
+	/// <summary>
+	/// Представляет сущность рынок.
+	/// </summary>
 	public class Market
 	{
+		/// <summary>
+		/// Возвращает или устанавливает блоки на рынке.
+		/// </summary>
 		public ObservableCollection<Block> Blocks
 		{
 			get;
 		}
 
+		/// <summary>
+		/// Инициализирует экземпляр типа <see cref="Market"/>, с жестко заданными блоками.
+		/// </summary>
 		public Market()
 		{
 			Blocks = new ObservableCollection<Block>
@@ -25,8 +34,8 @@ namespace gardener.Models
 					Title = "ТЦ Садовод",
 					Floors = new List<Floor>
 					{
-						new Floor {Value = "1 Этаж"},
-						new Floor {Value = "2 Этаж"}
+						new Floor {Value = 1},
+						new Floor {Value = 2}
 					}
 				},
 				new Block

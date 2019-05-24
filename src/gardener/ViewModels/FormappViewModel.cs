@@ -15,6 +15,7 @@ namespace gardener.ViewModels
 		#region Fields
 		private ObservableCollection<Place> _placeCollection;
 		private Block _block;
+		private readonly int _floor;
 		#endregion
 		#endregion
 
@@ -23,6 +24,15 @@ namespace gardener.ViewModels
 		{
 			Title = "Свободные места";
 			_block = block;
+			_placeCollection = new ObservableCollection<Place>();
+		}
+
+
+		public FormAppViewModel(Block block, int floor)
+		{
+			Title = "Свободные места";
+			_block = block;
+			_floor = floor;
 			_placeCollection = new ObservableCollection<Place>();
 		}
 		#endregion
@@ -46,7 +56,14 @@ namespace gardener.ViewModels
 					await Task.Run(() =>
 					{
 						_block.SetPlaceFromApi(url);
-						PlaceCollection = _block.Places;
+						if (_floor > 0)
+						{
+							PlaceCollection = (ObservableCollection<Place>)_block.Places.Where(x => x.Floor == _floor);
+						}
+						else
+						{
+							PlaceCollection = _block.Places;
+						}
 						IsBusy = false;
 
 					});
