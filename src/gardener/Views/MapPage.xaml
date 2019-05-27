@@ -4,8 +4,9 @@
              x:Class="gardener.Views.MapPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center">
-            <Image Source="logo.jpeg" VerticalOptions="Center" />
-        </StackLayout>
+
+        <AbsoluteLayout HorizontalOptions="FillAndExpand">
+            <ImageButton HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="60, 0, 20, 60"  Source="tc6.png" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

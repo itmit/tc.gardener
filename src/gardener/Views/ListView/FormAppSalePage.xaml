@@ -15,8 +15,6 @@
                                Placeholder="Имя" PlaceholderColor="#7a7a7a" />
                 <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
                                Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
-                <gardener:ExtendedEntry x:Name="Cost" FontSize="Large" TextColor="#9e4819"
-                                        Placeholder="Стоимость" PlaceholderColor="#7a7a7a" />
                 <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" />
