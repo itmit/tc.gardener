@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using gardener.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace gardener.Views
 {
@@ -37,8 +38,8 @@ namespace gardener.Views
 						MenuPages.Add(id, new NavigationPage(new RentSalePage()));
 						break;
 					case (int) MenuItemType.Selling:
-						MenuPages.Add(id, new NavigationPage(new SalePage()));
-						break;
+                        await Call("89005392566");
+                        break;
 					case (int) MenuItemType.Purchase:
 
 						// TODO: Переименовать или удалить и создать новую страницу.
@@ -70,6 +71,23 @@ namespace gardener.Views
 				IsPresented = false;
 			}
 		}
-		#endregion
-	}
+
+        public async Task Call(string number)
+        {
+            try
+            {
+                PhoneDialer.Open(number);
+            }
+
+            catch (FeatureNotSupportedException ex)
+            {
+                // Phone Dialer is not supported on this device.  
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.  
+            }
+        }
+        #endregion
+    }
 }

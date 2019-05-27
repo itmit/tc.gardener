@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace gardener.Views
@@ -16,5 +10,10 @@ namespace gardener.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void OpenMap(object sender, System.EventArgs e)
+        {
+            DisplayAlert("Схема карты", "Тут карта", "Ок");
+        }
+    }
 }
