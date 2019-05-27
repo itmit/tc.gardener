@@ -3,6 +3,10 @@ using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Xamarin.Essentials;
+using System.Threading.Tasks;
+using System;
+using Android.Runtime;
 
 namespace gardener.Droid
 {
@@ -22,7 +26,16 @@ namespace gardener.Droid
 			base.OnCreate(savedInstanceState);
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
-		}
-		#endregion
-	}
+
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+        }
+        #endregion
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+    }
 }
