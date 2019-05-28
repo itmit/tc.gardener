@@ -38,18 +38,17 @@ namespace gardener.Views
 						MenuPages.Add(id, new NavigationPage(new RentSalePage()));
 						break;
 					case (int) MenuItemType.Selling:
-                        await Call("89005392566");
-                        break;
+                         await Call("89005392566");
+                         break;
 					case (int) MenuItemType.Purchase:
-
 						// TODO: Переименовать или удалить и создать новую страницу.
 						MenuPages.Add(id, new NavigationPage(new RentPage()));
 						break;
 					case (int) MenuItemType.EmployCall:
-						MenuPages.Add(id, new NavigationPage(new EmployCallPage()));
+                        await Call("89153991269");
 						break;
 					case (int) MenuItemType.CallSecurity:
-						MenuPages.Add(id, new NavigationPage(new CallSecurityPage()));
+                        await Call("89261505109");
 						break;
                     case (int)MenuItemType.Map:
                         MenuPages.Add(id, new NavigationPage(new MapPage()));
@@ -76,14 +75,18 @@ namespace gardener.Views
         {
             try
             {
-                PhoneDialer.Open(number);
+                await Task.Run(() =>
+                {
+                    PhoneDialer.Open(number);
+                }
+                );
             }
 
             catch (FeatureNotSupportedException ex)
             {
-                // Phone Dialer is not supported on this device.  
+                // Phone Dialer is not supported on this device.
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 // Other error has occurred.  
             }
