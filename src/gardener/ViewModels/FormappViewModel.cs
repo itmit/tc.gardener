@@ -65,7 +65,6 @@ namespace gardener.ViewModels
 							PlaceCollection = _block.Places;
 						}
 						IsBusy = false;
-
 					});
 				}
 				else
