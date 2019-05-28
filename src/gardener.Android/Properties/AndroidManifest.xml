@@ -4,5 +4,5 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.CALL_PRIVILEGED" />
-	<application android:label="gardener.Android" android:icon="@drawable/pict_1"></application>
+	<application android:label="gardener.Android" android:icon="@drawable/pict_1" android:usesCleartextTraffic="true"></application>
 </manifest>
