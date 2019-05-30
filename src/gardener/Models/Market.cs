@@ -45,7 +45,7 @@ namespace gardener.Models
 				},
 				new Block
 				{
-                    ImagePath = "paltoviy_krug.jpg",
+                    ImagePath = "paltovy_krug.png",
                     Title = "Пальтовый круг"
 				},
 				new Block

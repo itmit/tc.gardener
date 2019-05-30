@@ -5,7 +5,7 @@
              x:Class="gardener.Views.SelectFloorPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" VerticalOptions="CenterAndExpand">
+        <StackLayout Padding="30">
             <ListView ItemsSource="{Binding Floors}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -13,6 +13,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </FlexLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

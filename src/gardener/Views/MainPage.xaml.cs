@@ -38,7 +38,7 @@ namespace gardener.Views
 						MenuPages.Add(id, new NavigationPage(new RentSalePage()));
 						break;
 					case (int) MenuItemType.Selling:
-                         await Call("89005392566");
+                         await Call("84996371111");
                          break;
 					case (int) MenuItemType.Purchase:
 						// TODO: Переименовать или удалить и создать новую страницу.
