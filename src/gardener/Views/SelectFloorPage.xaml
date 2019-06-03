@@ -5,14 +5,24 @@
              x:Class="gardener.Views.SelectFloorPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout Padding="30">
-            <ListView ItemsSource="{Binding Floors}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <blocksViews:FloorViewCell/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        <ListView Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" ItemsSource="{Binding Floors}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <blocksViews:FloorViewCell/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

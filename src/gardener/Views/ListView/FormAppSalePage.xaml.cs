@@ -15,7 +15,7 @@ namespace gardener.Views.ListView
 			// TODO: Создать VM для Формы заявки продажи.
 			var viewModel = new BaseViewModel
 			{
-				Title = "Форма заявки продажи"
+				Title = "Форма заявки на аренду помещения"
 			};
 			BindingContext = viewModel;
 		}

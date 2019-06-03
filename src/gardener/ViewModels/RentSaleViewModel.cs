@@ -19,7 +19,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public RentSaleViewModel(INavigation navigation)
 		{
-			Title = "Аренда торговых помещений";
+			Title = "Список свободных помещений";
 			_blocks = Market.Blocks;
 			_navigation = navigation;
 		}

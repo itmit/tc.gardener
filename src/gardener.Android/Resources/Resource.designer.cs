@@ -6481,10 +6481,10 @@ namespace gardener.Droid
 			public const int pict_1 = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int pict_6 = 2130837815;
+			public const int svadebnaya_galereya_SALYuT = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int svadebnaya_galereya_SALYuT = 2130837816;
+			public const int tc4 = 2130837816;
 			
 			// aapt resource value: 0x7f020139
 			public const int tc6 = 2130837817;

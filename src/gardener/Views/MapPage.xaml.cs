@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using gardener.Views.ListView;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace gardener.Views
@@ -11,9 +13,14 @@ namespace gardener.Views
 			InitializeComponent ();
 		}
 
-        private void OpenMap(object sender, System.EventArgs e)
+        private void ImageButton_Clicked(object sender, System.EventArgs e)
         {
-            DisplayAlert("Схема карты", "Тут карта", "Ок");
+            Navigation.PushAsync(new ListSalePage());
+        }
+
+        private void ImageButton_Clicked_1(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ListSalePage());
         }
     }
 }

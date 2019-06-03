@@ -27,7 +27,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public FormAppBuyViewModel()
 		{
-			Title = "Форма заявки покупки";
+			Title = "Форма заявки на сдачу в аренду помещения";
 			SendFormCommand = new RelayCommand(x =>
 											   {
 												   ExecuteSendFormCommand();

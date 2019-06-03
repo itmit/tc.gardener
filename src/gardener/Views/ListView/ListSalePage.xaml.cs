@@ -9,9 +9,12 @@ namespace gardener.Views.ListView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListSalePage : ContentPage
 	{
+        public ListSalePage()
+        {
+        }
 
-		#region .ctor
-		public ListSalePage(Block block, int floor)
+        #region .ctor
+        public ListSalePage(Block block, int floor)
 		{
 			InitializeComponent();
 

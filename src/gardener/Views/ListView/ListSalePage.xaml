@@ -20,9 +20,9 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button Text="Аренда помещения" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="RentButton" />
-            <Button Text="Продажа помещения" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="SellButton" />
-            <Button Text="Покупка помещения" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="BuyButton" />
+            <Button Text="Список свободных помещений" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="RentButton" />
+            <Button Text="Заявка на аренду помещения" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="SellButton" />
+            <Button Text="Заявка на сдачу в аренду помещения" Style="{StaticResource ButtonStyle}" Command="{Binding OpenPageCommand}" x:Name="BuyButton" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
