@@ -5,16 +5,33 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-            <AbsoluteLayout VerticalOptions="Center">
+            <AbsoluteLayout VerticalOptions="FillAndExpand">
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                       AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
-                       Source="tc6.png"
-                       Clicked="ImageButton_Clicked"/>
+                           AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
+                           Source="tc6.png"
+                           BackgroundColor="Transparent"
+                           Clicked="ImageButton_Clicked"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                       AbsoluteLayout.LayoutBounds="0.86, 0.04, AutoSize, AutoSize"
-                       WidthRequest="55"
-                       Source="tc4.png"
-                       Clicked="ImageButton_Clicked_1"/>
+                           AbsoluteLayout.LayoutBounds="0.86, 0.025, AutoSize, AutoSize"
+                           WidthRequest="55"
+                           Source="tc4.png"
+                           BackgroundColor="Transparent"
+                           Clicked="ImageButton_Clicked_1"/>
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                           WidthRequest="180"
+                           AbsoluteLayout.LayoutBounds="0.3, 0.37, AutoSize, AutoSize"
+                           BackgroundColor="Transparent"
+                           Source="tc7.png"/>
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                           WidthRequest="130"
+                           BackgroundColor="Transparent"
+                           AbsoluteLayout.LayoutBounds="0.86, 0.37, AutoSize, AutoSize"
+                           Source="tc9.png"/>
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                           WidthRequest="300"
+                           BackgroundColor="Transparent"
+                           AbsoluteLayout.LayoutBounds="0.3, 0.6, AutoSize, AutoSize"
+                           Source="tc5.png"/>
             </AbsoluteLayout>
         </StackLayout>
     </ContentPage.Content>
