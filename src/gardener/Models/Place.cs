@@ -49,7 +49,7 @@ namespace gardener.Models
 		/// <summary>
 		/// Возвращает или устанавливает ряд в котором находится место.
 		/// </summary>
-		public int Row
+		public string Row
 		{
 			get;
 			set;

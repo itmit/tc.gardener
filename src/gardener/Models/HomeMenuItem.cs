@@ -9,7 +9,8 @@
 		EmployCallLyon,
 		CallSecurity,
 		Purchase,
-        Map
+        Map,
+        Course
 	}
 
 	public class HomeMenuItem

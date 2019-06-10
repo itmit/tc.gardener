@@ -50,6 +50,9 @@ namespace gardener.Views
 					case (int) MenuItemType.CallSecurity:
                         await Call("89261505109");
 						break;
+                    case (int)MenuItemType.Course:
+                        MenuPages.Add(id, new NavigationPage(new CoursePage()));
+                        break;
                     case (int)MenuItemType.Map:
                         MenuPages.Add(id, new NavigationPage(new MapPage()));
                         break;

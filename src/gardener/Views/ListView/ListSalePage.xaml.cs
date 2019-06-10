@@ -11,6 +11,7 @@ namespace gardener.Views.ListView
 	{
         public ListSalePage()
         {
+            InitializeComponent();
         }
 
         #region .ctor

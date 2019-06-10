@@ -23,12 +23,12 @@ namespace gardener.Models
 			};
 		}
 
-		#region Properties
+        #region Properties
 
-		/// <summary>
-		/// Возвращает или устанавливает физический путь к картинке.
-		/// </summary>
-		public string ImagePath
+        /// <summary>
+        /// Возвращает или устанавливает физический путь к картинке.
+        /// </summary>
+        public string ImagePath
 		{
 			get;
 			set;

@@ -42,7 +42,7 @@ namespace gardener.Views
 				},
 				new HomeMenuItem
 				{
-					Id = MenuItemType.CallSecurity,
+					Id = MenuItemType.Course,
 					Title = "Котировки валют"
 				},
 				new HomeMenuItem

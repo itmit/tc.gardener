@@ -1,61 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:gardener.Extensions"
              x:Class="gardener.Views.MapPage"
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-           <AbsoluteLayout HeightRequest="600">
+            <local:PinchToZoomContainer>
+                <local:PinchToZoomContainer.Content>
+            <AbsoluteLayout   x:Name="MapGardener" HeightRequest="600">
+                <Image AbsoluteLayout.LayoutFlags="PositionProportional"
+                                 AbsoluteLayout.LayoutBounds="0, 0.3, AutoSize, AutoSize"
+                                 WidthRequest="425"
+                                 BackgroundColor="Transparent"
+                                 Source="maptc.jpg"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                             AbsoluteLayout.LayoutBounds="0, 0.3, AutoSize, AutoSize"
-                             WidthRequest="425"
-                             BackgroundColor="Transparent"
-                             Source="maptc.jpg"
-                             />
+                               AbsoluteLayout.LayoutBounds="0.5, 0.31, AutoSize, AutoSize"
+                               Source="tc6.png"
+                               WidthRequest="235"
+                               BackgroundColor="Transparent"
+                               Clicked="ImageButton_Clicked"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           AbsoluteLayout.LayoutBounds="0.5, 0.31, AutoSize, AutoSize"
-                           Source="tc6.png"
-                           WidthRequest="235"
-                           BackgroundColor="Transparent"
-                           Clicked="ImageButton_Clicked"/>
+                               AbsoluteLayout.LayoutBounds="0.69, 0.275, AutoSize, AutoSize"
+                               WidthRequest="27"
+                               Source="tc4.png"
+                               BackgroundColor="Transparent"
+                               Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           AbsoluteLayout.LayoutBounds="0.69, 0.275, AutoSize, AutoSize"
-                           WidthRequest="27"
-                           Source="tc4.png"
-                           BackgroundColor="Transparent"
-                           Clicked="ImageButton_Clicked_1"/>
-                
+                               WidthRequest="120"
+                               AbsoluteLayout.LayoutBounds="0.38, 0.49, AutoSize, AutoSize"
+                               BackgroundColor="Transparent"
+                               Source="tc7.png"
+                                Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="120"
-                           AbsoluteLayout.LayoutBounds="0.38, 0.49, AutoSize, AutoSize"
-                           BackgroundColor="Transparent"
-                           Source="tc7.png"/>
-               <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="105"
-                           BackgroundColor="Transparent"
-                           AbsoluteLayout.LayoutBounds="0.73, 0.478, AutoSize, AutoSize"
-                           Source="tc9.png"/>
+                               WidthRequest="105"
+                               BackgroundColor="Transparent"
+                               AbsoluteLayout.LayoutBounds="0.73, 0.478, AutoSize, AutoSize"
+                               Source="tc9.png"
+                                Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="155"
-                           BackgroundColor="Transparent"
-                           AbsoluteLayout.LayoutBounds="0.49, 0.58, AutoSize, AutoSize"
-                           Source="tc5.png"/>
+                               WidthRequest="155"
+                               BackgroundColor="Transparent"
+                               AbsoluteLayout.LayoutBounds="0.49, 0.58, AutoSize, AutoSize"
+                               Source="tc5.png"
+                                 Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="30"
-                           BackgroundColor="Transparent"
-                           AbsoluteLayout.LayoutBounds="0.04, 0.43, AutoSize, AutoSize"
-                           Source="tc1.png"/>
+                               WidthRequest="30"
+                               BackgroundColor="Transparent"
+                               AbsoluteLayout.LayoutBounds="0.04, 0.43, AutoSize, AutoSize"
+                               Source="tc1.png"
+                                 Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="27"
-                           BackgroundColor="Transparent"
-                           AbsoluteLayout.LayoutBounds="0.042, 0.464, AutoSize, AutoSize"
-                           Source="tc2.png"/>
+                               WidthRequest="27"
+                               BackgroundColor="Transparent"
+                               AbsoluteLayout.LayoutBounds="0.042, 0.464, AutoSize, AutoSize"
+                               Source="tc2.png"
+                                 Clicked="ImageButton_Clicked_1"/>
                 <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                           WidthRequest="51"
-                           BackgroundColor="Transparent"
-                           AbsoluteLayout.LayoutBounds="0.04, 0.515, AutoSize, AutoSize"
-                           Source="tc3.png"/>
+                               WidthRequest="51"
+                               BackgroundColor="Transparent"
+                               AbsoluteLayout.LayoutBounds="0.04, 0.515, AutoSize, AutoSize"
+                               Source="tc3.png"
+                                 Clicked="ImageButton_Clicked_1"/>
             </AbsoluteLayout>
+            </local:PinchToZoomContainer.Content>
+            </local:PinchToZoomContainer>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
