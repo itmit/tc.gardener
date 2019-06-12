@@ -5,7 +5,7 @@ namespace gardener.Models
 	/// <summary>
 	/// Представляет сущность места в блоке.
 	/// </summary>
-	public class Place : BaseModel
+	public class Place
 	{
 		#region Properties
 
