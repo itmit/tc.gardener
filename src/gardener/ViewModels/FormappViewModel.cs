@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using gardener.Models;
+using gardener.Services;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
 
@@ -46,26 +47,26 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Public
-		public async void SetSerializedJsonData(string url)
+		public async void SetSerializedJsonDataAsync(string url)
 		{
 			if (_block.Places == null)
 			{
 				if (CrossConnectivity.Current.IsConnected)
 				{
+					var service = new PlaceDataStore(url);
+
 					IsBusy = true;
-					await Task.Run(() =>
+					_block.Places = await service.GetItemsAsync(_block.Places != null && _block.Places.Count > 0);
+					
+					if (_floor > 0)
 					{
-						_block.SetPlaceFromApi(url);
-						if (_floor > 0)
-						{
-							PlaceCollection = (ObservableCollection<Place>)_block.Places.Where(x => x.Floor == _floor);
-						}
-						else
-						{
-							PlaceCollection = _block.Places;
-						}
-						IsBusy = false;
-					});
+						PlaceCollection = (ObservableCollection<Place>)_block.Places.Where(x => x.Floor == _floor);
+					}
+					else
+					{
+						PlaceCollection = _block.Places;
+					}
+					IsBusy = false;
 				}
 				else
 				{

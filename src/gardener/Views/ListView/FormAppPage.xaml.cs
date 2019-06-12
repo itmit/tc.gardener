@@ -17,7 +17,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
+			viewModel.SetSerializedJsonDataAsync("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
 		}
 
 
@@ -29,7 +29,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonData("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
+			viewModel.SetSerializedJsonDataAsync("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
 		}
 		#endregion
 	}

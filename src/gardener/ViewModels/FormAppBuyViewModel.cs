@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using gardener.Models;
+using gardener.Services;
 using gardener.Views.ListView;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
@@ -67,43 +68,22 @@ namespace gardener.ViewModels
 			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
-				await Task.Run(() =>
+				var service = new BidForSaleDataStore("http://tc.itmit-studio.ru/api/bid-for-sale");
+
+				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber)))
 				{
-					SendForm("http://tc.itmit-studio.ru/api/bid-for-sale");
-				});
+					// TODO: Дописать действия в случае успешной и отправки формы.
+				}
+				else
+				{
+					// TODO: Дописать действия в случае отправки формы с ошибкой.
+				}
 			}
 			else
 			{
 				Title = "Ожидание сети";
 			}
-		}
 
-		private async void SendForm(string url)
-		{
-			var bidForSale = new BidForSale(PlaceNumber, Name, PhoneNumber);
-			var client = new HttpClient();
-			var request = new HttpRequestMessage(HttpMethod.Post, new Uri(url))
-			{
-				Content = new StringContent(JsonConvert.SerializeObject(bidForSale))
-			};
-
-			var parameters = new Dictionary<string, string>
-			{
-				{
-					"data", JsonConvert.SerializeObject(bidForSale)
-				}
-			};
-			var encodedContent = new FormUrlEncodedContent(parameters);
-
-			var response = await client.PostAsync(url, encodedContent);
-			if (response.StatusCode == HttpStatusCode.OK)
-			{
-				// TODO: Дописать действия в случае успешной и отправки формы.
-			}
-			else
-			{
-				// TODO: Дописать действия в случае отправки формы с ошибкой.
-			}
 			IsBusy = false;
 		}
 		#endregion

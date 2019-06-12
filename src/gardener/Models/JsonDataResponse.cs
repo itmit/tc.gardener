@@ -1,4 +1,7 @@
-﻿namespace gardener.Models
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace gardener.Models
 {
 	/// <summary>
 	/// Представляет тип для данных возвращаемые от внешнего сервиса в формате json.
@@ -11,7 +14,7 @@
 		/// <summary>
 		/// Возвращает или устанавливает данные возвращаемые от сервиса.
 		/// </summary>
-		public T Data
+		public ObservableCollection<T> Data
 		{
 			get;
 			set;
@@ -24,7 +27,7 @@
 		{
 			get;
 			set;
-		}
+		} = false;
 
 		/// <summary>
 		/// Возвращает или устанавливает возвращаемое сообщение сообщение.
@@ -33,7 +36,7 @@
 		{
 			get;
 			set;
-		}
+		} = "";
 		#endregion
 	}
 }

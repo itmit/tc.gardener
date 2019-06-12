@@ -58,7 +58,7 @@ namespace gardener.Models
 		public ObservableCollection<Place> Places
 		{
 			get;
-			private set;
+			set;
 		}
 
 		/// <summary>
@@ -68,44 +68,6 @@ namespace gardener.Models
 		{
 			get;
 			set;
-		}
-		#endregion
-
-
-		#region Private
-
-		/// <summary>
-		/// Устанавливает места в блоке из внешнего api, по заданному адресу.
-		/// </summary>
-		/// <param name="url">Адрес внешнего сервиса.</param>
-		public void SetPlaceFromApi(string url)
-		{
-			var response = _download_serialized_json_data<JsonDataResponse<ObservableCollection<Place>>>(url);
-
-#if (DEBUG)
-			Debug.WriteLine(response.Message);
-#endif
-
-			if (response.Success && response.Data != null)
-			{
-				Places = response.Data;
-			}
-		}
-
-		/// <summary>
-		/// Скачивает в формате json места в блоке.
-		/// </summary>
-		/// <typeparam name="T">Тип места в блоке.</typeparam>
-		/// <param name="url">Адрес внешнего сервиса.</param>
-		/// <returns></returns>
-		private T _download_serialized_json_data<T>(string url) where T : new()
-		{
-			using (var w = new WebClient())
-			{
-				var jsonData = w.DownloadString(url);
-
-				return !string.IsNullOrEmpty(jsonData) ? JsonConvert.DeserializeObject<T>(jsonData) : new T();
-			}
 		}
 		#endregion
 	}
