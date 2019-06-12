@@ -21,7 +21,7 @@ namespace gardener.Models
 		/// <summary>
 		/// Возвращает или устанавливает номер этажа на котором находится место.
 		/// </summary>
-		public int Floor
+		public int? Floor
 		{
 			get;
 			set;
@@ -40,7 +40,7 @@ namespace gardener.Models
 		/// <summary>
 		/// Возвращает или устанавливает стоимость блока
 		/// </summary>
-		public int Price
+		public int? Price
 		{
 			get;
 			set;
