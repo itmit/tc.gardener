@@ -8,62 +8,73 @@
         <StackLayout>
             <local:PinchToZoomContainer>
                 <local:PinchToZoomContainer.Content>
-            <AbsoluteLayout   x:Name="MapGardener" HeightRequest="600">
-                <Image AbsoluteLayout.LayoutFlags="PositionProportional"
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="600" WidthRequest="425">
+                        <AbsoluteLayout   x:Name="MapGardener" HeightRequest="600" WidthRequest="425">
+                            <Image AbsoluteLayout.LayoutFlags="PositionProportional"
                                  AbsoluteLayout.LayoutBounds="0, 0.3, AutoSize, AutoSize"
+                                   HorizontalOptions="Center"
                                  WidthRequest="425"
                                  BackgroundColor="Transparent"
                                  Source="maptc.jpg"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                AbsoluteLayout.LayoutBounds="0.5, 0.31, AutoSize, AutoSize"
+                               HorizontalOptions="Center"
                                Source="tc6.png"
                                WidthRequest="235"
                                BackgroundColor="Transparent"
                                Clicked="ImageButton_Clicked"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                AbsoluteLayout.LayoutBounds="0.69, 0.275, AutoSize, AutoSize"
+                               HorizontalOptions="Center"
                                WidthRequest="27"
                                Source="tc4.png"
                                BackgroundColor="Transparent"
                                Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="120"
                                AbsoluteLayout.LayoutBounds="0.38, 0.49, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                BackgroundColor="Transparent"
                                Source="tc7.png"
                                 Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="105"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.73, 0.478, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                Source="tc9.png"
                                 Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="155"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.49, 0.58, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                Source="tc5.png"
                                  Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="30"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.04, 0.43, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                Source="tc1.png"
                                  Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="27"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.042, 0.464, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                Source="tc2.png"
                                  Clicked="ImageButton_Clicked_1"/>
-                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                            <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="51"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.04, 0.515, AutoSize, AutoSize"
+                                         HorizontalOptions="Center"
                                Source="tc3.png"
                                  Clicked="ImageButton_Clicked_1"/>
-            </AbsoluteLayout>
-            </local:PinchToZoomContainer.Content>
+                        </AbsoluteLayout>
+                    </StackLayout>
+                </local:PinchToZoomContainer.Content>
             </local:PinchToZoomContainer>
         </StackLayout>
     </ContentPage.Content>
