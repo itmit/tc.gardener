@@ -22,11 +22,12 @@ namespace gardener.ViewModels
 		private string _phoneNumber;
 
 		private string _placeNumber;
+		private Block _block;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppBuyViewModel()
+		public FormAppBuyViewModel(Block block)
 		{
 			Title = "Форма заявки на сдачу в аренду помещения";
 			SendFormCommand = new RelayCommand(x =>
@@ -34,6 +35,7 @@ namespace gardener.ViewModels
 												   ExecuteSendFormCommand();
 											   },
 											   x => true);
+			_block = block;
 		}
 		#endregion
 
@@ -70,7 +72,7 @@ namespace gardener.ViewModels
 			{
 				var service = new BidForSaleDataStore("http://tc.itmit-studio.ru/api/bid-for-sale");
 
-				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber)))
+				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block)))
 				{
 					// TODO: Дописать действия в случае успешной и отправки формы.
 				}

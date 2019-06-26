@@ -4,17 +4,15 @@ using gardener.Models;
 
 namespace gardener.Services
 {
-	public class BidForSaleDataStore : BaseJsonDataStore<BidForSale>
+	public class BidForBuyDataStore : BaseJsonDataStore<BidForBuy>
 	{
-		#region .ctor
-		public BidForSaleDataStore(string url)
+		public BidForBuyDataStore(string url)
 			: base(url)
 		{
 		}
-		#endregion
 
 		#region Public
-		public new async Task<bool> AddItemAsync(BidForSale item) =>
+		public new async Task<bool> AddItemAsync(BidForBuy item) =>
 			await Task.FromResult(await SendForm(new Dictionary<string, string>
 			{
 				{

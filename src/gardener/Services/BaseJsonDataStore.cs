@@ -60,27 +60,15 @@ namespace gardener.Services
 			}
 		}
 
-
-		protected async Task<bool> SendForm(BidForSale item)
+		protected async Task<bool> SendForm(Dictionary<string, string> parameters)
 		{
 			var client = new HttpClient();
-			var request = new HttpRequestMessage(HttpMethod.Post, new Uri(Url))
-			{
-				Content = new StringContent(JsonConvert.SerializeObject(item))
-			};
 
-			var parameters = new Dictionary<string, string>
-			{
-				{
-					"data", JsonConvert.SerializeObject(item)
-				}
-			};
 			var encodedContent = new FormUrlEncodedContent(parameters);
 
 			var response = await client.PostAsync(Url, encodedContent);
 
 			return await Task.FromResult(response.IsSuccessStatusCode);
-
 		}
 	}
 }

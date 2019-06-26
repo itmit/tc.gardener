@@ -14,7 +14,11 @@
                 <gardener:ExtendedEntry x:Name="Name" FontSize="Large" TextColor="#9e4819"
                                Placeholder="Имя" PlaceholderColor="#7a7a7a" />
                 <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
-                               Placeholder="Телефон" PlaceholderColor="#7a7a7a" />
+                               Placeholder="Телефон" PlaceholderColor="#7a7a7a" Keyboard="Numeric">
+                    <gardener:ExtendedEntry.Behaviors>
+                        <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
+                    </gardener:ExtendedEntry.Behaviors>
+                </gardener:ExtendedEntry>
                 <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         CornerRadius="15" WidthRequest="250" BackgroundColor="Transparent" />

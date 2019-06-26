@@ -1,30 +1,15 @@
 ﻿namespace gardener.Models
 {
-	public class BidForSale
+	public class BidForSale : BaseBid
 	{
-		public BidForSale(string placeNumber, string name, string phoneNumber)
+		public BidForSale(string placeNumber, string name, string phoneNumber, Block block)
+			: base(placeNumber, name, phoneNumber, block)
 		{
-			PlaceNumber = placeNumber;
-			Name = name;
-			PhoneNumber = phoneNumber;
 		}
 
-		public string PlaceNumber
+		public BidForSale(string placeNumber, string name, string phoneNumber, Block block, int floor)
+			: base(placeNumber, name, phoneNumber, block, floor)
 		{
-			get;
-			set;
-		}
-
-		public string Name
-		{
-			get;
-			set;
-		}
-
-		public string PhoneNumber
-		{
-			get;
-			set;
 		}
 	}
 }
