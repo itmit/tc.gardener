@@ -1,16 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="gardener.Views.RentPage">
-    <!--Pages can be added as references or inline-->
-    <ContentPage Title="Аренда 1">
-        <StackLayout>
-            <Label Text="Страница аренды находиться в разработке. Для связи почта: info@itmit-studio.ru"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Аренда 2" />
-    <ContentPage Title="Аренда 3" />
-</TabbedPage>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" StyleClass="item-block" BackgroundColor="{Binding IsActive, Converter={StaticResource ActiveToColorConverter}}">
+                    <StackLayout WidthRequest="100" Margin="10,0,10,0">
+                        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1">
+                            <Image Source="paltovy_krug.png" Aspect="AspectFill" VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="Новости рынка" Margin="10, 0" FontSize="Medium" TextColor="#9e4819"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" StyleClass="item-block" BackgroundColor="{Binding IsActive, Converter={StaticResource ActiveToColorConverter}}">
+                    <StackLayout WidthRequest="100" Margin="10,0,10,0">
+                        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1">
+                            <Image Source="paltovy_krug.png" Aspect="AspectFill" VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="Новости рынка" Margin="10, 0" FontSize="Medium" TextColor="#9e4819"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" StyleClass="item-block" BackgroundColor="{Binding IsActive, Converter={StaticResource ActiveToColorConverter}}">
+                    <StackLayout WidthRequest="100" Margin="10,0,10,0">
+                        <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1">
+                            <Image Source="paltovy_krug.png" Aspect="AspectFill" VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Label Text="Новости рынка" Margin="10, 0" FontSize="Medium" TextColor="#9e4819"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

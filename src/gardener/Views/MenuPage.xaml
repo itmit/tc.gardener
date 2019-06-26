@@ -7,7 +7,7 @@
     <StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" HeightRequest="230" BackgroundColor="#fcf7f1">
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                <Image Source="pict_1.png" Margin="10" />
+                <Image Source="mLogo1.png" Margin="10" />
                 <Label Text="САДОВОД" TextColor="#9e4819" FontSize="20" />
             </StackLayout>
         </StackLayout>
