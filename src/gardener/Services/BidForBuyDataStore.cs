@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using gardener.Models;
 
@@ -6,14 +7,13 @@ namespace gardener.Services
 {
 	public class BidForBuyDataStore : BaseJsonDataStore<BidForBuy>
 	{
-		public BidForBuyDataStore(string url)
-			: base(url)
-		{
-		}
+		private readonly Uri _createUri;
+
+		public BidForBuyDataStore(Uri addItemUri) => _createUri = addItemUri;
 
 		#region Public
 		public new async Task<bool> AddItemAsync(BidForBuy item) =>
-			await Task.FromResult(await SendForm(new Dictionary<string, string>
+			await Task.FromResult(await SendForm(_createUri, new Dictionary<string, string>
 			{
 				{
 					"PlaceNumber", item.PlaceNumber

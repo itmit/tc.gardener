@@ -1,4 +1,5 @@
-﻿using gardener.Models;
+﻿using System;
+using gardener.Models;
 using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,12 +13,8 @@ namespace gardener.Views.ListView
 		public FormAppSalePage(Block block)
 		{
 			InitializeComponent();
-			// TODO: Создать VM для Формы заявки продажи.
-			var viewModel = new BaseViewModel
-			{
-				Title = "Форма заявки на аренду помещения"
-			};
-			BindingContext = viewModel;
+
+			BindingContext = new FormAppSaleViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForSale"), "Форма заявки на аренду помещения");
 		}
 		#endregion
 	}

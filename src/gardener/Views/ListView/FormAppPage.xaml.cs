@@ -1,4 +1,5 @@
-﻿using gardener.Models;
+﻿using System;
+using gardener.Models;
 using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,7 +18,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonDataAsync("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
+			viewModel.SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{block.Title}/Свободен"));
 		}
 
 
@@ -29,7 +30,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonDataAsync("http://tc.itmit-studio.ru/api/places/" + block.Title + "/Свободен");
+			viewModel.SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{block.Title}/Свободен"));
 		}
 		#endregion
 	}

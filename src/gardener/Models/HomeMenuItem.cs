@@ -8,7 +8,7 @@
 		EmployCall,
 		EmployCallLyon,
 		CallSecurity,
-		Purchase,
+		News,
         Map,
         Course
 	}

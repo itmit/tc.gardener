@@ -6,7 +6,6 @@
              xmlns:gardener="clr-namespace:gardener"
              Title="{Binding Title}">
     <ContentPage.Content>
-
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="{Binding IsBusy}"/>
             <StackLayout>

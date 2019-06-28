@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
-using gardener.Views.ListView;
-using Newtonsoft.Json;
 using Plugin.Connectivity;
 
 namespace gardener.ViewModels
 {
-	/// <summary>
-	/// Представляет ViewModel для <see cref="FormAppBuyPage" />
-	/// </summary>
-	public class FormAppBuyViewModel : BaseViewModel
+	public class FormAppSaleViewModel : BaseViewModel
 	{
 		#region Data
 		#region Fields
@@ -27,7 +18,7 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region .ctor
-		public FormAppBuyViewModel(Block block, Uri url, string title)
+		public FormAppSaleViewModel(Block block, Uri url, string title)
 		{
 			Title = title;
 			SendFormCommand = new RelayCommand(x =>
@@ -70,9 +61,9 @@ namespace gardener.ViewModels
 			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
-				var service = new BidForBuyDataStore(url);
+				var service = new BidForSaleDataStore(url);
 
-				if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block)))
+				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block)))
 				{
 					// TODO: Дописать действия в случае успешной и отправки формы.
 				}

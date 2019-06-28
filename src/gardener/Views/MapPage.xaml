@@ -5,7 +5,7 @@
              x:Class="gardener.Views.MapPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
             <local:PinchToZoomContainer>
                 <local:PinchToZoomContainer.Content>
                     <StackLayout VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="600" WidthRequest="425">
@@ -76,6 +76,6 @@
                     </StackLayout>
                 </local:PinchToZoomContainer.Content>
             </local:PinchToZoomContainer>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

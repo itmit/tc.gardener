@@ -47,7 +47,7 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Public
-		public async void SetSerializedJsonDataAsync(string url)
+		public async void SetSerializedJsonDataAsync(Uri url)
 		{
 			if (_block.Places == null)
 			{

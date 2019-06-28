@@ -47,7 +47,7 @@ namespace gardener.Views
 				},
 				new HomeMenuItem
 				{
-					Id = MenuItemType.Purchase,
+					Id = MenuItemType.News,
 					Title = "Новости рынка"
 				}
 			};

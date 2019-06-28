@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using gardener.Models;
+using gardener.Views.ListView;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
@@ -40,9 +41,8 @@ namespace gardener.Views
 					case (int) MenuItemType.Selling:
                          await Call("84996371111");
                          break;
-					case (int) MenuItemType.Purchase:
-						// TODO: Переименовать или удалить и создать новую страницу.
-						MenuPages.Add(id, new NavigationPage(new RentPage()));
+					case (int) MenuItemType.News:
+						MenuPages.Add(id, new NavigationPage(new NewsPage()));
 						break;
 					case (int) MenuItemType.EmployCall:
                         await Call("89153991269");
