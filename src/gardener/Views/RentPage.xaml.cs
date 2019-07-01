@@ -11,8 +11,8 @@ namespace gardener.Views
 		{
 			InitializeComponent();
 
-            //BindingContext = new RentSaleViewModel(Navigation);
-        }
+			//BindingContext = new RentSaleViewModel(Navigation);
+		}
 		#endregion
 	}
 }

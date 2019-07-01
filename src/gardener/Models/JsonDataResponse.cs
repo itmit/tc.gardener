@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace gardener.Models
 {
@@ -10,7 +9,6 @@ namespace gardener.Models
 	public class JsonDataResponse<T>
 	{
 		#region Properties
-
 		/// <summary>
 		/// Возвращает или устанавливает данные возвращаемые от сервиса.
 		/// </summary>
@@ -21,15 +19,6 @@ namespace gardener.Models
 		}
 
 		/// <summary>
-		/// Возвращает или устанавливает статус ответа.
-		/// </summary>
-		public bool Success
-		{
-			get;
-			set;
-		} = false;
-
-		/// <summary>
 		/// Возвращает или устанавливает возвращаемое сообщение сообщение.
 		/// </summary>
 		public string Message
@@ -37,6 +26,15 @@ namespace gardener.Models
 			get;
 			set;
 		} = "";
+
+		/// <summary>
+		/// Возвращает или устанавливает статус ответа.
+		/// </summary>
+		public bool Success
+		{
+			get;
+			set;
+		} = false;
 		#endregion
 	}
 }

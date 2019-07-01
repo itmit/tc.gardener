@@ -17,7 +17,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout HeightRequest="60" Padding="20, 0, 0, 0" >
+                            <StackLayout HeightRequest="60" Padding="20, 0, 0, 0">
                                 <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" FontSize="20"
                                        TextColor="#9e4819" />
                             </StackLayout>

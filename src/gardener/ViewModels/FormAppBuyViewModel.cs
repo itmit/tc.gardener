@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views.ListView;
-using Newtonsoft.Json;
 using Plugin.Connectivity;
 
 namespace gardener.ViewModels
@@ -18,11 +13,11 @@ namespace gardener.ViewModels
 	{
 		#region Data
 		#region Fields
+		private readonly Block _block;
 		private string _name;
 		private string _phoneNumber;
 
 		private string _placeNumber;
-		private Block _block;
 		#endregion
 		#endregion
 
@@ -75,10 +70,6 @@ namespace gardener.ViewModels
 				if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block)))
 				{
 					// TODO: Дописать действия в случае успешной и отправки формы.
-				}
-				else
-				{
-					// TODO: Дописать действия в случае отправки формы с ошибкой.
 				}
 			}
 			else

@@ -1,5 +1,4 @@
-﻿using System;
-using gardener.Models;
+﻿using gardener.Models;
 using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,13 +8,13 @@ namespace gardener.Views.ListView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListSalePage : ContentPage
 	{
-        public ListSalePage()
-        {
-            InitializeComponent();
-        }
+		#region .ctor
+		public ListSalePage()
+		{
+			InitializeComponent();
+		}
 
-        #region .ctor
-        public ListSalePage(Block block, int floor)
+		public ListSalePage(Block block, int floor)
 		{
 			InitializeComponent();
 

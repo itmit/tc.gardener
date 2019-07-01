@@ -2,8 +2,10 @@
 
 namespace gardener.Views.PortableInterface
 {
-    public interface ICallMaster
-    {
-        Task Call(string phoneNumber);
-    }
+	public interface ICallMaster
+	{
+		#region Overridable
+		Task Call(string phoneNumber);
+		#endregion
+	}
 }

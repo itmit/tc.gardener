@@ -1,6 +1,5 @@
-﻿using Xamarin.Forms;
-using System.Threading.Tasks;
-using Xamarin.Forms.PlatformConfiguration;
+﻿
+
 /*
 [assembly: Dependency(typeof(gardener.Views.PortableInterface.CallMaster))]
 namespace gardener.Views.PortableInterface

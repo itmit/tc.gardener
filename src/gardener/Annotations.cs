@@ -503,14 +503,12 @@ namespace gardener
 		public ImplicitUseTargetFlags TargetFlags
 		{
 			get;
-			private set;
 		}
 
 		[UsedImplicitly]
 		public ImplicitUseKindFlags UseKindFlags
 		{
 			get;
-			private set;
 		}
 		#endregion
 	}

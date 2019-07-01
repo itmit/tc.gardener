@@ -9,8 +9,8 @@
 		EmployCallLyon,
 		CallSecurity,
 		News,
-        Map,
-        Course
+		Map,
+		Course
 	}
 
 	public class HomeMenuItem

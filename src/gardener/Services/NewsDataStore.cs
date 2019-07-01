@@ -8,12 +8,19 @@ namespace gardener.Services
 {
 	public class NewsDataStore : BaseJsonDataStore<News>
 	{
+		#region Data
+		#region Fields
 		private readonly Uri _itemsUri;
+		#endregion
+		#endregion
 
+		#region .ctor
 		public NewsDataStore(Uri getItemsUri) => _itemsUri = getItemsUri;
 
 		public NewsDataStore() => _itemsUri = new Uri("http://tc.itmit-studio.ru/api/news");
+		#endregion
 
+		#region Public
 		public new async Task<ObservableCollection<News>> GetItemsAsync(bool forceRefresh = false)
 		{
 			if (Items.Count > 0 && !forceRefresh)
@@ -21,7 +28,7 @@ namespace gardener.Services
 				return await Task.FromResult(Items);
 			}
 
-			JsonDataResponse<News> response = DownloadSerializedJsonData(_itemsUri);
+			var response = DownloadSerializedJsonData(_itemsUri);
 
 			if (!response.Success)
 			{
@@ -30,5 +37,6 @@ namespace gardener.Services
 
 			return Items = response.Data;
 		}
+		#endregion
 	}
 }

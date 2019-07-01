@@ -5,6 +5,7 @@
 	/// </summary>
 	public class Floor
 	{
+		#region Properties
 		/// <summary>
 		/// Возвращает или устанавливает номер этажа.
 		/// </summary>
@@ -13,5 +14,6 @@
 			get;
 			set;
 		}
+		#endregion
 	}
 }

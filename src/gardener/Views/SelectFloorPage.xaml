@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:blocksViews="clr-namespace:gardener.Views.BlocksViews"
@@ -16,13 +17,14 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-        <ListView Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" ItemsSource="{Binding Floors}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <blocksViews:FloorViewCell/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            <ListView Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" ItemsSource="{Binding Floors}"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <blocksViews:FloorViewCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

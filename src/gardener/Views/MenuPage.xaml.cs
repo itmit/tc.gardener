@@ -19,12 +19,12 @@ namespace gardener.Views
 				{
 					Id = MenuItemType.Rent,
 					Title = "Аренда торговых помещений"
-                },
-                new HomeMenuItem
-                {
-                    Id = MenuItemType.Map,
-                    Title = "Схема рынка"
-                },
+				},
+				new HomeMenuItem
+				{
+					Id = MenuItemType.Map,
+					Title = "Схема рынка"
+				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Selling,
@@ -63,7 +63,7 @@ namespace gardener.Views
 				}
 
 				var id = (int) ((HomeMenuItem) e.SelectedItem).Id;
-                
+
 				await RootPage.NavigateFromMenu(id);
 			};
 		}

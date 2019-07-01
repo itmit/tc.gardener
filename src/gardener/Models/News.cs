@@ -4,13 +4,7 @@ namespace gardener.Models
 {
 	public class News
 	{
-		[JsonProperty("head")]
-		public string Title
-		{
-			get;
-			set;
-		}
-
+		#region Properties
 		[JsonProperty("picture")]
 		public string ImageUrl
 		{
@@ -24,5 +18,13 @@ namespace gardener.Models
 			get;
 			set;
 		}
+
+		[JsonProperty("head")]
+		public string Title
+		{
+			get;
+			set;
+		}
+		#endregion
 	}
 }

@@ -1,13 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using gardener.Models;
-using gardener.Views;
-using gardener.Views.ListView;
-using Xamarin.Forms;
-
-namespace gardener.ViewModels
+﻿namespace gardener.ViewModels
 {
-    internal class RentPageModel : BaseViewModel
-    {
-
-    }
+	internal class RentPageModel : BaseViewModel
+	{
+	}
 }
