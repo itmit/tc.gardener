@@ -5,7 +5,8 @@ namespace gardener
 	/// <summary>
 	/// A custom ScrollView with the following features:
 	/// - Min/Max Zoom
-	/// - Min Zoom is dynamic on the size of the content, so you can't zoom out past the content - this is what would prevent content going top left
+	/// - Min Zoom is dynamic on the size of the content, so you can't zoom out past the content - this is what would prevent
+	/// content going top left
 	/// - Min/Max Zoom needs to "bounce" like native iOS
 	/// - Content should auto-center
 	/// - You want the scrollview to save its settings when hidden

@@ -5,8 +5,15 @@ namespace gardener
 {
 	public class MaskedBehavior : Behavior<Entry>
 	{
+		#region Data
+		#region Fields
 		private string _mask = "";
 
+		private IDictionary<int, char> _positions;
+		#endregion
+		#endregion
+
+		#region Properties
 		public string Mask
 		{
 			get => _mask;
@@ -16,7 +23,9 @@ namespace gardener
 				SetPositions();
 			}
 		}
+		#endregion
 
+		#region Overrided
 		protected override void OnAttachedTo(Entry entry)
 		{
 			entry.TextChanged += OnEntryTextChanged;
@@ -28,29 +37,9 @@ namespace gardener
 			entry.TextChanged -= OnEntryTextChanged;
 			base.OnDetachingFrom(entry);
 		}
+		#endregion
 
-		private IDictionary<int, char> _positions;
-
-		private void SetPositions()
-		{
-			if (string.IsNullOrEmpty(Mask))
-			{
-				_positions = null;
-				return;
-			}
-
-			var list = new Dictionary<int, char>();
-			for (var i = 0; i < Mask.Length; i++)
-			{
-				if (Mask[i] != 'X')
-				{
-					list.Add(i, Mask[i]);
-				}
-			}
-
-			_positions = list;
-		}
-
+		#region Private
 		private void OnEntryTextChanged(object sender, TextChangedEventArgs args)
 		{
 			if (sender is Entry entry)
@@ -86,5 +75,26 @@ namespace gardener
 				}
 			}
 		}
+
+		private void SetPositions()
+		{
+			if (string.IsNullOrEmpty(Mask))
+			{
+				_positions = null;
+				return;
+			}
+
+			var list = new Dictionary<int, char>();
+			for (var i = 0; i < Mask.Length; i++)
+			{
+				if (Mask[i] != 'X')
+				{
+					list.Add(i, Mask[i]);
+				}
+			}
+
+			_positions = list;
+		}
+		#endregion
 	}
 }

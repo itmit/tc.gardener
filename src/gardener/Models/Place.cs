@@ -8,7 +8,6 @@ namespace gardener.Models
 	public class Place
 	{
 		#region Properties
-
 		/// <summary>
 		/// Возвращает или устанавливает название блока, в котором находится место.
 		/// </summary>

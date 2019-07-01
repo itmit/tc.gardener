@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Net;
-using Newtonsoft.Json;
 
 namespace gardener.Models
 {
@@ -12,23 +8,34 @@ namespace gardener.Models
 	/// </summary>
 	public class Block
 	{
+		#region .ctor
 		/// <summary>
-		/// Инициализирует новый экземпляр типа <see cref="Block"/>>.
+		/// Инициализирует новый экземпляр типа <see cref="Block" />>.
 		/// </summary>
-		public Block()
-		{
+		public Block() =>
 			Floors = new List<Floor>
 			{
-				new Floor{ Value = 1 }
+				new Floor
+				{
+					Value = 1
+				}
 			};
+		#endregion
+
+		#region Properties
+		/// <summary>
+		/// Возвращает или устанавливает коллекцию этажей в блоке.
+		/// </summary>
+		public List<Floor> Floors
+		{
+			get;
+			set;
 		}
 
-        #region Properties
-
-        /// <summary>
-        /// Возвращает или устанавливает физический путь к картинке.
-        /// </summary>
-        public string ImagePath
+		/// <summary>
+		/// Возвращает или устанавливает физический путь к картинке.
+		/// </summary>
+		public string ImagePath
 		{
 			get;
 			set;
@@ -44,15 +51,6 @@ namespace gardener.Models
 		} = true;
 
 		/// <summary>
-		/// Возвращает или устанавливает название блока.
-		/// </summary>
-		public string Title
-		{
-			get;
-			set;
-		}
-
-		/// <summary>
 		/// Возвращает или устанавливает коллекцию мест в блоке
 		/// </summary>
 		public ObservableCollection<Place> Places
@@ -62,9 +60,9 @@ namespace gardener.Models
 		}
 
 		/// <summary>
-		/// Возвращает или устанавливает коллекцию этажей в блоке.
+		/// Возвращает или устанавливает название блока.
 		/// </summary>
-		public List<Floor> Floors
+		public string Title
 		{
 			get;
 			set;

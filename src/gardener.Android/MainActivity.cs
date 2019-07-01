@@ -1,12 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Xamarin.Essentials;
-using System.Threading.Tasks;
-using System;
-using Android.Runtime;
+using Platform = Xamarin.Essentials.Platform;
 
 namespace gardener.Droid
 {
@@ -18,6 +16,13 @@ namespace gardener.Droid
 	public class MainActivity : FormsAppCompatActivity
 	{
 		#region Overrided
+		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+		{
+			Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			TabLayoutResource = Resource.Layout.Tabbar;
@@ -27,15 +32,8 @@ namespace gardener.Droid
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-        }
-        #endregion
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-    }
+			Platform.Init(this, savedInstanceState);
+		}
+		#endregion
+	}
 }

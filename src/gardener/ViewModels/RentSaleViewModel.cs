@@ -10,9 +10,9 @@ namespace gardener.ViewModels
 	{
 		#region Data
 		#region Fields
+		private ObservableCollection<Block> _blocks;
 		private readonly INavigation _navigation;
 		private Block _selectedItem;
-		private ObservableCollection<Block> _blocks;
 		#endregion
 		#endregion
 
@@ -54,8 +54,11 @@ namespace gardener.ViewModels
 					}
 					else
 					{
-						_navigation.PushAsync(new ListSalePage(value, value.Floors[0].Value));
+						_navigation.PushAsync(new ListSalePage(value,
+															   value.Floors[0]
+																	.Value));
 					}
+
 					_selectedItem = null;
 				}
 

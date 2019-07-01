@@ -1,25 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using gardener.Models;
-using Newtonsoft.Json;
 
 namespace gardener.Services
 {
 	public class PlaceDataStore : BaseJsonDataStore<Place>
 	{
+		#region Data
+		#region Fields
 		private readonly Uri _itemsUri;
+		#endregion
+		#endregion
 
-		public PlaceDataStore(Uri getItemsUri)
-		{
-			_itemsUri = getItemsUri;
-		}
+		#region .ctor
+		public PlaceDataStore(Uri getItemsUri) => _itemsUri = getItemsUri;
+		#endregion
 
+		#region Public
 		public new async Task<ObservableCollection<Place>> GetItemsAsync(bool forceRefresh = false)
 		{
 			if (Items.Count > 0 && !forceRefresh)
@@ -27,7 +26,7 @@ namespace gardener.Services
 				return await Task.FromResult(Items);
 			}
 
-			JsonDataResponse<Place> response = DownloadSerializedJsonData(_itemsUri);
+			var response = DownloadSerializedJsonData(_itemsUri);
 
 			if (!response.Success)
 			{
@@ -36,5 +35,6 @@ namespace gardener.Services
 
 			return Items = response.Data;
 		}
+		#endregion
 	}
 }

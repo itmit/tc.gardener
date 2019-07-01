@@ -9,8 +9,10 @@
         <ScrollView>
             <StackLayout>
                 <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center" IsRunning="{Binding IsBusy}"/>
-                    <ListView HasUnevenRows="True" ItemsSource="{Binding PlaceCollection}" SelectedItem="{Binding SelectedPlace, Mode=TwoWay}">
+                    <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
+                                       IsRunning="{Binding IsBusy}" />
+                    <ListView HasUnevenRows="True" ItemsSource="{Binding PlaceCollection}"
+                              SelectedItem="{Binding SelectedPlace, Mode=TwoWay}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <blocksViews:PlaceViewCell />

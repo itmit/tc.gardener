@@ -7,10 +7,15 @@ namespace gardener.ViewModels
 {
 	public class SelectFloorViewModel : BaseViewModel
 	{
-		private Block _block;
+		#region Data
+		#region Fields
+		private readonly Block _block;
+		private readonly INavigation _navigation;
 		private Floor _selectedItem;
-		private INavigation _navigation;
+		#endregion
+		#endregion
 
+		#region .ctor
 		public SelectFloorViewModel(Block block, INavigation navigation)
 		{
 			Title = "Выбор этажа";
@@ -18,7 +23,9 @@ namespace gardener.ViewModels
 			_navigation = navigation;
 			Floors = block.Floors;
 		}
+		#endregion
 
+		#region Properties
 		public List<Floor> Floors
 		{
 			get;
@@ -36,8 +43,10 @@ namespace gardener.ViewModels
 					_navigation.PushAsync(new ListSalePage(_block, value.Value));
 					_selectedItem = null;
 				}
+
 				OnPropertyChanged(nameof(SelectedItem));
 			}
 		}
+		#endregion
 	}
 }

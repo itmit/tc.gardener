@@ -21,7 +21,6 @@ namespace gardener.Views.ListView
 			viewModel.SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{block.Title}/Свободен"));
 		}
 
-
 		public FormAppPage(Block block, int floor)
 		{
 			InitializeComponent();

@@ -1,7 +1,6 @@
 ﻿using Android.Content;
 using gardener;
 using gardener.Droid;
-using gardener.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;

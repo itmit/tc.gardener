@@ -1,8 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using gardener.Models;
 using gardener.Services;
-using gardener.Views;
-using gardener.Views.ListView;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
@@ -12,9 +10,9 @@ namespace gardener.ViewModels
 		#region Data
 		#region Fields
 		private readonly INavigation _navigation;
-		private News _selectedItem;
 		private ObservableCollection<News> _news;
 		private readonly NewsDataStore _newsDataStore;
+		private News _selectedItem;
 		#endregion
 		#endregion
 
@@ -27,11 +25,6 @@ namespace gardener.ViewModels
 			_navigation = navigation;
 		}
 		#endregion
-
-		public async void UpdateNews()
-		{
-			News = await _newsDataStore.GetItemsAsync(true);
-		}
 
 		#region Properties
 		public ObservableCollection<News> News
@@ -53,6 +46,13 @@ namespace gardener.ViewModels
 
 				OnPropertyChanged(nameof(SelectedItem));
 			}
+		}
+		#endregion
+
+		#region Public
+		public async void UpdateNews()
+		{
+			News = await _newsDataStore.GetItemsAsync(true);
 		}
 		#endregion
 	}

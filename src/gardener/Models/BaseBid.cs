@@ -2,7 +2,7 @@
 {
 	public abstract class BaseBid
 	{
-
+		#region .ctor
 		public BaseBid(string placeNumber, string name, string phoneNumber, Block block)
 		{
 			PlaceNumber = placeNumber;
@@ -11,6 +11,7 @@
 			Block = block.Title;
 			Floor = 1;
 		}
+
 		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, int floor)
 		{
 			PlaceNumber = placeNumber;
@@ -19,8 +20,16 @@
 			Block = block.Title;
 			Floor = floor;
 		}
+		#endregion
 
-		public string PlaceNumber
+		#region Properties
+		public string Block
+		{
+			get;
+			set;
+		}
+
+		public int Floor
 		{
 			get;
 			set;
@@ -38,16 +47,11 @@
 			set;
 		}
 
-		public string Block
+		public string PlaceNumber
 		{
 			get;
 			set;
 		}
-
-		public int Floor
-		{
-			get;
-			set;
-		}
+		#endregion
 	}
 }

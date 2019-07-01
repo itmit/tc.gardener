@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
-using Newtonsoft.Json;
 using Plugin.Connectivity;
 
 namespace gardener.ViewModels
@@ -14,9 +11,9 @@ namespace gardener.ViewModels
 	{
 		#region Data
 		#region Fields
-		private ObservableCollection<Place> _placeCollection;
-		private Block _block;
+		private readonly Block _block;
 		private readonly int _floor;
+		private ObservableCollection<Place> _placeCollection;
 		#endregion
 		#endregion
 
@@ -27,7 +24,6 @@ namespace gardener.ViewModels
 			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
 		}
-
 
 		public FormAppViewModel(Block block, int floor)
 		{
@@ -57,15 +53,16 @@ namespace gardener.ViewModels
 
 					IsBusy = true;
 					_block.Places = await service.GetItemsAsync(_block.Places != null && _block.Places.Count > 0);
-					
+
 					if (_floor > 0)
 					{
-						PlaceCollection = (ObservableCollection<Place>)_block.Places.Where(x => x.Floor == _floor);
+						PlaceCollection = (ObservableCollection<Place>) _block.Places.Where(x => x.Floor == _floor);
 					}
 					else
 					{
 						PlaceCollection = _block.Places;
 					}
+
 					IsBusy = false;
 				}
 				else
@@ -78,8 +75,6 @@ namespace gardener.ViewModels
 				PlaceCollection = _block.Places;
 			}
 		}
-
 		#endregion
-
 	}
 }

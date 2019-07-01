@@ -2,6 +2,7 @@
 {
 	public class BidForBuy : BaseBid
 	{
+		#region .ctor
 		public BidForBuy(string placeNumber, string name, string phoneNumber, Block block)
 			: base(placeNumber, name, phoneNumber, block)
 		{
@@ -11,5 +12,6 @@
 			: base(placeNumber, name, phoneNumber, block, floor)
 		{
 		}
+		#endregion
 	}
 }

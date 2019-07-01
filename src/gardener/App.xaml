@@ -12,7 +12,8 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationGardener}" />
                 <Setter Property="BarTextColor" Value="#9e4819" />
             </Style>
-            <converters:BoolActiveToColorConverter x:Key="ActiveToColorConverter" ActiveColor="Default" NoActiveColor="DarkGray"/>
+            <converters:BoolActiveToColorConverter x:Key="ActiveToColorConverter" ActiveColor="Default"
+                                                   NoActiveColor="DarkGray" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
