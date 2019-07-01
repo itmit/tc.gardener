@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.WebSockets;
@@ -67,7 +68,10 @@ namespace gardener.Services
 				if (jsonString != null)
 				{
 					var jsonData = JsonConvert.DeserializeObject<JsonDataResponse<string>>(jsonString);
-					ErrorsList.Add(jsonData.Message);
+					foreach (var errorString in jsonData.Data)
+					{
+						ErrorsList.Add(errorString);
+					}
 				}
 			}
 

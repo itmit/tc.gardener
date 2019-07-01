@@ -35,7 +35,14 @@ namespace gardener.Services
 				throw new WebException("Произошла ошибка сервера.");
 			}
 
-			return Items = response.Data;
+			Items = response.Data;
+
+			foreach (var item in Items)
+			{
+				item.ImageUrl = "http://" + _itemsUri.Host + item.ImageUrl;
+			}
+
+			return Items;
 		}
 		#endregion
 	}

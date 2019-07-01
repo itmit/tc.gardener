@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using gardener.Models;
 using gardener.Services;
 using Plugin.Connectivity;
@@ -14,6 +15,7 @@ namespace gardener.ViewModels
 		private string _phoneNumber;
 
 		private string _placeNumber;
+		private Action<bool> _onSendFormAction;
 		#endregion
 		#endregion
 
@@ -28,7 +30,30 @@ namespace gardener.ViewModels
 											   x => true);
 			_block = block;
 		}
+
+
+		public FormAppSaleViewModel(Block block, Uri url, string title, Action<bool> onSendFormAction)
+		{
+			Title = title;
+			SendFormCommand = new RelayCommand(x =>
+											   {
+												   ExecuteSendFormCommand(url);
+											   },
+											   x => true);
+			_block = block;
+			_onSendFormAction = onSendFormAction;
+		}
 		#endregion
+
+		public string GetLastError()
+		{
+			if (ErrorsList.Count > 1)
+			{
+				return ErrorsList[ErrorsList.Count - 1];
+			}
+
+			return "";
+		}
 
 		#region Properties
 		public RelayCommand SendFormCommand
@@ -65,7 +90,18 @@ namespace gardener.ViewModels
 
 				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block)))
 				{
-					// TODO: Дописать действия в случае успешной и отправки формы.
+					_onSendFormAction(true);
+				}
+				else
+				{
+					if (service.ErrorsList.Count > 1)
+					{
+						foreach (var errorString in service.ErrorsList)
+						{
+							ErrorsList.Add(errorString);
+						}
+					}
+					_onSendFormAction(false);
 				}
 			}
 			else
@@ -75,6 +111,11 @@ namespace gardener.ViewModels
 
 			IsBusy = false;
 		}
+
+		public List<string> ErrorsList
+		{
+			get;
+		} = new List<string>();
 		#endregion
 	}
 }
