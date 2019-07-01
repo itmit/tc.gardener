@@ -22,6 +22,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public FormAppSaleViewModel(Block block, Uri url, string title)
 		{
+			ErrorsList = new List<string>();
 			Title = title;
 			SendFormCommand = new RelayCommand(x =>
 											   {
@@ -34,6 +35,7 @@ namespace gardener.ViewModels
 
 		public FormAppSaleViewModel(Block block, Uri url, string title, Action<bool> onSendFormAction)
 		{
+			ErrorsList = new List<string>();
 			Title = title;
 			SendFormCommand = new RelayCommand(x =>
 											   {
@@ -94,7 +96,7 @@ namespace gardener.ViewModels
 				}
 				else
 				{
-					if (service.ErrorsList.Count > 1)
+					if (service.ErrorsList.Count > 0)
 					{
 						foreach (var errorString in service.ErrorsList)
 						{
@@ -115,7 +117,7 @@ namespace gardener.ViewModels
 		public List<string> ErrorsList
 		{
 			get;
-		} = new List<string>();
+		}
 		#endregion
 	}
 }

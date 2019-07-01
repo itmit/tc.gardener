@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gardener.Views.NewsDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+            <Label Text="{Binding Title}"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand" />
+                <Image Source="{Binding Image}"/>
+                <WebView Source="{Binding HtmlSource}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

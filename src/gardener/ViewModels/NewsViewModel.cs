@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using gardener.Models;
 using gardener.Services;
+using gardener.Views;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
@@ -41,6 +42,7 @@ namespace gardener.ViewModels
 				_selectedItem = value;
 				if (value != null)
 				{
+					_navigation.PushAsync(new NewsDetailPage(value));
 					_selectedItem = null;
 				}
 

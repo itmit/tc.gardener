@@ -28,7 +28,8 @@ namespace gardener.Views.ListView
 			}
 			else
 			{
-				DisplayAlert("Внимание", _viewModel.GetLastError(), "Ok");
+				var error = _viewModel.GetLastError();
+				DisplayAlert("Внимание", error == "" ? "Ошибка отправки формы" : _viewModel.GetLastError(), "Ok");
 			}
 		}
 	}

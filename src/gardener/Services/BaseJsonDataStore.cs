@@ -16,12 +16,16 @@ namespace gardener.Services
 	{
 		#region Data
 		#region Fields
-		public List<string> ErrorsList = new List<string>();
+		public readonly List<string> ErrorsList;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public BaseJsonDataStore() => Items = new ObservableCollection<T>();
+		public BaseJsonDataStore()
+		{
+			ErrorsList = new List<string>();
+			Items = new ObservableCollection<T>();
+		}
 		#endregion
 
 		#region Properties
