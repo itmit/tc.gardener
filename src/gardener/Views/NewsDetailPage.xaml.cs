@@ -17,7 +17,17 @@ namespace gardener.Views
 		{
 			InitializeComponent();
 
-			BindingContext = new NewsDetailViewModel(news);
+			//BindingContext = new NewsDetailViewModel(news);
+			Label.Text = news.Title;
+			Image.Source = news.ImageUrl;
+			WebView webView = new WebView();
+			var htmlSource = new HtmlWebViewSource
+			{
+				Html = news.Text
+			};
+			webView.Source = htmlSource;
+			webView.VerticalOptions = LayoutOptions.FillAndExpand; 
+			WebContent.Children.Add(webView);
 		}
 	}
 }

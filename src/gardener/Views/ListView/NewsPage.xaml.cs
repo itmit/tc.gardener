@@ -1,4 +1,5 @@
-﻿using gardener.Services;
+﻿using System.Threading.Tasks;
+using gardener.Services;
 using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,8 +16,12 @@ namespace gardener.Views.ListView
 
 			var vm = new NewsViewModel(Navigation, new NewsDataStore());
 			BindingContext = vm;
-
-			vm.UpdateNews();
+			vm.IsBusy = true;
+			Task.Run(() =>
+			{
+				vm.UpdateNews();
+				vm.IsBusy = false;
+			});
 		}
 		#endregion
 	}

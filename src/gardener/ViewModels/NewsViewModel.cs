@@ -45,6 +45,10 @@ namespace gardener.ViewModels
 					_navigation.PushAsync(new NewsDetailPage(value));
 					_selectedItem = null;
 				}
+				else
+				{
+					return;
+				}
 
 				OnPropertyChanged(nameof(SelectedItem));
 			}

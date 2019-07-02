@@ -65,7 +65,7 @@ namespace gardener.Views
 						return;
 					case (int) MenuItemType.News:
 						MenuPages.Add(id, new NavigationPage(new NewsPage()));
-						return;
+						break;
 					case (int) MenuItemType.EmployCall:
 						await Call("89153991269");
 						return;

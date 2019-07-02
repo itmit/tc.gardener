@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gardener.Views.NewsDetailPage">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Orientation="Vertical">
-            <Label Text="{Binding Title}"
-                   FontSize="Large"
-                   HorizontalOptions="CenterAndExpand" />
-                <Image Source="{Binding Image}"/>
-                <WebView Source="{Binding HtmlSource}"/>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Label
+                x:Name="Label"
+                Text="{Binding Title}"   
+                FontSize="Large"
+                VerticalOptions="Start" Margin="10"/>
+                <Image Source="{Binding Image}" x:Name="Image"/>
+                <StackLayout x:Name="WebContent" VerticalOptions="FillAndExpand" MinimumHeightRequest="60"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
