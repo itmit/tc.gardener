@@ -12,6 +12,7 @@ namespace gardener.Droid
 		Icon = "@mipmap/pict_1",
 		Theme = "@style/MainTheme",
 		MainLauncher = true,
+		ScreenOrientation = ScreenOrientation.Portrait,
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : FormsAppCompatActivity
 	{
