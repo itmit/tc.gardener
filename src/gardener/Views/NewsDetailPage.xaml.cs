@@ -26,7 +26,8 @@ namespace gardener.Views
 				Html = news.Text
 			};
 			webView.Source = htmlSource;
-			webView.VerticalOptions = LayoutOptions.FillAndExpand; 
+			webView.VerticalOptions = LayoutOptions.FillAndExpand;
+			webView.HorizontalOptions = LayoutOptions.FillAndExpand;
 			WebContent.Children.Add(webView);
 		}
 	}
