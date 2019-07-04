@@ -9,7 +9,7 @@ using Platform = Xamarin.Essentials.Platform;
 namespace gardener.Droid
 {
 	[Activity(Label = "gardener",
-		Icon = "@mipmap/pict_1",
+		Icon = "@mipmap/l",
 		Theme = "@style/MainTheme",
 		MainLauncher = true,
 		ScreenOrientation = ScreenOrientation.Portrait,
