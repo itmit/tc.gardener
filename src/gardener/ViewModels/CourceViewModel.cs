@@ -34,8 +34,8 @@ namespace gardener.ViewModels
 					course.Values.UAH
 				};
 				Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-				_dateTime = DateTime.Parse(course.Date);
-				_dateTime = new DateTime(_dateTime.Year, _dateTime.Month, _dateTime.Day, _dateTime.Hour + 3, _dateTime.Minute, _dateTime.Second);
+				_dateTime = DateTime.Parse(course.Timestamp);
+				//_dateTime = new DateTime(_dateTime.Year, _dateTime.Month, _dateTime.Day, _dateTime.Hour + 3, _dateTime.Minute, _dateTime.Second);
 				OnPropertyChanged(nameof(DateTimeLastUpdate));
 			}
 		}
