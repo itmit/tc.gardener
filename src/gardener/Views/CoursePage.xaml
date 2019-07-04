@@ -2,7 +2,36 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:blocksViews="clr-namespace:gardener.Views.BlocksViews"
              x:Class="gardener.Views.CoursePage">
     <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
+                                   IsRunning="{Binding IsBusy}" />
+
+                <StackLayout Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                    <Label Text="Курсы валют ЦБ РФ" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Валюта" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                        <Label Grid.Column="1" Text="RUB" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                    </Grid>
+                    <ListView HasUnevenRows="True" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Items}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <blocksViews:CurrencyViewCell/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Label Text="{Binding DateTimeLastUpdate}" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
