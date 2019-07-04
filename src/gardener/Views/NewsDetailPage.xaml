@@ -12,7 +12,7 @@
                 FontSize="Large"
                 VerticalOptions="Start" Margin="10"/>
                 <Image Source="{Binding Image}" x:Name="Image"/>
-                <StackLayout x:Name="WebContent" HeightRequest="1000"/>
+                <StackLayout x:Name="WebContent"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
