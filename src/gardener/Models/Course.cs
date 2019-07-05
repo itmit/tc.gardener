@@ -24,14 +24,15 @@ namespace gardener.Models
 			set;
 		}
 
-		public string Timestamp
+		[JsonProperty("time_last_updated")]
+		public int Timestamp
 		{
 			get;
 			set;
 		}
 
-		[JsonProperty("Valute")]
-		public Valute Values
+		[JsonProperty("rates")]
+		public Rates Rates
 		{
 			get;
 			set;

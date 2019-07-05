@@ -26,17 +26,19 @@ namespace gardener.ViewModels
 			{
 				Items = new ObservableCollection<Currency>
 				{
-					course.Values.USD,
-					course.Values.EUR,
-					course.Values.JPY,
-					course.Values.GBP,
-					course.Values.CNY,
-					course.Values.UAH
+					new Currency("USD", 1 / course.Rates.USD),
+					new Currency("EUR", 1 / course.Rates.EUR),
+					new Currency("JPY", 1 / course.Rates.JPY),
+					new Currency("GBP", 1 / course.Rates.GBP),
+					new Currency("CNY", 1 / course.Rates.CNY),
+					new Currency("UAH", 1 / course.Rates.UAH)
 				};
 				Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-				_dateTime = DateTime.Parse(course.Timestamp);
-				//_dateTime = new DateTime(_dateTime.Year, _dateTime.Month, _dateTime.Day, _dateTime.Hour + 3, _dateTime.Minute, _dateTime.Second);
-				OnPropertyChanged(nameof(DateTimeLastUpdate));
+
+				DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+				_dateTime = dtDateTime.AddSeconds(course.Timestamp).ToLocalTime();
+				
+OnPropertyChanged(nameof(DateTimeLastUpdate));
 			}
 		}
 
