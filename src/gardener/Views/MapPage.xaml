@@ -6,73 +6,73 @@
              xmlns:ex="clr-namespace:gardener.Controls"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <ex:ZoomScroll Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="600" WidthRequest="400">
-                <AbsoluteLayout   x:Name="MapGardener" HeightRequest="600" WidthRequest="400">
-                    <Image AbsoluteLayout.LayoutFlags="PositionProportional"
+        <ScrollView Orientation="Vertical">
+        <ex:ZoomScroll Orientation="Horizontal" HorizontalOptions="Fill">
+            <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="MapGardener" HeightRequest="600" WidthRequest="400">
+                <Image AbsoluteLayout.LayoutFlags="PositionProportional"
                                  AbsoluteLayout.LayoutBounds="0, 0.3, AutoSize, AutoSize"
                                    HorizontalOptions="Center"
                                  WidthRequest="400"
                                  BackgroundColor="Transparent"
                                  Source="maptc.jpg"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                               AbsoluteLayout.LayoutBounds="0.44, 0.31, AutoSize, AutoSize"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                               AbsoluteLayout.LayoutBounds="0.45, 0.31, AutoSize, AutoSize"
                                HorizontalOptions="Center"
                                Source="tc6.png"
                                WidthRequest="230"
                                BackgroundColor="Transparent"
                                Clicked="ImageButton_Clicked"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                               AbsoluteLayout.LayoutBounds="0.655, 0.278, AutoSize, AutoSize"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                               AbsoluteLayout.LayoutBounds="0.67, 0.278, AutoSize, AutoSize"
                                HorizontalOptions="Center"
                                WidthRequest="27"
                                Source="tc4.png"
                                BackgroundColor="Transparent"
                                Clicked="ImageButton_Clicked_1"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="105"
-                               AbsoluteLayout.LayoutBounds="0.375, 0.476, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutBounds="0.38, 0.476, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                BackgroundColor="Transparent"
                                Source="tc7.png"
                                 Clicked="ImageButton_Clicked_2"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="105"
                                BackgroundColor="Transparent"
-                               AbsoluteLayout.LayoutBounds="0.69, 0.473, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutBounds="0.7, 0.473, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                Source="tc9.png"
                                 Clicked="ImageButton_Clicked_3"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="150"
                                BackgroundColor="Transparent"
-                               AbsoluteLayout.LayoutBounds="0.44, 0.575, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutBounds="0.46, 0.575, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                Source="tc5.png"
                                  Clicked="ImageButton_Clicked_4"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="30"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.024, 0.43, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                Source="tc1.png"
                                  Clicked="ImageButton_Clicked_5"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="27"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.028, 0.464, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                Source="tc2.png"
                                  Clicked="ImageButton_Clicked_6"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
+                <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="51"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.024, 0.515, AutoSize, AutoSize"
                                          HorizontalOptions="Center"
                                Source="tc3.png"
                                  Clicked="ImageButton_Clicked_7"/>
-                </AbsoluteLayout>
-            </StackLayout>
+            </AbsoluteLayout>
         </ex:ZoomScroll>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
