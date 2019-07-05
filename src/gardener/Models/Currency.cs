@@ -2,6 +2,12 @@
 {
 	public class Currency
 	{
+		public Currency(string charCode, double value)
+		{
+			CharCode = charCode;
+			Value = value;
+		}
+
 		public string Id
 		{
 			get;
@@ -32,13 +38,13 @@
 			set;
 		}
 
-		public float Value
+		public double Value
 		{
 			get;
 			set;
 		}
 
-		public float Previous
+		public double Previous
 		{
 			get;
 			set;

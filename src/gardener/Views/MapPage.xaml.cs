@@ -15,7 +15,16 @@ namespace gardener.Views
 			InitializeComponent ();
 		}
 
-        private void ImageButton_Clicked(object sender, EventArgs e)
+		protected override void OnSizeAllocated(double width, double height)
+		{
+			base.OnSizeAllocated(width, height);
+
+			if (width != Application.Current.MainPage.Width || height != Application.Current.MainPage.Height)
+			{
+			}
+		}
+
+		private void ImageButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[0], 1));
         }

@@ -1,206 +1,206 @@
 ﻿namespace gardener.Models
 {
-	public class Valute
+	public class Rates
 	{
-		public Currency AUD
+		public double AUD
 		{
 			get;
 			set;
 		}
 
-		public Currency AZN
+		public double AZN
 		{
 			get;
 			set;
 		}
 
-		public Currency GBP
+		public double GBP
 		{
 			get;
 			set;
 		}
 
-		public Currency AMD
+		public double AMD
 		{
 			get;
 			set;
 		}
 
-		public Currency BYN
+		public double BYN
 		{
 			get;
 			set;
 		}
 
-		public Currency BGN
+		public double BGN
 		{
 			get;
 			set;
 		}
 
-		public Currency BRL
+		public double BRL
 		{
 			get;
 			set;
 		}
 
-		public Currency HUF
+		public double HUF
 		{
 			get;
 			set;
 		}
 
-		public Currency HKD
+		public double HKD
 		{
 			get;
 			set;
 		}
 
-		public Currency DKK
+		public double DKK
 		{
 			get;
 			set;
 		}
 
-		public Currency USD
+		public double USD
 		{
 			get;
 			set;
 		}
 
-		public Currency EUR
+		public double EUR
 		{
 			get;
 			set;
 		}
 
-		public Currency INR
+		public double INR
 		{
 			get;
 			set;
 		}
 
-		public Currency KZT
+		public double KZT
 		{
 			get;
 			set;
 		}
 
-		public Currency CAD
+		public double CAD
 		{
 			get;
 			set;
 		}
 
-		public Currency KGS
+		public double KGS
 		{
 			get;
 			set;
 		}
 
-		public Currency CNY
+		public double CNY
 		{
 			get;
 			set;
 		}
 
-		public Currency MDL
+		public double MDL
 		{
 			get;
 			set;
 		}
 
-		public Currency NOK
+		public double NOK
 		{
 			get;
 			set;
 		}
 
-		public Currency PLN
+		public double PLN
 		{
 			get;
 			set;
 		}
 
-		public Currency RON
+		public double RON
 		{
 			get;
 			set;
 		}
 
-		public Currency XDR
+		public double XDR
 		{
 			get;
 			set;
 		}
 
-		public Currency SGD
+		public double SGD
 		{
 			get;
 			set;
 		}
 
-		public Currency TJS
+		public double TJS
 		{
 			get;
 			set;
 		}
 
-		public Currency TRY
+		public double TRY
 		{
 			get;
 			set;
 		}
 
-		public Currency TMT
+		public double TMT
 		{
 			get;
 			set;
 		}
 
-		public Currency UZS
+		public double UZS
 		{
 			get;
 			set;
 		}
 
-		public Currency UAH
+		public double UAH
 		{
 			get;
 			set;
 		}
 
-		public Currency CZK
+		public double CZK
 		{
 			get;
 			set;
 		}
 
-		public Currency SEK
+		public double SEK
 		{
 			get;
 			set;
 		}
 
-		public Currency CHF
+		public double CHF
 		{
 			get;
 			set;
 		}
 
-		public Currency ZAR
+		public double ZAR
 		{
 			get;
 			set;
 		}
 
-		public Currency KRW
+		public double KRW
 		{
 			get;
 			set;
 		}
 
-		public Currency JPY
+		public double JPY
 		{
 			get;
 			set;

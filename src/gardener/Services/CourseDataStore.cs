@@ -10,7 +10,7 @@ namespace gardener.Services
 {
 	public class CourseDataStore : IDataStore<Course>
 	{
-		private const string Url = "https://www.cbr-xml-daily.ru/daily_json.js";
+		private const string Url = "https://api.exchangerate-api.com/v4/latest/RUB";
 
 		public Task<bool> AddItemAsync(Course item) => throw new System.NotImplementedException();
 
