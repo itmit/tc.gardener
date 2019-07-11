@@ -55,7 +55,9 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new System.NotImplementedException();
+			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
+			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
+			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;
 		}
 	}
 }

@@ -18,10 +18,6 @@ namespace gardener.Views.ListView
 			InitializeComponent();
 			_viewModel = new FormAppSaleViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForSale"), "Форма заявки на аренду помещения", OnSendForm);
 			BindingContext = _viewModel;
-
-            PlaceNumber.Placeholder = Properties.Strings.Place;
-            PlaceNumber.Placeholder = Properties.Strings.Name;
-            PlaceNumber.Placeholder = Properties.Strings.Phone;
         }
 		#endregion
 

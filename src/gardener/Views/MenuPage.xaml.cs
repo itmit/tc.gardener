@@ -84,12 +84,13 @@ namespace gardener.Views
 
 		private void Button_OnClicked1(object sender, EventArgs e)
 		{
-			BaseViewModel.ChangeLanguage("vi-VN");
+			BaseViewModel.ChangeLanguage("zh-CN");
 		}
 
 		private void Button_OnClicked3(object sender, EventArgs e)
 		{
-			BaseViewModel.ChangeLanguage("zh-CN");
+			BaseViewModel.ChangeLanguage("vi-VN");
 		}
+
 	}
 }

@@ -11,13 +11,13 @@
                                IsRunning="{Binding IsBusy}" />
             <StackLayout>
                 <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                    <gardener:ExtendedEntry x:Name="PlaceNumber" FontSize="Large" TextColor="#9e4819"
+                    <gardener:ExtendedEntry Placeholder="{Binding PlaceTitle}" FontSize="Large" TextColor="#9e4819"
                                             PlaceholderColor="#7a7a7a"
                                             Text="{Binding PlaceNumber, Mode=TwoWay}" />
-                    <gardener:ExtendedEntry x:Name="Name" FontSize="Large" TextColor="#9e4819"
+                    <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding Name, Mode=TwoWay}"
                                             PlaceholderColor="#7a7a7a" />
-                    <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
+                    <gardener:ExtendedEntry Placeholder="{Binding PhoneTitle}" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding PhoneNumber, Mode=TwoWay}"
                                             PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                         <gardener:ExtendedEntry.Behaviors>

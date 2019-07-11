@@ -36,7 +36,7 @@ namespace gardener.ViewModels
 		public static Market Market
 		{
 			get;
-			private set;
+			protected set;
 		}
 
 		public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();

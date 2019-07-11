@@ -17,6 +17,9 @@ namespace gardener.ViewModels
 
 		private string _placeNumber;
 		private Action<bool> _onSendFormAction;
+		private string _phoneTitle;
+		private string _nameTitle;
+		private string _placeTitle;
 		#endregion
 		#endregion
 
@@ -31,8 +34,29 @@ namespace gardener.ViewModels
 											   },
 											   x => true);
 			_block = block;
+
+			PlaceTitle = Properties.Strings.Place;
+			NameTitle = Properties.Strings.Name;
+			PhoneTitle = Properties.Strings.Phone;
 		}
 
+		public string PhoneTitle
+		{
+			get => _phoneTitle;
+			set => SetProperty(ref _phoneTitle, value);
+		}
+
+		public string NameTitle
+		{
+			get => _nameTitle;
+			set => SetProperty(ref _nameTitle, value);
+		}
+
+		public string PlaceTitle
+		{
+			get => _placeTitle;
+			set => SetProperty(ref _placeTitle, value);
+		}
 
 		public FormAppSaleViewModel(Block block, Uri url, string title, Action<bool> onSendFormAction)
 		{
@@ -123,7 +147,9 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new NotImplementedException();
+			PlaceTitle = Properties.Strings.Place;
+			NameTitle = Properties.Strings.Name;
+			PhoneTitle = Properties.Strings.Phone;
 		}
 	}
 }
