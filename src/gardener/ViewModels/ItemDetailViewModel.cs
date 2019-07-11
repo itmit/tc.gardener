@@ -1,4 +1,5 @@
-﻿using gardener.Models;
+﻿using System.ComponentModel;
+using gardener.Models;
 
 namespace gardener.ViewModels
 {
@@ -19,5 +20,10 @@ namespace gardener.ViewModels
 			set;
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

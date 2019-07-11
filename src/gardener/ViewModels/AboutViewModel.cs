@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -21,5 +22,10 @@ namespace gardener.ViewModels
 			get;
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using gardener.Models;
 using gardener.Views.ListView;
 using Xamarin.Forms;
@@ -48,5 +49,10 @@ namespace gardener.ViewModels
 			}
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

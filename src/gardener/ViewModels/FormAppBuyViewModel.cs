@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
@@ -124,5 +125,10 @@ namespace gardener.ViewModels
 			IsBusy = false;
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

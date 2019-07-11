@@ -1,4 +1,5 @@
-﻿using gardener.Models;
+﻿using System.ComponentModel;
+using gardener.Models;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
@@ -29,6 +30,11 @@ namespace gardener.ViewModels
 		{
 			get => _image;
 			set => SetProperty(ref _image, value);
+		}
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

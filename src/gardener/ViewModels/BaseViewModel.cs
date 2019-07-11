@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
-	public class BaseViewModel : INotifyPropertyChanged
+	public abstract class BaseViewModel : INotifyPropertyChanged
 	{
 		#region Data
 		#region Fields
@@ -25,6 +25,8 @@ namespace gardener.ViewModels
 			{
 				Market = new Market();
 			}
+
+			PropertyChanged += OnPropertyChanged;
 		}
 		#endregion
 
@@ -75,5 +77,15 @@ namespace gardener.ViewModels
 			changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 		#endregion
+
+		//public abstract void OnLanguageChange();
+
+		public delegate void MethodContainer();
+
+		//Событие OnCount c типом делегата MethodContainer.
+
+		public static event MethodContainer LanguageChange;
+
+		protected abstract void OnPropertyChanged(object sender, PropertyChangedEventArgs e);
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using gardener.Models;
 using gardener.Views;
 using gardener.Views.ListView;
@@ -66,5 +67,10 @@ namespace gardener.ViewModels
 			}
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

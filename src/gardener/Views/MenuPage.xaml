@@ -25,6 +25,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Русский"/>
+            <Button Text="中国"/>
+            <Button Text="Tiếng việt"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

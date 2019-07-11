@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views;
@@ -61,5 +62,10 @@ namespace gardener.ViewModels
 			News = await _newsDataStore.GetItemsAsync(true);
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
