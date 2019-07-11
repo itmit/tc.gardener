@@ -20,11 +20,13 @@ namespace gardener.ViewModels
 		private string _phoneTitle;
 		private string _nameTitle;
 		private string _placeTitle;
+		private string _sendButtonText;
+		private int _floor;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppSaleViewModel(Block block, Uri url, string title)
+		public FormAppSaleViewModel(Block block, int floor, Uri url, string title)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
@@ -35,6 +37,7 @@ namespace gardener.ViewModels
 											   x => true);
 			_block = block;
 
+			_floor = floor;
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
 			PhoneTitle = Properties.Strings.Phone;
@@ -94,6 +97,12 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _name, value);
 		}
 
+		public string SendButtonText
+		{
+			get => _sendButtonText;
+			set => SetProperty(ref _sendButtonText, value);
+		}
+
 		public string PhoneNumber
 		{
 			get => _phoneNumber;
@@ -115,7 +124,7 @@ namespace gardener.ViewModels
 			{
 				var service = new BidForSaleDataStore(url);
 
-				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block)))
+				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block, _floor)))
 				{
 					_onSendFormAction(true);
 				}
@@ -149,6 +158,7 @@ namespace gardener.ViewModels
 		{
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
+			SendTextButton = Properties.Strings.SendTextButton;
 			PhoneTitle = Properties.Strings.Phone;
 		}
 	}

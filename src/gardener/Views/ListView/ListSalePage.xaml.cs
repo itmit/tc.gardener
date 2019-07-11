@@ -21,8 +21,8 @@ namespace gardener.Views.ListView
 			BindingContext = new ListSaleViewModel(Navigation);
 
 			RentButton.CommandParameter = new FormAppPage(block);
-			SellButton.CommandParameter = new FormAppSalePage(block);
-			BuyButton.CommandParameter = new FormAppBuyPage(block);
+			SellButton.CommandParameter = new FormAppSalePage(block, floor);
+			BuyButton.CommandParameter = new FormAppBuyPage(block, floor);
 		}
 		#endregion
 	}

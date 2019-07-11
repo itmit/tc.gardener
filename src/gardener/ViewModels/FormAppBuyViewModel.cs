@@ -38,10 +38,6 @@ namespace gardener.ViewModels
 											   },
 											   x => true);
 			_block = block;
-
-			PlaceTitle = Properties.Strings.Place;
-			NameTitle = Properties.Strings.Name;
-			PhoneTitle = Properties.Strings.Phone;
 		}
 
 		public string PhoneTitle
@@ -62,10 +58,10 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-		public FormAppBuyViewModel(Block block, Uri url, string title, Action<bool> callBack)
+		public FormAppBuyViewModel(Block block, Uri url, Action<bool> callBack)
 		{
 			ErrorsList = new List<string>();
-			Title = title;
+			Title = Properties.Strings.Applicationformforleaseofpremises;
 			SendFormCommand = new RelayCommand(x =>
 											   {
 												   ExecuteSendFormCommand(url);
@@ -152,9 +148,11 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
+			Title = Properties.Strings.Applicationformforleaseofpremises;
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
 			PhoneTitle = Properties.Strings.Phone;
+			SendTextButton = Properties.Strings.SendTextButton;
 		}
 	}
 }

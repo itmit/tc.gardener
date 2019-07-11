@@ -20,7 +20,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public RentSaleViewModel(INavigation navigation)
 		{
-			//Title = Properties.Strings.RentSalePageTitle;
+			Title = Properties.Strings.RentSalePageTitle;
 			_blocks = Market.Blocks;
 			_navigation = navigation;
 		}
@@ -72,7 +72,7 @@ namespace gardener.ViewModels
 		{
 			Market = new Market();
 			Blocks = Market.Blocks;
-			//Title = Properties.Strings.RentSalePageTitle;
+			Title = Properties.Strings.RentSalePageTitle;
 		}
 	}
 }

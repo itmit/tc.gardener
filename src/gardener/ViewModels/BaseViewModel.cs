@@ -27,8 +27,9 @@ namespace gardener.ViewModels
 			{
 				Market = new Market();
 			}
-
 			LanguageChange += OnLanguageChanged;
+
+			OnLanguageChanged();
 		}
 		#endregion
 

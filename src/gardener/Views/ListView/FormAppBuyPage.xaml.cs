@@ -15,7 +15,7 @@ namespace gardener.Views.ListView
 		public FormAppBuyPage(Block block)
 		{
 			InitializeComponent();
-			_viewModel = new FormAppBuyViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), PlaceNumber.Placeholder = Properties.Strings.Applicationformforleaseofpremises, OnFormSend);
+			_viewModel = new FormAppBuyViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), OnFormSend);
 			BindingContext = _viewModel;
         }
 		#endregion

@@ -20,10 +20,6 @@ namespace gardener.ViewModels
 												   }
 											   },
 											   param => param != null);
-
-			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
-			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
-			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;
 		}
 
 		public string ApplicationForLeaseOfInPremises
@@ -55,6 +51,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
+			Title = Properties.Strings.ListSalePageTitle;
 			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
 			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
 			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;

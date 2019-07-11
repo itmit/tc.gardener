@@ -20,9 +20,6 @@ namespace gardener.ViewModels
 		public CourseViewModel(CourseDataStore service)
 		{
 			_service = service;
-
-			CoursesTableTitle = Properties.Strings.CoursesTableTitle;
-			RatesTitle = Properties.Strings.RatesTitle;
 		}
 
 		public string RatesTitle
