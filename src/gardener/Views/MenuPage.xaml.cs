@@ -16,7 +16,50 @@ namespace gardener.Views
 		public MenuPage()
 		{
 			InitializeComponent();
+			List<HomeMenuItem> menuItems = GetMenuItems();
+			ListViewMenu.ItemsSource = menuItems;
+			ListViewMenu.SelectedItem = menuItems[0];
+			ListViewMenu.ItemSelected += async (sender, e) =>
+			{
+				if (e.SelectedItem == null)
+				{
+					return;
+				}
 
+				var id = (int) ((HomeMenuItem) e.SelectedItem).Id;
+
+				await RootPage.NavigateFromMenu(id);
+			};
+		}
+		#endregion
+
+		#region Properties
+		private MainPage RootPage => Application.Current.MainPage as MainPage;
+		#endregion
+
+		private void Button_OnClicked(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("ru-RU");
+			List<HomeMenuItem> menuItems = GetMenuItems();
+			ListViewMenu.ItemsSource = menuItems;
+		}
+
+		private void Button_OnClicked1(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("zh-CN");
+			List<HomeMenuItem> menuItems = GetMenuItems();
+			ListViewMenu.ItemsSource = menuItems;
+		}
+
+		private void Button_OnClicked3(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("vi-VN");
+			List<HomeMenuItem> menuItems = GetMenuItems();
+			ListViewMenu.ItemsSource = menuItems;
+		}
+
+		private List<HomeMenuItem> GetMenuItems()
+		{
 			var menuItems = new List<HomeMenuItem>
 			{
 				new HomeMenuItem
@@ -53,44 +96,10 @@ namespace gardener.Views
 				{
 					Id = MenuItemType.News,
 					Title = Properties.Strings.Marketnews
-                }
-			};
-
-			ListViewMenu.ItemsSource = menuItems;
-
-			ListViewMenu.SelectedItem = menuItems[0];
-			ListViewMenu.ItemSelected += async (sender, e) =>
-			{
-				if (e.SelectedItem == null)
-				{
-					return;
 				}
-
-				var id = (int) ((HomeMenuItem) e.SelectedItem).Id;
-
-				await RootPage.NavigateFromMenu(id);
 			};
+
+			return menuItems;
 		}
-		#endregion
-
-		#region Properties
-		private MainPage RootPage => Application.Current.MainPage as MainPage;
-		#endregion
-
-		private void Button_OnClicked(object sender, EventArgs e)
-		{
-			BaseViewModel.ChangeLanguage("ru-RU");
-		}
-
-		private void Button_OnClicked1(object sender, EventArgs e)
-		{
-			BaseViewModel.ChangeLanguage("zh-CN");
-		}
-
-		private void Button_OnClicked3(object sender, EventArgs e)
-		{
-			BaseViewModel.ChangeLanguage("vi-VN");
-		}
-
 	}
 }
