@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Update="Views\CallSecurityPage.xaml.cs">
       <DependentUpon>CallSecurityPage.xaml</DependentUpon>
     </Compile>
@@ -49,6 +54,10 @@
   <ItemGroup>
     <EmbeddedResource Update="index.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\BlocksViews\BlockViewCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
