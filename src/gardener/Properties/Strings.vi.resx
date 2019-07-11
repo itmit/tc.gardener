@@ -177,6 +177,10 @@
     <value>Ứng dụng chuyển cơ sở</value>
     <comment>Список свободных помещений</comment>
   </data>
+  <data name="ListSalePageTitle" xml:space="preserve">
+    <value>Hành động lựa chọn</value>
+    <comment>Выбор действия</comment>
+  </data>
   <data name="Map" xml:space="preserve">
     <value>The scheme of the market</value>
     <comment>Схема рынка</comment>
@@ -216,6 +220,10 @@
   <data name="Selling" xml:space="preserve">
     <value>Calling the master (Lyon)</value>
     <comment>Вызов мастера (Лайон)</comment>
+  </data>
+  <data name="SendButtonText" xml:space="preserve">
+    <value>Gửi yêu cầu</value>
+    <comment>Отправить заявку</comment>
   </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
     <value>Dạng đã thành công gửi</value>
