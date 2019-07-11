@@ -21,11 +21,11 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding OpenPageCommand}" x:Name="RentButton" />
+                    Command="{Binding OpenPageCommand}" x:Name="RentButton" Text="{Binding ListOfAvailablePremises}" />
             <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding OpenPageCommand}" x:Name="SellButton" />
+                    Command="{Binding OpenPageCommand}" x:Name="SellButton" Text="{Binding ApplicationForLeaseOfPremises}"/>
             <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding OpenPageCommand}" x:Name="BuyButton" />
+                    Command="{Binding OpenPageCommand}" x:Name="BuyButton" Text="{Binding ApplicationForLeaseOfInPremises}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

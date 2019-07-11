@@ -20,7 +20,8 @@ namespace gardener.ViewModels
 		#region .ctor
 		public RentSaleViewModel(INavigation navigation)
 		{
-			Title = "Список свободных помещений";
+			// "Список свободных помещений"
+			Title = Properties.Strings.RentSalePageTitle;
 			_blocks = Market.Blocks;
 			_navigation = navigation;
 		}
@@ -40,7 +41,7 @@ namespace gardener.ViewModels
 			{
 				if (value != null)
 				{
-					if (value.Title == "Новый ТЦ")
+					if (value.Title == Properties.Strings.Thenewshoppingcenter)
 					{
 						return;
 					}
@@ -70,7 +71,8 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new System.NotImplementedException();
+
+			Title = Properties.Strings.RentSalePageTitle;
 		}
 	}
 }

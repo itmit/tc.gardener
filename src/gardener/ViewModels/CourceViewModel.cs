@@ -21,8 +21,8 @@ namespace gardener.ViewModels
 		{
 			_service = service;
 
-			CoursesTableTitle = Properties.Strings.Course;
-			RatesTitle = Properties.Strings.Course;
+			CoursesTableTitle = Properties.Strings.CoursesTableTitle;
+			RatesTitle = Properties.Strings.RatesTitle;
 		}
 
 		public string RatesTitle
@@ -82,8 +82,8 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-            CoursesTableTitle = Properties.Strings.Course;
-            RatesTitle = Properties.Strings.Course;
+            CoursesTableTitle = Properties.Strings.CoursesTableTitle;
+            RatesTitle = Properties.Strings.RatesTitle;
         }
 	}
 }
