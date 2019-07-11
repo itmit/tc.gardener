@@ -23,6 +23,8 @@ namespace gardener.ViewModels
 		{
 			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
+
+			Title = Properties.Strings.FreePlace;
 		}
 
 		public FormAppViewModel(Block block, int floor)
@@ -30,6 +32,8 @@ namespace gardener.ViewModels
 			_block = block;
 			_floor = floor;
 			_placeCollection = new ObservableCollection<Place>();
+
+			Title = Properties.Strings.FreePlace;
 		}
 		#endregion
 

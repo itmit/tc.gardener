@@ -19,7 +19,7 @@ namespace gardener.ViewModels
 		#region .ctor
 		public SelectFloorViewModel(Block block, INavigation navigation)
 		{
-			Title = "Выбор этажа";
+			Title = Properties.Strings.SelectFloor;
 			_block = block;
 			_navigation = navigation;
 			Floors = block.Floors;
@@ -52,6 +52,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
+			Title = Properties.Strings.SelectFloor;
 		}
 	}
 }

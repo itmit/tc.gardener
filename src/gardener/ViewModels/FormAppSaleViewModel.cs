@@ -38,8 +38,10 @@ namespace gardener.ViewModels
 			_block = block;
 
 			_floor = floor;
+
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
+			SendButtonText = Properties.Strings.SendButtonText;
 			PhoneTitle = Properties.Strings.Phone;
 		}
 
@@ -73,6 +75,11 @@ namespace gardener.ViewModels
 			_block = block;
 			_onSendFormAction = onSendFormAction;
 			_floor = floor;
+
+			PlaceTitle = Properties.Strings.Place;
+			NameTitle = Properties.Strings.Name;
+			SendButtonText = Properties.Strings.SendButtonText;
+			PhoneTitle = Properties.Strings.Phone;
 		}
 		#endregion
 

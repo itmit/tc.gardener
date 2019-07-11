@@ -253,4 +253,8 @@
     <value>Ожидание сети</value>
     <comment>Ожидание сети</comment>
   </data>
+  <data name="SelectFloor" xml:space="preserve">
+    <value>Выбор этажа</value>
+    <comment>Выбор этажа</comment>
+  </data>
 </root>

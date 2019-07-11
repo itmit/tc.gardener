@@ -41,6 +41,13 @@ namespace gardener.ViewModels
 											   x => true);
 			_block = block;
 			_floor = floor;
+
+
+			Title = Properties.Strings.Applicationformforleaseofpremises;
+			PlaceTitle = Properties.Strings.Place;
+			NameTitle = Properties.Strings.Name;
+			PhoneTitle = Properties.Strings.Phone;
+			SendButtonText = Properties.Strings.SendButtonText;
 		}
 
 		public string PhoneTitle
@@ -73,6 +80,12 @@ namespace gardener.ViewModels
 			_block = block;
 			_callBack = callBack;
 			_floor = floor;
+
+			Title = Properties.Strings.Applicationformforleaseofpremises;
+			PlaceTitle = Properties.Strings.Place;
+			NameTitle = Properties.Strings.Name;
+			PhoneTitle = Properties.Strings.Phone;
+			SendButtonText = Properties.Strings.SendButtonText;
 		}
 		#endregion
 

@@ -25,7 +25,6 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new NotImplementedException();
 		}
 	}
 }

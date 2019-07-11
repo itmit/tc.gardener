@@ -24,6 +24,8 @@ namespace gardener.ViewModels
 			_newsDataStore = newsService;
 			_news = new ObservableCollection<News>();
 			_navigation = navigation;
+
+			Title = Properties.Strings.Marketnews;
 		}
 		#endregion
 

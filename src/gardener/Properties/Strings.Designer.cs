@@ -304,6 +304,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Выбор этажа.
+        /// </summary>
+        internal static string SelectFloor {
+            get {
+                return ResourceManager.GetString("SelectFloor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вызов мастера (Лайон).
         /// </summary>
         internal static string Selling {

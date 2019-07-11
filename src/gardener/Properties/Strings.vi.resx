@@ -253,4 +253,8 @@
     <value>Chờ mạng</value>
     <comment>Ожидание сети</comment>
   </data>
+  <data name="SelectFloor" xml:space="preserve">
+    <value>Sự lựa chọn của sàn nhà</value>
+    <comment>Выбор этажа</comment>
+  </data>
 </root>

@@ -23,6 +23,10 @@ namespace gardener.ViewModels
 			Title = Properties.Strings.RentSalePageTitle;
 			_blocks = Market.Blocks;
 			_navigation = navigation;
+
+			Market = new Market();
+			Blocks = Market.Blocks;
+			Title = Properties.Strings.RentSalePageTitle;
 		}
 		#endregion
 

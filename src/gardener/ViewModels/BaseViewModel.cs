@@ -29,7 +29,6 @@ namespace gardener.ViewModels
 			}
 			LanguageChange += OnLanguageChanged;
 
-			OnLanguageChanged();
 		}
 		#endregion
 
