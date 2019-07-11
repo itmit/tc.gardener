@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 using gardener.Models;
@@ -13,10 +14,27 @@ namespace gardener.ViewModels
 		private Currency _selectedItem;
 		private ObservableCollection<Currency> _items;
 		private DateTime _dateTime;
+		private string _coursesTableTitle;
+		private string _ratesTitle;
 
 		public CourseViewModel(CourseDataStore service)
 		{
 			_service = service;
+
+			CoursesTableTitle = Properties.Strings.Course;
+			RatesTitle = Properties.Strings.Course;
+		}
+
+		public string RatesTitle
+		{
+			get => _ratesTitle;
+			set => SetProperty(ref _ratesTitle, value);
+		}
+
+		public string CoursesTableTitle
+		{
+			get => _coursesTableTitle;
+			set => SetProperty(ref _coursesTableTitle, value);
 		}
 
 		public async void UpdateCourse()
@@ -38,7 +56,7 @@ namespace gardener.ViewModels
 				DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 				_dateTime = dtDateTime.AddSeconds(course.Timestamp).ToLocalTime();
 				
-OnPropertyChanged(nameof(DateTimeLastUpdate));
+				OnPropertyChanged(nameof(DateTimeLastUpdate));
 			}
 		}
 
@@ -61,5 +79,10 @@ OnPropertyChanged(nameof(DateTimeLastUpdate));
 
 		public string DateTimeLastUpdate 
 			=> _dateTime.ToShortDateString() + " " + _dateTime.ToShortTimeString();
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

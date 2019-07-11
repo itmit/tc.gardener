@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using gardener.Models;
+using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -72,5 +76,20 @@ namespace gardener.Views
 		#region Properties
 		private MainPage RootPage => Application.Current.MainPage as MainPage;
 		#endregion
+
+		private void Button_OnClicked(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("ru-RU");
+		}
+
+		private void Button_OnClicked1(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("vi-VN");
+		}
+
+		private void Button_OnClicked3(object sender, EventArgs e)
+		{
+			BaseViewModel.ChangeLanguage("zh-CN");
+		}
 	}
 }

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using gardener.Models;
 using gardener.Services;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
-	public class BaseViewModel : INotifyPropertyChanged
+	public abstract class BaseViewModel : INotifyPropertyChanged
 	{
 		#region Data
 		#region Fields
@@ -25,6 +27,8 @@ namespace gardener.ViewModels
 			{
 				Market = new Market();
 			}
+
+			PropertyChanged += OnPropertyChanged;
 		}
 		#endregion
 
@@ -75,5 +79,21 @@ namespace gardener.ViewModels
 			changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 		#endregion
+
+		public static void ChangeLanguage(string cultureCode)
+		{
+			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureCode);
+			LanguageChange?.Invoke();
+		}
+
+		//public abstract void OnLanguageChange();
+
+		public delegate void MethodContainer();
+
+		//Событие OnCount c типом делегата MethodContainer.
+
+		public static event MethodContainer LanguageChange;
+
+		protected abstract void OnPropertyChanged(object sender, PropertyChangedEventArgs e);
 	}
 }

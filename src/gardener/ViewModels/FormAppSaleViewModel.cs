@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using gardener.Models;
 using gardener.Services;
 using Plugin.Connectivity;
@@ -119,5 +120,10 @@ namespace gardener.ViewModels
 			get;
 		}
 		#endregion
+
+		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

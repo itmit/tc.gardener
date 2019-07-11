@@ -12,13 +12,13 @@
 
                 <StackLayout Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-                    <Label Text="Курсы валют ЦБ РФ" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                    <Label Text="{Binding CoursesTableTitle}" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Валюта" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
+                        <Label Text="{Binding RatesTitle}" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
                         <Label Grid.Column="1" Text="RUB" Margin="0, 15" FontSize="Large" HorizontalOptions="Center"/>
                     </Grid>
                     <ListView HasUnevenRows="True" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding Items}">
