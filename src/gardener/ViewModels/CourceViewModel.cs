@@ -21,8 +21,8 @@ namespace gardener.ViewModels
 		{
 			_service = service;
 
-			CoursesTableTitle = Properties.Strings.H;
-			RatesTitle = Properties.Strings.H;
+			CoursesTableTitle = Properties.Strings.Course;
+			RatesTitle = Properties.Strings.Course;
 		}
 
 		public string RatesTitle
@@ -82,8 +82,7 @@ namespace gardener.ViewModels
 
 		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			Title = Properties.Strings.H;
-			CoursesTableTitle = Properties.Strings.H;
+			throw new NotImplementedException();
 		}
 	}
 }

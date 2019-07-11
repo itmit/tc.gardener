@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using gardener.Models;
 using gardener.Services;
 using Xamarin.Forms;
@@ -77,6 +79,12 @@ namespace gardener.ViewModels
 			changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 		#endregion
+
+		public static void ChangeLanguage(string cultureCode)
+		{
+			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureCode);
+			LanguageChange?.Invoke();
+		}
 
 		//public abstract void OnLanguageChange();
 
