@@ -124,6 +124,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Курсы валют ЦБ РФ.
+        /// </summary>
+        internal static string CoursesTableTitle {
+            get {
+                return ResourceManager.GetString("CoursesTableTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вызов врача.
         /// </summary>
         internal static string EmployCall {
@@ -165,6 +174,42 @@ namespace gardener.Properties {
         internal static string Marketnews {
             get {
                 return ResourceManager.GetString("Marketnews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Телефон.
+        /// </summary>
+        internal static string Phone {
+            get {
+                return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Место.
+        /// </summary>
+        internal static string Place {
+            get {
+                return ResourceManager.GetString("Place", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Валюта.
+        /// </summary>
+        internal static string RatesTitle {
+            get {
+                return ResourceManager.GetString("RatesTitle", resourceCulture);
             }
         }
         

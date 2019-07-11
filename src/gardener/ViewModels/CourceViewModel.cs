@@ -82,7 +82,8 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new NotImplementedException();
-		}
+            CoursesTableTitle = Properties.Strings.Course;
+            RatesTitle = Properties.Strings.Course;
+        }
 	}
 }

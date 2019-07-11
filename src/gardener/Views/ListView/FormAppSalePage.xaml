@@ -13,14 +13,14 @@
             <StackLayout>
                 <StackLayout Margin="30,10,30,10" WidthRequest="300">
                     <gardener:ExtendedEntry x:Name="PlaceNumber" FontSize="Large" TextColor="#9e4819"
-                                            Placeholder="Место" PlaceholderColor="#7a7a7a"
+                                            PlaceholderColor="#7a7a7a"
                                             Text="{Binding PlaceNumber, Mode=TwoWay}" />
                     <gardener:ExtendedEntry x:Name="Name" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding Name, Mode=TwoWay}"
-                                            Placeholder="Имя" PlaceholderColor="#7a7a7a" />
+                                            PlaceholderColor="#7a7a7a" />
                     <gardener:ExtendedEntry x:Name="PhoneNumber" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding PhoneNumber, Mode=TwoWay}"
-                                            Placeholder="Телефон" PlaceholderColor="#7a7a7a" Keyboard="Numeric">
+                                            PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                         <gardener:ExtendedEntry.Behaviors>
                             <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
                         </gardener:ExtendedEntry.Behaviors>
