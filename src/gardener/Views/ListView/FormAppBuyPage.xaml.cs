@@ -15,7 +15,7 @@ namespace gardener.Views.ListView
 		public FormAppBuyPage(Block block)
 		{
 			InitializeComponent();
-			_viewModel = new FormAppBuyViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), "Форма заявки на сдачу в аренду помещения", OnFormSend);
+			_viewModel = new FormAppBuyViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), PlaceNumber.Placeholder = Properties.Strings.Applicationformforleaseofpremises, OnFormSend);
 			BindingContext = _viewModel;
         }
 		#endregion
@@ -24,12 +24,12 @@ namespace gardener.Views.ListView
 		{
 			if (isSuccess)
 			{
-				DisplayAlert("Внимание", "Форма успешно отправлена", "Ok");
+				DisplayAlert(Properties.Strings.Attention, Properties.Strings.Theformwassuccessfullysent, Properties.Strings.Ok);
 			}
 			else
 			{
 				var error = _viewModel.GetLastError();
-				DisplayAlert("Внимание", error == "" ? "Ошибка отправки формы" : _viewModel.GetLastError(), "Ok");
+				DisplayAlert(Properties.Strings.Attention, error == "" ? Properties.Strings.Errorsubmittingform : _viewModel.GetLastError(), Properties.Strings.Ok);
 			}
 		}
 	}

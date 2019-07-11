@@ -79,6 +79,24 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма заявки на сдачу в аренду помещения.
+        /// </summary>
+        internal static string Applicationformforleaseofpremises {
+            get {
+                return ResourceManager.GetString("Applicationformforleaseofpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание.
+        /// </summary>
+        internal static string Attention {
+            get {
+                return ResourceManager.GetString("Attention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вызов охраны.
         /// </summary>
         internal static string CallSecurity {
@@ -142,6 +160,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка отправки формы.
+        /// </summary>
+        internal static string Errorsubmittingform {
+            get {
+                return ResourceManager.GetString("Errorsubmittingform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Меха и кожа.
         /// </summary>
         internal static string Furandleather {
@@ -187,6 +214,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ok.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Телефон.
         /// </summary>
         internal static string Phone {
@@ -223,11 +259,29 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Список свободных помещений.
+        /// </summary>
+        internal static string RentSalePageTitle {
+            get {
+                return ResourceManager.GetString("RentSalePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вызов мастера (Лайон).
         /// </summary>
         internal static string Selling {
             get {
                 return ResourceManager.GetString("Selling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма успешно отправлена.
+        /// </summary>
+        internal static string Theformwassuccessfullysent {
+            get {
+                return ResourceManager.GetString("Theformwassuccessfullysent", resourceCulture);
             }
         }
         

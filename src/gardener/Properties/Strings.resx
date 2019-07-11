@@ -125,6 +125,14 @@
     <value>Заявка на аренду помещения</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
+  <data name="Applicationformforleaseofpremises" xml:space="preserve">
+    <value>Форма заявки на сдачу в аренду помещения</value>
+    <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Внимание</value>
+    <comment>Внимание</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
     <value>Вызов охраны</value>
     <comment>Вызов охраны</comment>
@@ -153,6 +161,10 @@
     <value>Вызов врача</value>
     <comment>Вызов врача</comment>
   </data>
+  <data name="Errorsubmittingform" xml:space="preserve">
+    <value>Ошибка отправки формы</value>
+    <comment>Ошибка отправки формы</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
     <value>Меха и кожа</value>
     <comment>Меха и кожа</comment>
@@ -173,6 +185,10 @@
     <value>Имя</value>
     <comment>Имя</comment>
   </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>OK</comment>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>Телефон</value>
     <comment>Телефон</comment>
@@ -189,9 +205,17 @@
     <value>Аренда торговых помещений</value>
     <comment>Аренда торговых помещений</comment>
   </data>
+  <data name="RentSalePageTitle" xml:space="preserve">
+    <value>Список свободных помещений</value>
+    <comment>Список свободных помещений</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
     <value>Вызов мастера (Лайон)</value>
     <comment>Вызов мастера (Лайон)</comment>
+  </data>
+  <data name="Theformwassuccessfullysent" xml:space="preserve">
+    <value>Форма успешно отправлена</value>
+    <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
     <value>Новый ТЦ</value>

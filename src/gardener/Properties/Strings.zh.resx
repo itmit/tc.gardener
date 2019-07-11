@@ -125,6 +125,14 @@
     <value>房屋租赁申请</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
+  <data name="Applicationformforleaseofpremises" xml:space="preserve">
+    <value>楼宇租赁申请表</value>
+    <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>注意</value>
+    <comment>Внимание</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
     <value>Call security</value>
     <comment>Вызов охраны</comment>
@@ -153,6 +161,10 @@
     <value>Doctor's call</value>
     <comment>Вызов врача</comment>
   </data>
+  <data name="Errorsubmittingform" xml:space="preserve">
+    <value>错误提交表单</value>
+    <comment>Ошибка отправки формы</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
     <value>毛皮和皮革</value>
     <comment>Меха и кожа</comment>
@@ -173,6 +185,10 @@
     <value>姓名</value>
     <comment>Имя</comment>
   </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>OK</comment>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>电话</value>
     <comment>Телефон</comment>
@@ -189,9 +205,17 @@
     <value>Rent of commercial premises</value>
     <comment>Аренда торговых помещений</comment>
   </data>
+  <data name="RentSalePageTitle" xml:space="preserve">
+    <value>可用房地清单</value>
+    <comment>Список свободных помещений</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
     <value>Calling the master (Lyon)</value>
     <comment>Вызов мастера (Лайон)</comment>
+  </data>
+  <data name="Theformwassuccessfullysent" xml:space="preserve">
+    <value>表单已成功发送</value>
+    <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
     <value>新的购物中心</value>

@@ -125,6 +125,14 @@
     <value>Ứng dụng của cơ sở cho thuê</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
+  <data name="Applicationformforleaseofpremises" xml:space="preserve">
+    <value>Mẫu đơn của cơ sở cho thuê</value>
+    <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Chú ý</value>
+    <comment>Внимание</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
     <value>Call security</value>
     <comment>Вызов охраны</comment>
@@ -153,6 +161,10 @@
     <value>Doctor's call</value>
     <comment>Вызов врача</comment>
   </data>
+  <data name="Errorsubmittingform" xml:space="preserve">
+    <value>Lỗi gửi mẫu</value>
+    <comment>Ошибка отправки формы</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
     <value>Lông và da</value>
     <comment>Меха и кожа</comment>
@@ -173,6 +185,10 @@
     <value>Tên</value>
     <comment>Имя</comment>
   </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>OK</comment>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>Điện thoại</value>
     <comment>Телефон</comment>
@@ -189,9 +205,17 @@
     <value>Rent of commercial premises</value>
     <comment>Аренда торговых помещений</comment>
   </data>
+  <data name="RentSalePageTitle" xml:space="preserve">
+    <value>Danh sách của sẵn cơ sở</value>
+    <comment>Список свободных помещений</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
     <value>Calling the master (Lyon)</value>
     <comment>Вызов мастера (Лайон)</comment>
+  </data>
+  <data name="Theformwassuccessfullysent" xml:space="preserve">
+    <value>Dạng đã thành công gửi</value>
+    <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
     <value>Trung tâm mua sắm mới</value>
