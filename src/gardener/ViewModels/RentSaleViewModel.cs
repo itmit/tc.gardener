@@ -21,7 +21,7 @@ namespace gardener.ViewModels
 		public RentSaleViewModel(INavigation navigation)
 		{
 			// "Список свободных помещений"
-			Title = Properties.Strings.RentSalePageTitle;
+			//Title = Properties.Strings.RentSalePageTitle;
 			_blocks = Market.Blocks;
 			_navigation = navigation;
 		}
@@ -72,7 +72,7 @@ namespace gardener.ViewModels
 		protected override void OnLanguageChanged()
 		{
 
-			Title = Properties.Strings.RentSalePageTitle;
+			//Title = Properties.Strings.RentSalePageTitle;
 		}
 	}
 }
