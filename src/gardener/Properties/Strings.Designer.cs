@@ -178,6 +178,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Этаж.
+        /// </summary>
+        internal static string Floor {
+            get {
+                return ResourceManager.GetString("Floor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Свободные места.
         /// </summary>
         internal static string FreePlace {
@@ -237,6 +246,15 @@ namespace gardener.Properties {
         internal static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новости рынка.
+        /// </summary>
+        internal static string News {
+            get {
+                return ResourceManager.GetString("News", resourceCulture);
             }
         }
         

@@ -257,4 +257,12 @@
     <value>Выбор этажа</value>
     <comment>Выбор этажа</comment>
   </data>
+  <data name="Floor" xml:space="preserve">
+    <value>Этаж</value>
+    <comment>Этаж</comment>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Новости рынка</value>
+    <comment>Новости рынка</comment>
+  </data>
 </root>

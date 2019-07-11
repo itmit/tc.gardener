@@ -186,7 +186,7 @@
     <comment>Схема рынка</comment>
   </data>
   <data name="Marketnews" xml:space="preserve">
-    <value>Market news</value>
+    <value>Tin tức thị trường</value>
     <comment>Новости рынка</comment>
   </data>
   <data name="Name" xml:space="preserve">
@@ -256,5 +256,13 @@
   <data name="SelectFloor" xml:space="preserve">
     <value>Sự lựa chọn của sàn nhà</value>
     <comment>Выбор этажа</comment>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>Sàn nhà</value>
+    <comment>Этаж</comment>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Market news</value>
+    <comment>Новости рынка</comment>
   </data>
 </root>

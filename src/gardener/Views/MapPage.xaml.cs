@@ -1,6 +1,8 @@
 ﻿using gardener.ViewModels;
 using gardener.Views.ListView;
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,14 +15,52 @@ namespace gardener.Views
 		public MapPage ()
 		{
 			InitializeComponent ();
+
+			BaseViewModel.LanguageChangeEvent += OnLanguageChangeEvent;
+
+			if (Thread.CurrentThread.CurrentUICulture.Name == "ru-RU")
+			{
+				Tc2.Source = "tc2.png";
+				Tc3.Source = "tc3.png";
+				Tc4.Source = "tc4.png";
+				Tc5.Source = "tc5.png";
+				Tc6.Source = "tc6.png";
+				Tc7.Source = "tc7.png";
+				Tc9.Source = "tc9.png";
+			}
+			else
+			{
+				Tc2.Source = "entc2.png";
+				Tc3.Source = "entc3.png";
+				Tc4.Source = "entc4.png";
+				Tc5.Source = "entc5.png";
+				Tc6.Source = "entc6.png";
+				Tc7.Source = "entc7.png";
+				Tc9.Source = "entc9.png";
+			}
 		}
 
-		protected override void OnSizeAllocated(double width, double height)
+		private void OnLanguageChangeEvent()
 		{
-			base.OnSizeAllocated(width, height);
-
-			if (width != Application.Current.MainPage.Width || height != Application.Current.MainPage.Height)
+			if (Thread.CurrentThread.CurrentUICulture.Name == "ru-RU")
 			{
+				Tc2.Source = "tc2.png";
+				Tc3.Source = "tc3.png";
+				Tc4.Source = "tc4.png";
+				Tc5.Source = "tc5.png";
+				Tc6.Source = "tc6.png";
+				Tc7.Source = "tc7.png";
+				Tc9.Source = "tc9.png";
+			}
+			else
+			{
+				Tc2.Source = "en/tc2.png";
+				Tc3.Source = "en/tc3.png";
+				Tc4.Source = "en/tc4.png";
+				Tc5.Source = "en/tc5.png";
+				Tc6.Source = "en/tc6.png";
+				Tc7.Source = "en/tc7.png";
+				Tc9.Source = "en/tc9.png";
 			}
 		}
 

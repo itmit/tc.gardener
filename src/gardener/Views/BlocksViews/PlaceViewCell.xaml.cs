@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using gardener.ViewModels;
+using Xamarin.Forms.Xaml;
 
 namespace gardener.Views.BlocksViews
 {
@@ -9,7 +10,17 @@ namespace gardener.Views.BlocksViews
 		public PlaceViewCell()
 		{
 			InitializeComponent();
+
+			PlaceTitle.Text = Properties.Strings.Place;
+			RowTitle.Text = Properties.Strings.Row;
+			BaseViewModel.LanguageChangeEvent += OnLanguageChangeEvent;
 		}
 		#endregion
+
+		private void OnLanguageChangeEvent()
+		{
+			PlaceTitle.Text = Properties.Strings.Place;
+			RowTitle.Text = Properties.Strings.Row;
+		}
 	}
 }

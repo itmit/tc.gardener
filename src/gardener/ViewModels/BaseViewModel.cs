@@ -27,7 +27,7 @@ namespace gardener.ViewModels
 			{
 				Market = new Market();
 			}
-			LanguageChange += OnLanguageChanged;
+			LanguageChangeEvent += OnLanguageChanged;
 
 		}
 		#endregion
@@ -83,7 +83,7 @@ namespace gardener.ViewModels
 		public static void ChangeLanguage(string cultureCode)
 		{
 			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureCode);
-			LanguageChange?.Invoke();
+			LanguageChangeEvent?.Invoke();
 		}
 
 		//public abstract void OnLanguageChange();
@@ -92,7 +92,7 @@ namespace gardener.ViewModels
 
 		//Событие OnCount c типом делегата MethodContainer.
 
-		public static event MethodContainer LanguageChange;
+		public static event MethodContainer LanguageChangeEvent;
 
 		protected abstract void OnLanguageChanged();
 	}

@@ -95,7 +95,7 @@ namespace gardener.Views
 				new HomeMenuItem
 				{
 					Id = MenuItemType.News,
-					Title = Properties.Strings.Marketnews
+					Title = Properties.Strings.News
 				}
 			};
 
