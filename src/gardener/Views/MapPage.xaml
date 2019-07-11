@@ -51,13 +51,6 @@
                                Source="tc5.png"
                                  Clicked="ImageButton_Clicked_4"/>
                     <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
-                               WidthRequest="30"
-                               BackgroundColor="Transparent"
-                               AbsoluteLayout.LayoutBounds="0.024, 0.43, AutoSize, AutoSize"
-                                         HorizontalOptions="Center"
-                               Source="tc1.png"
-                                 Clicked="ImageButton_Clicked_5"/>
-                    <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                WidthRequest="27"
                                BackgroundColor="Transparent"
                                AbsoluteLayout.LayoutBounds="0.028, 0.464, AutoSize, AutoSize"
