@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Applicationforleaseofinpremises" xml:space="preserve">
+    <value>申请移交处所</value>
+    <comment>Заявка на сдачу помещения</comment>
+  </data>
+  <data name="Applicationforleaseofpremises" xml:space="preserve">
+    <value>房屋租赁申请</value>
+    <comment>Заявка на аренду помещения</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
     <value>Call security</value>
     <comment>Вызов охраны</comment>
@@ -144,6 +152,10 @@
   <data name="Furandleather" xml:space="preserve">
     <value>毛皮和皮革</value>
     <comment>Меха и кожа</comment>
+  </data>
+  <data name="Listofavailablepremises" xml:space="preserve">
+    <value>可用房地清单</value>
+    <comment>Список свободных помещений</comment>
   </data>
   <data name="Map" xml:space="preserve">
     <value>The scheme of the market</value>
