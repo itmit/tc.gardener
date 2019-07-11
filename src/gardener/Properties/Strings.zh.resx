@@ -125,6 +125,10 @@
     <value>房屋租赁申请</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
+  <data name="Applicationformforleaseofinpremises" xml:space="preserve">
+    <value>楼宇租赁申请表</value>
+    <comment>Форма заявки на аренду помещения</comment>
+  </data>
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
     <value>楼宇租赁申请表</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>

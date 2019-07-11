@@ -125,6 +125,10 @@
     <value>Ứng dụng của cơ sở cho thuê</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
+  <data name="Applicationformforleaseofinpremises" xml:space="preserve">
+    <value>Mẫu đơn của cơ sở cho thuê</value>
+    <comment>Форма заявки на аренду помещения</comment>
+  </data>
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
     <value>Mẫu đơn của cơ sở cho thuê</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>

@@ -79,6 +79,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма заявки на аренду помещения.
+        /// </summary>
+        internal static string Applicationformforleaseofinpremises {
+            get {
+                return ResourceManager.GetString("Applicationformforleaseofinpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Форма заявки на сдачу в аренду помещения.
         /// </summary>
         internal static string Applicationformforleaseofpremises {
