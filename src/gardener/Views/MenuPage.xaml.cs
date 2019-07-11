@@ -18,38 +18,38 @@ namespace gardener.Views
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Rent,
-					Title = "Аренда торговых помещений"
+					Title = Properties.Strings.Rent
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Map,
-					Title = "Схема рынка"
+					Title = Properties.Strings.Map
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Selling,
-					Title = "Вызов мастера (Лайон)"
+					Title = Properties.Strings.Selling
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.CallSecurity,
-					Title = "Вызов охраны"
+					Title = Properties.Strings.CallSecurity
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.EmployCall,
-					Title = "Вызов врача"
+					Title = Properties.Strings.EmployCall
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.Course,
-					Title = "Котировки валют"
+					Title = Properties.Strings.Course
 				},
 				new HomeMenuItem
 				{
 					Id = MenuItemType.News,
-					Title = "Новости рынка"
-				}
+					Title = Properties.Strings.Marketnews
+                }
 			};
 
 			ListViewMenu.ItemsSource = menuItems;
