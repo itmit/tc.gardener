@@ -149,7 +149,7 @@
     <value>The scheme of the market</value>
     <comment>Схема рынка</comment>
   </data>
-  <data name="News" xml:space="preserve">
+  <data name="Marketnews" xml:space="preserve">
     <value>Market news</value>
     <comment>Новости рынка</comment>
   </data>

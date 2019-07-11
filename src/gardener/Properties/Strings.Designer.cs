@@ -135,9 +135,9 @@ namespace gardener.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Новости рынка.
         /// </summary>
-        internal static string News {
+        internal static string Marketnews {
             get {
-                return ResourceManager.GetString("News", resourceCulture);
+                return ResourceManager.GetString("Marketnews", resourceCulture);
             }
         }
         
