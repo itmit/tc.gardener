@@ -61,6 +61,24 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Заявка на сдачу в аренду помещения.
+        /// </summary>
+        internal static string Applicationforleaseofinpremises {
+            get {
+                return ResourceManager.GetString("Applicationforleaseofinpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заявка на аренду помещения.
+        /// </summary>
+        internal static string Applicationforleaseofpremises {
+            get {
+                return ResourceManager.GetString("Applicationforleaseofpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вызов охраны.
         /// </summary>
         internal static string CallSecurity {
@@ -120,6 +138,15 @@ namespace gardener.Properties {
         internal static string Furandleather {
             get {
                 return ResourceManager.GetString("Furandleather", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список свободных помещений.
+        /// </summary>
+        internal static string Listofavailablepremises {
+            get {
+                return ResourceManager.GetString("Listofavailablepremises", resourceCulture);
             }
         }
         

@@ -23,7 +23,11 @@ namespace gardener.Views.ListView
 			RentButton.CommandParameter = new FormAppPage(block);
 			SellButton.CommandParameter = new FormAppSalePage(block);
 			BuyButton.CommandParameter = new FormAppBuyPage(block);
-		}
+
+            RentButton.Text = Properties.Strings.Listofavailablepremises;
+            SellButton.Text = Properties.Strings.Applicationforleaseofpremises;
+            BuyButton.Text = Properties.Strings.Applicationforleaseofinpremises;
+        }
 		#endregion
 	}
 }
