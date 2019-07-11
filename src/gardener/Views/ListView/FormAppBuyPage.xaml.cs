@@ -12,10 +12,10 @@ namespace gardener.Views.ListView
 		private FormAppBuyViewModel _viewModel;
 
 		#region .ctor
-		public FormAppBuyPage(Block block)
+		public FormAppBuyPage(Block block, int floor)
 		{
 			InitializeComponent();
-			_viewModel = new FormAppBuyViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), OnFormSend);
+			_viewModel = new FormAppBuyViewModel(block, floor, new Uri("http://tc.itmit-studio.ru/api/bidForBuy"), OnFormSend);
 			BindingContext = _viewModel;
         }
 		#endregion

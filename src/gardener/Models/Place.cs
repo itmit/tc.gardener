@@ -7,6 +7,24 @@ namespace gardener.Models
 	/// </summary>
 	public class Place
 	{
+		public Place()
+		{
+			RowTitle = Properties.Strings.Row;
+			PlaceTitle = Properties.Strings.Place;
+		}
+
+		public string PlaceTitle
+		{
+			get;
+			set;
+		}
+
+		public string RowTitle
+		{
+			get;
+			set;
+		}
+
 		#region Properties
 		/// <summary>
 		/// Возвращает или устанавливает название блока, в котором находится место.

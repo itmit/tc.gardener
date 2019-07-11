@@ -241,4 +241,16 @@
     <value>Свадебная галерея 'САЛЮТ'</value>
     <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>Свободные места</value>
+    <comment>Свободные места</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Ряд</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="WaitingForNetwork" xml:space="preserve">
+    <value>Ожидание сети</value>
+    <comment>Ожидание сети</comment>
+  </data>
 </root>

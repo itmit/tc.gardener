@@ -61,7 +61,7 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-		public FormAppSaleViewModel(Block block, Uri url, string title, Action<bool> onSendFormAction)
+		public FormAppSaleViewModel(Block block, int floor, Uri url, string title, Action<bool> onSendFormAction)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
@@ -72,6 +72,7 @@ namespace gardener.ViewModels
 											   x => true);
 			_block = block;
 			_onSendFormAction = onSendFormAction;
+			_floor = floor;
 		}
 		#endregion
 
@@ -142,7 +143,7 @@ namespace gardener.ViewModels
 			}
 			else
 			{
-				Title = "Ожидание сети";
+				Title = Properties.Strings.WaitingForNetwork;
 			}
 
 			IsBusy = false;
@@ -158,7 +159,7 @@ namespace gardener.ViewModels
 		{
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
-			SendTextButton = Properties.Strings.SendTextButton;
+			SendButtonText = Properties.Strings.SendButtonText;
 			PhoneTitle = Properties.Strings.Phone;
 		}
 	}

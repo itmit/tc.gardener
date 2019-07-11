@@ -16,7 +16,7 @@ namespace gardener.Views.ListView
 		public FormAppSalePage(Block block, int floor)
 		{
 			InitializeComponent();
-			_viewModel = new FormAppSaleViewModel(block, new Uri("http://tc.itmit-studio.ru/api/bidForSale"), Properties.Strings.Applicationformforleaseofinpremises, OnSendForm);
+			_viewModel = new FormAppSaleViewModel(block, floor, new Uri("http://tc.itmit-studio.ru/api/bidForSale"), Properties.Strings.Applicationformforleaseofinpremises, OnSendForm);
 			BindingContext = _viewModel;
         }
 		#endregion

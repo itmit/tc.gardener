@@ -24,11 +24,13 @@ namespace gardener.ViewModels
 		private string _phoneTitle;
 		private string _nameTitle;
 		private string _placeTitle;
+		private int _floor;
+		private string _sendButtonText;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppBuyViewModel(Block block, Uri url, string title)
+		public FormAppBuyViewModel(Block block, int floor, Uri url, string title)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
@@ -38,6 +40,7 @@ namespace gardener.ViewModels
 											   },
 											   x => true);
 			_block = block;
+			_floor = floor;
 		}
 
 		public string PhoneTitle
@@ -58,7 +61,7 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-		public FormAppBuyViewModel(Block block, Uri url, Action<bool> callBack)
+		public FormAppBuyViewModel(Block block, int floor, Uri url, Action<bool> callBack)
 		{
 			ErrorsList = new List<string>();
 			Title = Properties.Strings.Applicationformforleaseofpremises;
@@ -69,6 +72,7 @@ namespace gardener.ViewModels
 											   x => true);
 			_block = block;
 			_callBack = callBack;
+			_floor = floor;
 		}
 		#endregion
 
@@ -120,7 +124,7 @@ namespace gardener.ViewModels
 			{
 				var service = new BidForBuyDataStore(url);
 
-				if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block)))
+				if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block, _floor)))
 				{
 					_callBack(true);
 				}
@@ -139,7 +143,7 @@ namespace gardener.ViewModels
 			}
 			else
 			{
-				Title = "Ожидание сети";
+				Title = Properties.Strings.WaitingForNetwork;
 			}
 
 			IsBusy = false;
@@ -152,7 +156,13 @@ namespace gardener.ViewModels
 			PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
 			PhoneTitle = Properties.Strings.Phone;
-			SendTextButton = Properties.Strings.SendTextButton;
+			SendButtonText = Properties.Strings.SendButtonText;
+		}
+
+		public string SendButtonText
+		{
+			get => _sendButtonText;
+			set => SetProperty(ref _sendButtonText, value);
 		}
 	}
 }

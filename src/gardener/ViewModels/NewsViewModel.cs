@@ -21,7 +21,6 @@ namespace gardener.ViewModels
 		#region .ctor
 		public NewsViewModel(INavigation navigation, NewsDataStore newsService)
 		{
-			Title = "Новости рынка";
 			_newsDataStore = newsService;
 			_news = new ObservableCollection<News>();
 			_navigation = navigation;
@@ -65,7 +64,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new System.NotImplementedException();
+			Title = Properties.Strings.Marketnews;
 		}
 	}
 }

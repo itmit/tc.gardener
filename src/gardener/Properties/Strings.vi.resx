@@ -241,4 +241,16 @@
     <value>Bộ sưu tập cưới 'CHÀO'</value>
     <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>Miễn phí không gian</value>
+    <comment>Свободные места</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Khoảng</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="WaitingForNetwork" xml:space="preserve">
+    <value>Chờ mạng</value>
+    <comment>Ожидание сети</comment>
+  </data>
 </root>

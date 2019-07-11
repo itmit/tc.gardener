@@ -26,7 +26,7 @@
                         </gardener:ExtendedEntry.Behaviors>
                     </gardener:ExtendedEntry>
                 </StackLayout>
-                <Button Text="Отправить заявку" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
                         Command="{Binding SendFormCommand}" />

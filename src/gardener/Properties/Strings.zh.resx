@@ -241,4 +241,16 @@
     <value>婚礼画廊"敬礼"</value>
     <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>自由空间</value>
+    <comment>Свободные места</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>范围</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="WaitingForNetwork" xml:space="preserve">
+    <value>等待网络</value>
+    <comment>Ожидание сети</comment>
+  </data>
 </root>

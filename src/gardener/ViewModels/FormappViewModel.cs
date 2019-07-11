@@ -21,14 +21,12 @@ namespace gardener.ViewModels
 		#region .ctor
 		public FormAppViewModel(Block block)
 		{
-			Title = "Свободные места";
 			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
 		}
 
 		public FormAppViewModel(Block block, int floor)
 		{
-			Title = "Свободные места";
 			_block = block;
 			_floor = floor;
 			_placeCollection = new ObservableCollection<Place>();
@@ -44,7 +42,7 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Public
-		public async void SetSerializedJsonDataAsync(Uri url)
+		public async void SetSerializedJsonDataAsync(Uri url, bool force = false)
 		{
 			if (_block.Places == null)
 			{
@@ -53,7 +51,7 @@ namespace gardener.ViewModels
 					var service = new PlaceDataStore(url);
 
 					IsBusy = true;
-					_block.Places = await service.GetItemsAsync(_block.Places != null && _block.Places.Count > 0);
+					_block.Places = await service.GetItemsAsync(_block.Places != null && _block.Places.Count > 0 || force);
 
 					if (_floor > 0)
 					{
@@ -68,7 +66,7 @@ namespace gardener.ViewModels
 				}
 				else
 				{
-					Title = "Ожидание сети";
+					Title = Properties.Strings.WaitingForNetwork;
 				}
 			}
 			else
@@ -80,7 +78,8 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			throw new NotImplementedException();
+			SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{_block.Title}/Свободен"), true);
+			Title = Properties.Strings.FreePlace;
 		}
 	}
 }
