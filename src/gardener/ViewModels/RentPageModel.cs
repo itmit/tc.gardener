@@ -4,7 +4,7 @@ namespace gardener.ViewModels
 {
 	internal class RentPageModel : BaseViewModel
 	{
-		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		protected override void OnLanguageChanged()
 		{
 			throw new System.NotImplementedException();
 		}

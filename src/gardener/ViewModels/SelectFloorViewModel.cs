@@ -50,7 +50,7 @@ namespace gardener.ViewModels
 		}
 		#endregion
 
-		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		protected override void OnLanguageChanged()
 		{
 			throw new System.NotImplementedException();
 		}

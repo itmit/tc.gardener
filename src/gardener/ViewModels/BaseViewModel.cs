@@ -28,7 +28,7 @@ namespace gardener.ViewModels
 				Market = new Market();
 			}
 
-			PropertyChanged += OnPropertyChanged;
+			LanguageChange += OnLanguageChanged;
 		}
 		#endregion
 
@@ -94,6 +94,6 @@ namespace gardener.ViewModels
 
 		public static event MethodContainer LanguageChange;
 
-		protected abstract void OnPropertyChanged(object sender, PropertyChangedEventArgs e);
+		protected abstract void OnLanguageChanged();
 	}
 }

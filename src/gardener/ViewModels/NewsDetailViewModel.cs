@@ -32,7 +32,7 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _image, value);
 		}
 
-		protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+		protected override void OnLanguageChanged()
 		{
 			throw new System.NotImplementedException();
 		}
