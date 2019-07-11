@@ -79,6 +79,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма заявки на аренду помещения.
+        /// </summary>
+        internal static string Applicationformforleaseofinpremises {
+            get {
+                return ResourceManager.GetString("Applicationformforleaseofinpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Форма заявки на сдачу в аренду помещения.
         /// </summary>
         internal static string Applicationformforleaseofpremises {
@@ -187,6 +196,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбор действия.
+        /// </summary>
+        internal static string ListSalePageTitle {
+            get {
+                return ResourceManager.GetString("ListSalePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Схема рынка.
         /// </summary>
         internal static string Map {
@@ -273,6 +291,15 @@ namespace gardener.Properties {
         internal static string Selling {
             get {
                 return ResourceManager.GetString("Selling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отправить заявку.
+        /// </summary>
+        internal static string SendButtonText {
+            get {
+                return ResourceManager.GetString("SendButtonText", resourceCulture);
             }
         }
         
