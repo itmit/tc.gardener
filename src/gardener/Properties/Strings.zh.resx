@@ -122,15 +122,15 @@
     <comment>Вызов охраны</comment>
   </data>
   <data name="Carpetsandtextiles" xml:space="preserve">
-    <value>Thảm và dệt</value>
+    <value>地毯和纺织品</value>
     <comment>Ковры и текстиль</comment>
   </data>
   <data name="Clothingseries" xml:space="preserve">
-    <value>Quần áo loạt</value>
+    <value>服装系列</value>
     <comment>Вещевые ряды</comment>
   </data>
   <data name="Coatcircle" xml:space="preserve">
-    <value>Áo vòng tròn</value>
+    <value>外套圈</value>
     <comment>Пальтовый круг</comment>
   </data>
   <data name="Course" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Вызов врача</comment>
   </data>
   <data name="Furandleather" xml:space="preserve">
-    <value>Lông và da</value>
+    <value>毛皮和皮革</value>
     <comment>Меха и кожа</comment>
   </data>
   <data name="Map" xml:space="preserve">
@@ -162,15 +162,15 @@
     <comment>Вызов мастера (Лайон)</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
-    <value>Trung tâm mua sắm mới</value>
+    <value>新的购物中心</value>
     <comment>Новый ТЦ</comment>
   </data>
   <data name="Ttsgreenthumb" xml:space="preserve">
-    <value>Trung tâm mua sắm làm Vườn</value>
-    <comment>ТЦ Садовод</comment>
+    <value>购物中心园丁</value>
+    <comment>Торговый центр Садовод</comment>
   </data>
   <data name="Weddinggallery" xml:space="preserve">
-    <value>Bộ sưu tập cưới 'CHÀO'</value>
+    <value>婚礼画廊"敬礼"</value>
     <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
 </root>

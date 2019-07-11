@@ -117,7 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="H" xml:space="preserve">
+  <data name="CallSecurity" xml:space="preserve">
+    <value>Вызов охраны</value>
+    <comment>Вызов охраны</comment>
+  </data>
+  <data name="Carpetsandtextiles" xml:space="preserve">
+    <value>Ковры и текстиль</value>
+    <comment>Ковры и текстиль</comment>
+  </data>
+  <data name="Clothingseries" xml:space="preserve">
+    <value>Вещевые ряды</value>
+    <comment>Вещевые ряды</comment>
+  </data>
+  <data name="Coatcircle" xml:space="preserve">
+    <value>Пальтовый круг</value>
+    <comment>Пальтовый круг</comment>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>Котировки валют</value>
+    <comment>Котировки валют</comment>
+  </data>
+  <data name="EmployCall" xml:space="preserve">
+    <value>Вызов врача</value>
+    <comment>Вызов врача</comment>
+  </data>
+  <data name="Furandleather" xml:space="preserve">
     <value>Меха и кожа</value>
+    <comment>Меха и кожа</comment>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Схема рынка</value>
+    <comment>Схема рынка</comment>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Новости рынка</value>
+    <comment>Новости рынка</comment>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>Аренда торговых помещений</value>
+    <comment>Аренда торговых помещений</comment>
+  </data>
+  <data name="Selling" xml:space="preserve">
+    <value>Вызов мастера (Лайон)</value>
+    <comment>Вызов мастера (Лайон)</comment>
+  </data>
+  <data name="Thenewshoppingcenter" xml:space="preserve">
+    <value>Новый ТЦ</value>
+    <comment>Новый ТЦ</comment>
+  </data>
+  <data name="Ttsgreenthumb" xml:space="preserve">
+    <value>ТЦ Садовод</value>
+    <comment>ТЦ Садовод</comment>
+  </data>
+  <data name="Weddinggallery" xml:space="preserve">
+    <value>Свадебная галерея 'САЛЮТ'</value>
+    <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
 </root>
