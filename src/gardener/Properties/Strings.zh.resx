@@ -145,6 +145,10 @@
     <value>Currency quotation</value>
     <comment>Котировки валют</comment>
   </data>
+  <data name="CoursesTableTitle" xml:space="preserve">
+    <value>汇率CBR</value>
+    <comment>Курсы валют ЦБ РФ</comment>
+  </data>
   <data name="EmployCall" xml:space="preserve">
     <value>Doctor's call</value>
     <comment>Вызов врача</comment>
@@ -164,6 +168,22 @@
   <data name="Marketnews" xml:space="preserve">
     <value>Market news</value>
     <comment>Новости рынка</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>姓名</value>
+    <comment>Имя</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>电话</value>
+    <comment>Телефон</comment>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>地点</value>
+    <comment>Место</comment>
+  </data>
+  <data name="RatesTitle" xml:space="preserve">
+    <value>货币</value>
+    <comment>Валюта</comment>
   </data>
   <data name="Rent" xml:space="preserve">
     <value>Rent of commercial premises</value>
