@@ -18,7 +18,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{block.Title}/Свободен"));
+			viewModel.SetSerializedJsonDataAsync();
 		}
 
 		public FormAppPage(Block block, int floor)
@@ -29,7 +29,7 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{block.Title}/Свободен"));
+			viewModel.SetSerializedJsonDataAsync();
 		}
 		#endregion
 	}

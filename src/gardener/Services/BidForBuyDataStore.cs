@@ -9,17 +9,12 @@ namespace gardener.Services
 	{
 		#region Data
 		#region Fields
-		private readonly Uri _createUri;
+		private const string Url = "http://tc.itmit-studio.ru/api/bidForBuy";
 		#endregion
 		#endregion
-
-		#region .ctor
-		public BidForBuyDataStore(Uri addItemUri) => _createUri = addItemUri;
-		#endregion
-
 		#region Public
-		public new async Task<bool> AddItemAsync(BidForBuy item) =>
-			await Task.FromResult(await SendForm(_createUri,
+		public override async Task<bool> AddItemAsync(BidForBuy item) =>
+			await Task.FromResult(await SendForm(new Uri(Url), 
 												 new Dictionary<string, string>
 												 {
 													 {
@@ -32,12 +27,20 @@ namespace gardener.Services
 														 "PhoneNumber", item.PhoneNumber
 													 },
 													 {
-														 "Block", item.Block
+														 "Block", item.Block.OriginalTitle
 													 },
 													 {
 														 "Floor", item.Floor.ToString()
 													 }
 												 }));
+
+		public override Task<bool> DeleteItemAsync(string id) => throw new NotImplementedException();
+
+		public override Task<BidForBuy> GetItemAsync(string id) => throw new NotImplementedException();
+
+		public override Task<IEnumerable<BidForBuy>> GetItemsAsync(bool forceRefresh = false) => throw new NotImplementedException();
+
+		public override Task<bool> UpdateItemAsync(BidForBuy item) => throw new NotImplementedException();
 		#endregion
 	}
 }

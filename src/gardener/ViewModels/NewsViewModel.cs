@@ -60,7 +60,7 @@ namespace gardener.ViewModels
 		#region Public
 		public async void UpdateNews()
 		{
-			News = await _newsDataStore.GetItemsAsync(true);
+			News = (ObservableCollection<News>)await _newsDataStore.GetItemsAsync(true);
 		}
 		#endregion
 

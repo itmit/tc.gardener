@@ -8,9 +8,9 @@
         <StackLayout Margin="10, 10" Orientation="Horizontal">
 
             <Label x:Name="PlaceTitle" FontSize="Large" TextColor="#333333" Margin="10, 0" />
-            <Label x:Name="RowTitle" FontSize="Large" TextColor="#333333" />
-
             <Label Text="{Binding PlaceNumber}" FontSize="Large" TextColor="#333333" Margin="10, 0" />
+
+            <Label x:Name="RowTitle" FontSize="Large" TextColor="#333333" />
             <Label Text="{Binding Row}" FontSize="Large" TextColor="#333333" />
 
         </StackLayout>

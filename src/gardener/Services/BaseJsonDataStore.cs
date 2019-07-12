@@ -34,6 +34,12 @@ namespace gardener.Services
 			get;
 			set;
 		}
+
+		public abstract Task<bool> AddItemAsync(T item);
+		public abstract Task<bool> DeleteItemAsync(string id);
+		public abstract Task<T> GetItemAsync(string id);
+		public abstract Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+		public abstract Task<bool> UpdateItemAsync(T item);
 		#endregion
 
 		#region Protected
@@ -84,15 +90,6 @@ namespace gardener.Services
 		#endregion
 
 		#region IDataStore<T> members
-		public Task<bool> AddItemAsync(T item) => throw new NotImplementedException();
-
-		public Task<bool> DeleteItemAsync(string id) => throw new NotImplementedException();
-
-		public Task<T> GetItemAsync(string id) => throw new NotImplementedException();
-
-		public Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false) => throw new NotImplementedException();
-
-		public Task<bool> UpdateItemAsync(T item) => throw new NotImplementedException();
 		#endregion
 	}
 }

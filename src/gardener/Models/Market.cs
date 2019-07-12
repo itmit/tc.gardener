@@ -18,8 +18,9 @@ namespace gardener.Models
 				new Block
 				{
 					ImagePath = "veschevye_ryady.jpg",
-					Title = Properties.Strings.Clothingseries
-                },
+					Title = Properties.Strings.Clothingseries,
+					OriginalTitle = "Вещевые ряды"
+				},
 				new Block
 				{
 					ImagePath = "tts_sadovod.jpg",
@@ -34,33 +35,39 @@ namespace gardener.Models
 						{
 							Value = 2
 						}
-					}
+					},
+					OriginalTitle = "ТЦ Садовод"
 				},
 				new Block
 				{
 					ImagePath = "mex.png",
-					Title = Properties.Strings.Furandleather
-                },
+					Title = Properties.Strings.Furandleather,
+					OriginalTitle = "Меха и кожа"
+				},
 				new Block
 				{
 					ImagePath = "paltovy_krug.png",
-					Title = Properties.Strings.Coatcircle
-                },
+					Title = Properties.Strings.Coatcircle,
+					OriginalTitle = "Пальтовый круг"
+				},
 				new Block
 				{
 					ImagePath = "svadebnaya_galereya_SALYuT.jpg",
-					Title = Properties.Strings.Weddinggallery
-                },
+					Title = Properties.Strings.Weddinggallery,
+					OriginalTitle = "Свадебная галерея 'САЛЮТ'"
+				},
 				new Block
 				{
 					ImagePath = "kovr_tekst.jpg",
-					Title = Properties.Strings.Carpetsandtextiles
-                },
+					Title = Properties.Strings.Carpetsandtextiles,
+					OriginalTitle = "Ковры и текстиль"
+				},
 				new Block
 				{
 					ImagePath = "novy_tts.png",
 					Title = Properties.Strings.Thenewshoppingcenter,
-					IsActive = false
+					IsActive = false,
+					OriginalTitle = "Новый ТЦ"
 				}
 			};
 		#endregion

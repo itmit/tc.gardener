@@ -26,13 +26,13 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region .ctor
-		public FormAppSaleViewModel(Block block, int floor, Uri url, string title)
+		public FormAppSaleViewModel(Block block, int floor, string title)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
 			SendFormCommand = new RelayCommand(x =>
 											   {
-												   ExecuteSendFormCommand(url);
+												   ExecuteSendFormCommand();
 											   },
 											   x => true);
 			_block = block;
@@ -63,13 +63,13 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-		public FormAppSaleViewModel(Block block, int floor, Uri url, string title, Action<bool> onSendFormAction)
+		public FormAppSaleViewModel(Block block, int floor, string title, Action<bool> onSendFormAction)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
 			SendFormCommand = new RelayCommand(x =>
 											   {
-												   ExecuteSendFormCommand(url);
+												   ExecuteSendFormCommand();
 											   },
 											   x => true);
 			_block = block;
@@ -125,12 +125,12 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Private
-		private async void ExecuteSendFormCommand(Uri url)
+		private async void ExecuteSendFormCommand()
 		{
 			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
-				var service = new BidForSaleDataStore(url);
+				var service = new BidForSaleDataStore();
 
 				if (await service.AddItemAsync(new BidForSale(PlaceNumber, Name, PhoneNumber, _block, _floor)))
 				{

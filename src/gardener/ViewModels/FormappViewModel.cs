@@ -46,17 +46,17 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Public
-		public async void SetSerializedJsonDataAsync(Uri url, bool force = false)
+		public async void SetSerializedJsonDataAsync(bool force = false)
 		{
 			if (_block.Places == null)
 			{
 				if (CrossConnectivity.Current.IsConnected)
 				{
-					var service = new PlaceDataStore(url);
+					var service = new PlaceDataStore();
 
 					IsBusy = true;
-					_block.Places = await service.GetItemsAsync(_block.Places != null && _block.Places.Count > 0 || force);
-
+					_block.Places = (ObservableCollection<Place>)await service.GetItemsFromBlockAsync(_block, _block.Places != null && _block.Places.Count > 0 || force);
+					
 					if (_floor > 0)
 					{
 						PlaceCollection = (ObservableCollection<Place>) _block.Places.Where(x => x.Floor == _floor);
@@ -82,7 +82,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			SetSerializedJsonDataAsync(new Uri($"http://tc.itmit-studio.ru/api/places/{_block.Title}/Свободен"), true);
+			SetSerializedJsonDataAsync(true);
 			Title = Properties.Strings.FreePlace;
 		}
 	}

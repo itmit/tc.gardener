@@ -8,8 +8,7 @@
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
-			Block = block.Title;
-			Floor = 1;
+			Block = block;
 		}
 
 		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, int floor)
@@ -17,13 +16,13 @@
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
-			Block = block.Title;
+			Block = block;
 			Floor = floor;
 		}
 		#endregion
 
 		#region Properties
-		public string Block
+		public Block Block
 		{
 			get;
 			set;

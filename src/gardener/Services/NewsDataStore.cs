@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net;
 using System.Threading.Tasks;
@@ -21,7 +22,13 @@ namespace gardener.Services
 		#endregion
 
 		#region Public
-		public new async Task<ObservableCollection<News>> GetItemsAsync(bool forceRefresh = false)
+		public override Task<bool> AddItemAsync(News item) => throw new NotImplementedException();
+
+		public override Task<bool> DeleteItemAsync(string id) => throw new NotImplementedException();
+
+		public override Task<News> GetItemAsync(string id) => throw new NotImplementedException();
+
+		public override async Task<IEnumerable<News>> GetItemsAsync(bool forceRefresh = false)
 		{
 			if (Items.Count > 0 && !forceRefresh)
 			{
@@ -44,6 +51,8 @@ namespace gardener.Services
 
 			return Items;
 		}
+
+		public override Task<bool> UpdateItemAsync(News item) => throw new NotImplementedException();
 		#endregion
 	}
 }

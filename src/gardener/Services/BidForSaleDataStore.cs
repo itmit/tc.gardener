@@ -8,18 +8,15 @@ namespace gardener.Services
 	public class BidForSaleDataStore : BaseJsonDataStore<BidForSale>
 	{
 		#region Data
-		#region Fields
-		private readonly Uri _createUri;
-		#endregion
-		#endregion
+		#region Fields		
+		private const string Url = "http://tc.itmit-studio.ru/api/bidForSale";
 
-		#region .ctor
-		public BidForSaleDataStore(Uri addItemUri) => _createUri = addItemUri;
+		#endregion
 		#endregion
 
 		#region Public
-		public new async Task<bool> AddItemAsync(BidForSale item) =>
-			await Task.FromResult(await SendForm(_createUri,
+		public override async Task<bool> AddItemAsync(BidForSale item) =>
+			await Task.FromResult(await SendForm(new Uri(Url), 
 												 new Dictionary<string, string>
 												 {
 													 {
@@ -32,12 +29,20 @@ namespace gardener.Services
 														 "PhoneNumber", item.PhoneNumber
 													 },
 													 {
-														 "Block", item.Block
+														 "Block", item.Block.OriginalTitle
 													 },
 													 {
 														 "Floor", item.Floor.ToString()
 													 }
 												 }));
+
+		public override Task<bool> DeleteItemAsync(string id) => throw new NotImplementedException();
+
+		public override Task<BidForSale> GetItemAsync(string id) => throw new NotImplementedException();
+
+		public override Task<IEnumerable<BidForSale>> GetItemsAsync(bool forceRefresh = false) => throw new NotImplementedException();
+
+		public override Task<bool> UpdateItemAsync(BidForSale item) => throw new NotImplementedException();
 		#endregion
 	}
 }

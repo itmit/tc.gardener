@@ -67,6 +67,15 @@ namespace gardener.Models
 			get;
 			set;
 		}
+
+		/// <summary>
+		/// Возвращает или устанавливает оригинальное название блока, на русском.
+		/// </summary>
+		public string OriginalTitle
+		{
+			get;
+			set;
+		}
 		#endregion
 	}
 }
