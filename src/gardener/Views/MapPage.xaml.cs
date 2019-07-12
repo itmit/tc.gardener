@@ -17,7 +17,16 @@ namespace gardener.Views
 			InitializeComponent ();
 
 			BaseViewModel.LanguageChangeEvent += OnLanguageChangeEvent;
+			SetImages();
+		}
 
+		private void OnLanguageChangeEvent()
+		{
+			SetImages();
+		}
+
+		private void SetImages()
+		{
 			if (Thread.CurrentThread.CurrentUICulture.Name == "ru-RU")
 			{
 				Tc2.Source = "tc2.png";
@@ -37,30 +46,6 @@ namespace gardener.Views
 				Tc6.Source = "entc6.png";
 				Tc7.Source = "entc7.png";
 				Tc9.Source = "entc9.png";
-			}
-		}
-
-		private void OnLanguageChangeEvent()
-		{
-			if (Thread.CurrentThread.CurrentUICulture.Name == "ru-RU")
-			{
-				Tc2.Source = "tc2.png";
-				Tc3.Source = "tc3.png";
-				Tc4.Source = "tc4.png";
-				Tc5.Source = "tc5.png";
-				Tc6.Source = "tc6.png";
-				Tc7.Source = "tc7.png";
-				Tc9.Source = "tc9.png";
-			}
-			else
-			{
-				Tc2.Source = "en/tc2.png";
-				Tc3.Source = "en/tc3.png";
-				Tc4.Source = "en/tc4.png";
-				Tc5.Source = "en/tc5.png";
-				Tc6.Source = "en/tc6.png";
-				Tc7.Source = "en/tc7.png";
-				Tc9.Source = "en/tc9.png";
 			}
 		}
 
