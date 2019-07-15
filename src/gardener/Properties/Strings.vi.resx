@@ -138,7 +138,7 @@
     <comment>Внимание</comment>
   </data>
   <data name="CallSecurity" xml:space="preserve">
-    <value>Call security</value>
+    <value>Gọi an ninh</value>
     <comment>Вызов охраны</comment>
   </data>
   <data name="Carpetsandtextiles" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>Пальтовый круг</comment>
   </data>
   <data name="Course" xml:space="preserve">
-    <value>Currency quotation</value>
+    <value>Tệ báo</value>
     <comment>Котировки валют</comment>
   </data>
   <data name="CoursesTableTitle" xml:space="preserve">
@@ -182,7 +182,7 @@
     <comment>Выбор действия</comment>
   </data>
   <data name="Map" xml:space="preserve">
-    <value>The scheme of the market</value>
+    <value>Chương trình của thị trường</value>
     <comment>Схема рынка</comment>
   </data>
   <data name="Marketnews" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Валюта</comment>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>Rent of commercial premises</value>
+    <value>Thuê của cơ sở thương mại</value>
     <comment>Аренда торговых помещений</comment>
   </data>
   <data name="RentSalePageTitle" xml:space="preserve">
@@ -262,7 +262,7 @@
     <comment>Этаж</comment>
   </data>
   <data name="News" xml:space="preserve">
-    <value>Market news</value>
+    <value>Tin tức thị trường</value>
     <comment>Новости рынка</comment>
   </data>
 </root>

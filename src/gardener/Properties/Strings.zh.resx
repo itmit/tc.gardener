@@ -138,7 +138,7 @@
     <comment>Внимание</comment>
   </data>
   <data name="CallSecurity" xml:space="preserve">
-    <value>Call security</value>
+    <value>呼叫安全</value>
     <comment>Вызов охраны</comment>
   </data>
   <data name="Carpetsandtextiles" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>Пальтовый круг</comment>
   </data>
   <data name="Course" xml:space="preserve">
-    <value>Currency quotation</value>
+    <value>货币报价</value>
     <comment>Котировки валют</comment>
   </data>
   <data name="CoursesTableTitle" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>Курсы валют ЦБ РФ</comment>
   </data>
   <data name="EmployCall" xml:space="preserve">
-    <value>Doctor's call</value>
+    <value>医生的电话</value>
     <comment>Вызов врача</comment>
   </data>
   <data name="Errorsubmittingform" xml:space="preserve">
@@ -182,7 +182,7 @@
     <comment>Выбор действия</comment>
   </data>
   <data name="Map" xml:space="preserve">
-    <value>The scheme of the market</value>
+    <value>市场计划</value>
     <comment>Схема рынка</comment>
   </data>
   <data name="Marketnews" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Валюта</comment>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>Rent of commercial premises</value>
+    <value>商业楼宇租金</value>
     <comment>Аренда торговых помещений</comment>
   </data>
   <data name="RentSalePageTitle" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Список свободных помещений</comment>
   </data>
   <data name="Selling" xml:space="preserve">
-    <value>Calling the master (Lyon)</value>
+    <value>呼叫主人（里昂)</value>
     <comment>Вызов мастера (Лайон)</comment>
   </data>
   <data name="SendButtonText" xml:space="preserve">
@@ -262,7 +262,7 @@
     <comment>Этаж</comment>
   </data>
   <data name="News" xml:space="preserve">
-    <value>Market news</value>
+    <value>市场新闻</value>
     <comment>Новости рынка</comment>
   </data>
 </root>
