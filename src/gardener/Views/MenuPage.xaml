@@ -8,7 +8,20 @@
         <StackLayout VerticalOptions="FillAndExpand" HeightRequest="230" BackgroundColor="#fcf7f1">
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <Image Source="mLogo1.png" Margin="10" />
-                <Label Text="САДОВОД" TextColor="#9e4819" FontSize="20" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Source="rus.png" WidthRequest="40" Clicked="Button_OnClicked" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" Margin="8"/>
+                    <ImageButton Source="zh.png" WidthRequest="40" Clicked="Button_OnClicked1" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0" Margin="8"/>
+                    <ImageButton Source="vietnam" WidthRequest="40" Clicked="Button_OnClicked3" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Grid.Column="2" Grid.Row="0" Margin="8"/>
+                </Grid>
+                <Label Text="САДОВОД" TextColor="#9e4819" FontSize="20" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f7ecdd">
@@ -25,9 +38,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Русский" Clicked="Button_OnClicked"/>
-            <Button Text="中国" Clicked="Button_OnClicked1"/>
-            <Button Text="Tiếng việt" Clicked="Button_OnClicked3"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
