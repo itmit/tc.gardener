@@ -14,7 +14,9 @@ namespace gardener.Views.BlocksViews
 			PlaceTitle.Text = Properties.Strings.Place;
 			RowTitle.Text = Properties.Strings.Row;
 			BaseViewModel.LanguageChangeEvent += OnLanguageChangeEvent;
-		}
+
+            BindingContext = new PlaceViewModel();
+        }
 		#endregion
 
 		private void OnLanguageChangeEvent()
@@ -22,5 +24,7 @@ namespace gardener.Views.BlocksViews
 			PlaceTitle.Text = Properties.Strings.Place;
 			RowTitle.Text = Properties.Strings.Row;
 		}
+        
+        
 	}
 }

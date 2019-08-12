@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gardener="clr-namespace:gardener"
+             mc:Ignorable="d"
+             x:Class="gardener.Views.ReservationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="30,10,30,10" WidthRequest="300">
+                <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
+                                        PlaceholderColor="#7a7a7a"
+                                        IsEnabled="False"    />
+                <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
+                                        PlaceholderColor="#7a7a7a"
+                                        IsEnabled="False" />
+                <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
+                                        PlaceholderColor="#7a7a7a" Keyboard="Numeric">
+                    <gardener:ExtendedEntry.Behaviors>
+                        <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
+                    </gardener:ExtendedEntry.Behaviors>
+                </gardener:ExtendedEntry>
+            </StackLayout>
+            <Button Text="Забронировать" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                        WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                        />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
