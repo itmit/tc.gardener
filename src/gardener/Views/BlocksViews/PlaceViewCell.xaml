@@ -7,7 +7,7 @@
     <ViewCell.View>
         <StackLayout Margin="10, 10" Orientation="Horizontal">
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding Resevation}" 
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
                                       NumberOfTapsRequired="1"/>
             </StackLayout.GestureRecognizers>
             <Label x:Name="PlaceTitle" FontSize="Large" TextColor="#333333" Margin="10, 0" />

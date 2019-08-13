@@ -27,7 +27,10 @@ namespace gardener.ViewModels
 			Title = Properties.Strings.FreePlace;
 		}
 
-		public FormAppViewModel(Block block, int floor)
+       // Replaced = new ReplacedCommand({
+       // });
+
+        public FormAppViewModel(Block block, int floor)
 		{
 			_block = block;
 			_floor = floor;

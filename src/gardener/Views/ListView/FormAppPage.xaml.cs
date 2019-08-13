@@ -19,7 +19,8 @@ namespace gardener.Views.ListView
 			BindingContext = viewModel;
 
 			viewModel.SetSerializedJsonDataAsync();
-		}
+
+        }
 
 		public FormAppPage(Block block, int floor)
 		{
