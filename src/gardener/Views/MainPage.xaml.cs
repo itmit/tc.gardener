@@ -43,7 +43,7 @@ namespace gardener.Views
 			}
 			catch (FeatureNotSupportedException ex)
 			{
-				// Phone Dialer is not supported on this device.
+				// PhoneNumber Dialer is not supported on this device.
 			}
 			catch (Exception ex)
 			{

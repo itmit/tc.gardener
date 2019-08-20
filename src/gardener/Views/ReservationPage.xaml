@@ -20,13 +20,16 @@
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         PlaceholderColor="#7a7a7a"
                                         Placeholder="Имя"
-                                        IsEnabled="False"    />
+                                        Text="{Binding FirstName}"
+                                        />
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         PlaceholderColor="#7a7a7a"
                                         Placeholder="Фамилия"
-                                        IsEnabled="False" />
+                                        Text="{Binding LastName}"
+                                        />
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         Placeholder="Номер"
+                                        Text="{Binding Place.PlaceNumber}"
                                         PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                     <gardener:ExtendedEntry.Behaviors>
                         <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
@@ -36,6 +39,7 @@
             <Button Text="Забронировать" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                        Command="{Binding ReservationCommand}"
                         />
         </StackLayout>
     </ContentPage.Content>

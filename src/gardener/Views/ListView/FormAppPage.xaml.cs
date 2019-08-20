@@ -14,7 +14,7 @@ namespace gardener.Views.ListView
 		{
 			InitializeComponent();
 
-			var viewModel = new FormAppViewModel(block);
+			var viewModel = new FormAppViewModel(block, Navigation);
 
 			BindingContext = viewModel;
 
@@ -26,7 +26,7 @@ namespace gardener.Views.ListView
 		{
 			InitializeComponent();
 
-			var viewModel = new FormAppViewModel(block, floor);
+			var viewModel = new FormAppViewModel(block, floor, Navigation);
 
 			BindingContext = viewModel;
 

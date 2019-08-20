@@ -25,10 +25,5 @@ namespace gardener.Views.BlocksViews
 			PlaceTitle.Text = Properties.Strings.Place;
 			RowTitle.Text = Properties.Strings.Row;
 		}
-
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new ReservationPage());
-        }
     }
 }

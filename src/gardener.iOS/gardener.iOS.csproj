@@ -144,4 +144,100 @@
       <Name>gardener</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CNY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\entc9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\EUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\GBP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\JPY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mLogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\novy_tts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paltovy_krug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pict_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tc9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UAH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\USD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vietnam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zh.png" />
+  </ItemGroup>
 </Project>

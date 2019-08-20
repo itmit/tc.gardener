@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using gardener.Models;
 using gardener.Services;
+using gardener.Views;
 using Plugin.Connectivity;
+using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
@@ -15,22 +17,22 @@ namespace gardener.ViewModels
 		private readonly Block _block;
 		private readonly int _floor;
 		private ObservableCollection<Place> _placeCollection;
+		private Place _selectedPlace;
+		private readonly INavigation _navigation;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppViewModel(Block block)
+		public FormAppViewModel(Block block, INavigation navigation)
 		{
+			_navigation = navigation;
 			_block = block;
 			_placeCollection = new ObservableCollection<Place>();
 
 			Title = Properties.Strings.FreePlace;
 		}
 
-       // Replaced = new ReplacedCommand({
-       // });
-
-        public FormAppViewModel(Block block, int floor)
+        public FormAppViewModel(Block block, int floor, INavigation navigation)
 		{
 			_block = block;
 			_floor = floor;
@@ -41,6 +43,24 @@ namespace gardener.ViewModels
 		#endregion
 
 		#region Properties
+		public Place SelectedPlace
+		{
+			get => _selectedPlace;
+			set
+			{
+				_selectedPlace = value;
+				if (value != null)
+				{
+					_navigation.PushAsync(new ReservationPage(_selectedPlace));
+					
+
+					_selectedPlace = null;
+				}
+
+				OnPropertyChanged(nameof(SelectedPlace));
+			}
+		}
+
 		public ObservableCollection<Place> PlaceCollection
 		{
 			get => _placeCollection;
