@@ -61,8 +61,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -128,6 +129,17 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\kovr_tekst.png" />
+    <BundleResource Include="Resources\tts_sadovod.png" />
+    <BundleResource Include="Resources\svadebnaya_galereya_SALYuT.png" />
+    <BundleResource Include="Resources\mex.png" />
+    <BundleResource Include="Resources\maptc.png" />
+    <BundleResource Include="Resources\veschevye_ryady.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\87.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

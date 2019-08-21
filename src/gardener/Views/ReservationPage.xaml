@@ -11,11 +11,11 @@
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Место: " FontSize="Large"/>
-                    <Label Text="1" FontSize="Large"/>
+                    <Label Text="{Binding Place.PlaceNumber}" FontSize="Large"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Ряд: " FontSize="Large"/>
-                    <Label Text="2" FontSize="Large"/>
+                    <Label Text="{Binding Place.Row}" FontSize="Large"/>
                 </StackLayout>
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         PlaceholderColor="#7a7a7a"
@@ -29,7 +29,7 @@
                                         />
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         Placeholder="Номер"
-                                        Text="{Binding Place.PlaceNumber}"
+                                        Text="{Binding PhoneNumber}"
                                         PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                     <gardener:ExtendedEntry.Behaviors>
                         <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
