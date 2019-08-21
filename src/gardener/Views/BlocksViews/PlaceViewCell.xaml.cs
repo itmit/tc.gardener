@@ -1,5 +1,4 @@
-﻿using Android.Content.Res;
-using gardener.ViewModels;
+﻿using gardener.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
