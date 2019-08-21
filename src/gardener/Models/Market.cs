@@ -17,13 +17,13 @@ namespace gardener.Models
 			{
 				new Block
 				{
-					ImagePath = "veschevye_ryady.jpg",
+					ImagePath = "veschevye_ryady.png",
 					Title = Properties.Strings.Clothingseries,
 					OriginalTitle = "Вещевые ряды"
 				},
 				new Block
 				{
-					ImagePath = "tts_sadovod.jpg",
+					ImagePath = "tts_sadovod.png",
 					Title = Properties.Strings.Ttsgreenthumb,
 					Floors = new List<Floor>
 					{
@@ -52,13 +52,13 @@ namespace gardener.Models
 				},
 				new Block
 				{
-					ImagePath = "svadebnaya_galereya_SALYuT.jpg",
+					ImagePath = "svadebnaya_galereya_SALYuT.png",
 					Title = Properties.Strings.Weddinggallery,
 					OriginalTitle = "Свадебная галерея 'САЛЮТ'"
 				},
 				new Block
 				{
-					ImagePath = "kovr_tekst.jpg",
+					ImagePath = "kovr_tekst.png",
 					Title = Properties.Strings.Carpetsandtextiles,
 					OriginalTitle = "Ковры и текстиль"
 				},

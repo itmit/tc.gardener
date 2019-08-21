@@ -23,7 +23,11 @@ namespace gardener.Droid.Renderers
         private float mScale = 1f;
         private ScaleGestureDetector mScaleDetector;
 
-        protected override void OnElementChanged(VisualElementChangedEventArgs e)
+		public ZoomScrollViewRenderer(Context context)
+			: base(context)
+		{ }
+
+		protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
 
             base.OnElementChanged(e);

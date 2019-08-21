@@ -14,7 +14,7 @@
                                  HorizontalOptions="Center"
                                  WidthRequest="400"
                                  BackgroundColor="Transparent"
-                                 Source="maptc.jpg"/>
+                                 Source="maptc.png"/>
                     <ImageButton AbsoluteLayout.LayoutFlags="PositionProportional"
                                AbsoluteLayout.LayoutBounds="0.45, 0.31, AutoSize, AutoSize"
                                HorizontalOptions="Center"
