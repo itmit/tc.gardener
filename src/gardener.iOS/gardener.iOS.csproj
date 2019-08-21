@@ -70,6 +70,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\CustomEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -140,7 +141,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\gardener\gardener.csproj">
-      <Project>{53813204-5D91-4DE7-903E-4C9A4ACE446C}</Project>
+      <Project>{808AD66E-3E73-4346-A342-6A92A7F574C5}</Project>
       <Name>gardener</Name>
     </ProjectReference>
   </ItemGroup>
@@ -239,5 +240,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\zh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
   </ItemGroup>
 </Project>
