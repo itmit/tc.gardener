@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using gardener.Models;
+using gardener.Services;
 using gardener.Views.ListView;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -31,25 +32,13 @@ namespace gardener.Views
 		#endregion
 
 		#region Public
-		public async Task Call(string number)
+		public void Call(string number)
 		{
-			try
-			{
-				PhoneDialer.Open(number);
-			}
-			catch (ArgumentNullException anEx)
-			{
-				// Number was null or white space
-			}
-			catch (FeatureNotSupportedException ex)
-			{
-				// PhoneNumber Dialer is not supported on this device.
-			}
-			catch (Exception ex)
-			{
-				// Other error has occurred.
-			}
-		}
+            Task.Run(() =>
+            {
+                DependencyService.Get<IPhoneCall>().MakeQuickCall(number);
+            });
+        }
 
 		public async Task NavigateFromMenu(int id)
 		{
@@ -61,16 +50,16 @@ namespace gardener.Views
 						MenuPages.Add(id, new NavigationPage(new RentSalePage()));
 						break;
 					case (int) MenuItemType.Selling:
-						await Call("84996371111");
+						Call("84996371111");
 						return;
 					case (int) MenuItemType.News:
 						MenuPages.Add(id, new NavigationPage(new NewsPage()));
 						break;
 					case (int) MenuItemType.EmployCall:
-						await Call("89153991269");
+						Call("89153991269");
 						return;
 					case (int) MenuItemType.CallSecurity:
-						await Call("89261505109");
+						Call("89261505109");
 						return;
 					case (int) MenuItemType.Course:
 						MenuPages.Add(id, new NavigationPage(new CoursePage()));
