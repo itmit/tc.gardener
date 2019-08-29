@@ -265,4 +265,16 @@
     <value>Tin tức thị trường</value>
     <comment>Новости рынка</comment>
   </data>
+  <data name="LastName" xml:space="preserve">
+    <value>họ</value>
+    <comment>Фамилия</comment>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>con số</value>
+    <comment>Номер</comment>
+  </data>
+  <data name="Reservation" xml:space="preserve">
+    <value>Đặt ngay</value>
+    <comment>Забронировать</comment>
+  </data>
 </root>

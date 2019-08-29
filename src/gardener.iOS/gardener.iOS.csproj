@@ -135,11 +135,21 @@
     <BundleResource Include="Resources\mex.png" />
     <BundleResource Include="Resources\maptc.png" />
     <BundleResource Include="Resources\veschevye_ryady.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views;
@@ -19,6 +20,7 @@ namespace gardener.ViewModels
 		private ObservableCollection<Place> _placeCollection;
 		private Place _selectedPlace;
 		private readonly INavigation _navigation;
+		private Timer _timer;
 		#endregion
 		#endregion
 
@@ -30,6 +32,7 @@ namespace gardener.ViewModels
 			_placeCollection = new ObservableCollection<Place>();
 
 			Title = Properties.Strings.FreePlace;
+			_timer = new Timer(UpdatePlaceList, null, 0, 15000);
 		}
 
         public FormAppViewModel(Block block, int floor, INavigation navigation)
@@ -39,8 +42,15 @@ namespace gardener.ViewModels
 			_placeCollection = new ObservableCollection<Place>();
 
 			Title = Properties.Strings.FreePlace;
+
+			_timer = new Timer(UpdatePlaceList, null, 0, 15000);
 		}
 		#endregion
+
+		private void UpdatePlaceList(object obj)
+		{
+			SetSerializedJsonDataAsync(true);
+		}
 
 		#region Properties
 		public Place SelectedPlace
@@ -71,7 +81,7 @@ namespace gardener.ViewModels
 		#region Public
 		public async void SetSerializedJsonDataAsync(bool force = false)
 		{
-			if (_block.Places == null)
+			if (_block.Places == null || force)
 			{
 				if (CrossConnectivity.Current.IsConnected)
 				{

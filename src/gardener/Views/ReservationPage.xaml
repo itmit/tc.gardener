@@ -4,31 +4,32 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gardener="clr-namespace:gardener"
+             xmlns:properties="clr-namespace:gardener.Properties"
              mc:Ignorable="d"
              x:Class="gardener.Views.ReservationPage">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Margin="30,10,30,10" WidthRequest="300">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Место: " FontSize="Large"/>
+                    <Label Text="{Binding PlaceTitle}" FontSize="Large"/>
                     <Label Text="{Binding Place.PlaceNumber}" FontSize="Large"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Ряд: " FontSize="Large"/>
+                    <Label Text="{Binding RowTitle}" FontSize="Large"/>
                     <Label Text="{Binding Place.Row}" FontSize="Large"/>
                 </StackLayout>
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         PlaceholderColor="#7a7a7a"
-                                        Placeholder="Имя"
+                                        Placeholder="{Binding NameTitle}"
                                         Text="{Binding FirstName}"
                                         />
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
                                         PlaceholderColor="#7a7a7a"
-                                        Placeholder="Фамилия"
+                                        Placeholder="{Binding LastNameTitle}"
                                         Text="{Binding LastName}"
                                         />
                 <gardener:ExtendedEntry FontSize="Large" TextColor="#9e4819"
-                                        Placeholder="Номер"
+                                        Placeholder="{Binding NumberTitle}"
                                         Text="{Binding PhoneNumber}"
                                         PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                     <gardener:ExtendedEntry.Behaviors>
@@ -36,7 +37,7 @@
                     </gardener:ExtendedEntry.Behaviors>
                 </gardener:ExtendedEntry>
             </StackLayout>
-            <Button Text="Забронировать" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+            <Button Text="{Binding ReservationTitle}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
                         WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
                         Command="{Binding ReservationCommand}"

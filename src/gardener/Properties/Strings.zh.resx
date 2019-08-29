@@ -265,4 +265,16 @@
     <value>市场新闻</value>
     <comment>Новости рынка</comment>
   </data>
+  <data name="LastName" xml:space="preserve">
+    <value>姓</value>
+    <comment>Фамилия</comment>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数</value>
+    <comment>Номер</comment>
+  </data>
+  <data name="Reservation" xml:space="preserve">
+    <value>现在预订</value>
+    <comment>Забронировать</comment>
+  </data>
 </root>

@@ -205,6 +205,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Фамилия.
+        /// </summary>
+        internal static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Список свободных помещений.
         /// </summary>
         internal static string Listofavailablepremises {
@@ -259,6 +268,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Номер.
+        /// </summary>
+        internal static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         internal static string Ok {
@@ -309,6 +327,15 @@ namespace gardener.Properties {
         internal static string RentSalePageTitle {
             get {
                 return ResourceManager.GetString("RentSalePageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Забронировать.
+        /// </summary>
+        internal static string Reservation {
+            get {
+                return ResourceManager.GetString("Reservation", resourceCulture);
             }
         }
         
