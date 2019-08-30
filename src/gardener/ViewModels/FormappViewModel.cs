@@ -20,7 +20,7 @@ namespace gardener.ViewModels
 		private ObservableCollection<Place> _placeCollection;
 		private Place _selectedPlace;
 		private readonly INavigation _navigation;
-		private Timer _timer;
+		private readonly Timer _timer;
 		#endregion
 		#endregion
 
@@ -49,6 +49,11 @@ namespace gardener.ViewModels
 
 		private void UpdatePlaceList(object obj)
 		{
+			if (_timer == null)
+			{
+				return;
+			}
+
 			SetSerializedJsonDataAsync(true);
 		}
 

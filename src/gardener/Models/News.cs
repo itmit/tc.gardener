@@ -1,10 +1,25 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
+using Realms;
 
 namespace gardener.Models
 {
-	public class News
+	public class News : RealmObject
 	{
 		#region Properties
+		public string Uuid
+		{
+			get;
+			set;
+		} = Guid.NewGuid().ToString();
+
+		[JsonProperty("created_at")]
+		public DateTimeOffset CreatedAt
+		{
+			get;
+			set;
+		}
+
 		[JsonProperty("picture")]
 		public string ImageUrl
 		{
