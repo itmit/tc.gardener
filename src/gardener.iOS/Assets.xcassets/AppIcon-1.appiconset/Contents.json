@@ -25,21 +25,25 @@
       "idiom": "iphone"
     },
     {
+      "filename": "l_80x80 (1).png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
+      "filename": "l_120x120 (1).png",
       "size": "40x40",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
+      "filename": "l_120x120 (1)-1.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
+      "filename": "l_180x180 (1).png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "iphone"
@@ -231,5 +235,8 @@
   "info": {
     "version": 1,
     "author": "xcode"
+  },
+  "properties": {
+    "pre-rendered": true
   }
 }
