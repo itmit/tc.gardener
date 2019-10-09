@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views;
@@ -60,7 +61,9 @@ namespace gardener.ViewModels
 		#region Public
 		public async void UpdateNews()
 		{
-			News = (ObservableCollection<News>)await _newsDataStore.GetItemsAsync(true);
+			News = new ObservableCollection<News>(
+                (await _newsDataStore.GetItemsAsync(true)).OrderByDescending(x => x.CreatedAt)
+                );
 		}
 		#endregion
 
