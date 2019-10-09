@@ -42,14 +42,6 @@ namespace gardener.ViewModels
 			get => _selectedItem;
 			set
 			{
-				if (value != null)
-				{
-					if (value.Title == Properties.Strings.Thenewshoppingcenter)
-					{
-						return;
-					}
-				}
-
 				_selectedItem = value;
 				if (value != null)
 				{

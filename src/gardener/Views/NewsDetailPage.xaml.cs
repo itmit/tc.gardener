@@ -25,7 +25,6 @@ namespace gardener.Views
 			{
 				Html = news.Text
 			};
-			webView.HeightRequest = news.Text.Length / 2;
 			webView.Source = htmlSource;
 			webView.VerticalOptions = LayoutOptions.FillAndExpand;
 			webView.HorizontalOptions = LayoutOptions.FillAndExpand;

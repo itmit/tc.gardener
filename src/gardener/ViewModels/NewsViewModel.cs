@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views;
@@ -12,6 +13,7 @@ namespace gardener.ViewModels
 		#region Data
 		#region Fields
 		private readonly INavigation _navigation;
+       
 		private ObservableCollection<News> _news;
 		private readonly NewsDataStore _newsDataStore;
 		private News _selectedItem;
@@ -22,8 +24,8 @@ namespace gardener.ViewModels
 		public NewsViewModel(INavigation navigation, NewsDataStore newsService)
 		{
 			_newsDataStore = newsService;
-			_news = new ObservableCollection<News>();
-			_navigation = navigation;
+            _news = new ObservableCollection<News>();
+            _navigation = navigation;
 
 			Title = Properties.Strings.Marketnews;
 		}
@@ -60,8 +62,8 @@ namespace gardener.ViewModels
 		#region Public
 		public async void UpdateNews()
 		{
-			News = (ObservableCollection<News>)await _newsDataStore.GetItemsAsync(true);
-		}
+            News = new ObservableCollection<News>((await _newsDataStore.GetItemsAsync(true)).OrderByDescending(news => news.CreatedAt).ToList());
+        }
 		#endregion
 
 		protected override void OnLanguageChanged()

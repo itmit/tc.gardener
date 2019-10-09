@@ -62,12 +62,22 @@ namespace gardener.Models
 					Title = Properties.Strings.Carpetsandtextiles,
 					OriginalTitle = "Ковры и текстиль"
 				},
-				new Block
+                new Block
 				{
 					ImagePath = "novy_tts.png",
 					Title = Properties.Strings.Thenewshoppingcenter,
-					IsActive = false,
-					OriginalTitle = "Новый ТЦ"
+                    Floors = new List<Floor>
+                    {
+                        new Floor
+                        {
+                            Value = 1
+                        },
+                        new Floor
+                        {
+                            Value = 2
+                        }
+                    },
+                    OriginalTitle = "Новый ТЦ"
 				}
 			};
 		#endregion
