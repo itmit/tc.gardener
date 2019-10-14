@@ -3,8 +3,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using System.Linq;
 using gardener.iOS.Renderers;
+using gardener.Controls;
 
-[assembly: ExportRenderer(typeof(ScrollView), typeof(ZoomScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(ZoomScroll), typeof(ZoomScrollViewRenderer))]
 namespace gardener.iOS.Renderers
 {
     public class ZoomScrollViewRenderer : ScrollViewRenderer

@@ -4,9 +4,11 @@
              xmlns:local="clr-namespace:gardener.Extensions"
              x:Class="gardener.Views.MapPage"
              xmlns:ex="clr-namespace:gardener.Controls"
+             xmlns:zsv="clr-namespace:Xamarin.Forms.ZoomScrollView;assembly=Xamarin.Forms.ZoomScrollView"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <ex:ZoomScroll Orientation="Horizontal" HorizontalOptions="Fill">
+        <zsv:ZoomScrollView Orientation="Both" HorizontalOptions="Fill" MinimumZoomScale="1"
+                            MaximumZoomScale="3">
             <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center" x:Name="MapGardener" HeightRequest="600" WidthRequest="400">
                 <Image AbsoluteLayout.LayoutFlags="PositionProportional"
                                  AbsoluteLayout.LayoutBounds="0, 0.3, AutoSize, AutoSize"
@@ -64,6 +66,6 @@
                                x:Name="Tc3"
                                Clicked="ImageButton_Clicked_7"/>
             </AbsoluteLayout>
-        </ex:ZoomScroll>
+        </zsv:ZoomScrollView>
     </ContentPage.Content>
 </ContentPage>
