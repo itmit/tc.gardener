@@ -162,7 +162,7 @@
     <comment>Курсы валют ЦБ РФ</comment>
   </data>
   <data name="EmployCall" xml:space="preserve">
-    <value>Doctor's call</value>
+    <value>Bác sĩ</value>
     <comment>Вызов врача</comment>
   </data>
   <data name="Errorsubmittingform" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Список свободных помещений</comment>
   </data>
   <data name="Selling" xml:space="preserve">
-    <value>Calling the master (Lyon)</value>
+    <value>Gọi các thầy (Lyon)</value>
     <comment>Вызов мастера (Лайон)</comment>
   </data>
   <data name="SendButtonText" xml:space="preserve">
