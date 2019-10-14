@@ -194,7 +194,7 @@
     <comment>Имя</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>Tôi thấy</value>
     <comment>OK</comment>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -276,5 +276,9 @@
   <data name="Reservation" xml:space="preserve">
     <value>Đặt ngay</value>
     <comment>Забронировать</comment>
+  </data>
+  <data name="Notreading" xml:space="preserve">
+    <value>lĩnh vực được yêu cầu</value>
+    <comment>поля обязательны</comment>
   </data>
 </root>

@@ -29,7 +29,14 @@ namespace gardener.Views.ListView
 			else
 			{
 				var error = _viewModel.GetLastError();
-				DisplayAlert(Properties.Strings.Attention, error == "" ? Properties.Strings.Errorsubmittingform : _viewModel.GetLastError(), Properties.Strings.Ok);
+                if (error != "")
+                {
+                    DisplayAlert(Properties.Strings.Attention, error == "" ? Properties.Strings.Errorsubmittingform : _viewModel.GetLastError(), Properties.Strings.Ok);
+                }
+                else
+                {
+                    DisplayAlert(Properties.Strings.Attention, Properties.Strings.Place + ',' + Properties.Strings.Name + ',' + Properties.Strings.Number + ' ' + Properties.Strings.Notreading, Properties.Strings.Ok);
+                }
 			}
 		}
 	}

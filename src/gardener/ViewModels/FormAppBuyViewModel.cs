@@ -137,22 +137,29 @@ namespace gardener.ViewModels
 			{
 				var service = new BidForBuyDataStore();
 
-				if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block, _floor)))
-				{
-					_callBack(true);
-				}
-				else
-				{
+                if (PlaceTitle != null && PlaceNumber != null && PhoneTitle != null)
+                {
+                    if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block, _floor)))
+                    {
+                        _callBack(true);
+                    }
+                    else
+                    {
 
-					if (service.ErrorsList.Count > 0)
-					{
-						foreach (var errorString in service.ErrorsList)
-						{
-							ErrorsList.Add(errorString);
-						}
-					}
-					_callBack(false);
-				}
+                        if (service.ErrorsList.Count > 0)
+                        {
+                            foreach (var errorString in service.ErrorsList)
+                            {
+                                ErrorsList.Add(errorString);
+                            }
+                        }
+                        _callBack(false);
+                    }
+                }
+                else
+                {
+                    _callBack(false);
+                }
 			}
 			else
 			{

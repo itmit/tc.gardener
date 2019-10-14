@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Input;
 using gardener.Models;
 using gardener.Services;
 using Plugin.Connectivity;
@@ -6,6 +8,9 @@ using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
+    /// <summary>
+    /// Представляет ViewModel для <see cref="ReservationPage" />
+    /// </summary>
 	public class ReservationViewModel : BaseViewModel
 	{
 		private INavigation _navigation;
@@ -21,24 +26,26 @@ namespace gardener.ViewModels
 		private string _numberTitle;
 		private string _reservationTitle;
 		private string _rowTitle;
+        private Action<bool> _callBack;
 
-		public ReservationViewModel(INavigation navigation, Place place)
+        public ReservationViewModel(INavigation navigation, Place place, Action<bool> callBack)
 		{
 			_navigation = navigation;
 			Place = place;
-
-			PlaceTitle = Properties.Strings.Place;
+            PlaceTitle = Properties.Strings.Place;
 			NameTitle = Properties.Strings.Name;
 			LastNameTitle = Properties.Strings.LastName;
 			NumberTitle = Properties.Strings.Number;
 			ReservationTitle = Properties.Strings.Reservation;
 			RowTitle = Properties.Strings.Row;
 
-			ReservationCommand = new RelayCommand(obj =>
+            ReservationCommand = new RelayCommand(obj =>
 			{
 				ReservationCommandExecute();
 			}, obj => CrossConnectivity.Current.IsConnected);
-		}
+
+            _callBack = callBack;
+        }
 
 		public string ReservationTitle
 		{
@@ -70,20 +77,40 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-		private void ReservationCommandExecute()
+        private void ReservationCommandExecute()
 		{
-			var service = new PlaceDataStore();
+            IsBusy = true;
 
-			service.ReservationPlace(new Reservation
-			{
-				PhoneNumber = PhoneNumber,
-				Place = Place,
-				FirstName = FirstName,
-				LastName = LastName
-			});
-		}
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                var service = new PlaceDataStore();
 
-		public string LastName
+                if(PhoneNumber != null && FirstName != null && LastName != null)
+                {
+                    service.ReservationPlace(new Reservation
+                    {
+                        PhoneNumber = PhoneNumber,
+                        Place = Place,
+                        FirstName = FirstName,
+                        LastName = LastName
+                    });
+                    _callBack(true);
+                }
+                else
+                {
+                    _callBack(false);
+                }
+            }
+            else
+            {
+                Title = Properties.Strings.WaitingForNetwork;
+                _callBack(false);
+            }
+            IsBusy = false;
+        }
+
+
+        public string LastName
 		{
 			get => _lastName;
 			set => SetProperty(ref _lastName, value);

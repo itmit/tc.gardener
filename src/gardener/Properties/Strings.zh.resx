@@ -194,7 +194,7 @@
     <comment>Имя</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>原來如此。</value>
     <comment>OK</comment>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -276,5 +276,9 @@
   <data name="Reservation" xml:space="preserve">
     <value>现在预订</value>
     <comment>Забронировать</comment>
+  </data>
+  <data name="Notreading" xml:space="preserve">
+    <value>领域都需要</value>
+    <comment>поля обязательны</comment>
   </data>
 </root>
