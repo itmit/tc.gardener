@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="100" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -15,6 +15,7 @@
                 x:Name="Label"
                 Text="{Binding Title}"   
                 FontSize="Large"
+                TextColor="#9e4819"
                 VerticalOptions="Start" Margin="10"/>
             <Image Grid.Row="1" Source="{Binding Image}" x:Name="Image"/>
             <StackLayout Grid.Row="2" x:Name="WebContent"/>

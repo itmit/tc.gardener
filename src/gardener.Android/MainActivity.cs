@@ -8,7 +8,7 @@ using Platform = Xamarin.Essentials.Platform;
 
 namespace gardener.Droid
 {
-	[Activity(Label = "gardener",
+	[Activity(Label = "Садовод онлайн",
 		Icon = "@mipmap/l",
 		Theme = "@style/MainTheme",
 		MainLauncher = true,

@@ -56,7 +56,7 @@ namespace gardener.Views
 
         private void ImageButton_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[2], 1));
+            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[3], 1));
         }
 
         private void ImageButton_Clicked_2(object sender, EventArgs e)
@@ -66,27 +66,22 @@ namespace gardener.Views
 
         private void ImageButton_Clicked_3(object sender, EventArgs e)
         {
-           
+            Navigation.PushAsync(new SelectFloorPage(BaseViewModel.Market.Blocks[2]));
         }
 
         private void ImageButton_Clicked_4(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[5], 1));
-        }
-
-        private void ImageButton_Clicked_5(object sender, EventArgs e)
-        {
-            
+            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[6], 1));
         }
 
         private void ImageButton_Clicked_6(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[4], 1));
+            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[5], 1));
         }
 
         private void ImageButton_Clicked_7(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[3], 1));
+            Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[4], 1));
         }
     }
 }
