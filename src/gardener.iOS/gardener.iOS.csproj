@@ -61,10 +61,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution: ITMIT OOO (D74723C9R5)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchFloat32>true</MtouchFloat32>
-    <CodesignProvision>GardenerDev</CodesignProvision>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <CodesignProvision>Vadim Grashenko</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
