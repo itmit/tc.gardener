@@ -8,6 +8,7 @@ namespace gardener.ViewModels
 		private string _listOfAvailablePremises;
 		private string _applicationForLeaseOfPremises;
 		private string _applicationForLeaseOfInPremises;
+		private string infoButton;
 
 		#region .ctor
 		public ListSaleViewModel(INavigation navigation)
@@ -22,6 +23,7 @@ namespace gardener.ViewModels
 											   param => param != null);
 
 			Title = Properties.Strings.ListSalePageTitle;
+			InfoButton = Properties.Strings.FeedBackButton;
 			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
 			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
 			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;
@@ -31,6 +33,12 @@ namespace gardener.ViewModels
 		{
 			get => _applicationForLeaseOfInPremises;
 			set => SetProperty(ref _applicationForLeaseOfInPremises, value);
+		}
+
+		public string InfoButton
+		{
+			get => infoButton;
+			set => SetProperty(ref infoButton, value);
 		}
 
 		public string ApplicationForLeaseOfPremises
@@ -57,6 +65,7 @@ namespace gardener.ViewModels
 		protected override void OnLanguageChanged()
 		{
 			Title = Properties.Strings.ListSalePageTitle;
+			InfoButton = Properties.Strings.FeedBackButton;
 			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
 			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
 			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;

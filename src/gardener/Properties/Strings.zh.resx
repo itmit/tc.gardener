@@ -281,4 +281,16 @@
     <value>领域都需要</value>
     <comment>поля обязательны</comment>
   </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>所选位置被保留。</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>申请其他您感兴趣的问题。</value>
+    <comment>Заявка по другим интересующим вас вопросам.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>已预订</value>
+    <comment>Забронировано</comment>
+  </data>
 </root>

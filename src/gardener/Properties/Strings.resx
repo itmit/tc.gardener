@@ -281,4 +281,16 @@
     <value>поля обязательны</value>
     <comment>поля обязательны</comment>
   </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>Выбранное место забронировано.</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>Заявка по другим интересующим вас вопросам.</value>
+    <comment>Заявка по другим интересующим вас вопросам.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Забронировано</value>
+    <comment>Забронировано</comment>
+  </data>
 </root>

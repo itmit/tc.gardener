@@ -69,7 +69,7 @@ namespace gardener.ViewModels
 				{
 					if (value.Status == "Забронировано")
 					{
-						Application.Current.MainPage.DisplayAlert("Внимание", "Выбранное место забронировано.", Properties.Strings.Ok);
+						Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.BlockedPlace, Properties.Strings.Ok);
 						OnPropertyChanged(nameof(SelectedPlace));
 						return;
 					}

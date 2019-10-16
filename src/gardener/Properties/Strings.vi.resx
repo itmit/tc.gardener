@@ -281,4 +281,16 @@
     <value>lĩnh vực được yêu cầu</value>
     <comment>поля обязательны</comment>
   </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>Nơi đã chọn được bảo lưu.</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>Ứng dụng cho các câu hỏi khác mà bạn quan tâm.</value>
+    <comment>Заявка по другим интересующим вас вопросам.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Đã đặt</value>
+    <comment>Забронировано</comment>
+  </data>
 </root>

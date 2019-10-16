@@ -3,14 +3,21 @@
 <gardener:ExtendedViewCell xmlns="http://xamarin.com/schemas/2014/forms"
                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                            xmlns:gardener="clr-namespace:gardener"
+                           xmlns:converters="clr-namespace:gardener.Converters;assembly=gardener"
                            x:Class="gardener.Views.BlocksViews.PlaceViewCell">
     <ViewCell.View>
-        <StackLayout Margin="10, 10" Orientation="Horizontal">
-            <Label x:Name="PlaceTitle" FontSize="Large" TextColor="#333333" Margin="10, 0" />
-            <Label Text="{Binding PlaceNumber}" FontSize="Large" TextColor="#333333" Margin="10, 0" />
+        <StackLayout Margin="10, 10">
+            <StackLayout.Resources>
+                <converters:PlaceStatusConverter x:Key="PlaceStatusConverter" />
+            </StackLayout.Resources>
+            <Label Text="{Binding Status, Converter={StaticResource PlaceStatusConverter}}" HorizontalOptions="End"/>
+            <StackLayout  Orientation="Horizontal">
+                <Label x:Name="PlaceTitle" FontSize="Large" TextColor="#333333" Margin="10, 0" />
+                <Label Text="{Binding PlaceNumber}" FontSize="Large" TextColor="#333333" Margin="10, 0" />
 
-            <Label x:Name="RowTitle" FontSize="Large" TextColor="#333333" />
-            <Label Text="{Binding Row}" FontSize="Large" TextColor="#333333" />
+                <Label x:Name="RowTitle" FontSize="Large" TextColor="#333333" />
+                <Label Text="{Binding Row}" FontSize="Large" TextColor="#333333" />
+            </StackLayout>
         </StackLayout>
     </ViewCell.View>
 </gardener:ExtendedViewCell>
