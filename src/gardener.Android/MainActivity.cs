@@ -2,9 +2,14 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Platform = Xamarin.Essentials.Platform;
+using Firebase.Messaging;
+using Firebase.Iid;
+using Android.Util;
+using Android.Gms.Common;
 
 namespace gardener.Droid
 {
@@ -29,6 +34,8 @@ namespace gardener.Droid
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate(savedInstanceState);
+
+			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.notification_bg;
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
 

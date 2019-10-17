@@ -6,6 +6,7 @@ using AndroidX.Work;
 using gardener.Models;
 using gardener.Services;
 using Realms;
+using Xamarin.Forms;
 
 namespace gardener.Droid
 {
@@ -72,9 +73,9 @@ namespace gardener.Droid
 
 		private void SendPushNotification(News news)
 		{
-			//var service = new PushNotificationService();
-			//service.PushNotification("Новости рынка", news.Title);
-			App.SendPushNotification("Новости рынка", news.Title);
+			INotificationService notificationManager = DependencyService.Get<INotificationService>();
+			notificationManager.SendNotification("Новости рынка", news.Title, 1);
+			notificationManager.StopNotifications();
 		}
 		#endregion
 	}
