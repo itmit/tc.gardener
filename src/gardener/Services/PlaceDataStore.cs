@@ -82,7 +82,7 @@ namespace gardener.Services
 				return await Task.FromResult(Items);
 			}
 
-			var response = DownloadSerializedJsonData(new Uri(Url + $"/{_block.OriginalTitle}/Свободен"));
+			var response = DownloadSerializedJsonData(new Uri(Url + $"/{_block.OriginalTitle}"));
 
 			if (!response.Success)
 			{

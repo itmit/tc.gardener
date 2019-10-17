@@ -14,6 +14,7 @@
             </Style>
             <converters:BoolActiveToColorConverter x:Key="ActiveToColorConverter" ActiveColor="Default"
                                                    NoActiveColor="DarkGray" />
+            <converters:PlaceStatusConverterToColor x:Key="PlaceStatusConverterToColor" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

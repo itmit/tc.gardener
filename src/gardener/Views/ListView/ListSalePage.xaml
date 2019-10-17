@@ -26,6 +26,8 @@
                     Command="{Binding OpenPageCommand}" x:Name="SellButton" Text="{Binding ApplicationForLeaseOfPremises}"/>
             <Button Style="{StaticResource ButtonStyle}"
                     Command="{Binding OpenPageCommand}" x:Name="BuyButton" Text="{Binding ApplicationForLeaseOfInPremises}"/>
+            <Button Style="{StaticResource ButtonStyle}"
+                    Command="{Binding OpenPageCommand}" x:Name="InfoButton" Text="{Binding InfoButton}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -17,7 +17,6 @@ namespace gardener.Droid
 												 ).Build();
 			WorkManager.Instance.Enqueue(taxWorkRequest);
 			_workId = taxWorkRequest.Id;
-
 		}
 
 		public void StopService()

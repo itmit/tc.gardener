@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gardener="clr-namespace:gardener"
+             mc:Ignorable="d"
+             x:Class="gardener.Views.ListView.FeedbackPage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
+                               IsRunning="{Binding IsBusy}" />
+            <StackLayout>
+                <StackLayout Margin="30,10,30,10" WidthRequest="300">
+                    <Editor Placeholder="" FontSize="Large" TextColor="#9e4819"
+                                            PlaceholderColor="#7a7a7a"
+                                            Text="{Binding Text, Mode=TwoWay}" />
+                    <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
+                                            Text="{Binding Name, Mode=TwoWay}"
+                                            PlaceholderColor="#7a7a7a" />
+                    <gardener:ExtendedEntry Placeholder="{Binding PhoneTitle}" FontSize="Large" TextColor="#9e4819"
+                                            Text="{Binding PhoneNumber, Mode=TwoWay}"
+                                            PlaceholderColor="#7a7a7a" Keyboard="Numeric">
+                        <gardener:ExtendedEntry.Behaviors>
+                            <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
+                        </gardener:ExtendedEntry.Behaviors>
+                    </gardener:ExtendedEntry>
+                </StackLayout>
+                <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                        WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                        Command="{Binding SendFormCommand}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -64,11 +64,18 @@ namespace gardener.ViewModels
 			set
 			{
 				_selectedPlace = value;
+
 				if (value != null)
 				{
+					if (value.Status == "Забронировано")
+					{
+						Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.BlockedPlace, Properties.Strings.Ok);
+						OnPropertyChanged(nameof(SelectedPlace));
+						return;
+					}
+
 					_navigation.PushAsync(new ReservationPage(_selectedPlace));
 					
-
 					_selectedPlace = null;
 				}
 

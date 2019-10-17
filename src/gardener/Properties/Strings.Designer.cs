@@ -106,6 +106,24 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбранное место забронировано..
+        /// </summary>
+        internal static string BlockedPlace {
+            get {
+                return ResourceManager.GetString("BlockedPlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Забронировано.
+        /// </summary>
+        internal static string Booked {
+            get {
+                return ResourceManager.GetString("Booked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вызов охраны.
         /// </summary>
         internal static string CallSecurity {
@@ -178,11 +196,29 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Заявка по другим интересующим вас вопросам..
+        /// </summary>
+        internal static string FeedBackButton {
+            get {
+                return ResourceManager.GetString("FeedBackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Этаж.
         /// </summary>
         internal static string Floor {
             get {
                 return ResourceManager.GetString("Floor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма заявки по интересующим вас вопросам.
+        /// </summary>
+        internal static string Formfeedback {
+            get {
+                return ResourceManager.GetString("Formfeedback", resourceCulture);
             }
         }
         

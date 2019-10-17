@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "487900269621",
+    "firebase_url": "https://tc-gardener.firebaseio.com",
+    "project_id": "tc-gardener",
+    "storage_bucket": "tc-gardener.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487900269621:android:ebfa28c15fd73748b2f57c",
+        "android_client_info": {
+          "package_name": "com.itmit.gardener"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487900269621-e4iouo452k8as8493h1ot6begr738c14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itmit.gardener",
+            "certificate_hash": "e1f27c58f8bef82b86775950b76daf906904cda7"
+          }
+        },
+        {
+          "client_id": "487900269621-bfbm1604jh4n7bm6r5hsng741qneqn79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU_egHAOZo2K_8l6FSFl_iqqmzLZRLG54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487900269621-bfbm1604jh4n7bm6r5hsng741qneqn79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
