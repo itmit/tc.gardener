@@ -12,7 +12,7 @@
                                IsRunning="{Binding IsBusy}" />
             <StackLayout>
                 <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                    <Editor Placeholder="{Binding Text}" FontSize="Large" TextColor="#9e4819"
+                    <Editor Placeholder="" FontSize="Large" TextColor="#9e4819"
                                             PlaceholderColor="#7a7a7a"
                                             Text="{Binding Text, Mode=TwoWay}" />
                     <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"

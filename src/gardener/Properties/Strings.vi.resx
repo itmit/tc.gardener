@@ -293,4 +293,8 @@
     <value>Đã đặt</value>
     <comment>Забронировано</comment>
   </data>
+  <data name="Formfeedback" xml:space="preserve">
+    <value>Mẫu đơn cho câu hỏi của bạn</value>
+    <comment>Форма заявки по интересующим вас вопросам</comment>
+  </data>
 </root>

@@ -25,11 +25,12 @@ namespace gardener.ViewModels
 		private string _placeTitle;
 		private string _sendButtonText;
 		private int _floor;
-		#endregion
-		#endregion
+        private string _Plfeedback;
+        #endregion
+        #endregion
 
-		#region .ctor
-		public FeedbackViewModel(string title)
+        #region .ctor
+        public FeedbackViewModel(string title)
 		{
 			ErrorsList = new List<string>();
 			Title = title;
@@ -117,7 +118,13 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _phoneNumber, value);
 		}
 
-		public string Text
+        public string Plfeedback
+        {
+            get => _Plfeedback;
+            set => SetProperty(ref _Plfeedback, value);
+        }
+
+        public string Text
 		{
 			get => _placeNumber;
 			set => SetProperty(ref _placeNumber, value);
@@ -192,6 +199,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-		}
+          
+        }
 	}
 }
