@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.Android", "gardene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener.iOS", "gardener.iOS\gardener.iOS.csproj", "{3C223EFA-05F9-416F-AD98-5CA6C0792258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener", "gardener\gardener.csproj", "{808AD66E-3E73-4346-A342-6A92A7F574C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gardener", "gardener\gardener.csproj", "{44461089-8EBB-44CA-8D8F-2A1B848A9B64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,24 +55,24 @@ Global
 		{3C223EFA-05F9-416F-AD98-5CA6C0792258}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{3C223EFA-05F9-416F-AD98-5CA6C0792258}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{3C223EFA-05F9-416F-AD98-5CA6C0792258}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhone.Deploy.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhone.Build.0 = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhone.Deploy.0 = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{808AD66E-3E73-4346-A342-6A92A7F574C5}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhone.Build.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{44461089-8EBB-44CA-8D8F-2A1B848A9B64}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

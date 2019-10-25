@@ -40,8 +40,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Vadim Grashenko (DSN36L2SUL)</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Gardener</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,10 +66,12 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer: Vadim Grashenko (DSN36L2SUL)</CodesignKey>
+    <CodesignKey>iPhone Distribution: ITMIT OOO (D74723C9R5)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchUseThumb>true</MtouchUseThumb>
+    <CodesignProvision>GardenerAppstore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -208,7 +210,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\gardener\gardener.csproj">
-      <Project>{808AD66E-3E73-4346-A342-6A92A7F574C5}</Project>
+      <Project>{44461089-8EBB-44CA-8D8F-2A1B848A9B64}</Project>
       <Name>gardener</Name>
     </ProjectReference>
   </ItemGroup>
