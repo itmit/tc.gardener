@@ -90,6 +90,8 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PhoneCallDroid.cs" />
+    <Compile Include="Services\FireBaseService.cs" />
+    <Compile Include="Services\SubscribeTopicFireBaseDroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />

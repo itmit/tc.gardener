@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using gardener.Models;
 using gardener.Services;
+using gardener.Views;
 using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
     /// <summary>
-    /// Представляет ViewModel для <see cref="ReservationPage" />
+    /// Представляет ViewModel для <see cref="ReservationPage" />.
     /// </summary>
 	public class ReservationViewModel : BaseViewModel
 	{
