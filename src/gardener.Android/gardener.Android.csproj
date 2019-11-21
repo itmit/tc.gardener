@@ -33,10 +33,6 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -129,7 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gardener\gardener.csproj">
-      <Project>{808AD66E-3E73-4346-A342-6A92A7F574C5}</Project>
+      <Project>{44461089-8EBB-44CA-8D8F-2A1B848A9B64}</Project>
       <Name>gardener</Name>
     </ProjectReference>
   </ItemGroup>
@@ -264,9 +260,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\veschevye_ryady.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\baseline_notifications_none_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\notifications.png" />

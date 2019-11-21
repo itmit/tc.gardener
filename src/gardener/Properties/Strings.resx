@@ -293,4 +293,8 @@
     <value>Забронировано</value>
     <comment>Забронировано</comment>
   </data>
+  <data name="Formfeedback" xml:space="preserve">
+    <value>Форма заявки по интересующим вас вопросам</value>
+    <comment>Форма заявки по интересующим вас вопросам</comment>
+  </data>
 </root>
