@@ -7,6 +7,15 @@
     <StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" HeightRequest="230" BackgroundColor="#fcf7f1">
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Label TextColor="Black" IsVisible="{Binding Visible}" Grid.Row="0" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Здравствуйте, "/>
+                            <Span Text="{Binding Name}"/>
+                            <Span Text="!"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
                 <Image Source="mLogo1.png" Margin="10" />
                 <Grid>
                     <Grid.ColumnDefinitions>
