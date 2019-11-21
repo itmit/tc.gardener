@@ -22,7 +22,7 @@
                                             Text="{Binding PhoneNumber, Mode=TwoWay}"
                                             PlaceholderColor="#7a7a7a" Keyboard="Numeric">
                         <gardener:ExtendedEntry.Behaviors>
-                            <gardener:MaskedBehavior Mask="+X (XXX) XXX-XX-XX" />
+                            <gardener:MaskedBehavior Mask="+7 (XXX) XXX-XX-XX" />
                         </gardener:ExtendedEntry.Behaviors>
                     </gardener:ExtendedEntry>
                 </StackLayout>

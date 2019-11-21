@@ -30,7 +30,7 @@ namespace gardener.Services
 
 		public override Task<Place> GetItemAsync(string id) => throw new NotImplementedException();
 
-		public async void ReservationPlace(Reservation reservation)
+		public async Task<bool> ReservationPlace(Reservation reservation)
 		{
 			HttpResponseMessage response;
 			using (var client = new HttpClient())
@@ -48,6 +48,9 @@ namespace gardener.Services
 								   },
 								   {
 									   "phone", reservation.PhoneNumber
+								   },
+								   {
+									   "row", reservation.Place.Row
 								   },
 								   {
 									   "block", reservation.Place.Block
@@ -68,11 +71,11 @@ namespace gardener.Services
 			{
 				if (jsonString != null)
 				{
-					return;
+					return true;
 				}
-
-				throw new NoNullAllowedException("Нет ответа от сервера.");
 			}
+
+			return false;
 		}
 
 		public override async Task<IEnumerable<Place>> GetItemsAsync(bool forceRefresh = false)
