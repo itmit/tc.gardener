@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
+using gardener.ViewModels;
 using gardener.Views.ListView;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -17,17 +18,20 @@ namespace gardener.Views
 		#region Data
 		#region Fields
 		private readonly Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
-		#endregion
-		#endregion
+        private MasterViewModel _mvm;
+        #endregion
+        #endregion
 
-		#region .ctor
-		public MainPage()
+        #region .ctor
+        public MainPage()
 		{
 			InitializeComponent();
 
 			MasterBehavior = MasterBehavior.Popover;
 
 			MenuPages.Add((int) MenuItemType.Rent, new NavigationPage(new RentSalePage()));
+            _mvm = new MasterViewModel();
+            Master.BindingContext = _mvm;
 		}
 		#endregion
 
@@ -67,6 +71,9 @@ namespace gardener.Views
 					case (int) MenuItemType.Map:
 						MenuPages.Add(id, new NavigationPage(new MapPage()));
 						break;
+                    case (int) MenuItemType.Input:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage(_mvm)));
+                        break;
 				}
 			}
 

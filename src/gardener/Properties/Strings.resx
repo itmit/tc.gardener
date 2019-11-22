@@ -297,4 +297,8 @@
     <value>Форма заявки по интересующим вас вопросам</value>
     <comment>Форма заявки по интересующим вас вопросам</comment>
   </data>
+  <data name="Input" xml:space="preserve">
+    <value>Вход</value>
+    <comment>Вход</comment>
+  </data>
 </root>

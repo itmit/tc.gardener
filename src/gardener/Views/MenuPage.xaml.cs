@@ -35,9 +35,9 @@ namespace gardener.Views
 
 		#region Properties
 		private MainPage RootPage => Application.Current.MainPage as MainPage;
-		#endregion
+        #endregion
 
-		private void Button_OnClicked(object sender, EventArgs e)
+        private void Button_OnClicked(object sender, EventArgs e)
 		{
 			BaseViewModel.ChangeLanguage("ru-RU");
 			List<HomeMenuItem> menuItems = GetMenuItems();
@@ -60,43 +60,48 @@ namespace gardener.Views
 
 		private List<HomeMenuItem> GetMenuItems()
 		{
-			var menuItems = new List<HomeMenuItem>
-			{
-				new HomeMenuItem
-				{
-					Id = MenuItemType.Rent,
-					Title = Properties.Strings.Rent
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.Map,
-					Title = Properties.Strings.Map
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.Selling,
-					Title = Properties.Strings.Selling
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.CallSecurity,
-					Title = Properties.Strings.CallSecurity
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.EmployCall,
-					Title = Properties.Strings.EmployCall
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.Course,
-					Title = Properties.Strings.Course
-				},
-				new HomeMenuItem
-				{
-					Id = MenuItemType.News,
-					Title = Properties.Strings.News
-				}
+            var menuItems = new List<HomeMenuItem>
+            {
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Rent,
+                    Title = Properties.Strings.Rent
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Map,
+                    Title = Properties.Strings.Map
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Selling,
+                    Title = Properties.Strings.Selling
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.CallSecurity,
+                    Title = Properties.Strings.CallSecurity
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.EmployCall,
+                    Title = Properties.Strings.EmployCall
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Course,
+                    Title = Properties.Strings.Course
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.News,
+                    Title = Properties.Strings.News
+                },
+                new HomeMenuItem
+                {
+                    Id = MenuItemType.Input,
+                    Title = Properties.Strings.Input
+                }
 			};
 
 			return menuItems;

@@ -297,4 +297,8 @@
     <value>您的问题申请表</value>
     <comment>Форма заявки по интересующим вас вопросам</comment>
   </data>
+  <data name="Inpute" xml:space="preserve">
+    <value>入口处</value>
+    <comment>Вход</comment>
+  </data>
 </root>

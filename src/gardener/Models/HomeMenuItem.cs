@@ -10,7 +10,8 @@
 		CallSecurity,
 		News,
 		Map,
-		Course
+		Course,
+        Input
 	}
 
 	public class HomeMenuItem
