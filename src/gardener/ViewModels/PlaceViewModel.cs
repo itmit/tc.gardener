@@ -9,6 +9,7 @@ namespace gardener.ViewModels
 		private Place _place;
 		private Timer _timer;
 		private string _time;
+		private DateTime? _dateTime;
 
 		public PlaceViewModel(Place place, DateTime? serverDateTime)
 		{
@@ -19,11 +20,13 @@ namespace gardener.ViewModels
 				return;
 			}
 
+			DateTime = new DateTime(Place.ReservationDate.Value.Ticks);
 			timeValue = Place.ReservationDate.Value - serverDateTime.Value;
-			var _ = Place.ReservationDate.Value.AddHours(3);
+
+			var _ = DateTime.Value.AddHours(3);
 			_timer = new Timer(state =>
 			{
-				if (timeValue == TimeSpan.Zero)
+				if (timeValue == TimeSpan.Zero || _timer == null)
 				{
 					return;
 				}
@@ -31,6 +34,12 @@ namespace gardener.ViewModels
 				timeValue = timeValue - TimeSpan.FromSeconds(1);
 				Time = timeValue.ToString();
 			}, null, 0, 1000);
+		}
+
+		public DateTime? DateTime
+		{
+			get => _dateTime;
+			set => SetProperty(ref _dateTime, value);
 		}
 
 		public Place Place

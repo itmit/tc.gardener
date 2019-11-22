@@ -54,20 +54,16 @@ namespace gardener.ViewModels
             bool result = await _authService.LoginAsync(login, password);
 
             if (result)
-            {
+			{
+				var service = DependencyService.Get<ISubscribeTopicFireBase>();
+				service.Subscribe();
                 await Application.Current.MainPage.DisplayAlert("Уведомление", "Вход выполнен!", "ОК");
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert("Уведомление", "Неверный логин или пароль!", "ОК");
             }
-
-            var app = Application.Current as App;
-            if (app == null)
-            {
-                return;
-            }
-        }
+		}
 
         protected override void OnLanguageChanged()
         {

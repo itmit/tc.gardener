@@ -23,8 +23,8 @@
 
                 <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
                     <Label Text="{Binding Place.Status, Converter={StaticResource PlaceStatusConverter}}" />
-                    <Label IsVisible="{Binding Place.ReservationDate, Converter={StaticResource NullToBoolConverter}}" 
-                           Text="{Binding Place.ReservationDate, StringFormat='до {0:dd.MM.yyyy hh:mm:ss}'}"/>
+                    <Label IsVisible="{Binding DateTime, Converter={StaticResource NullToBoolConverter}}" 
+                           Text="{Binding DateTime, StringFormat='до {0:dd.MM.yyyy hh:mm:ss}'}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" 
                              IsVisible="{Binding Time, Converter={StaticResource NullToBoolConverter}}">
