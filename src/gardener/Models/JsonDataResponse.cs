@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace gardener.Models
 {
@@ -35,6 +37,13 @@ namespace gardener.Models
 			get;
 			set;
 		} = false;
+
+		[JsonProperty("date")]
+		public DateTime? ServerDate
+		{
+			get;
+			set;
+		}
 		#endregion
 	}
 }

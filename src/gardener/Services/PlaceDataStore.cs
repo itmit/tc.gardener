@@ -23,6 +23,12 @@ namespace gardener.Services
 		#endregion
 		#endregion
 
+		public JsonDataResponse<object> LastDataResponse
+		{
+			get;
+			private set;
+		}
+
 		#region Public
 		public override Task<bool> AddItemAsync(Place item) => throw new NotImplementedException();
 
@@ -87,6 +93,19 @@ namespace gardener.Services
 
 			var response = DownloadSerializedJsonData(new Uri(Url + $"/{_block.OriginalTitle}"));
 
+			ObservableCollection<object> data = new ObservableCollection<object>();
+			foreach (var place in response.Data)
+			{
+				data.Add(place);
+			}
+
+			LastDataResponse = new JsonDataResponse<object>()
+			{
+				Success = response.Success,
+				Data = data,
+				Message = response.Message,
+				ServerDate = response.ServerDate
+			};
 			if (!response.Success)
 			{
 				throw new WebException("Произошла ошибка сервера.");

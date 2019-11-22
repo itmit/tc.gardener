@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace gardener.Models
 {
@@ -58,6 +59,13 @@ namespace gardener.Models
 		/// Возвращает или устанавливает статус места.
 		/// </summary>
 		public string Status
+		{
+			get;
+			set;
+		}
+
+		[JsonProperty("reservation")]
+		public DateTime? ReservationDate
 		{
 			get;
 			set;

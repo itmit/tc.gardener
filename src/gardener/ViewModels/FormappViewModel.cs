@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
 using gardener.Views;
@@ -17,10 +19,11 @@ namespace gardener.ViewModels
 		#region Fields
 		private readonly Block _block;
 		private readonly int _floor;
-		private ObservableCollection<Place> _placeCollection;
-		private Place _selectedPlace;
+		private ObservableCollection<PlaceViewModel> _placeCollection;
+		private PlaceViewModel _selectedPlace;
 		private readonly INavigation _navigation;
 		private readonly Timer _timer;
+		private DateTime? _serverDate;
 		#endregion
 		#endregion
 
@@ -29,7 +32,7 @@ namespace gardener.ViewModels
 		{
 			_navigation = navigation;
 			_block = block;
-			_placeCollection = new ObservableCollection<Place>();
+			_placeCollection = new ObservableCollection<PlaceViewModel>();
 
 			Title = Properties.Strings.FreePlace;
 			_timer = new Timer(UpdatePlaceList, null, 0, 15000);
@@ -39,7 +42,7 @@ namespace gardener.ViewModels
 		{
 			_block = block;
 			_floor = floor;
-			_placeCollection = new ObservableCollection<Place>();
+			_placeCollection = new ObservableCollection<PlaceViewModel>();
 
 			Title = Properties.Strings.FreePlace;
 
@@ -54,11 +57,14 @@ namespace gardener.ViewModels
 				return;
 			}
 
-			SetSerializedJsonDataAsync(true);
+			Task.Run(() =>
+			{
+				SetSerializedJsonDataAsync(true);
+			});
 		}
 
 		#region Properties
-		public Place SelectedPlace
+		public PlaceViewModel SelectedPlace
 		{
 			get => _selectedPlace;
 			set
@@ -67,14 +73,14 @@ namespace gardener.ViewModels
 
 				if (value != null)
 				{
-					if (value.Status == "Забронировано")
+					if (value.Place.Status == "Забронировано")
 					{
 						Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.BlockedPlace, Properties.Strings.Ok);
 						OnPropertyChanged(nameof(SelectedPlace));
 						return;
 					}
 
-					_navigation.PushAsync(new ReservationPage(_selectedPlace));
+					_navigation.PushAsync(new ReservationPage(_selectedPlace.Place));
 					
 					_selectedPlace = null;
 				}
@@ -83,7 +89,7 @@ namespace gardener.ViewModels
 			}
 		}
 
-		public ObservableCollection<Place> PlaceCollection
+		public ObservableCollection<PlaceViewModel> PlaceCollection
 		{
 			get => _placeCollection;
 			set => SetProperty(ref _placeCollection, value);
@@ -93,6 +99,7 @@ namespace gardener.ViewModels
 		#region Public
 		public async void SetSerializedJsonDataAsync(bool force = false)
 		{
+			ObservableCollection<Place> collection;
 			if (_block.Places == null || force)
 			{
 				if (CrossConnectivity.Current.IsConnected)
@@ -100,28 +107,33 @@ namespace gardener.ViewModels
 					var service = new PlaceDataStore();
 
 					IsBusy = true;
-					_block.Places = (ObservableCollection<Place>)await service.GetItemsFromBlockAsync(_block, _block.Places != null && _block.Places.Count > 0 || force);
-					
-					if (_floor > 0)
-					{
-						PlaceCollection = (ObservableCollection<Place>) _block.Places.Where(x => x.Floor == _floor);
-					}
-					else
-					{
-						PlaceCollection = _block.Places;
-					}
+					_block.Places = new ObservableCollection<Place>(await service.GetItemsFromBlockAsync(_block, _block.Places != null && _block.Places.Count > 0 || force));
+					_serverDate = service.LastDataResponse.ServerDate;
 
-					IsBusy = false;
+					collection = _floor > 0 ? new ObservableCollection<Place>(_block.Places.Where(x => x.Floor == _floor)) : _block.Places;
 				}
 				else
 				{
+					collection = _block.Places;
 					Title = Properties.Strings.WaitingForNetwork;
 				}
 			}
 			else
 			{
-				PlaceCollection = _block.Places;
+				collection = _block.Places;
 			}
+
+			ObservableCollection<PlaceViewModel> places = new ObservableCollection<PlaceViewModel>();
+			if (collection != null)
+			{
+				foreach (var place in collection)
+				{
+					places.Add(new PlaceViewModel(place, _serverDate));
+				}
+			}
+
+			PlaceCollection = places;
+			IsBusy = false;
 		}
 		#endregion
 
