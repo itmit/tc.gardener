@@ -18,12 +18,12 @@ namespace gardener.Views.ListView
 		{
 			InitializeComponent();
 
-			BindingContext = new ListSaleViewModel(Navigation);
+			BindingContext = new ListSaleViewModel(Navigation, block, floor);
 
-			RentButton.CommandParameter = new FormAppPage(block);
-			SellButton.CommandParameter = new FormAppSalePage(block, floor);
-			BuyButton.CommandParameter = new FormAppBuyPage(block, floor);
-			InfoButton.CommandParameter = new FeedbackPage();
+			RentButton.CommandParameter = typeof(FormAppPage);
+			SellButton.CommandParameter = typeof(FormAppSalePage);
+			BuyButton.CommandParameter = typeof(FormAppBuyPage);
+			InfoButton.CommandParameter = typeof(FeedbackPage);
 		}
 		#endregion
 	}

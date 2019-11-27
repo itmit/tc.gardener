@@ -35,7 +35,7 @@ namespace gardener.Droid.Services
 
 			var notificationBuilder = new NotificationCompat.Builder(this, MainActivity.ChannelId)
 									  .SetSmallIcon(Resource.Drawable.notifications)
-									  .SetContentTitle("FCM Message")
+									  .SetContentTitle("Внимание")
 									  .SetContentText(messageBody)
 									  .SetAutoCancel(true)
 									  .SetContentIntent(pendingIntent);

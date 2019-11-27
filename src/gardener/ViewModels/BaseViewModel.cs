@@ -39,8 +39,6 @@ namespace gardener.ViewModels
 			protected set;
 		}
 
-		public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
-
 		public bool IsBusy
 		{
 			get => _isBusy;

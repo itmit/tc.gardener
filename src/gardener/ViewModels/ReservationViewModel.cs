@@ -27,9 +27,9 @@ namespace gardener.ViewModels
 		private string _numberTitle;
 		private string _reservationTitle;
 		private string _rowTitle;
-        private Action<bool> _callBack;
+		private bool _isEnabled = true;
 
-        public ReservationViewModel(INavigation navigation, Place place, Action<bool> callBack)
+		public ReservationViewModel(INavigation navigation, Place place)
 		{
 			_navigation = navigation;
 			Place = place;
@@ -45,8 +45,13 @@ namespace gardener.ViewModels
 				ReservationCommandExecute();
 			}, obj => CrossConnectivity.Current.IsConnected);
 
-            _callBack = callBack;
         }
+
+		public bool IsEnabled
+		{
+			get => _isEnabled;
+			set => SetProperty(ref _isEnabled, value);
+		}
 
 		public string ReservationTitle
 		{
@@ -78,40 +83,48 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _placeTitle, value);
 		}
 
-        private void ReservationCommandExecute()
+        private async void ReservationCommandExecute()
 		{
+			IsEnabled = false;
             IsBusy = true;
 
             if (CrossConnectivity.Current.IsConnected)
             {
-                var service = new PlaceDataStore();
+                var service = new PlaceService();
 
                 if(PhoneNumber != null && FirstName != null && LastName != null)
                 {
-                    service.ReservationPlace(new Reservation
+                    var res = await service.ReservationPlace(new Reservation
                     {
                         PhoneNumber = PhoneNumber,
                         Place = Place,
                         FirstName = FirstName,
                         LastName = LastName
                     });
-                    _callBack(true);
-                }
+					if (res)
+					{
+						await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.Theformwassuccessfullysent, Properties.Strings.Ok);
+					}
+					else
+					{
+						await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, service.LastError, Properties.Strings.Ok);
+					}
+				}
                 else
-                {
-                    _callBack(false);
-                }
+				{
+					IsEnabled = true;
+					await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, $"{Properties.Strings.Name},{Properties.Strings.LastName},{Properties.Strings.Number} {Properties.Strings.Notreading}", Properties.Strings.Ok);
+				}
             }
             else
             {
                 Title = Properties.Strings.WaitingForNetwork;
-                _callBack(false);
-            }
-            IsBusy = false;
+				await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, $"{Properties.Strings.Name},{Properties.Strings.LastName},{Properties.Strings.Number} {Properties.Strings.Notreading}", Properties.Strings.Ok);
+			}
+			IsBusy = false;
         }
 
-
-        public string LastName
+		public string LastName
 		{
 			get => _lastName;
 			set => SetProperty(ref _lastName, value);

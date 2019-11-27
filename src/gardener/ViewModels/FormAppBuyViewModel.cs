@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using gardener.Models;
+﻿using gardener.Models;
+using gardener.Properties;
 using gardener.Services;
 using gardener.Views.ListView;
 using Plugin.Connectivity;
+using Xamarin.Forms;
 
 namespace gardener.ViewModels
 {
@@ -17,23 +15,22 @@ namespace gardener.ViewModels
 		#region Data
 		#region Fields
 		private readonly Block _block;
+		private readonly int _floor;
 		private string _name;
-		private string _phoneNumber;
-		private Action<bool> _callBack;
-		private string _placeNumber;
-		private string _phoneTitle;
 		private string _nameTitle;
+		private string _phoneNumber;
+		private string _phoneTitle;
+		private string _placeNumber;
 		private string _placeTitle;
-		private int _floor;
+		private string _row;
+		private string _rowTitle;
 		private string _sendButtonText;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public FormAppBuyViewModel(Block block, int floor, string title)
+		public FormAppBuyViewModel(Block block, int floor)
 		{
-			ErrorsList = new List<string>();
-			Title = title;
 			SendFormCommand = new RelayCommand(x =>
 											   {
 												   ExecuteSendFormCommand();
@@ -42,62 +39,9 @@ namespace gardener.ViewModels
 			_block = block;
 			_floor = floor;
 
-
-			Title = Properties.Strings.Applicationformforleaseofpremises;
-			PlaceTitle = Properties.Strings.Place;
-			NameTitle = Properties.Strings.Name;
-			PhoneTitle = Properties.Strings.Phone;
-			SendButtonText = Properties.Strings.SendButtonText;
-		}
-
-		public string PhoneTitle
-		{
-			get => _phoneTitle;
-			set => SetProperty(ref _phoneTitle, value);
-		}
-
-		public string NameTitle
-		{
-			get => _nameTitle;
-			set => SetProperty(ref _nameTitle, value);
-		}
-
-		public string PlaceTitle
-		{
-			get => _placeTitle;
-			set => SetProperty(ref _placeTitle, value);
-		}
-
-		public FormAppBuyViewModel(Block block, int floor, Action<bool> callBack)
-		{
-			ErrorsList = new List<string>();
-			Title = Properties.Strings.Applicationformforleaseofpremises;
-			SendFormCommand = new RelayCommand(x =>
-											   {
-												   ExecuteSendFormCommand();
-											   },
-											   x => true);
-			_block = block;
-			_callBack = callBack;
-			_floor = floor;
-
-			Title = Properties.Strings.Applicationformforleaseofpremises;
-			PlaceTitle = Properties.Strings.Place;
-			NameTitle = Properties.Strings.Name;
-			PhoneTitle = Properties.Strings.Phone;
-			SendButtonText = Properties.Strings.SendButtonText;
+			SetStrings();
 		}
 		#endregion
-
-		public string GetLastError()
-		{
-			if (ErrorsList.Count > 1 || ErrorsList == null)
-			{
-				return ErrorsList[ErrorsList.Count - 1];
-			}
-
-			return "";
-		}
 
 		#region Properties
 		public RelayCommand SendFormCommand
@@ -111,9 +55,10 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _name, value);
 		}
 
-		public List<string> ErrorsList
+		public string NameTitle
 		{
-			get;
+			get => _nameTitle;
+			set => SetProperty(ref _nameTitle, value);
 		}
 
 		public string PhoneNumber
@@ -122,10 +67,47 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _phoneNumber, value);
 		}
 
+		public string PhoneTitle
+		{
+			get => _phoneTitle;
+			set => SetProperty(ref _phoneTitle, value);
+		}
+
 		public string PlaceNumber
 		{
 			get => _placeNumber;
 			set => SetProperty(ref _placeNumber, value);
+		}
+
+		public string PlaceTitle
+		{
+			get => _placeTitle;
+			set => SetProperty(ref _placeTitle, value);
+		}
+
+		public string Row
+		{
+			get => _row;
+			set => SetProperty(ref _row, value);
+		}
+
+		public string RowTitle
+		{
+			get => _rowTitle;
+			set => SetProperty(ref _rowTitle, value);
+		}
+
+		public string SendButtonText
+		{
+			get => _sendButtonText;
+			set => SetProperty(ref _sendButtonText, value);
+		}
+		#endregion
+
+		#region Overrided
+		protected override void OnLanguageChanged()
+		{
+			SetStrings();
 		}
 		#endregion
 
@@ -135,54 +117,45 @@ namespace gardener.ViewModels
 			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
-				var service = new BidForBuyDataStore();
+				var service = new BidService();
 
-                if (PlaceTitle != null && PlaceNumber != null && PhoneTitle != null)
-                {
-                    if (await service.AddItemAsync(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block, _floor)))
-                    {
-                        _callBack(true);
-                    }
-                    else
-                    {
+				if (string.IsNullOrEmpty(PlaceTitle) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(PhoneNumber))
+				{
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention,
+																	$"{Strings.Place}, {Strings.Name}, {Strings.Number} {Strings.Notreading}",
+																	Strings.Ok);
+					return;
+				}
 
-                        if (service.ErrorsList.Count > 0)
-                        {
-                            foreach (var errorString in service.ErrorsList)
-                            {
-                                ErrorsList.Add(errorString);
-                            }
-                        }
-                        _callBack(false);
-                    }
-                }
-                else
-                {
-                    _callBack(false);
-                }
+				if (await service.CreateBid(new BidForBuy(PlaceNumber, Name, PhoneNumber, _block, Row, _floor)))
+				{
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
+				}
+				else
+				{
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention,
+																	string.IsNullOrEmpty(service.LastError) ? Strings.Errorsubmittingform : service.LastError,
+																	Strings.Ok);
+				}
+				
 			}
 			else
 			{
-				Title = Properties.Strings.WaitingForNetwork;
+				Title = Strings.WaitingForNetwork;
 			}
 
 			IsBusy = false;
 		}
+
+		private void SetStrings()
+		{
+			Title = Strings.Applicationformforleaseofpremises;
+			PlaceTitle = Strings.Place;
+			NameTitle = Strings.Name;
+			PhoneTitle = Strings.Phone;
+			SendButtonText = Strings.SendButtonText;
+			RowTitle = Strings.Row;
+		}
 		#endregion
-
-		protected override void OnLanguageChanged()
-		{
-			Title = Properties.Strings.Applicationformforleaseofpremises;
-			PlaceTitle = Properties.Strings.Place;
-			NameTitle = Properties.Strings.Name;
-			PhoneTitle = Properties.Strings.Phone;
-			SendButtonText = Properties.Strings.SendButtonText;
-		}
-
-		public string SendButtonText
-		{
-			get => _sendButtonText;
-			set => SetProperty(ref _sendButtonText, value);
-		}
 	}
 }

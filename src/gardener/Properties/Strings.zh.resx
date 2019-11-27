@@ -118,71 +118,103 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
-    <value>申请移交处所</value>
+    <value>出租申请</value>
     <comment>Заявка на сдачу помещения</comment>
   </data>
   <data name="Applicationforleaseofpremises" xml:space="preserve">
-    <value>房屋租赁申请</value>
+    <value>求租申请</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
   <data name="Applicationformforleaseofinpremises" xml:space="preserve">
-    <value>楼宇租赁申请表</value>
+    <value>求租申请表</value>
     <comment>Форма заявки на аренду помещения</comment>
   </data>
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
-    <value>楼宇租赁申请表</value>
+    <value>出租申请表</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>注意</value>
     <comment>Внимание</comment>
   </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>位置已预定的</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>预定的</value>
+    <comment>Забронировано</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
-    <value>呼叫安全</value>
+    <value>叫保安</value>
     <comment>Вызов охраны</comment>
   </data>
   <data name="Carpetsandtextiles" xml:space="preserve">
-    <value>地毯和纺织品</value>
+    <value>地毯和纺织品区</value>
     <comment>Ковры и текстиль</comment>
   </data>
   <data name="Clothingseries" xml:space="preserve">
-    <value>服装系列</value>
+    <value>服装区</value>
     <comment>Вещевые ряды</comment>
   </data>
   <data name="Coatcircle" xml:space="preserve">
-    <value>外套圈</value>
+    <value>大衣区</value>
     <comment>Пальтовый круг</comment>
   </data>
   <data name="Course" xml:space="preserve">
-    <value>货币报价</value>
+    <value>外币牌价</value>
     <comment>Котировки валют</comment>
   </data>
   <data name="CoursesTableTitle" xml:space="preserve">
-    <value>汇率CBR</value>
+    <value>俄罗斯联邦中央银行汇率</value>
     <comment>Курсы валют ЦБ РФ</comment>
   </data>
   <data name="EmployCall" xml:space="preserve">
-    <value>医生的电话</value>
+    <value>叫医生</value>
     <comment>Вызов врача</comment>
   </data>
   <data name="Errorsubmittingform" xml:space="preserve">
-    <value>错误提交表单</value>
+    <value>申请表发送失误</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>商店转让（过户）</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>楼</value>
+    <comment>Этаж</comment>
+  </data>
+  <data name="Formfeedback" xml:space="preserve">
+    <value>商店转让（过户）</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>空位置</value>
+    <comment>Свободные места</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
-    <value>毛皮和皮革</value>
+    <value>裘皮和皮草区</value>
     <comment>Меха и кожа</comment>
   </data>
+  <data name="HouseOfJewelry" xml:space="preserve">
+    <value>饰品区</value>
+    <comment>Дом бижутерии</comment>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>姓</value>
+    <comment>Фамилия</comment>
+  </data>
   <data name="Listofavailablepremises" xml:space="preserve">
-    <value>可用房地清单</value>
+    <value>空位表单</value>
     <comment>Список свободных помещений</comment>
   </data>
   <data name="ListSalePageTitle" xml:space="preserve">
-    <value>操作选择</value>
+    <value>选择行为</value>
     <comment>Выбор действия</comment>
   </data>
   <data name="Map" xml:space="preserve">
-    <value>市场计划</value>
+    <value>市场图</value>
     <comment>Схема рынка</comment>
   </data>
   <data name="Marketnews" xml:space="preserve">
@@ -190,19 +222,31 @@
     <comment>Новости рынка</comment>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>姓名</value>
+    <value>名</value>
     <comment>Имя</comment>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>市场新闻</value>
+    <comment>Новости</comment>
+  </data>
+  <data name="Notreading" xml:space="preserve">
+    <value>必须填写字段</value>
+    <comment>поля обязательны</comment>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>号码</value>
+    <comment>Номер</comment>
+  </data>
   <data name="Ok" xml:space="preserve">
-    <value>原來如此。</value>
+    <value>好！</value>
     <comment>OK</comment>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>电话</value>
+    <value>电话号码</value>
     <comment>Телефон</comment>
   </data>
   <data name="Place" xml:space="preserve">
-    <value>地点</value>
+    <value>位置</value>
     <comment>Место</comment>
   </data>
   <data name="RatesTitle" xml:space="preserve">
@@ -210,95 +254,59 @@
     <comment>Валюта</comment>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>商业楼宇租金</value>
+    <value>商业租赁</value>
     <comment>Аренда торговых помещений</comment>
   </data>
   <data name="RentSalePageTitle" xml:space="preserve">
-    <value>可用房地清单</value>
+    <value>空位表单</value>
     <comment>Список свободных помещений</comment>
   </data>
+  <data name="Reservation" xml:space="preserve">
+    <value>预定</value>
+    <comment>Забронировать</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>排</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="SelectFloor" xml:space="preserve">
+    <value>选楼</value>
+    <comment>Выбор этажа</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
-    <value>呼叫主人（里昂)</value>
-    <comment>Вызов мастера (Лайон)</comment>
+    <value>叫修理工</value>
+    <comment>Вызов мастера (Лайон) -</comment>
   </data>
   <data name="SendButtonText" xml:space="preserve">
-    <value>发送请求</value>
+    <value>发送申请</value>
     <comment>Отправить заявку</comment>
   </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>登入</value>
+    <comment>Войти</comment>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本</value>
+    <comment>Текст</comment>
+  </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
-    <value>表单已成功发送</value>
+    <value>申请表发送成功</value>
     <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
-    <value>新的购物中心</value>
+    <value>新商场</value>
     <comment>Новый ТЦ</comment>
   </data>
   <data name="Ttsgreenthumb" xml:space="preserve">
-    <value>购物中心园丁</value>
+    <value>萨达沃商场</value>
     <comment>Торговый центр Садовод</comment>
   </data>
-  <data name="Weddinggallery" xml:space="preserve">
-    <value>婚礼画廊"敬礼"</value>
-    <comment>Свадебная галерея 'САЛЮТ'</comment>
-  </data>
-  <data name="FreePlace" xml:space="preserve">
-    <value>自由空间</value>
-    <comment>Свободные места</comment>
-  </data>
-  <data name="Row" xml:space="preserve">
-    <value>范围</value>
-    <comment>Ряд</comment>
-  </data>
   <data name="WaitingForNetwork" xml:space="preserve">
-    <value>等待网络</value>
+    <value>正在等待网络</value>
     <comment>Ожидание сети</comment>
   </data>
-  <data name="SelectFloor" xml:space="preserve">
-    <value>地板的选择</value>
-    <comment>Выбор этажа</comment>
-  </data>
-  <data name="Floor" xml:space="preserve">
-    <value>地板</value>
-    <comment>Этаж</comment>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>市场新闻</value>
-    <comment>Новости рынка</comment>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>姓</value>
-    <comment>Фамилия</comment>
-  </data>
-  <data name="Number" xml:space="preserve">
-    <value>数</value>
-    <comment>Номер</comment>
-  </data>
-  <data name="Reservation" xml:space="preserve">
-    <value>现在预订</value>
-    <comment>Забронировать</comment>
-  </data>
-  <data name="Notreading" xml:space="preserve">
-    <value>领域都需要</value>
-    <comment>поля обязательны</comment>
-  </data>
-  <data name="BlockedPlace" xml:space="preserve">
-    <value>所选位置被保留。</value>
-    <comment>Выбранное место забронировано.</comment>
-  </data>
-  <data name="FeedBackButton" xml:space="preserve">
-    <value>申请其他您感兴趣的问题。</value>
-    <comment>Заявка по другим интересующим вас вопросам.</comment>
-  </data>
-  <data name="Booked" xml:space="preserve">
-    <value>已预订</value>
-    <comment>Забронировано</comment>
-  </data>
-  <data name="Formfeedback" xml:space="preserve">
-    <value>您的问题申请表</value>
-    <comment>Форма заявки по интересующим вас вопросам</comment>
-  </data>
-  <data name="Inpute" xml:space="preserve">
-    <value>入口处</value>
-    <comment>Вход</comment>
+  <data name="Weddinggallery" xml:space="preserve">
+    <value>«萨刘特»婚礼长廊</value>
+    <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
 </root>

@@ -2,6 +2,7 @@
 
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
           x:Class="gardener.Views.BlocksViews.NewsViewCell">
     <ViewCell.View>
         <Grid>
@@ -14,7 +15,10 @@
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" Grid.Column="0" Margin="10,0,10,0">
                 <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="#f68b1f" Padding="1">
-                    <Image Source="{Binding ImageUrl}" Aspect="AspectFill" VerticalOptions="Center" />
+                    <forms:CachedImage Aspect="AspectFill" VerticalOptions="Center"
+                                       ErrorPlaceholder="no_image"
+                                       LoadingPlaceholder="no_image"
+                                       Source="{Binding ImageUrl}" />
                 </StackLayout>
             </StackLayout>
             <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" Margin="10, 0" FontSize="Medium" TextColor="#9e4819"

@@ -61,7 +61,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заявка на сдачу в аренду помещения.
+        ///   Looks up a localized string similar to Заявка на сдачу помещения.
         /// </summary>
         internal static string Applicationforleaseofinpremises {
             get {
@@ -196,7 +196,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заявка по другим интересующим вас вопросам..
+        ///   Looks up a localized string similar to переуступка права пользования помещения.
         /// </summary>
         internal static string FeedBackButton {
             get {
@@ -214,7 +214,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Форма заявки по интересующим вас вопросам.
+        ///   Looks up a localized string similar to переуступка права пользования помещения.
         /// </summary>
         internal static string Formfeedback {
             get {
@@ -241,11 +241,11 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вход.
+        ///   Looks up a localized string similar to Дом бижутерии.
         /// </summary>
-        internal static string Input {
+        internal static string HouseOfJewelry {
             get {
-                return ResourceManager.GetString("Input", resourceCulture);
+                return ResourceManager.GetString("HouseOfJewelry", resourceCulture);
             }
         }
         
@@ -304,7 +304,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новости рынка.
+        ///   Looks up a localized string similar to Новости.
         /// </summary>
         internal static string News {
             get {
@@ -331,7 +331,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ОК.
+        ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Ok {
             get {
@@ -412,7 +412,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вызов мастера (Лайон).
+        ///   Looks up a localized string similar to Вызов мастера (Лайон) -.
         /// </summary>
         internal static string Selling {
             get {
@@ -426,6 +426,24 @@ namespace gardener.Properties {
         internal static string SendButtonText {
             get {
                 return ResourceManager.GetString("SendButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Войти.
+        /// </summary>
+        internal static string SignIn {
+            get {
+                return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Текст.
+        /// </summary>
+        internal static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
             }
         }
         
@@ -448,7 +466,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ТЦ Садовод.
+        ///   Looks up a localized string similar to Торговый центр Садовод.
         /// </summary>
         internal static string Ttsgreenthumb {
             get {

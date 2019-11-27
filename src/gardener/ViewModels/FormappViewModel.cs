@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using gardener.Models;
+using gardener.Properties;
 using gardener.Services;
 using gardener.Views;
 using Plugin.Connectivity;
@@ -19,10 +16,11 @@ namespace gardener.ViewModels
 		#region Fields
 		private readonly Block _block;
 		private readonly int _floor;
-		private ObservableCollection<PlaceViewModel> _placeCollection;
-		private PlaceViewModel _selectedPlace;
 		private readonly INavigation _navigation;
-		private readonly Timer _timer;
+		private ObservableCollection<PlaceViewModel> _placeCollection;
+		private string _placeTitle;
+		private string _rowTitle;
+		private PlaceViewModel _selectedPlace;
 		private DateTime? _serverDate;
 		#endregion
 		#endregion
@@ -33,37 +31,37 @@ namespace gardener.ViewModels
 			_navigation = navigation;
 			_block = block;
 			_placeCollection = new ObservableCollection<PlaceViewModel>();
-
-			Title = Properties.Strings.FreePlace;
-			_timer = new Timer(UpdatePlaceList, null, 0, 15000);
+			SetStrings();
 		}
 
-        public FormAppViewModel(Block block, int floor, INavigation navigation)
+		public FormAppViewModel(Block block, int floor, INavigation navigation)
 		{
 			_block = block;
 			_floor = floor;
 			_placeCollection = new ObservableCollection<PlaceViewModel>();
-
-			Title = Properties.Strings.FreePlace;
-
-			_timer = new Timer(UpdatePlaceList, null, 0, 15000);
+			SetStrings();
 		}
 		#endregion
 
-		private void UpdatePlaceList(object obj)
+		#region Properties
+		public ObservableCollection<PlaceViewModel> PlaceCollection
 		{
-			if (_timer == null)
-			{
-				return;
-			}
-
-			Task.Run(() =>
-			{
-				SetSerializedJsonDataAsync(true);
-			});
+			get => _placeCollection;
+			set => SetProperty(ref _placeCollection, value);
 		}
 
-		#region Properties
+		public string PlaceTitle
+		{
+			get => _placeTitle;
+			set => SetProperty(ref _placeTitle, value);
+		}
+
+		public string RowTitle
+		{
+			get => _rowTitle;
+			set => SetProperty(ref _rowTitle, value);
+		}
+
 		public PlaceViewModel SelectedPlace
 		{
 			get => _selectedPlace;
@@ -75,72 +73,67 @@ namespace gardener.ViewModels
 				{
 					if (value.Place.Status == "Забронировано")
 					{
-						Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.BlockedPlace, Properties.Strings.Ok);
+						Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.BlockedPlace, Strings.Ok);
 						OnPropertyChanged(nameof(SelectedPlace));
 						return;
 					}
 
 					_navigation.PushAsync(new ReservationPage(_selectedPlace.Place));
-					
+
 					_selectedPlace = null;
 				}
 
 				OnPropertyChanged(nameof(SelectedPlace));
 			}
 		}
-
-		public ObservableCollection<PlaceViewModel> PlaceCollection
-		{
-			get => _placeCollection;
-			set => SetProperty(ref _placeCollection, value);
-		}
 		#endregion
 
 		#region Public
-		public async void SetSerializedJsonDataAsync(bool force = false)
+		public async void LoadData(int limit = 100, int offset = 0)
 		{
 			ObservableCollection<Place> collection;
-			if (_block.Places == null || force)
+			if (CrossConnectivity.Current.IsConnected)
 			{
-				if (CrossConnectivity.Current.IsConnected)
-				{
-					var service = new PlaceDataStore();
+				var service = new PlaceService();
 
-					IsBusy = true;
-					_block.Places = new ObservableCollection<Place>(await service.GetItemsFromBlockAsync(_block, _block.Places != null && _block.Places.Count > 0 || force));
-					_serverDate = service.LastDataResponse.ServerDate;
+				IsBusy = true;
+				_block.Places = new ObservableCollection<Place>(await service.GetPlaces(_block, limit, offset));
+				_serverDate = service.ServerDate;
 
-					collection = _floor > 0 ? new ObservableCollection<Place>(_block.Places.Where(x => x.Floor == _floor)) : _block.Places;
-				}
-				else
-				{
-					collection = _block.Places;
-					Title = Properties.Strings.WaitingForNetwork;
-				}
+				collection = _floor > 0 ? new ObservableCollection<Place>(_block.Places.Where(x => x.Floor == _floor)) : _block.Places;
 			}
 			else
 			{
 				collection = _block.Places;
+				Title = Strings.WaitingForNetwork;
 			}
 
-			ObservableCollection<PlaceViewModel> places = new ObservableCollection<PlaceViewModel>();
 			if (collection != null)
 			{
 				foreach (var place in collection)
 				{
-					places.Add(new PlaceViewModel(place, _serverDate));
+					PlaceCollection.Add(new PlaceViewModel(place, _serverDate));
 				}
 			}
 
-			PlaceCollection = places;
 			IsBusy = false;
 		}
 		#endregion
 
+		#region Overrided
 		protected override void OnLanguageChanged()
 		{
-			SetSerializedJsonDataAsync(true);
-			Title = Properties.Strings.FreePlace;
+			Title = Strings.FreePlace;
 		}
+		#endregion
+
+		#region Private
+		private void SetStrings()
+		{
+			Title = Strings.FreePlace;
+			RowTitle = Strings.Row;
+			PlaceTitle = Strings.Place;
+		}
+		#endregion
 	}
 }

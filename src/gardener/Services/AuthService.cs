@@ -10,12 +10,15 @@ using System.Threading.Tasks;
 
 namespace gardener.Services
 {
+	/// <summary>
+	/// Представляет сервис для авторизации.
+	/// </summary>
     public class AuthService
     {
         /// <summary>
         /// Задает адрес для авторизации
         /// </summary>
-        private const string Adress = "http://tc.itmit-studio.ru/api/admin/login";
+        private const string Address = "http://tc.itmit-studio.ru/api/admin/login";
 
         /// <summary>
         /// Отправляет введенные данные пользователем на сервер
@@ -40,7 +43,7 @@ namespace gardener.Services
                         "password", password
                     }
                 });
-                response = await client.PostAsync(new Uri(Adress), encodedContent);
+                response = await client.PostAsync(Address, encodedContent);
             }
             var jsonString = await response.Content.ReadAsStringAsync();
             Debug.WriteLine(jsonString);

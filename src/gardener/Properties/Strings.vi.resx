@@ -118,83 +118,127 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
-    <value>Ứng dụng cho sự đầu hàng của các cơ sở</value>
+    <value>Đăng ký cho thuê cửa hàng</value>
     <comment>Заявка на сдачу помещения</comment>
   </data>
   <data name="Applicationforleaseofpremises" xml:space="preserve">
-    <value>Ứng dụng của cơ sở cho thuê</value>
+    <value>Đăng ký thuê cửa hàng</value>
     <comment>Заявка на аренду помещения</comment>
   </data>
   <data name="Applicationformforleaseofinpremises" xml:space="preserve">
-    <value>Mẫu đơn của cơ sở cho thuê</value>
+    <value>Mẫu đơn thuê cửa hàng</value>
     <comment>Форма заявки на аренду помещения</comment>
   </data>
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
-    <value>Mẫu đơn của cơ sở cho thuê</value>
+    <value>Mẫu đơn cho thuê cửa hàng</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>Chú ý</value>
     <comment>Внимание</comment>
   </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>Chỗ vừa chọn đã được đặt trước</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Đã đặt trước</value>
+    <comment>Забронировано</comment>
+  </data>
   <data name="CallSecurity" xml:space="preserve">
-    <value>Gọi an ninh</value>
+    <value>Gọi bảo vệ</value>
     <comment>Вызов охраны</comment>
   </data>
   <data name="Carpetsandtextiles" xml:space="preserve">
-    <value>Thảm và dệt</value>
+    <value>Thảm và hàng dệt kim</value>
     <comment>Ковры и текстиль</comment>
   </data>
   <data name="Clothingseries" xml:space="preserve">
-    <value>Quần áo loạt</value>
+    <value>Dãy bán hàng</value>
     <comment>Вещевые ряды</comment>
   </data>
   <data name="Coatcircle" xml:space="preserve">
-    <value>Áo vòng tròn</value>
+    <value>Khu Palto</value>
     <comment>Пальтовый круг</comment>
   </data>
   <data name="Course" xml:space="preserve">
-    <value>Tệ báo</value>
+    <value>Thông báo tỉ giá ngoại tệ</value>
     <comment>Котировки валют</comment>
   </data>
   <data name="CoursesTableTitle" xml:space="preserve">
-    <value>Tỷ giá AVI</value>
+    <value>Tỉ lệ Ngân hàng Trung ương Nga</value>
     <comment>Курсы валют ЦБ РФ</comment>
   </data>
   <data name="EmployCall" xml:space="preserve">
-    <value>Bác sĩ</value>
+    <value>Gọi bác sĩ</value>
     <comment>Вызов врача</comment>
   </data>
   <data name="Errorsubmittingform" xml:space="preserve">
-    <value>Lỗi gửi mẫu</value>
+    <value>Lỗi gửi đơn</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>Nhượng quyền sở hữu (bán)</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>Tầng</value>
+    <comment>Этаж</comment>
+  </data>
+  <data name="Formfeedback" xml:space="preserve">
+    <value>Nhượng quyền sở hữu (bán)</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>Cửa hàng còn trống</value>
+    <comment>Свободные места</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
-    <value>Lông và da</value>
+    <value>Hàng lông và da thú</value>
     <comment>Меха и кожа</comment>
   </data>
+  <data name="HouseOfJewelry" xml:space="preserve">
+    <value>Khu cửa hàng đồ trang sức</value>
+    <comment>Дом бижутерии</comment>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Họ</value>
+    <comment>Фамилия</comment>
+  </data>
   <data name="Listofavailablepremises" xml:space="preserve">
-    <value>Ứng dụng chuyển cơ sở</value>
+    <value>Danh sách cửa hàng còn trống</value>
     <comment>Список свободных помещений</comment>
   </data>
   <data name="ListSalePageTitle" xml:space="preserve">
-    <value>Hành động lựa chọn</value>
+    <value>Chọn lựa bước tiếp theo</value>
     <comment>Выбор действия</comment>
   </data>
   <data name="Map" xml:space="preserve">
-    <value>Chương trình của thị trường</value>
+    <value>Sơ đồ khu thương mại</value>
     <comment>Схема рынка</comment>
   </data>
   <data name="Marketnews" xml:space="preserve">
-    <value>Tin tức thị trường</value>
+    <value>Tin tức Khu Thương mại</value>
     <comment>Новости рынка</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Tên</value>
     <comment>Имя</comment>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>Tin tức</value>
+    <comment>Новости</comment>
+  </data>
+  <data name="Notreading" xml:space="preserve">
+    <value>Ô bắt buộc</value>
+    <comment>поля обязательны</comment>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Số</value>
+    <comment>Номер</comment>
+  </data>
   <data name="Ok" xml:space="preserve">
-    <value>Tôi thấy</value>
+    <value>OK</value>
     <comment>OK</comment>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -202,103 +246,67 @@
     <comment>Телефон</comment>
   </data>
   <data name="Place" xml:space="preserve">
-    <value>Nơi</value>
+    <value>Chỗ</value>
     <comment>Место</comment>
   </data>
   <data name="RatesTitle" xml:space="preserve">
-    <value>Tệ</value>
+    <value>Ngoại tệ</value>
     <comment>Валюта</comment>
   </data>
   <data name="Rent" xml:space="preserve">
-    <value>Thuê của cơ sở thương mại</value>
+    <value>Thuê cửa hàng</value>
     <comment>Аренда торговых помещений</comment>
   </data>
   <data name="RentSalePageTitle" xml:space="preserve">
-    <value>Danh sách của sẵn cơ sở</value>
+    <value>Danh sách cửa hàng còn trống</value>
     <comment>Список свободных помещений</comment>
   </data>
+  <data name="Reservation" xml:space="preserve">
+    <value>Đặt chỗ</value>
+    <comment>Забронировать</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Dãy</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="SelectFloor" xml:space="preserve">
+    <value>Chọn tầng</value>
+    <comment>Выбор этажа</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
-    <value>Gọi các thầy (Lyon)</value>
-    <comment>Вызов мастера (Лайон)</comment>
+    <value>Gọi thợ sửa chữa (Laion)</value>
+    <comment>Вызов мастера (Лайон) -</comment>
   </data>
   <data name="SendButtonText" xml:space="preserve">
-    <value>Gửi yêu cầu</value>
+    <value>Gửi đơn</value>
     <comment>Отправить заявку</comment>
   </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Đăng nhập</value>
+    <comment>Войти</comment>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Bản văn</value>
+    <comment>Текст</comment>
+  </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
-    <value>Dạng đã thành công gửi</value>
+    <value>Đơn đã được gửi thành công</value>
     <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
-    <value>Trung tâm mua sắm mới</value>
+    <value>Trung tâm Thương mại mới</value>
     <comment>Новый ТЦ</comment>
   </data>
   <data name="Ttsgreenthumb" xml:space="preserve">
-    <value>Trung tâm mua sắm làm Vườn</value>
-    <comment>ТЦ Садовод</comment>
-  </data>
-  <data name="Weddinggallery" xml:space="preserve">
-    <value>Bộ sưu tập cưới 'CHÀO'</value>
-    <comment>Свадебная галерея 'САЛЮТ'</comment>
-  </data>
-  <data name="FreePlace" xml:space="preserve">
-    <value>Miễn phí không gian</value>
-    <comment>Свободные места</comment>
-  </data>
-  <data name="Row" xml:space="preserve">
-    <value>Khoảng</value>
-    <comment>Ряд</comment>
+    <value>Trung tâm thương mại Sadovod</value>
+    <comment>Торговый центр Садовод</comment>
   </data>
   <data name="WaitingForNetwork" xml:space="preserve">
-    <value>Chờ mạng</value>
+    <value>Chờ kết nối mạng</value>
     <comment>Ожидание сети</comment>
   </data>
-  <data name="SelectFloor" xml:space="preserve">
-    <value>Sự lựa chọn của sàn nhà</value>
-    <comment>Выбор этажа</comment>
-  </data>
-  <data name="Floor" xml:space="preserve">
-    <value>Sàn nhà</value>
-    <comment>Этаж</comment>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>Tin tức thị trường</value>
-    <comment>Новости рынка</comment>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>họ</value>
-    <comment>Фамилия</comment>
-  </data>
-  <data name="Number" xml:space="preserve">
-    <value>con số</value>
-    <comment>Номер</comment>
-  </data>
-  <data name="Reservation" xml:space="preserve">
-    <value>Đặt ngay</value>
-    <comment>Забронировать</comment>
-  </data>
-  <data name="Notreading" xml:space="preserve">
-    <value>lĩnh vực được yêu cầu</value>
-    <comment>поля обязательны</comment>
-  </data>
-  <data name="BlockedPlace" xml:space="preserve">
-    <value>Nơi đã chọn được bảo lưu.</value>
-    <comment>Выбранное место забронировано.</comment>
-  </data>
-  <data name="FeedBackButton" xml:space="preserve">
-    <value>Ứng dụng cho các câu hỏi khác mà bạn quan tâm.</value>
-    <comment>Заявка по другим интересующим вас вопросам.</comment>
-  </data>
-  <data name="Booked" xml:space="preserve">
-    <value>Đã đặt</value>
-    <comment>Забронировано</comment>
-  </data>
-  <data name="Formfeedback" xml:space="preserve">
-    <value>Mẫu đơn cho câu hỏi của bạn</value>
-    <comment>Форма заявки по интересующим вас вопросам</comment>
-  </data>
-  <data name="Input" xml:space="preserve">
-    <value>Lối vào</value>
-    <comment>Вход</comment>
+  <data name="Weddinggallery" xml:space="preserve">
+    <value>Phòng trưng bày đồ cưới "Salut"</value>
+    <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
 </root>

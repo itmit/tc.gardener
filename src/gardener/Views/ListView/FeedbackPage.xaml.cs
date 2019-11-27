@@ -17,7 +17,7 @@ namespace gardener.Views.ListView
 		{
 			InitializeComponent();
 
-			BindingContext = new FeedbackViewModel(Properties.Strings.Formfeedback);
+			BindingContext = new FeedbackViewModel();
 		}
 	}
 }

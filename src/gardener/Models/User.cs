@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Realms;
 
 namespace gardener.Models
 {
-    public class User
+    public class User : RealmObject
     {
         /// <summary>
-        /// Возвращает логин пользователя
+        /// Возвращает логин пользователя.
         /// </summary>
-        public string Login 
-        { 
-            get; 
-            set; 
+        public string Login
+        {
+            get;
+            set;
         }
     }
 }

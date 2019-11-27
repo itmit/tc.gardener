@@ -71,7 +71,7 @@ namespace gardener.Views
 					case (int) MenuItemType.Map:
 						MenuPages.Add(id, new NavigationPage(new MapPage()));
 						break;
-                    case (int) MenuItemType.Input:
+                    case (int) MenuItemType.SignIn:
                         MenuPages.Add(id, new NavigationPage(new LoginPage(_mvm)));
                         break;
 				}

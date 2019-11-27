@@ -19,7 +19,7 @@ namespace gardener.Models
 				{
 					ImagePath = "veschevye_ryady.png",
 					Title = Properties.Strings.Clothingseries,
-					OriginalTitle = "Вещевые ряды"
+					OriginalTitle = "вещевой"
 				},
 				new Block
 				{
@@ -36,7 +36,7 @@ namespace gardener.Models
 							Value = 2
 						}
 					},
-					OriginalTitle = "ТЦ Садовод"
+					OriginalTitle = "ТЦ"
 				},
                 new Block
                 {
@@ -59,25 +59,57 @@ namespace gardener.Models
 				{
 					ImagePath = "mex.png",
 					Title = Properties.Strings.Furandleather,
-					OriginalTitle = "Меха и кожа"
+					OriginalTitle = "5 павильон"
 				},
                 new Block
 				{
 					ImagePath = "paltovy_krug.png",
 					Title = Properties.Strings.Coatcircle,
-					OriginalTitle = "Пальтовый круг"
+					OriginalTitle = "ЗСМИ"
 				},
 				new Block
 				{
 					ImagePath = "svadebnaya_galereya_SALYuT.png",
 					Title = Properties.Strings.Weddinggallery,
-					OriginalTitle = "Свадебная галерея 'САЛЮТ'"
+					OriginalTitle = "Салют",
+					Floors = new List<Floor>
+					{
+						new Floor
+						{
+							Value = 1
+						},
+						new Floor
+						{
+							Value = 2
+						},
+						new Floor
+						{
+							Value = 3
+						}
+					}
 				},
 				new Block
 				{
 					ImagePath = "kovr_tekst.png",
 					Title = Properties.Strings.Carpetsandtextiles,
 					OriginalTitle = "Ковры и текстиль"
+				},
+				new Block
+				{
+					ImagePath = "no_image",
+					Title = Properties.Strings.HouseOfJewelry,
+					Floors = new List<Floor>
+					{
+						new Floor
+						{
+							Value = 1
+						},
+						new Floor
+						{
+							Value = 2
+						}
+					},
+					OriginalTitle = "Дом бижутерии"
 				}
 			};
 		#endregion

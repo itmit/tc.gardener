@@ -10,9 +10,22 @@ namespace gardener.ViewModels
 		private Timer _timer;
 		private string _time;
 		private DateTime? _dateTime;
+		private bool _isStatusVisible;
+
+		public Guid Guid
+		{
+			get;
+		} = Guid.NewGuid();
+
+		public bool IsStatusVisible
+		{
+			get => _isStatusVisible;
+			set => SetProperty(ref _isStatusVisible, value);
+		}
 
 		public PlaceViewModel(Place place, DateTime? serverDateTime)
 		{
+			IsStatusVisible = place.Status.Equals("Забронировано");
 			TimeSpan timeValue;
 			Place = place;
 			if (serverDateTime == null || Place.ReservationDate == null)
@@ -26,7 +39,7 @@ namespace gardener.ViewModels
 			var _ = DateTime.Value.AddHours(3);
 			_timer = new Timer(state =>
 			{
-				if (timeValue == TimeSpan.Zero || _timer == null)
+				if (timeValue.Ticks <= 0 || _timer == null)
 				{
 					return;
 				}

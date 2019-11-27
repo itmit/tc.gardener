@@ -3,19 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:gardener="clr-namespace:gardener;assembly=gardener"
              mc:Ignorable="d"
              x:Class="gardener.Views.LoginPage">
     <ContentPage.Content>
         <Frame>
             <StackLayout VerticalOptions="CenterAndExpand">
-                <Entry Placeholder="Enter login"
+                <gardener:ExtendedEntry Placeholder="Enter login"
                    CursorPosition="0"
-                   Text="{Binding Login}"></Entry>
-                <Entry Placeholder="Enter password"
-                   IsPassword="True"
-                   Text="{Binding Password}"></Entry>
+                   FontSize="Large" TextColor="#9e4819"
+                   PlaceholderColor="#7a7a7a"
+                   Text="{Binding Login}"/>
+                <gardener:ExtendedEntry 
+                    Placeholder="Enter password"
+                    FontSize="Large" TextColor="#9e4819"
+                    PlaceholderColor="#7a7a7a"
+                    IsPassword="True"
+                    Text="{Binding Password}"/>
                 <Button Text="LogIn"
-                   Command="{Binding Input}"></Button>
+                        FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
+                        WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                   Command="{Binding Input}"/>
             </StackLayout>
         </Frame>
     </ContentPage.Content>

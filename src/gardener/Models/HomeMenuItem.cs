@@ -11,7 +11,7 @@
 		News,
 		Map,
 		Course,
-        Input
+        SignIn
 	}
 
 	public class HomeMenuItem

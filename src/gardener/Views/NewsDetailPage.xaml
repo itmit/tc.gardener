@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gardener.Views.NewsDetailPage"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              Title="{Binding Title}">
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand">
@@ -17,7 +18,12 @@
                 FontSize="Large"
                 TextColor="#9e4819"
                 VerticalOptions="Start" Margin="10"/>
-            <Image Grid.Row="1" Source="{Binding Image}" x:Name="Image"/>
+
+                <forms:CachedImage ErrorPlaceholder="no_image"
+                                   LoadingPlaceholder="no_image"
+                                   Grid.Row="1"
+                                   Source="{Binding ImageUrl}" />
+
             <StackLayout Grid.Row="2" x:Name="WebContent"/>
         </Grid>
     </ContentPage.Content>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using gardener.Models;
 using gardener.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,11 +17,9 @@ namespace gardener.Views
 		public NewsDetailPage(News news)
 		{
 			InitializeComponent();
-
-			//BindingContext = new NewsDetailViewModel(news);
-			Label.Text = news.Title;
-			Image.Source = news.ImageUrl;
+			BindingContext = news;
 			WebView webView = new WebView();
+			webView.Navigating += WebViewOnNavigating;
 			var htmlSource = new HtmlWebViewSource
 			{
 				Html = news.Text
@@ -29,6 +28,19 @@ namespace gardener.Views
 			webView.VerticalOptions = LayoutOptions.FillAndExpand;
 			webView.HorizontalOptions = LayoutOptions.FillAndExpand;
 			WebContent.Children.Add(webView);
+		}
+		public async void OpenBrowser(string uri)
+		{
+			if (Uri.IsWellFormedUriString(uri, UriKind.Absolute))
+			{
+				await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+			}
+		}
+
+		private void WebViewOnNavigating(object sender, WebNavigatingEventArgs e)
+		{
+			OpenBrowser(e.Url);
+			e.Cancel = true;
 		}
 	}
 }

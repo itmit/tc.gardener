@@ -9,16 +9,18 @@ namespace gardener.Views.ListView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FormAppPage : ContentPage
 	{
+		private FormAppViewModel _viewModel;
+
 		#region .ctor
 		public FormAppPage(Block block)
 		{
 			InitializeComponent();
 
-			var viewModel = new FormAppViewModel(block, Navigation);
+			_viewModel = new FormAppViewModel(block, Navigation);
 
-			BindingContext = viewModel;
+			BindingContext = _viewModel;
 
-			viewModel.SetSerializedJsonDataAsync();
+			_viewModel.LoadData();
 
         }
 
@@ -30,8 +32,26 @@ namespace gardener.Views.ListView
 
 			BindingContext = viewModel;
 
-			viewModel.SetSerializedJsonDataAsync();
+			viewModel.LoadData();
 		}
 		#endregion
+
+		private void ListView_OnItemAppearing(object sender, ItemVisibilityEventArgs e)
+		{
+			if (_viewModel.IsBusy || _viewModel.PlaceCollection.Count == 0)
+			{
+				return;
+			}
+
+			if (e.Item is PlaceViewModel place)
+			{
+				if (place.Guid == _viewModel.PlaceCollection[_viewModel.PlaceCollection.Count - 1].Guid)
+				{
+					_viewModel.LoadData(100, _viewModel.PlaceCollection.Count + 100);
+				}
+			}
+
+			
+		}
 	}
 }

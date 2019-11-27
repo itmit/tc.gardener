@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
-    <value>Заявка на сдачу в аренду помещения</value>
-    <comment>Заявка на сдачу в аренду помещения</comment>
+    <value>Заявка на сдачу помещения</value>
+    <comment>Заявка на сдачу помещения</comment>
   </data>
   <data name="Applicationforleaseofpremises" xml:space="preserve">
     <value>Заявка на аренду помещения</value>
@@ -136,6 +136,14 @@
   <data name="Attention" xml:space="preserve">
     <value>Внимание</value>
     <comment>Внимание</comment>
+  </data>
+  <data name="BlockedPlace" xml:space="preserve">
+    <value>Выбранное место забронировано.</value>
+    <comment>Выбранное место забронировано.</comment>
+  </data>
+  <data name="Booked" xml:space="preserve">
+    <value>Забронировано</value>
+    <comment>Забронировано</comment>
   </data>
   <data name="CallSecurity" xml:space="preserve">
     <value>Вызов охраны</value>
@@ -169,9 +177,33 @@
     <value>Ошибка отправки формы</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="FeedBackButton" xml:space="preserve">
+    <value>переуступка права пользования помещения</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>Этаж</value>
+    <comment>Этаж</comment>
+  </data>
+  <data name="Formfeedback" xml:space="preserve">
+    <value>переуступка права пользования помещения</value>
+    <comment>переуступка права пользования помещения</comment>
+  </data>
+  <data name="FreePlace" xml:space="preserve">
+    <value>Свободные места</value>
+    <comment>Свободные места</comment>
+  </data>
   <data name="Furandleather" xml:space="preserve">
     <value>Меха и кожа</value>
     <comment>Меха и кожа</comment>
+  </data>
+  <data name="HouseOfJewelry" xml:space="preserve">
+    <value>Дом бижутерии</value>
+    <comment>Дом бижутерии</comment>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
+    <comment>Фамилия</comment>
   </data>
   <data name="Listofavailablepremises" xml:space="preserve">
     <value>Список свободных помещений</value>
@@ -193,8 +225,20 @@
     <value>Имя</value>
     <comment>Имя</comment>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>Новости</value>
+    <comment>Новости</comment>
+  </data>
+  <data name="Notreading" xml:space="preserve">
+    <value>поля обязательны</value>
+    <comment>поля обязательны</comment>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Номер</value>
+    <comment>Номер</comment>
+  </data>
   <data name="Ok" xml:space="preserve">
-    <value>ОК</value>
+    <value>OK</value>
     <comment>OK</comment>
   </data>
   <data name="Phone" xml:space="preserve">
@@ -217,13 +261,33 @@
     <value>Список свободных помещений</value>
     <comment>Список свободных помещений</comment>
   </data>
+  <data name="Reservation" xml:space="preserve">
+    <value>Забронировать</value>
+    <comment>Забронировать</comment>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Ряд</value>
+    <comment>Ряд</comment>
+  </data>
+  <data name="SelectFloor" xml:space="preserve">
+    <value>Выбор этажа</value>
+    <comment>Выбор этажа</comment>
+  </data>
   <data name="Selling" xml:space="preserve">
-    <value>Вызов мастера (Лайон)</value>
-    <comment>Вызов мастера (Лайон)</comment>
+    <value>Вызов мастера (Лайон) -</value>
+    <comment>Вызов мастера (Лайон) -</comment>
   </data>
   <data name="SendButtonText" xml:space="preserve">
     <value>Отправить заявку</value>
     <comment>Отправить заявку</comment>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Войти</value>
+    <comment>Войти</comment>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Текст</value>
+    <comment>Текст</comment>
   </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
     <value>Форма успешно отправлена</value>
@@ -234,71 +298,15 @@
     <comment>Новый ТЦ</comment>
   </data>
   <data name="Ttsgreenthumb" xml:space="preserve">
-    <value>ТЦ Садовод</value>
-    <comment>ТЦ Садовод</comment>
-  </data>
-  <data name="Weddinggallery" xml:space="preserve">
-    <value>Свадебная галерея 'САЛЮТ'</value>
-    <comment>Свадебная галерея 'САЛЮТ'</comment>
-  </data>
-  <data name="FreePlace" xml:space="preserve">
-    <value>Свободные места</value>
-    <comment>Свободные места</comment>
-  </data>
-  <data name="Row" xml:space="preserve">
-    <value>Ряд</value>
-    <comment>Ряд</comment>
+    <value>Торговый центр Садовод</value>
+    <comment>Торговый центр Садовод</comment>
   </data>
   <data name="WaitingForNetwork" xml:space="preserve">
     <value>Ожидание сети</value>
     <comment>Ожидание сети</comment>
   </data>
-  <data name="SelectFloor" xml:space="preserve">
-    <value>Выбор этажа</value>
-    <comment>Выбор этажа</comment>
-  </data>
-  <data name="Floor" xml:space="preserve">
-    <value>Этаж</value>
-    <comment>Этаж</comment>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>Новости рынка</value>
-    <comment>Новости рынка</comment>
-  </data>
-  <data name="LastName" xml:space="preserve">
-    <value>Фамилия</value>
-    <comment>Фамилия</comment>
-  </data>
-  <data name="Number" xml:space="preserve">
-    <value>Номер</value>
-    <comment>Номер</comment>
-  </data>
-  <data name="Reservation" xml:space="preserve">
-    <value>Забронировать</value>
-    <comment>Забронировать</comment>
-  </data>
-  <data name="Notreading" xml:space="preserve">
-    <value>поля обязательны</value>
-    <comment>поля обязательны</comment>
-  </data>
-  <data name="BlockedPlace" xml:space="preserve">
-    <value>Выбранное место забронировано.</value>
-    <comment>Выбранное место забронировано.</comment>
-  </data>
-  <data name="FeedBackButton" xml:space="preserve">
-    <value>Заявка по другим интересующим вас вопросам.</value>
-    <comment>Заявка по другим интересующим вас вопросам.</comment>
-  </data>
-  <data name="Booked" xml:space="preserve">
-    <value>Забронировано</value>
-    <comment>Забронировано</comment>
-  </data>
-  <data name="Formfeedback" xml:space="preserve">
-    <value>Форма заявки по интересующим вас вопросам</value>
-    <comment>Форма заявки по интересующим вас вопросам</comment>
-  </data>
-  <data name="Input" xml:space="preserve">
-    <value>Вход</value>
-    <comment>Вход</comment>
+  <data name="Weddinggallery" xml:space="preserve">
+    <value>Свадебная галерея 'САЛЮТ'</value>
+    <comment>Свадебная галерея 'САЛЮТ'</comment>
   </data>
 </root>

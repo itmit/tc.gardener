@@ -11,6 +11,7 @@ using Firebase.Iid;
 using Android.Util;
 using Android.Gms.Common;
 using Android.Support.V13.View.Inputmethod;
+using FFImageLoading.Forms.Platform;
 using Firebase;
 
 namespace gardener.Droid
@@ -60,6 +61,7 @@ namespace gardener.Droid
 		{
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
+			CachedImageRenderer.Init(true);
 
 			base.OnCreate(savedInstanceState);
 

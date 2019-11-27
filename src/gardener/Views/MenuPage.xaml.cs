@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using gardener.Models;
 using gardener.ViewModels;
+using Realms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,6 +32,14 @@ namespace gardener.Views
 
 				await RootPage.NavigateFromMenu(id);
 			};
+
+			LoginViewModel.SignIn += LoginViewModelOnSignIn;
+		}
+
+		private void LoginViewModelOnSignIn()
+		{
+			List<HomeMenuItem> menuItems = GetMenuItems();
+			ListViewMenu.ItemsSource = menuItems;
 		}
 		#endregion
 
@@ -43,6 +53,8 @@ namespace gardener.Views
 			List<HomeMenuItem> menuItems = GetMenuItems();
 			ListViewMenu.ItemsSource = menuItems;
 		}
+
+		public Realm Realm => Realm.GetInstance();
 
 		private void Button_OnClicked1(object sender, EventArgs e)
 		{
@@ -96,13 +108,19 @@ namespace gardener.Views
                 {
                     Id = MenuItemType.News,
                     Title = Properties.Strings.News
-                },
-                new HomeMenuItem
-                {
-                    Id = MenuItemType.Input,
-                    Title = Properties.Strings.Input
                 }
 			};
+
+			if (Realm.All<User>()
+					 .SingleOrDefault() ==
+				null)
+			{
+				menuItems.Add(new HomeMenuItem
+				{
+					Id = MenuItemType.SignIn,
+					Title = Properties.Strings.SignIn
+				});
+			}
 
 			return menuItems;
 		}

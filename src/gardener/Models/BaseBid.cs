@@ -3,20 +3,22 @@
 	public abstract class BaseBid
 	{
 		#region .ctor
-		public BaseBid(string placeNumber, string name, string phoneNumber, Block block)
+		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, string row)
 		{
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
 			Block = block;
+			Row = row;
 		}
 
-		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, int floor)
+		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, string row, int floor)
 		{
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
 			Block = block;
+			Row = row;
 			Floor = floor;
 		}
 		#endregion
@@ -29,6 +31,12 @@
 		}
 
 		public int Floor
+		{
+			get;
+			set;
+		}
+
+		public string Row
 		{
 			get;
 			set;
