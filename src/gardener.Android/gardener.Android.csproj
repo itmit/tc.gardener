@@ -276,5 +276,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\no_image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bizuteria_tc.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
