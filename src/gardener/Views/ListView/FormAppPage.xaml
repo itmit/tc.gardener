@@ -10,7 +10,7 @@
             <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
                                    IsRunning="{Binding IsBusy}" />
             <StackLayout>
-                <Grid>
+                <Grid HorizontalOptions="FillAndExpand" MinimumHeightRequest="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="3"/>
