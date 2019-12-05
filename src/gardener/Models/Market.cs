@@ -96,7 +96,7 @@ namespace gardener.Models
 				},
 				new Block
 				{
-					ImagePath = "no_image",
+					ImagePath = "bizuteria_tc.png",
 					Title = Properties.Strings.HouseOfJewelry,
 					Floors = new List<Floor>
 					{
