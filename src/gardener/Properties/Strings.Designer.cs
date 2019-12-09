@@ -61,7 +61,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заявка на сдачу помещения.
+        ///   Looks up a localized string similar to Сдать помещение.
         /// </summary>
         internal static string Applicationforleaseofinpremises {
             get {
@@ -70,7 +70,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заявка на аренду помещения.
+        ///   Looks up a localized string similar to Арендовать помещение.
         /// </summary>
         internal static string Applicationforleaseofpremises {
             get {
