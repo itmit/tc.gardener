@@ -11,31 +11,33 @@
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
                                    IsRunning="{Binding IsBusy}" />
-                <StackLayout>
-                    <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                        <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
+                <StackLayout Margin="30,10,30,10" WidthRequest="300">
+                    <ScrollView>
+                        <StackLayout HeightRequest="300">
+                            <Editor Placeholder="{Binding TextTitle}"
+                                    FontSize="Large"
+                                    AutoSize="TextChanges"
+                                    TextColor="#9e4819"
+                                    VerticalOptions="FillAndExpand"
+                                    Keyboard="Chat"
+                                    PlaceholderColor="#7a7a7a"
+                                    Text="{Binding Text, Mode=TwoWay}" />
+                            <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
                                                 Text="{Binding Name, Mode=TwoWay}"
                                                 PlaceholderColor="#7a7a7a" />
-                        <gardener:ExtendedEntry Placeholder="{Binding PhoneTitle}" FontSize="Large" TextColor="#9e4819"
+                            <gardener:ExtendedEntry Placeholder="{Binding PhoneTitle}" FontSize="Large" TextColor="#9e4819"
                                                 Text="{Binding PhoneNumber, Mode=TwoWay}"
                                                 PlaceholderColor="#7a7a7a" Keyboard="Numeric">
-                            <gardener:ExtendedEntry.Behaviors>
-                                <gardener:MaskedBehavior Mask="+7 (XXX) XXX-XX-XX" />
-                            </gardener:ExtendedEntry.Behaviors>
-                        </gardener:ExtendedEntry>
-                        <Editor Placeholder="{Binding TextTitle}"
-                                FontSize="Large"
-                                AutoSize="TextChanges"
-                                TextColor="#9e4819"
-                                VerticalOptions="FillAndExpand"
-                                Keyboard="Chat"
-                                PlaceholderColor="#7a7a7a"
-                                Text="{Binding Text, Mode=TwoWay}" />
-                    </StackLayout>
-                    <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
-                            HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-                            WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
-                            Command="{Binding SendFormCommand}" />
+                                <gardener:ExtendedEntry.Behaviors>
+                                    <gardener:MaskedBehavior Mask="+7 (XXX) XXX-XX-XX" />
+                                </gardener:ExtendedEntry.Behaviors>
+                            </gardener:ExtendedEntry>
+                            <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                                    WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                                    Command="{Binding SendFormCommand}" />
+                        </StackLayout>
+                    </ScrollView>
                 </StackLayout>
             </Grid>
         </ScrollView>

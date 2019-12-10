@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
-    <value>Đăng ký cho thuê cửa hàng</value>
-    <comment>Заявка на сдачу помещения</comment>
+    <value>Cho thuê chỗ</value>
+    <comment>Сдать помещение</comment>
   </data>
   <data name="Applicationforleaseofpremises" xml:space="preserve">
-    <value>Đăng ký thuê cửa hàng</value>
-    <comment>Заявка на аренду помещения</comment>
+    <value>Muốn thuê chỗ</value>
+    <comment>Арендовать помещение</comment>
   </data>
   <data name="Applicationformforleaseofinpremises" xml:space="preserve">
     <value>Mẫu đơn thuê cửa hàng</value>
