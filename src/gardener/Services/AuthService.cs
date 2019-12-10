@@ -31,7 +31,6 @@ namespace gardener.Services
             HttpResponseMessage response;
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{login} {password}");
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var encodedContent = new FormUrlEncodedContent(new Dictionary<string, string>
@@ -48,9 +47,7 @@ namespace gardener.Services
             var jsonString = await response.Content.ReadAsStringAsync();
             Debug.WriteLine(jsonString);
 
-            var jsonData = JsonConvert.DeserializeObject<JsonAuthDataResponse<User>>(jsonString);
-
-            return await Task.FromResult(response.IsSuccessStatusCode);
+			return await Task.FromResult(response.IsSuccessStatusCode);
         }
     }
 }

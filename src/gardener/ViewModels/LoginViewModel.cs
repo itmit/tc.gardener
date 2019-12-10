@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Realms;
+using Realms.Schema;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
@@ -56,7 +57,22 @@ namespace gardener.ViewModels
 		public static event SignInEventHandler SignIn;
 
 		private async void LoginCommandExecute(string login, string password)
-        {
+		{
+			login = login.Trim();
+			password = password.Trim();
+			if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+			{
+				await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, "Отсутствует логин и(или) пароль", Properties.Strings.Ok);
+				return;
+			}
+
+			if (login.Length < 3)
+			{
+				await Application.Current.MainPage
+								 .DisplayAlert(Properties.Strings.Attention, "Количество символов в поле логин должно быть не менее 3", Properties.Strings.Ok);
+				return;
+			}
+
             bool result = await _authService.LoginAsync(login, password);
 
             if (result)
