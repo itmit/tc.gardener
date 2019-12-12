@@ -28,12 +28,10 @@ namespace gardener.ViewModels
 		private readonly INavigation _navigation;
 		private string _phoneNumber;
 		private string _phoneTitle;
-		private string _placeNumber = "Выберите место";
+		private string _placeName = "Выберите место";
 		private ObservableCollection<Place> _places;
 		private string _placeTitle;
 		private string _row;
-		private string _rowName = "Выберите ряд";
-		private Place _selectedRow;
 		private string _rowTitle;
 		private string _sendButtonText;
 		private Place _selectedPlace;
@@ -82,29 +80,24 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _textTitle, value);
 		}
 
-		public ICommand ClosePopUpCommand =>
-			new RelayCommand(obj =>
-							 {
-								 if (SelectedRow != null)
-								 {
-									 RowName = SelectedRow.Row;
-								 }
-
-								 _navigation.PopPopupAsync();
-							 },
-							 obj => true);
 		public ICommand ClosePlacePopUpCommand =>
 			new RelayCommand(obj =>
 							 {
 								 if (SelectedPlace != null)
 								 {
-									 RowName = SelectedPlace.Row;
-									 NumberName = SelectedPlace.PlaceNumber;
+									 PlaceName = $"Ряд {SelectedPlace.Row} Место {SelectedPlace.PlaceNumber}";
 								 }
 
+								 IsShowedPop = false;
 								 _navigation.PopPopupAsync();
 							 },
 							 obj => true);
+
+		public bool IsShowedPop
+		{
+			get;
+			set;
+		}
 
 		public string Name
 		{
@@ -118,49 +111,16 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _nameTitle, value);
 		}
 
-		public ICommand OpenRowPopUpCommand =>
-			new RelayCommand(obj =>
-							 {
-								 IEnumerable<Place> places;
-								 if (string.IsNullOrEmpty(Row))
-								 {
-									 places = _block.Places?.GroupBy(p => p.Row)
-														.Select(g => new Place
-														{
-															Row = g.Key
-														});
-								 }
-								 else
-								 {
-									 places = _block.Places?.GroupBy(p => p.Row)
-													.Where(p => p.Key.Contains(Row))
-													.Select(g => new Place
-													{
-														Row = g.Key
-													});
-								 }
-								 Places = places != null
-											  ? new ObservableCollection<Place>(places) 
-											  : new ObservableCollection<Place>();
-
-								 _navigation.PushPopupAsync(new SelectRowPopUpPage(this));
-							 },
-							 obj => true);
-
 		public ICommand OpenPlacePopUpCommand =>
 			new RelayCommand(obj =>
 							 {
 								 IEnumerable<Place> places = _block.Places;
 
-								 if (SelectedRow != null && !string.IsNullOrEmpty(SelectedRow.Row))
-								 {
-									 places = _block.Places.Where(p => p.Row.Equals(SelectedRow.Row));
-								 }
-
 								 Places = places != null
 											  ? new ObservableCollection<Place>(places) 
 											  : new ObservableCollection<Place>();
 
+								 IsShowedPop = true;
 								 _navigation.PushPopupAsync(new SelectPlacePopUpPage(this));
 							 },
 							 obj => true);
@@ -177,10 +137,10 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _phoneTitle, value);
 		}
 
-		public string NumberName
+		public string PlaceName
 		{
-			get => _placeNumber;
-			set => SetProperty(ref _placeNumber, value);
+			get => _placeName;
+			set => SetProperty(ref _placeName, value);
 		}
 
 		public string Number
@@ -189,33 +149,29 @@ namespace gardener.ViewModels
 			set
 			{
 				SetProperty(ref _number, value);
-
-				IEnumerable<Place> places = _block.Places;
-
-				if (string.IsNullOrEmpty(_number))
-				{
-					if (SelectedRow != null && !string.IsNullOrEmpty(SelectedRow.Row))
-					{
-						places = _block.Places.Where(p => p.Row.Equals(SelectedRow.Row));
-					}
-				}
-				else
-				{
-					if (SelectedRow != null && !string.IsNullOrEmpty(SelectedRow.Row))
-					{
-						places = _block.Places.Where(p => p.Row.Equals(SelectedRow.Row) && p.PlaceNumber.Contains(_number));
-					}
-					else
-					{
-						places = _block.Places.Where(p => p.PlaceNumber.Contains(_number));
-
-					}
-				}
-
-				Places = places != null
-							 ? new ObservableCollection<Place>(places)
-							 : new ObservableCollection<Place>();
+				UpdatePlaces();
 			}
+		}
+
+		private void UpdatePlaces()
+		{
+			IEnumerable<Place> places = _block.Places;
+
+			if (string.IsNullOrEmpty(_number))
+			{
+				if (!string.IsNullOrEmpty(Row))
+				{
+					places = _block.Places.Where(p => p.Row.Contains(Row));
+				}
+			}
+			else
+			{
+				places = string.IsNullOrEmpty(Row)
+							 ? _block.Places.Where(p => p.PlaceNumber.Contains(_number))
+							 : _block.Places.Where(p => p.Row.Contains(Row) && p.PlaceNumber.Contains(_number));
+			}
+
+			Places = places != null ? new ObservableCollection<Place>(places) : new ObservableCollection<Place>();
 		}
 
 		public ObservableCollection<Place> Places
@@ -236,39 +192,8 @@ namespace gardener.ViewModels
 			set
 			{
 				SetProperty(ref _row, value);
-				IEnumerable<Place> places;
-				if (string.IsNullOrEmpty(_row))
-				{
-					RowName = "Выберите ряд";
-					places = _block.Places.GroupBy(p => p.Row)
-									   .Select(g => new Place
-									   {
-										   Row = g.Key
-									   });
-					Places = new ObservableCollection<Place>(places);
-					return;
-				}
-
-				places = _block.Places.GroupBy(p => p.Row)
-							  .Where(p => p.Key.Contains(Row))
-							  .Select(g => new Place
-							  {
-								  Row = g.Key
-							  });
-				Places = new ObservableCollection<Place>(places);
+				UpdatePlaces();
 			}
-		}
-
-		public string RowName
-		{
-			get => _rowName;
-			set => SetProperty(ref _rowName, value);
-		}
-
-		public Place SelectedRow
-		{
-			get => _selectedRow;
-			set => SetProperty(ref _selectedRow, value);
 		}
 
 		public string Text

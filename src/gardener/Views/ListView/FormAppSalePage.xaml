@@ -23,14 +23,7 @@
                         </gardener:ExtendedEntry.Behaviors>
                     </gardener:ExtendedEntry>
 
-
-                    <Label Text="{Binding RowName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenRowPopUpCommand}"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Label Text="{Binding NumberName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
+                    <Label Text="{Binding PlaceName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OpenPlacePopUpCommand}"/>
                         </Label.GestureRecognizers>

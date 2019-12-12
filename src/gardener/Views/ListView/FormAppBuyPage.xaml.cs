@@ -20,5 +20,18 @@ namespace gardener.Views.ListView
 			BindingContext = _viewModel;
 		}
 		#endregion
+
+		/// <summary>Application developers can override this method to provide behavior when the back button is pressed.</summary>
+		/// <returns>To be added.</returns>
+		/// <remarks>To be added.</remarks>
+		protected override bool OnBackButtonPressed()
+		{
+			if (_viewModel.IsShowedPop)
+			{
+				Navigation.PopPopupAsync();
+				return false;
+			}
+			return base.OnBackButtonPressed();
+		}
 	}
 }
