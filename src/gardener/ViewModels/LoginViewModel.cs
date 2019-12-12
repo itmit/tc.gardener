@@ -53,13 +53,12 @@ namespace gardener.ViewModels
 		public delegate void SignInEventHandler();
 
 		//Событие OnCount c типом делегата SignInEventHandler.
-
 		public static event SignInEventHandler SignIn;
 
 		private async void LoginCommandExecute(string login, string password)
 		{
-			login = login.Trim();
-			password = password.Trim();
+			login = login?.Trim();
+			password = password?.Trim();
 			if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
 			{
 				await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, "Отсутствует логин и(или) пароль", Properties.Strings.Ok);
@@ -73,7 +72,17 @@ namespace gardener.ViewModels
 				return;
 			}
 
-            bool result = await _authService.LoginAsync(login, password);
+			bool result;
+			try
+			{
+				result = await _authService.LoginAsync(login, password);
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, "Ошибка сервера", Properties.Strings.Ok);
+				return;
+			}
 
             if (result)
 			{

@@ -1,24 +1,32 @@
 ﻿namespace gardener.Models
 {
-	public abstract class BaseBid
+	public class Bid
 	{
 		#region .ctor
-		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, string row)
+		public Bid(string placeNumber, string name, string phoneNumber, Block block, string row, string text)
 		{
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
 			Block = block;
 			Row = row;
+			Text = text;
 		}
 
-		public BaseBid(string placeNumber, string name, string phoneNumber, Block block, string row, int floor)
+		public string Text
+		{
+			get;
+			set;
+		}
+
+		public Bid(string placeNumber, string name, string phoneNumber, Block block, string row, int floor, string text)
 		{
 			PlaceNumber = placeNumber;
 			Name = name;
 			PhoneNumber = phoneNumber;
 			Block = block;
 			Row = row;
+			Text = text;
 			Floor = floor;
 		}
 		#endregion

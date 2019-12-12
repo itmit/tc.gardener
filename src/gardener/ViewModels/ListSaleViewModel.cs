@@ -16,9 +16,6 @@ namespace gardener.ViewModels
 		#region .ctor
 		public ListSaleViewModel(INavigation navigation, Block block, int floor)
 		{
-			var formAppSalePage = new FormAppSalePage(block, floor);
-			var formAppBuyPage = new FormAppBuyPage(block, floor);
-			var feedbackPage = new FeedbackPage();
 			OpenPageCommand = new RelayCommand(obj =>
 											   {
 												   if (obj is Type type)
@@ -30,13 +27,13 @@ namespace gardener.ViewModels
 															   page = new FormAppPage(block);
 															   break;
 														   case nameof(FormAppSalePage):
-															   page = formAppSalePage;
+															   page = new FormAppSalePage(block, floor);
 															   break;
 														   case nameof(FormAppBuyPage):
-															   page = formAppBuyPage;
+															   page = new FormAppBuyPage(block, floor);
 															   break;
 														   case nameof(FeedbackPage):
-															   page = feedbackPage;
+															   page = new FeedbackPage(block, floor);
 															   break;
 														   default:
 															   throw new ArgumentOutOfRangeException();

@@ -104,7 +104,8 @@ namespace gardener.Services
 			using (var client = new HttpClient())
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-				var response = await client.GetAsync($"{GetPlacesUri}/{block.OriginalTitle}?limit={limit}&offset={offset}");
+				var url = $"{GetPlacesUri}/{block.OriginalTitle}?limit={limit}&offset={offset}";
+				var response = await client.GetAsync(url);
 
 				var jsonString = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(jsonString);

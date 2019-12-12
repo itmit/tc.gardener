@@ -13,7 +13,7 @@ namespace gardener.Views.ListView
 		public FormAppSalePage(Block block, int floor)
 		{
 			InitializeComponent();
-			BindingContext = new FormAppSaleViewModel(block, floor); ;
+			BindingContext = new FormAppSaleViewModel(block, floor, Navigation);
         }
 		#endregion
 	}

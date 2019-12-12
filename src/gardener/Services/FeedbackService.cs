@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using gardener.Models;
 using Newtonsoft.Json;
 
 namespace gardener.Services
@@ -21,7 +22,7 @@ namespace gardener.Services
 		#endregion
 
 		#region Public
-		public async Task<bool> Send(string phoneNumber, string text, string name)
+		public async Task<bool> Send(string phoneNumber, Place place, int floor, Block block, string text, string name)
 		{
 			using (var client = new HttpClient())
 			{
@@ -30,6 +31,18 @@ namespace gardener.Services
 													  {
 														  {
 															  "phone_number", phoneNumber
+														  },
+														  {
+															  "place_number", place.PlaceNumber
+														  },
+														  {
+															  "row", place.Row
+														  },
+														  {
+															  "block", block.OriginalTitle
+														  },
+														  {
+															  "floor", floor.ToString()
 														  },
 														  {
 															  "text", text

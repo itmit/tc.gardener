@@ -80,6 +80,8 @@ namespace gardener.Droid
 
 			Log.Info(Tag, $"IsGooglePlayServicesAvailable code is {resultCode}");
 
+			Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
 			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.notifications;
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());

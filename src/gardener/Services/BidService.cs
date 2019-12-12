@@ -10,16 +10,16 @@ namespace gardener.Services
 {
 	public class BidService
 	{
-		private const string CreateBidForBuy = "http://tc.itmit-studio.ru/api/bidForBuy";
-		private const string CreateBidForSale = "http://tc.itmit-studio.ru/api/bidForSale";
+		private const string CreateBidForBuyUri = "http://tc.itmit-studio.ru/api/bidForBuy";
+		private const string CreateBidForSaleUri = "http://tc.itmit-studio.ru/api/bidForSale";
 
-		public async Task<bool> CreateBid(BidForBuy bid)
+		public async Task<bool> CreateBidForBuy(Bid bid)
 		{
 			using (var client = new HttpClient())
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				var response = await client.PostAsync(CreateBidForBuy, 
+				var response = await client.PostAsync(CreateBidForSaleUri, 
 												new FormUrlEncodedContent(new Dictionary<string, string>
 												{
 													{
@@ -39,6 +39,9 @@ namespace gardener.Services
 													},
 													{
 														"Floor", bid.Floor.ToString()
+													},
+													{
+														"Text", bid.Text
 													}
 												}));
 
@@ -66,13 +69,13 @@ namespace gardener.Services
 			set;
 		}
 
-		public async Task<bool> CreateBid(BidForSale bid)
+		public async Task<bool> CreateBidForSale(Bid bid)
 		{
 			using (var client = new HttpClient())
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				var response = await client.PostAsync(CreateBidForSale,
+				var response = await client.PostAsync(CreateBidForBuyUri,
 													  new FormUrlEncodedContent(new Dictionary<string, string>
 													  {
 														  {
@@ -92,6 +95,9 @@ namespace gardener.Services
 														  },
 														  {
 															  "Floor", bid.Floor.ToString()
+														  },
+														  {
+															  "Text", bid.Text
 														  }
 													  }));
 

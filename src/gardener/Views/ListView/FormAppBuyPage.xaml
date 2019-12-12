@@ -11,14 +11,6 @@
                                IsRunning="{Binding IsBusy}" />
             <StackLayout>
                 <StackLayout Margin="30,10,30,10" WidthRequest="300">
-                    <gardener:ExtendedEntry Placeholder="{Binding RowTitle}" 
-                                            FontSize="Large" 
-                                            TextColor="#9e4819"
-                                            PlaceholderColor="#7a7a7a"
-                                            Text="{Binding Row, Mode=TwoWay}" />
-                    <gardener:ExtendedEntry Placeholder="{Binding PlaceTitle}" FontSize="Large" TextColor="#9e4819"
-                                            PlaceholderColor="#7a7a7a"
-                                            Text="{Binding PlaceNumber, Mode=TwoWay}" />
                     <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding Name, Mode=TwoWay}"
                                             PlaceholderColor="#7a7a7a" />
@@ -29,6 +21,28 @@
                             <gardener:MaskedBehavior Mask="+7 (XXX) XXX-XX-XX" />
                         </gardener:ExtendedEntry.Behaviors>
                     </gardener:ExtendedEntry>
+
+
+                    <Label Text="{Binding RowName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenRowPopUpCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="{Binding NumberName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenPlacePopUpCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Editor Placeholder="{Binding TextTitle}"
+                            FontSize="Large"
+                            AutoSize="TextChanges"
+                            TextColor="#9e4819"
+                            VerticalOptions="Start"
+                            HeightRequest="150"
+                            Keyboard="Chat"
+                            PlaceholderColor="#7a7a7a"
+                            Text="{Binding Text, Mode=TwoWay}" />
                 </StackLayout>
                 <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
                         HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
