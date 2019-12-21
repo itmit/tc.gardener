@@ -103,9 +103,9 @@ namespace gardener.ViewModels
 					});
 					transaction.Commit();
 				}
-
+				
 				_mvm.Visible = true;
-
+				SignIn?.Invoke();
 				await Application.Current.MainPage.DisplayAlert("Уведомление", "Вход выполнен!", "ОК");
             }
             else
@@ -117,10 +117,5 @@ namespace gardener.ViewModels
         protected override void OnLanguageChanged()
         {
         }
-
-		private static void OnSignIn()
-		{
-			SignIn?.Invoke();
-		}
 	}
 }

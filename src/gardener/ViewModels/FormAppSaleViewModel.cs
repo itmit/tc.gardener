@@ -18,25 +18,36 @@ namespace gardener.ViewModels
 		{
 			_block = block;
 			_floor = floor;
+			Title = Strings.Applicationforleaseofinpremises;
+		}
+
+		protected override void OnLanguageChanged()
+		{
+			base.OnLanguageChanged();
+			Title = Strings.Applicationforleaseofinpremises;
 		}
 
 		protected override async void ExecuteSendFormCommand()
 		{
-			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new BidService();
-
-				if (string.IsNullOrEmpty(SelectedPlace.PlaceNumber) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(PhoneNumber))
+				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
 				{
-					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number} {Strings.Notreading}", Strings.Ok);
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
+
 					return;
 				}
-
+				IsBusy = true;
 				try
 				{
 					if (await service.CreateBidForSale(new Bid(SelectedPlace.PlaceNumber, Name, PhoneNumber, _block, SelectedPlace.Row, _floor, Text)))
 					{
+						PhoneNumber = "";
+						Name = "";
+						SelectedPlace = null;
+						Text = "";
+						PlaceName = Strings.SelectPlace;
 						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
 					}
 					else

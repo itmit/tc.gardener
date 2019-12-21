@@ -38,9 +38,16 @@
                             PlaceholderColor="#7a7a7a"
                             Text="{Binding Text, Mode=TwoWay}" />
                 </StackLayout>
-                <Button Text="{Binding SendButtonText}" FontSize="Medium" BorderWidth="1" Margin="5" BorderColor="#f68b1f"
-                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="60"
-                        WidthRequest="250" BackgroundColor="Transparent" CornerRadius="15"
+                <Button Text="{Binding SendButtonText}" 
+                        FontSize="Medium" 
+                        BorderWidth="1"
+                        Margin="5" 
+                        BorderColor="#f68b1f"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        Padding="20"
+                        BackgroundColor="Transparent" 
+                        CornerRadius="15"
                         Command="{Binding SendFormCommand}" />
             </StackLayout>
         </Grid>

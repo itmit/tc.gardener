@@ -11,7 +11,8 @@
                 <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
                                        IsRunning="{Binding IsBusy}" />
-                    <ListView ItemsSource="{Binding News}" RowHeight="100"
+                    <ListView ItemsSource="{Binding News}" 
+                              HasUnevenRows="True"
                           SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                         <ListView.ItemTemplate>
                             <DataTemplate>

@@ -16,11 +16,11 @@ namespace gardener.Views.ListView
 	{
 		private FeedbackViewModel _viewModel;
 
-		public FeedbackPage(Block block, int floor)
+		public FeedbackPage(Block block, int floor, string type)
 		{
 			InitializeComponent();
 
-			_viewModel = new FeedbackViewModel(block, floor, Navigation);
+			_viewModel = new FeedbackViewModel(block, floor, Navigation, type);
 			BindingContext = _viewModel;
 		}
 
@@ -32,8 +32,15 @@ namespace gardener.Views.ListView
 		{
 			if (_viewModel.IsShowedPop)
 			{
-				Navigation.PopPopupAsync();
-				return false;
+				try
+				{
+					Navigation.PopPopupAsync();
+					return false;
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
 			}
 			return base.OnBackButtonPressed();
 		}

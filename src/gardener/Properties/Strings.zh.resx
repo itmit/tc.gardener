@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AcquisitionOfRights" xml:space="preserve">
+    <value>买商店</value>
+    <comment>Приобретение прав</comment>
+  </data>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
     <value>商铺出租</value>
     <comment>Сдать помещение</comment>
@@ -132,6 +136,10 @@
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
     <value>出租申请表</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="AssignmentOfRights" xml:space="preserve">
+    <value>出售商店</value>
+    <comment>Переуступка прав</comment>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>注意</value>
@@ -213,6 +221,10 @@
     <value>选择行为</value>
     <comment>Выбор действия</comment>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>外出</value>
+    <comment>Выйти</comment>
+  </data>
   <data name="Map" xml:space="preserve">
     <value>市场图</value>
     <comment>Схема рынка</comment>
@@ -272,6 +284,10 @@
   <data name="SelectFloor" xml:space="preserve">
     <value>选楼</value>
     <comment>Выбор этажа</comment>
+  </data>
+  <data name="SelectPlace" xml:space="preserve">
+    <value>选位</value>
+    <comment>Выберите место</comment>
   </data>
   <data name="Selling" xml:space="preserve">
     <value>叫修理工</value>

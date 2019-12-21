@@ -14,6 +14,8 @@ namespace gardener.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MenuPage : ContentPage
 	{
+		private List<HomeMenuItem> _pages;
+
 		#region .ctor
 		public MenuPage()
 		{
@@ -38,8 +40,7 @@ namespace gardener.Views
 
 		private void LoginViewModelOnSignIn()
 		{
-			List<HomeMenuItem> menuItems = GetMenuItems();
-			ListViewMenu.ItemsSource = menuItems;
+			Pages = GetMenuItems();
 		}
 		#endregion
 
@@ -50,8 +51,7 @@ namespace gardener.Views
         private void Button_OnClicked(object sender, EventArgs e)
 		{
 			BaseViewModel.ChangeLanguage("ru-RU");
-			List<HomeMenuItem> menuItems = GetMenuItems();
-			ListViewMenu.ItemsSource = menuItems;
+			Pages = GetMenuItems();
 		}
 
 		public Realm Realm => Realm.GetInstance();
@@ -59,18 +59,26 @@ namespace gardener.Views
 		private void Button_OnClicked1(object sender, EventArgs e)
 		{
 			BaseViewModel.ChangeLanguage("zh-CN");
-			List<HomeMenuItem> menuItems = GetMenuItems();
-			ListViewMenu.ItemsSource = menuItems;
+			Pages = GetMenuItems();
 		}
 
 		private void Button_OnClicked3(object sender, EventArgs e)
 		{
 			BaseViewModel.ChangeLanguage("vi-VN");
-			List<HomeMenuItem> menuItems = GetMenuItems();
-			ListViewMenu.ItemsSource = menuItems;
+			Pages = GetMenuItems();
 		}
 
-		private List<HomeMenuItem> GetMenuItems()
+		public List<HomeMenuItem> Pages
+		{
+			get => _pages;
+			set
+			{
+				_pages = value;
+				ListViewMenu.ItemsSource = _pages;
+			}
+		}
+
+		public List<HomeMenuItem> GetMenuItems()
 		{
             var menuItems = new List<HomeMenuItem>
             {
@@ -121,8 +129,21 @@ namespace gardener.Views
 					Title = Properties.Strings.SignIn
 				});
 			}
+			else
+			{
+				menuItems.Add(new HomeMenuItem
+				{
+					Id = MenuItemType.LogOut,
+					Title = Properties.Strings.LogOut
+				});
+			}
 
 			return menuItems;
+		}
+
+		private void ListViewMenu_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			((Xamarin.Forms.ListView) sender).SelectedItem = null;
 		}
 	}
 }

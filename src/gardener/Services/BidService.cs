@@ -10,8 +10,8 @@ namespace gardener.Services
 {
 	public class BidService
 	{
-		private const string CreateBidForBuyUri = "http://tc.itmit-studio.ru/api/bidForBuy";
-		private const string CreateBidForSaleUri = "http://tc.itmit-studio.ru/api/bidForSale";
+		private const string CreateBidForBuyUri = "http://tc.itmit-studio.ru/api/bidForSale";
+		private const string CreateBidForSaleUri = "http://tc.itmit-studio.ru/api/bidForBuy";
 
 		public async Task<bool> CreateBidForBuy(Bid bid)
 		{
@@ -19,7 +19,7 @@ namespace gardener.Services
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				var response = await client.PostAsync(CreateBidForSaleUri, 
+				var response = await client.PostAsync(CreateBidForBuyUri, 
 												new FormUrlEncodedContent(new Dictionary<string, string>
 												{
 													{
@@ -75,7 +75,7 @@ namespace gardener.Services
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				var response = await client.PostAsync(CreateBidForBuyUri,
+				var response = await client.PostAsync(CreateBidForSaleUri,
 													  new FormUrlEncodedContent(new Dictionary<string, string>
 													  {
 														  {

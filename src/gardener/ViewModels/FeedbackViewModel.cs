@@ -4,6 +4,7 @@ using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using gardener.Properties;
 using Xamarin.Forms;
 
 namespace gardener.ViewModels
@@ -12,40 +13,69 @@ namespace gardener.ViewModels
 	{
 		private readonly Block _block;
 		private readonly int _floor;
+		private string _type;
 
-		public FeedbackViewModel(Block block, int floor, INavigation navigation)
+		public FeedbackViewModel(Block block, int floor, INavigation navigation, string type)
 			: base(block, floor, navigation)
 		{
+			_type = type;
 			_block = block;
-			_floor = floor;
+			_floor = floor; 
+			if (_type.Equals("assignment"))
+			{
+				Title = Strings.AssignmentOfRights;
+			}
+
+			if (_type.Equals("acquisition"))
+			{
+				Title = Strings.AcquisitionOfRights;
+			}
+		}
+
+		protected override void OnLanguageChanged()
+		{
+			base.OnLanguageChanged();
+			if (_type.Equals("assignment"))
+			{
+				Title = Strings.AssignmentOfRights;
+			}
+
+			if (_type.Equals("acquisition"))
+			{
+				Title = Strings.AcquisitionOfRights;
+			}
 		}
 
 		protected override async void ExecuteSendFormCommand()
 		{
-			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new FeedbackService();
 
-				if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
+				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
 				{
-					await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, $"{Properties.Strings.Name}, {Properties.Strings.Number}, {Properties.Strings.Text} {Properties.Strings.Notreading}", Properties.Strings.Ok);
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
 
 					IsBusy = false;
 					return;
 				}
-
+				IsBusy = true;
 				try
 				{
-					if (await service.Send(PhoneNumber, SelectedPlace, _floor, _block, Text, Name))
+					if (await service.Send(PhoneNumber, SelectedPlace, _floor, _block, Text, Name, _type))
 					{
-						await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.Theformwassuccessfullysent, Properties.Strings.Ok);
+						PhoneNumber = "";
+						Name = "";
+						SelectedPlace = null;
+						Text = "";
+						PlaceName = Strings.SelectPlace;
+						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
 					}
 					else
 					{
-						await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, string.IsNullOrEmpty(service.LastError)
-																										  ? Properties.Strings.Errorsubmittingform
-																										  : service.LastError, Properties.Strings.Ok);
+						await Application.Current.MainPage.DisplayAlert(Strings.Attention, string.IsNullOrEmpty(service.LastError)
+																										  ? Strings.Errorsubmittingform
+																										  : service.LastError, Strings.Ok);
 					}
 				}
 				catch (Exception e)
@@ -55,7 +85,7 @@ namespace gardener.ViewModels
 			}
 			else
 			{
-				Title = Properties.Strings.WaitingForNetwork;
+				Title = Strings.WaitingForNetwork;
 			}
 
 			IsBusy = false;

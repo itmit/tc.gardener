@@ -22,7 +22,7 @@ namespace gardener.Services
 		#endregion
 
 		#region Public
-		public async Task<bool> Send(string phoneNumber, Place place, int floor, Block block, string text, string name)
+		public async Task<bool> Send(string phoneNumber, Place place, int floor, Block block, string text, string name, string type)
 		{
 			using (var client = new HttpClient())
 			{
@@ -49,6 +49,9 @@ namespace gardener.Services
 														  },
 														  {
 															  "name", name
+														  },
+														  {
+															  "type", type
 														  }
 													  }));
 				var json = await response.Content.ReadAsStringAsync();

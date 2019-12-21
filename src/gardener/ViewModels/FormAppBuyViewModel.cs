@@ -28,7 +28,7 @@ namespace gardener.ViewModels
 		private readonly INavigation _navigation;
 		private string _phoneNumber;
 		private string _phoneTitle;
-		private string _placeName = "Выберите место";
+		private string _placeName;
 		private ObservableCollection<Place> _places;
 		private string _placeTitle;
 		private string _row;
@@ -249,21 +249,25 @@ namespace gardener.ViewModels
 		#region Private
 		protected virtual async void ExecuteSendFormCommand()
 		{
-			IsBusy = true;
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new BidService();
-
-				if (string.IsNullOrEmpty(PlaceTitle) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(PhoneNumber))
+				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
 				{
-					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number} {Strings.Notreading}", Strings.Ok);
+					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
+
 					return;
 				}
-
+				IsBusy = true;
 				try
 				{
 					if (await service.CreateBidForBuy(new Bid(SelectedPlace.PlaceNumber, Name, PhoneNumber, _block, SelectedPlace.Row, _floor, Text)))
 					{
+						PhoneNumber = "";
+						Name = "";
+						Text = "";
+						SelectedPlace = null;
+						PlaceName = Strings.SelectPlace;
 						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
 					}
 					else
@@ -288,8 +292,9 @@ namespace gardener.ViewModels
 
 		private void SetStrings()
 		{
+			PlaceName = Strings.SelectPlace;
 			TextTitle = Strings.Text;
-			Title = Strings.Applicationformforleaseofpremises;
+			Title = Strings.Applicationforleaseofpremises;
 			PlaceTitle = Strings.Place;
 			NameTitle = Strings.Name;
 			PhoneTitle = Strings.Phone;

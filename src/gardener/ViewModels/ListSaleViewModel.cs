@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using gardener.Models;
+using gardener.Views;
 using gardener.Views.ListView;
 using Xamarin.Forms;
 
@@ -32,8 +33,8 @@ namespace gardener.ViewModels
 														   case nameof(FormAppBuyPage):
 															   page = new FormAppBuyPage(block, floor);
 															   break;
-														   case nameof(FeedbackPage):
-															   page = new FeedbackPage(block, floor);
+														   case nameof(AssignmentRightUsePage):
+															   page = new AssignmentRightUsePage(block, floor);
 															   break;
 														   default:
 															   throw new ArgumentOutOfRangeException();
@@ -43,6 +44,11 @@ namespace gardener.ViewModels
 											   },
 											   param => param != null);
 
+			SetStrings();
+		}
+
+		public void SetStrings()
+		{
 			Title = Properties.Strings.ListSalePageTitle;
 			InfoButton = Properties.Strings.FeedBackButton;
 			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
@@ -85,11 +91,7 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			Title = Properties.Strings.ListSalePageTitle;
-			InfoButton = Properties.Strings.FeedBackButton;
-			ListOfAvailablePremises = Properties.Strings.Listofavailablepremises;
-			ApplicationForLeaseOfPremises = Properties.Strings.Applicationforleaseofpremises;
-			ApplicationForLeaseOfInPremises = Properties.Strings.Applicationforleaseofinpremises;
+			SetStrings();
 		}
 	}
 }

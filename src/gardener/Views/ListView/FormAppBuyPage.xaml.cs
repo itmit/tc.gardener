@@ -28,8 +28,15 @@ namespace gardener.Views.ListView
 		{
 			if (_viewModel.IsShowedPop)
 			{
-				Navigation.PopPopupAsync();
-				return false;
+				try
+				{
+					Navigation.PopPopupAsync();
+					return false;
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
 			}
 			return base.OnBackButtonPressed();
 		}

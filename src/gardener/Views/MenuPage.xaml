@@ -35,6 +35,7 @@
         </StackLayout>
         <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f7ecdd">
             <ListView x:Name="ListViewMenu"
+                      ItemSelected="ListViewMenu_OnItemSelected"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>

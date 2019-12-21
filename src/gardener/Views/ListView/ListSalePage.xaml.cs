@@ -23,7 +23,7 @@ namespace gardener.Views.ListView
 			RentButton.CommandParameter = typeof(FormAppPage);
 			SellButton.CommandParameter = typeof(FormAppSalePage);
 			BuyButton.CommandParameter = typeof(FormAppBuyPage);
-			InfoButton.CommandParameter = typeof(FeedbackPage);
+			InfoButton.CommandParameter = typeof(AssignmentRightUsePage);
 		}
 		#endregion
 	}

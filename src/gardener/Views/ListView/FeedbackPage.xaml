@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gardener="clr-namespace:gardener"
              mc:Ignorable="d"
+             Title="{Binding Title}"
              x:Class="gardener.Views.ListView.FeedbackPage">
     <ContentPage.Content>
         <ScrollView>

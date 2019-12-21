@@ -23,9 +23,13 @@
             <Button Style="{StaticResource ButtonStyle}"
                     Command="{Binding OpenPageCommand}" x:Name="RentButton" Text="{Binding ListOfAvailablePremises}" />
             <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding OpenPageCommand}" x:Name="SellButton" Text="{Binding ApplicationForLeaseOfPremises}"/>
+                    Command="{Binding OpenPageCommand}" 
+                    x:Name="BuyButton" 
+                    Text="{Binding ApplicationForLeaseOfPremises}"/>
             <Button Style="{StaticResource ButtonStyle}"
-                    Command="{Binding OpenPageCommand}" x:Name="BuyButton" Text="{Binding ApplicationForLeaseOfInPremises}"/>
+                    Command="{Binding OpenPageCommand}" 
+                    x:Name="SellButton" 
+                    Text="{Binding ApplicationForLeaseOfInPremises}"/>
             <Button Style="{StaticResource ButtonStyle}"
                     Command="{Binding OpenPageCommand}" x:Name="InfoButton" Text="{Binding InfoButton}"/>
         </StackLayout>

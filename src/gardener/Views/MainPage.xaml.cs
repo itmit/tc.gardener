@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using gardener.Models;
 using gardener.Services;
 using gardener.ViewModels;
 using gardener.Views.ListView;
+using Realms;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace gardener.Views
@@ -74,14 +77,36 @@ namespace gardener.Views
                     case (int) MenuItemType.SignIn:
                         MenuPages.Add(id, new NavigationPage(new LoginPage(_mvm)));
                         break;
+                    case (int) MenuItemType.LogOut:
+						using (var realm = Realm.GetInstance())
+						{
+							using (var transaction = realm.BeginWrite())
+							{
+								var userRealm = realm.All<User>()
+													 .SingleOrDefault();
+								realm.Remove(userRealm);
+								transaction.Commit();
+							}
+						}
+
+						if (Master is MenuPage menuPage)
+						{
+							_mvm.Visible = false;
+							menuPage.Pages = menuPage.GetMenuItems();
+						}
+
+						return;
 				}
 			}
 
 			var newPage = MenuPages[id];
 
-			if (newPage != null && Detail != newPage)
+			if (newPage != null)
 			{
-				Detail = newPage;
+				if (Detail != newPage)
+				{
+					Detail = newPage;
+				}
 
 				if (Device.RuntimePlatform == Device.Android)
 				{

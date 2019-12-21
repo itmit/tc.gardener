@@ -61,6 +61,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Приобретение прав.
+        /// </summary>
+        internal static string AcquisitionOfRights {
+            get {
+                return ResourceManager.GetString("AcquisitionOfRights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Сдать помещение.
         /// </summary>
         internal static string Applicationforleaseofinpremises {
@@ -93,6 +102,15 @@ namespace gardener.Properties {
         internal static string Applicationformforleaseofpremises {
             get {
                 return ResourceManager.GetString("Applicationformforleaseofpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Переуступка прав.
+        /// </summary>
+        internal static string AssignmentOfRights {
+            get {
+                return ResourceManager.GetString("AssignmentOfRights", resourceCulture);
             }
         }
         
@@ -277,6 +295,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Выйти.
+        /// </summary>
+        internal static string LogOut {
+            get {
+                return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Схема рынка.
         /// </summary>
         internal static string Map {
@@ -408,6 +435,15 @@ namespace gardener.Properties {
         internal static string SelectFloor {
             get {
                 return ResourceManager.GetString("SelectFloor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Выбор места.
+        /// </summary>
+        internal static string SelectPlace {
+            get {
+                return ResourceManager.GetString("SelectPlace", resourceCulture);
             }
         }
         
