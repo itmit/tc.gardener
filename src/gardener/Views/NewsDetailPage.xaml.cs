@@ -39,8 +39,11 @@ namespace gardener.Views
 
 		private void WebViewOnNavigating(object sender, WebNavigatingEventArgs e)
 		{
-			OpenBrowser(e.Url);
-			e.Cancel = true;
+			if (e.Url.StartsWith("http") || e.Url.StartsWith("https"))
+			{
+				OpenBrowser(e.Url);
+				e.Cancel = true;
+			}
 		}
 	}
 }
