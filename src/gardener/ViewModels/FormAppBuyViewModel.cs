@@ -153,6 +153,12 @@ namespace gardener.ViewModels
 			}
 		}
 
+		public string OldEntryNumber
+		{
+			get => _number;
+			set => SetProperty(ref _number, value);
+		}
+
 		private void UpdatePlaces()
 		{
 			IEnumerable<Place> places = _block.Places;
@@ -194,6 +200,12 @@ namespace gardener.ViewModels
 				SetProperty(ref _row, value);
 				UpdatePlaces();
 			}
+		}
+
+		public string OldEntryRow
+		{
+			get => _row;
+			set => SetProperty(ref _row, value);
 		}
 
 		public string Text
@@ -252,7 +264,11 @@ namespace gardener.ViewModels
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new BidService();
-				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
+				if (string.IsNullOrEmpty(_number)
+					|| string.IsNullOrEmpty(_row)
+					|| string.IsNullOrEmpty(Name) 
+					|| string.IsNullOrEmpty(Text) 
+					|| string.IsNullOrEmpty(PhoneNumber))
 				{
 					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
 
@@ -261,14 +277,16 @@ namespace gardener.ViewModels
 				IsBusy = true;
 				try
 				{
-					if (await service.CreateBidForBuy(new Bid(SelectedPlace.PlaceNumber, Name, PhoneNumber, _block, SelectedPlace.Row, _floor, Text)))
+					if (await service.CreateBidForBuy(new Bid(_number, Name, PhoneNumber, _block, _row, _floor, Text)))
 					{
 						PhoneNumber = "";
 						Name = "";
 						Text = "";
 						SelectedPlace = null;
 						PlaceName = Strings.SelectPlace;
-						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
+						OldEntryNumber = "";
+						OldEntryRow = "";
+						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.LeasingApplicationIsAccepted, Strings.Ok);
 					}
 					else
 					{

@@ -121,6 +121,10 @@
     <value>Mua quyền sở dụng</value>
     <comment>Приобретение прав</comment>
   </data>
+  <data name="ApplicationForAssignmentIsAccepted" xml:space="preserve">
+    <value>Đơn xin chuyển quyền của bạn đã được chấp nhận.</value>
+    <comment>Ваша заявка на переуступку прав принята.</comment>
+  </data>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
     <value>Cho thuê chỗ</value>
     <comment>Сдать помещение</comment>
@@ -136,6 +140,14 @@
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
     <value>Mẫu đơn cho thuê cửa hàng</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="ApplicationForSurrenderIsAccepted" xml:space="preserve">
+    <value>Đơn xin thay đổi của bạn đã được chấp nhận.</value>
+    <comment>Ваша заявка на сдачу принята.</comment>
+  </data>
+  <data name="ApplicationToAcquireRightsIsAccepted" xml:space="preserve">
+    <value>Đơn xin quyền của bạn đã được chấp nhận.</value>
+    <comment>Ваша заявка на приобретение прав принята.</comment>
   </data>
   <data name="AssignmentOfRights" xml:space="preserve">
     <value>Chuyển nhượng lại quyền sử dụng</value>
@@ -212,6 +224,10 @@
   <data name="LastName" xml:space="preserve">
     <value>Họ</value>
     <comment>Фамилия</comment>
+  </data>
+  <data name="LeasingApplicationIsAccepted" xml:space="preserve">
+    <value>Đơn xin thuê của bạn đã được chấp nhận Người quản lý sẽ gọi lại cho bạn.</value>
+    <comment>Ваша заявка на аренду принята. Вам перезвонит менеджер.</comment>
   </data>
   <data name="Listofavailablepremises" xml:space="preserve">
     <value>Danh sách cửa hàng còn trống</value>

@@ -52,7 +52,17 @@ namespace gardener.ViewModels
 			{
 				var service = new FeedbackService();
 
-				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
+				SelectedPlace = new Place
+				{
+					PlaceNumber = Number,
+					Row = Row
+				};
+
+				if (string.IsNullOrEmpty(SelectedPlace.PlaceNumber) 
+					|| string.IsNullOrEmpty(SelectedPlace.Row) 
+					|| string.IsNullOrEmpty(Name) 
+					|| string.IsNullOrEmpty(Text) 
+					|| string.IsNullOrEmpty(PhoneNumber))
 				{
 					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
 
@@ -69,7 +79,18 @@ namespace gardener.ViewModels
 						SelectedPlace = null;
 						Text = "";
 						PlaceName = Strings.SelectPlace;
-						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
+						OldEntryNumber = "";
+						OldEntryRow = "";
+
+						if (_type.Equals("assignment"))
+						{
+							await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.ApplicationForAssignmentIsAccepted, Strings.Ok);
+						}
+
+						if (_type.Equals("acquisition"))
+						{
+							await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.ApplicationToAcquireRightsIsAccepted, Strings.Ok);
+						}
 					}
 					else
 					{

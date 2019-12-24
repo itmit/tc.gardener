@@ -23,6 +23,7 @@ namespace gardener.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			CachedImageRenderer.Init();
+			Rg.Plugins.Popup.Popup.Init();
 			Forms.Init();
 			LoadApplication(new App());
 

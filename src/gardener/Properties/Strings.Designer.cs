@@ -70,6 +70,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ваша заявка на переуступку прав принята..
+        /// </summary>
+        internal static string ApplicationForAssignmentIsAccepted {
+            get {
+                return ResourceManager.GetString("ApplicationForAssignmentIsAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Сдать помещение.
         /// </summary>
         internal static string Applicationforleaseofinpremises {
@@ -102,6 +111,24 @@ namespace gardener.Properties {
         internal static string Applicationformforleaseofpremises {
             get {
                 return ResourceManager.GetString("Applicationformforleaseofpremises", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваша заявка на сдачу принята..
+        /// </summary>
+        internal static string ApplicationForSurrenderIsAccepted {
+            get {
+                return ResourceManager.GetString("ApplicationForSurrenderIsAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваша заявка на приобретение прав принята..
+        /// </summary>
+        internal static string ApplicationToAcquireRightsIsAccepted {
+            get {
+                return ResourceManager.GetString("ApplicationToAcquireRightsIsAccepted", resourceCulture);
             }
         }
         
@@ -273,6 +300,15 @@ namespace gardener.Properties {
         internal static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваша заявка на аренду принята. Вам перезвонит менеджер..
+        /// </summary>
+        internal static string LeasingApplicationIsAccepted {
+            get {
+                return ResourceManager.GetString("LeasingApplicationIsAccepted", resourceCulture);
             }
         }
         

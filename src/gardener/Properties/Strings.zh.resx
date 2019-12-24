@@ -121,6 +121,10 @@
     <value>买商店</value>
     <comment>Приобретение прав</comment>
   </data>
+  <data name="ApplicationForAssignmentIsAccepted" xml:space="preserve">
+    <value>您的权利转让申请已被接受。</value>
+    <comment>Ваша заявка на переуступку прав принята.</comment>
+  </data>
   <data name="Applicationforleaseofinpremises" xml:space="preserve">
     <value>商铺出租</value>
     <comment>Сдать помещение</comment>
@@ -136,6 +140,14 @@
   <data name="Applicationformforleaseofpremises" xml:space="preserve">
     <value>出租申请表</value>
     <comment>Форма заявки на сдачу в аренду помещения</comment>
+  </data>
+  <data name="ApplicationForSurrenderIsAccepted" xml:space="preserve">
+    <value>您的变更申请已被接受。</value>
+    <comment>Ваша заявка на сдачу принята.</comment>
+  </data>
+  <data name="ApplicationToAcquireRightsIsAccepted" xml:space="preserve">
+    <value>您的权利申请已被接受。</value>
+    <comment>Ваша заявка на приобретение прав принята.</comment>
   </data>
   <data name="AssignmentOfRights" xml:space="preserve">
     <value>出售商店</value>
@@ -212,6 +224,10 @@
   <data name="LastName" xml:space="preserve">
     <value>姓</value>
     <comment>Фамилия</comment>
+  </data>
+  <data name="LeasingApplicationIsAccepted" xml:space="preserve">
+    <value>您的租赁申请已被接受。 经理会给您回电。</value>
+    <comment>Ваша заявка на аренду принята. Вам перезвонит менеджер.</comment>
   </data>
   <data name="Listofavailablepremises" xml:space="preserve">
     <value>空位表单</value>

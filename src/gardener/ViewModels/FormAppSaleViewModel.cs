@@ -32,7 +32,11 @@ namespace gardener.ViewModels
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new BidService();
-				if (SelectedPlace == null || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Text) || string.IsNullOrEmpty(PhoneNumber))
+				if (string.IsNullOrEmpty(Number)
+					|| string.IsNullOrEmpty(Row)
+					|| string.IsNullOrEmpty(Name) 
+					|| string.IsNullOrEmpty(Text) 
+					|| string.IsNullOrEmpty(PhoneNumber))
 				{
 					await Application.Current.MainPage.DisplayAlert(Strings.Attention, $"{Strings.Place}, {Strings.Name}, {Strings.Number}, {Strings.Text} {Strings.Notreading}", Strings.Ok);
 
@@ -41,14 +45,16 @@ namespace gardener.ViewModels
 				IsBusy = true;
 				try
 				{
-					if (await service.CreateBidForSale(new Bid(SelectedPlace.PlaceNumber, Name, PhoneNumber, _block, SelectedPlace.Row, _floor, Text)))
+					if (await service.CreateBidForSale(new Bid(Number, Name, PhoneNumber, _block, Row, _floor, Text)))
 					{
 						PhoneNumber = "";
 						Name = "";
 						SelectedPlace = null;
 						Text = "";
 						PlaceName = Strings.SelectPlace;
-						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
+						OldEntryNumber = "";
+						OldEntryRow = "";
+						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.ApplicationForSurrenderIsAccepted, Strings.Ok);
 					}
 					else
 					{

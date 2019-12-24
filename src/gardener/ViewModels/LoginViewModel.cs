@@ -72,6 +72,7 @@ namespace gardener.ViewModels
 				return;
 			}
 
+			IsBusy = true;
 			bool result;
 			try
 			{
@@ -81,6 +82,7 @@ namespace gardener.ViewModels
 			{
 				Console.WriteLine(e);
 				await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, "Ошибка сервера", Properties.Strings.Ok);
+				IsBusy = false;
 				return;
 			}
 
@@ -90,10 +92,6 @@ namespace gardener.ViewModels
 				service.Subscribe();
 
 				_mvm.Name = login;
-				if (string.IsNullOrEmpty(login))
-				{
-					return;
-				}
 
 				using (var transaction = Realm.BeginWrite())
 				{
@@ -112,6 +110,7 @@ namespace gardener.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert("Уведомление", "Неверный логин или пароль!", "ОК");
             }
+			IsBusy = false;
 		}
 
         protected override void OnLanguageChanged()
