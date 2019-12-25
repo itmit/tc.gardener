@@ -57,6 +57,11 @@ namespace gardener.ViewModels
 
 		private async void LoginCommandExecute(string login, string password)
 		{
+			if (IsBusy)
+			{
+				return;
+			}
+
 			login = login?.Trim();
 			password = password?.Trim();
 			if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
