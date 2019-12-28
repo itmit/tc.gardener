@@ -43,16 +43,14 @@ namespace gardener.ViewModels
 			{
 				Items = new ObservableCollection<Currency>
 				{
-					new Currency("USD", 1 / course.Rates.USD),
-					new Currency("EUR", 1 / course.Rates.EUR),
-					new Currency("JPY", 1 / course.Rates.JPY),
-					new Currency("GBP", 1 / course.Rates.GBP),
-					new Currency("CNY", 1 / course.Rates.CNY),
-					new Currency("UAH", 1 / course.Rates.UAH)
+					new Currency("USD", Math.Round(1 / course.Rates.USD, 3)),
+					new Currency("EUR", Math.Round(1 / course.Rates.EUR, 3)),
+					new Currency("JPY", Math.Round(1 / course.Rates.JPY, 3)),
+					new Currency("GBP", Math.Round(1 / course.Rates.GBP, 3)),
+					new Currency("CNY", Math.Round(1 / course.Rates.CNY, 3)),
+					new Currency("UAH", Math.Round(1 / course.Rates.UAH, 3))
 				};
-				Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-
-				DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+				DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
 				_dateTime = dtDateTime.AddSeconds(course.Timestamp).ToLocalTime();
 				
 				OnPropertyChanged(nameof(DateTimeLastUpdate));
@@ -76,8 +74,7 @@ namespace gardener.ViewModels
 			set => SetProperty(ref _items, value);
 		}
 
-		public string DateTimeLastUpdate 
-			=> _dateTime.ToShortDateString() + " " + _dateTime.ToShortTimeString();
+		public string DateTimeLastUpdate => _dateTime.ToString("dd.MM.yyyy HH:mm");
 
 		protected override void OnLanguageChanged()
 		{

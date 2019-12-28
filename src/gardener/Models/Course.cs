@@ -24,7 +24,7 @@ namespace gardener.Models
 			set;
 		}
 
-		[JsonProperty("time_last_updated")]
+		[JsonProperty("timestamp")]
 		public int Timestamp
 		{
 			get;

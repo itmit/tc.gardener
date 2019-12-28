@@ -36,7 +36,7 @@ namespace gardener.ViewModels
 			DateTime = new DateTime(Place.ReservationDate.Value.Ticks);
 			timeValue = Place.ReservationDate.Value - serverDateTime.Value;
 
-			var _ = DateTime.Value.AddHours(3);
+			DateTime = DateTime.Value.AddHours(3);
 			_timer = new Timer(state =>
 			{
 				if (timeValue.Ticks <= 0 || _timer == null)
