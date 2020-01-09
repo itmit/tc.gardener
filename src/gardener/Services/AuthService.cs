@@ -18,7 +18,7 @@ namespace gardener.Services
         /// <summary>
         /// Задает адрес для авторизации
         /// </summary>
-        private const string Address = "http://tc.itmit-studio.ru/api/admin/login";
+        private const string Address = "https://sadovod-online.com/api/admin/login";
 
         /// <summary>
         /// Отправляет введенные данные пользователем на сервер

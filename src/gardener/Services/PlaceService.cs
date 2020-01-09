@@ -14,12 +14,12 @@ namespace gardener.Services
 		/// <summary>
 		/// Адрес для бронирования мест.
 		/// </summary>
-		private const string ReservationPlaceUri = "http://tc.itmit-studio.ru/api/place/makeReservation";
+		private const string ReservationPlaceUri = "https://sadovod-online.com/api/place/makeReservation";
 		
 		/// <summary>
 		/// Адрес для получения мест.
 		/// </summary>
-		private const string GetPlacesUri = "http://tc.itmit-studio.ru/api/places";
+		private const string GetPlacesUri = "https://sadovod-online.com/api/places";
 
 		public DateTime? ServerDate
 		{

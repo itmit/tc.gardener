@@ -10,8 +10,8 @@ namespace gardener.Services
 {
 	public class BidService
 	{
-		private const string CreateBidForBuyUri = "http://tc.itmit-studio.ru/api/bidForSale";
-		private const string CreateBidForSaleUri = "http://tc.itmit-studio.ru/api/bidForBuy";
+		private const string CreateBidForBuyUri = "https://sadovod-online.com/api/bidForSale";
+		private const string CreateBidForSaleUri = "https://sadovod-online.com/api/bidForBuy";
 
 		public async Task<bool> CreateBidForBuy(Bid bid)
 		{

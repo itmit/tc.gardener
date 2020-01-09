@@ -18,7 +18,7 @@ namespace gardener.Services
 		#region .ctor
 		public NewsDataStore(Uri getItemsUri) => _itemsUri = getItemsUri;
 
-		public NewsDataStore() => _itemsUri = new Uri("http://tc.itmit-studio.ru/api/news");
+		public NewsDataStore() => _itemsUri = new Uri("https://sadovod-online.com/api/news");
 		#endregion
 
 		#region Public

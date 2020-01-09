@@ -26,7 +26,7 @@ namespace gardener.Services
 		{
 			using (var client = new HttpClient())
 			{
-				var response = await client.PostAsync("http://tc.itmit-studio.ru/api/question/store",
+				var response = await client.PostAsync("https://sadovod-online.com/api/question/store",
 													  new FormUrlEncodedContent(new Dictionary<string, string>
 													  {
 														  {

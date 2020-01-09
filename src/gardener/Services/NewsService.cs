@@ -10,7 +10,7 @@ namespace gardener.Services
 {
 	public class NewsService
 	{
-		private const string HourlyNewsUri = "http://tc.itmit-studio.ru/api/news/hourlyNews";
+		private const string HourlyNewsUri = "https://sadovod-online.com/api/news/hourlyNews";
 
 
 		public async Task<IEnumerable<News>> GetHourlyNews()
