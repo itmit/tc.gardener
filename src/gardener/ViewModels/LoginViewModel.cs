@@ -16,8 +16,9 @@ namespace gardener.ViewModels
     {
         private string _login;
         private string _password;
-        private AuthService _authService = new AuthService();
+        private readonly AuthService _authService = new AuthService();
 		private MasterViewModel _mvm;
+		private bool _isAuthorization;
 
 		public LoginViewModel(MasterViewModel mvm)
 		{
@@ -48,16 +49,13 @@ namespace gardener.ViewModels
             get;
         }
 
-		//public abstract void OnLanguageChange();
-
 		public delegate void SignInEventHandler();
 
-		//Событие OnCount c типом делегата SignInEventHandler.
 		public static event SignInEventHandler SignIn;
 
 		private async void LoginCommandExecute(string login, string password)
 		{
-			if (IsBusy)
+			if (IsBusy || _isAuthorization)
 			{
 				return;
 			}
@@ -95,7 +93,7 @@ namespace gardener.ViewModels
 			{
 				var service = DependencyService.Get<ISubscribeTopicFireBase>();
 				service.Subscribe();
-
+				_isAuthorization = true;
 				_mvm.Name = login;
 
 				using (var transaction = Realm.BeginWrite())

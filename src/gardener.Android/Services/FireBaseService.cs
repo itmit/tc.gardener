@@ -34,7 +34,7 @@ namespace gardener.Droid.Services
 			var pendingIntent = PendingIntent.GetActivity(this, MainActivity.NotificationId, intent, PendingIntentFlags.OneShot);
 
 			var notificationBuilder = new NotificationCompat.Builder(this, MainActivity.ChannelId)
-									  .SetSmallIcon(Resource.Drawable.notifications)
+									  .SetSmallIcon(Resource.Drawable.pict_1)
 									  .SetContentTitle("Внимание")
 									  .SetContentText(messageBody)
 									  .SetAutoCancel(true)

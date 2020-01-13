@@ -44,13 +44,13 @@ namespace gardener.Droid
 
 			if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
 			{
-				_notificationBuilder.SetSmallIcon(Resource.Drawable.notifications);
+				_notificationBuilder.SetSmallIcon(Resource.Drawable.pict_1);
 				_notificationBuilder.SetColor(Resource.Color.primary_material_dark);
 				_notificationBuilder.SetCategory(Notification.CategoryMessage);
 			}
 			else
 			{
-				_notificationBuilder.SetSmallIcon(Resource.Drawable.notifications);
+				_notificationBuilder.SetSmallIcon(Resource.Drawable.pict_1);
 			}
 
 			_notificationManager.Notify(1, _notificationBuilder.Build());

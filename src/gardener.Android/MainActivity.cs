@@ -82,7 +82,7 @@ namespace gardener.Droid
 
 			Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
 
-			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.notifications;
+			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.pict_1;
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
 
