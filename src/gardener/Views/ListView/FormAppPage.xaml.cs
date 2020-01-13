@@ -27,12 +27,11 @@ namespace gardener.Views.ListView
 		public FormAppPage(Block block, int floor)
 		{
 			InitializeComponent();
+			_viewModel = new FormAppViewModel(block, floor, Navigation);
 
-			var viewModel = new FormAppViewModel(block, floor, Navigation);
+			BindingContext = _viewModel;
 
-			BindingContext = viewModel;
-
-			viewModel.LoadData();
+			_viewModel.LoadData();
 		}
 		#endregion
 

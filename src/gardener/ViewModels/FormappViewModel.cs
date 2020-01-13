@@ -36,6 +36,7 @@ namespace gardener.ViewModels
 
 		public FormAppViewModel(Block block, int floor, INavigation navigation)
 		{
+			_navigation = navigation;
 			_block = block;
 			_floor = floor;
 			_placeCollection = new ObservableCollection<PlaceViewModel>();
@@ -97,7 +98,7 @@ namespace gardener.ViewModels
 				var service = new PlaceService();
 
 				IsBusy = true;
-				_block.Places = new ObservableCollection<Place>(await service.GetPlaces(_block, limit, offset));
+				_block.Places = new ObservableCollection<Place>(await service.GetPlaces(_block, _floor, limit, offset));
 				_serverDate = service.ServerDate;
 
 				collection = _floor > 0 ? new ObservableCollection<Place>(_block.Places.Where(x => x.Floor == _floor)) : _block.Places;
@@ -123,7 +124,7 @@ namespace gardener.ViewModels
 		#region Overrided
 		protected override void OnLanguageChanged()
 		{
-			Title = Strings.FreePlace;
+			SetStrings();
 		}
 		#endregion
 
@@ -133,6 +134,14 @@ namespace gardener.ViewModels
 			Title = Strings.FreePlace;
 			RowTitle = Strings.Row;
 			PlaceTitle = Strings.Place;
+
+			if (_block.Places != null)
+			{
+				foreach (var place in _block.Places)
+				{
+					place.NotifyStatusChanged();
+				}
+			}
 		}
 		#endregion
 	}

@@ -241,7 +241,7 @@ namespace gardener.ViewModels
 				var service = new PlaceService();
 				try
 				{
-					_block.Places = new ObservableCollection<Place>(await service.GetPlaces(_block, limit, offset));
+					_block.Places = new ObservableCollection<Place>(await service.GetPlaces(_block, _floor, limit, offset));
 				}
 				catch (Exception e)
 				{

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
 namespace gardener.Models
@@ -6,8 +8,10 @@ namespace gardener.Models
 	/// <summary>
 	/// Представляет сущность места в блоке.
 	/// </summary>
-	public class Place
+	public class Place : INotifyPropertyChanged
 	{
+		private string _expiresIn;
+
 		#region Properties
 		/// <summary>
 		/// Возвращает или устанавливает название блока, в котором находится место.
@@ -71,5 +75,18 @@ namespace gardener.Models
 			set;
 		}
 		#endregion
+
+		public void NotifyStatusChanged()
+		{
+			OnPropertyChanged(nameof(Status));
+		}
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		[Annotations.NotifyPropertyChangedInvocator]
+		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
 	}
 }

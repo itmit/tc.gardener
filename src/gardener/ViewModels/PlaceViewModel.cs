@@ -11,6 +11,7 @@ namespace gardener.ViewModels
 		private string _time;
 		private DateTime? _dateTime;
 		private bool _isStatusVisible;
+		private string _expiresIn;
 
 		public Guid Guid
 		{
@@ -25,6 +26,7 @@ namespace gardener.ViewModels
 
 		public PlaceViewModel(Place place, DateTime? serverDateTime)
 		{
+			ExpiresIn = Properties.Strings.ExpiresIn;
 			IsStatusVisible = place.Status.Equals("Забронировано");
 			TimeSpan timeValue;
 			Place = place;
@@ -69,7 +71,13 @@ namespace gardener.ViewModels
 
 		protected override void OnLanguageChanged()
 		{
-			
+			ExpiresIn = Properties.Strings.ExpiresIn;
+		}
+
+		public string ExpiresIn
+		{
+			get => _expiresIn;
+			set => SetProperty(ref _expiresIn, value);
 		}
 	}
 }

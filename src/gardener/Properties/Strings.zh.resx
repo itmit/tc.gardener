@@ -197,6 +197,10 @@
     <value>申请表发送失误</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="ExpiresIn" xml:space="preserve">
+    <value>有效期： </value>
+    <comment>Истекает через:</comment>
+  </data>
   <data name="FeedBackButton" xml:space="preserve">
     <value>商店转让（过户）</value>
     <comment>переуступка права пользования помещения</comment>

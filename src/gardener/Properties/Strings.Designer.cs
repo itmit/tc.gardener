@@ -241,6 +241,15 @@ namespace gardener.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Истекает через: .
+        /// </summary>
+        internal static string ExpiresIn {
+            get {
+                return ResourceManager.GetString("ExpiresIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to переуступка права пользования помещения.
         /// </summary>
         internal static string FeedBackButton {

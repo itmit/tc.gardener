@@ -197,6 +197,10 @@
     <value>Lỗi gửi đơn</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="ExpiresIn" xml:space="preserve">
+    <value>Hết hạn trong: </value>
+    <comment>Истекает через:</comment>
+  </data>
   <data name="FeedBackButton" xml:space="preserve">
     <value>Nhượng quyền sở hữu (bán)</value>
     <comment>переуступка права пользования помещения</comment>

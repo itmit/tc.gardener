@@ -99,12 +99,12 @@ namespace gardener.Services
 		/// <param name="limit">Предельное количество получаемых мест.</param>
 		/// <param name="offset">Количество пропущенных мест.</param>
 		/// <returns>Список мест в блоке.</returns>
-		public async Task<IEnumerable<Place>> GetPlaces(Block block, int limit = 100, int offset = 0)
+		public async Task<IEnumerable<Place>> GetPlaces(Block block, int floor, int limit = 100, int offset = 0)
 		{
 			using (var client = new HttpClient())
 			{
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-				var url = $"{GetPlacesUri}/{block.OriginalTitle}?limit={limit}&offset={offset}";
+				var url = $"{GetPlacesUri}/{block.OriginalTitle}?limit={limit}&offset={offset}&floor={floor}";
 				var response = await client.GetAsync(url);
 
 				var jsonString = await response.Content.ReadAsStringAsync();

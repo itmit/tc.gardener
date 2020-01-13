@@ -15,7 +15,7 @@ namespace gardener.ViewModels
 		private string _infoButton;
 
 		#region .ctor
-		public ListSaleViewModel(INavigation navigation, Block block, int floor)
+		public ListSaleViewModel(INavigation navigation, Block block, int floor = 1)
 		{
 			OpenPageCommand = new RelayCommand(obj =>
 											   {
@@ -25,7 +25,7 @@ namespace gardener.ViewModels
 													   switch (type.Name)
 													   {
 														   case nameof(FormAppPage):
-															   page = new FormAppPage(block);
+															   page = new FormAppPage(block, floor);
 															   break;
 														   case nameof(FormAppSalePage):
 															   page = new FormAppSalePage(block, floor);

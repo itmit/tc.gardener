@@ -197,6 +197,10 @@
     <value>Ошибка отправки формы</value>
     <comment>Ошибка отправки формы</comment>
   </data>
+  <data name="ExpiresIn" xml:space="preserve">
+    <value>Истекает через: </value>
+    <comment>Истекает через:</comment>
+  </data>
   <data name="FeedBackButton" xml:space="preserve">
     <value>переуступка права пользования помещения</value>
     <comment>переуступка права пользования помещения</comment>
