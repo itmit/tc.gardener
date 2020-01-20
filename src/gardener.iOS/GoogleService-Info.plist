@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>487900269621-9utpqf0phsif7ibmidprmmqlhsl70nhh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.487900269621-9utpqf0phsif7ibmidprmmqlhsl70nhh</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>487900269621-df7ll2p95j13ate1phgaj7gdeq9c0eav.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyqMAC3_iH5T35HLuhiQuAKdm5Y5NkcRc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>487900269621</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.itmit.gardener</string>
+	<key>PROJECT_ID</key>
+	<string>tc-gardener</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tc-gardener.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:487900269621:ios:604206815206ebc0b2f57c</string>
+	<key>DATABASE_URL</key>
+	<string>https://tc-gardener.firebaseio.com</string>
+</dict>
+</plist>

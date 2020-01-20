@@ -1,6 +1,9 @@
-﻿using FFImageLoading.Forms.Platform;
+﻿using System;
+using FFImageLoading.Forms.Platform;
+using Firebase.CloudMessaging;
 using Foundation;
 using UIKit;
+using UserNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -10,7 +13,7 @@ namespace gardener.iOS
 	// User Interface of the application, as well as listening (and optionally responding) to 
 	// application events from iOS.
 	[Register("AppDelegate")]
-	public class AppDelegate : FormsApplicationDelegate
+	public class AppDelegate : FormsApplicationDelegate, IUNUserNotificationCenterDelegate, IMessagingDelegate
 	{
 		#region Overrided
 		//
@@ -27,10 +30,37 @@ namespace gardener.iOS
 			CachedImageRenderer.Init();
 			Rg.Plugins.Popup.Popup.Init();
 			Forms.Init();
+			Firebase.Core.App.Configure();
+
 			LoadApplication(new App());
+			if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+			{
+				// iOS 10 or later
+				var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
+				UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
+					Console.WriteLine(granted);
+				});
+
+				// For iOS 10 display notification (sent via APNS)
+				UNUserNotificationCenter.Current.Delegate = this;
+			}
+			else
+			{
+				// iOS 9 or before
+				var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
+				var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
+				UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+			}
+
+			UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
 			return base.FinishedLaunching(app, options);
 		}
 		#endregion
+
+		public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken)
+		{
+			System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+		}
 	}
 }

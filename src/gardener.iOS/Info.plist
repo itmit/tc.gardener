@@ -42,5 +42,9 @@
 	<string>1.5.7</string>
 	<key>CFBundleName</key>
 	<string>Садовод онлайн</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>
