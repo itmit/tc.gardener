@@ -38,7 +38,16 @@ namespace gardener.ViewModels
 
 		public async void UpdateCourse()
 		{
-			Course course = await _service.GetItemAsync();
+			Course course = null;
+			try
+			{
+				course = await _service.GetItemAsync();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+			}
+
 			if (course != null)
 			{
 				Items = new ObservableCollection<Currency>
