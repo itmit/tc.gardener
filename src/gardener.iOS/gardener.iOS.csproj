@@ -221,6 +221,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\gardener.Android\gardener.Android.csproj">
+      <Project>{24CE3C36-16B9-426D-AA0C-5961ECF8D88C}</Project>
+      <Name>gardener.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\gardener\gardener.csproj">
       <Project>{44461089-8EBB-44CA-8D8F-2A1B848A9B64}</Project>
       <Name>gardener</Name>
