@@ -190,6 +190,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\l_180x180 %281%29.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\l_1024x1024%281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
