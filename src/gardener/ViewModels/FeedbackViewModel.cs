@@ -88,7 +88,7 @@ namespace gardener.ViewModels
 
 						if (_type.Equals("assignment"))
 						{
-							await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.ApplicationForAssignmentIsAccepted, Strings.Ok);
+							await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
 						}
 
 						if (_type.Equals("acquisition"))

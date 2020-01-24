@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Platform = Xamarin.Essentials.Platform;
@@ -82,7 +81,6 @@ namespace gardener.Droid
 
 			Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
 
-			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.pict_1;
 			Forms.Init(this, savedInstanceState);
 			LoadApplication(new App());
 

@@ -292,7 +292,7 @@ namespace gardener.ViewModels
 						PlaceName = Strings.SelectPlace;
 						OldEntryNumber = "";
 						OldEntryRow = "";
-						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.LeasingApplicationIsAccepted, Strings.Ok);
+						await Application.Current.MainPage.DisplayAlert(Strings.Attention, Strings.Theformwassuccessfullysent, Strings.Ok);
 					}
 					else
 					{

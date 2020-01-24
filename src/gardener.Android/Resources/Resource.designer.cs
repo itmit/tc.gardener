@@ -26,7 +26,6 @@ namespace gardener.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::gardener.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::gardener.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::gardener.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::gardener.Droid.Resource.Attribute.font;
@@ -6677,61 +6676,58 @@ namespace gardener.Droid
 			public const int pict_1 = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int plugin_lc_smallicon = 2131165539;
+			public const int rus = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int rus = 2131165540;
+			public const int svadebnaya_galereya_SALYuT = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int svadebnaya_galereya_SALYuT = 2131165541;
+			public const int tc2 = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int tc2 = 2131165542;
+			public const int tc3 = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int tc3 = 2131165543;
+			public const int tc4 = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int tc4 = 2131165544;
+			public const int tc5 = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int tc5 = 2131165545;
+			public const int tc6 = 2131165545;
 			
 			// aapt resource value: 0x7F07016A
-			public const int tc6 = 2131165546;
+			public const int tc7 = 2131165546;
 			
 			// aapt resource value: 0x7F07016B
-			public const int tc7 = 2131165547;
+			public const int tc9 = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int tc9 = 2131165548;
+			public const int tooltip_frame_dark = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int tooltip_frame_dark = 2131165549;
+			public const int tooltip_frame_light = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int tooltip_frame_light = 2131165550;
+			public const int tts_sadovod = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int tts_sadovod = 2131165551;
+			public const int UAH = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int UAH = 2131165552;
+			public const int USD = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int USD = 2131165553;
+			public const int veschevye_ryady = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int veschevye_ryady = 2131165554;
+			public const int vietnam = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int vietnam = 2131165555;
+			public const int ViewCellBackground = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int ViewCellBackground = 2131165556;
-			
-			// aapt resource value: 0x7F070175
-			public const int zh = 2131165557;
+			public const int zh = 2131165556;
 			
 			static Drawable()
 			{

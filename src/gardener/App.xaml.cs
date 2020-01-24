@@ -1,9 +1,10 @@
 ﻿using System;
 using gardener.Services;
 using gardener.Views;
-using Plugin.LocalNotifications;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
+using Application = Xamarin.Forms.Application;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -17,6 +18,8 @@ namespace gardener
 			InitializeComponent();
 
 			MainPage = new MainPage();
+
+			On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 		}
 		#endregion
 
