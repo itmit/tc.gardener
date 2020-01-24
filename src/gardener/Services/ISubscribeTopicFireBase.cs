@@ -4,8 +4,10 @@ namespace gardener.Services
 {
 	public interface ISubscribeTopicFireBase
 	{
-		void Subscribe();
+		void SubscribeToAdminTopic();
 
-		void Unsubscribe();
+		void UnsubscribeToAdminTopic();
+
+		void SubscribeToAllTopic();
 	}
 }

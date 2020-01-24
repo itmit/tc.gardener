@@ -8,13 +8,9 @@ using Newtonsoft.Json;
 
 namespace gardener.Services
 {
-	public class CourseDataStore : IDataStore<Course>
+	public class CourseDataStore
 	{
 		private const string Url = "https://openexchangerates.org/api/latest.json?app_id=1d306ad7ee394fbf9ea29eb519d42296&base=rub";
-
-		public Task<bool> AddItemAsync(Course item) => throw new System.NotImplementedException();
-
-		public Task<bool> DeleteItemAsync(string id) => throw new System.NotImplementedException();
 
 		public Task<Course> GetItemAsync(string id = "")
 		{
@@ -30,10 +26,5 @@ namespace gardener.Services
 				return Task.FromResult(JsonConvert.DeserializeObject<Course>(jsonData));
 			}
 		}
-
-		public Task<IEnumerable<Course>> GetItemsAsync(bool forceRefresh = false)
-			=> throw new System.NotImplementedException();
-
-		public Task<bool> UpdateItemAsync(Course item) => throw new System.NotImplementedException();
 	}
 }

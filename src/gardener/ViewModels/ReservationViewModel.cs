@@ -85,10 +85,15 @@ namespace gardener.ViewModels
 
         private async void ReservationCommandExecute()
 		{
+			if (IsBusy)
+			{
+				return;
+			}
+
 			IsEnabled = false;
             IsBusy = true;
 
-            if (CrossConnectivity.Current.IsConnected)
+			if (CrossConnectivity.Current.IsConnected)
             {
                 var service = new PlaceService();
 
@@ -104,6 +109,10 @@ namespace gardener.ViewModels
 					if (res)
 					{
 						await Application.Current.MainPage.DisplayAlert(Properties.Strings.Attention, Properties.Strings.Theformwassuccessfullysent, Properties.Strings.Ok);
+
+						PhoneNumber = "";
+						FirstName = "";
+						LastName = "";
 					}
 					else
 					{

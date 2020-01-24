@@ -13,20 +13,26 @@ namespace gardener.Droid.Services
 	public class SubscribeTopicFireBaseDroid : ISubscribeTopicFireBase
 	{
 		private const string TopicName = "AdminNotification";
+		private const string AllTopicName = "All";
 
-		public async void Subscribe()
+		public async void SubscribeToAdminTopic()
 		{
-			// Subscribe the devices corresponding to the registration tokens to the
+			// SubscribeToAdminTopic the devices corresponding to the registration tokens to the
 			// topic
 			var response = await FirebaseMessaging.Instance.SubscribeToTopic(TopicName);
 		}
 
-		public async void Unsubscribe()
+		public async void UnsubscribeToAdminTopic()
 		{
 
-			// Subscribe the devices corresponding to the registration tokens to the
+			// SubscribeToAdminTopic the devices corresponding to the registration tokens to the
 			// topic
 			var response = await FirebaseMessaging.Instance.UnsubscribeFromTopic(TopicName);
+		}
+
+		public async void SubscribeToAllTopic()
+		{
+			await FirebaseMessaging.Instance.SubscribeToTopic(AllTopicName);
 		}
 	}
 }

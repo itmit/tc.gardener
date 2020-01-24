@@ -10,7 +10,8 @@
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ActivityIndicator Color="#7a7a7a" VerticalOptions="Center" HorizontalOptions="Center"
                                IsRunning="{Binding IsBusy}" />
-            <StackLayout>
+            <ScrollView>
+                <StackLayout>
                 <StackLayout Margin="30,10,30,10" WidthRequest="300">
                     <gardener:ExtendedEntry Placeholder="{Binding NameTitle}" FontSize="Large" TextColor="#9e4819"
                                             Text="{Binding Name, Mode=TwoWay}"
@@ -67,6 +68,7 @@
                         CornerRadius="15"
                         Command="{Binding SendFormCommand}" />
             </StackLayout>
+            </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

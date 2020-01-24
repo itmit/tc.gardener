@@ -326,7 +326,7 @@
     <comment>Текст</comment>
   </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
-    <value>Форма успешно отправлена</value>
+    <value>Ваша заявка успешно отправлена, менеджер в ближайшее время вам перезвонит.</value>
     <comment>Форма успешно отправлена</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">

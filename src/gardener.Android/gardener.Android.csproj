@@ -96,9 +96,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewsNotifyingAndroid.cs" />
-    <Compile Include="NewsNotifyingWorker.cs" />
-    <Compile Include="NotificationServiceAndroid.cs" />
     <Compile Include="Renderers\CustomEntryRenderer.cs" />
     <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
     <Compile Include="MainActivity.cs" />

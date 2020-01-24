@@ -92,7 +92,7 @@ namespace gardener.ViewModels
             if (result)
 			{
 				var service = DependencyService.Get<ISubscribeTopicFireBase>();
-				service.Subscribe();
+				service.SubscribeToAdminTopic();
 				_isAuthorization = true;
 				_mvm.Name = login;
 

@@ -326,8 +326,8 @@
     <comment>Текст</comment>
   </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
-    <value>申请表发送成功</value>
-    <comment>Форма успешно отправлена</comment>
+    <value>申请发送成功！马上我们会联系您！</value>
+    <comment>Ваша заявка успешно отправлена, менеджер в ближайшее время вам перезвонит.</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
     <value>新商场</value>

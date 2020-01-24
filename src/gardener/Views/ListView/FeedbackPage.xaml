@@ -25,14 +25,6 @@
                             </gardener:ExtendedEntry.Behaviors>
                         </gardener:ExtendedEntry>
 
-                        <!--
-                        <Label Text="{Binding PlaceName, Mode=OneWay}" FontSize="Large" Margin="0,10,0,10">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding OpenPlacePopUpCommand}"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                        -->
-
                         <gardener:ExtendedEntry Placeholder="{Binding RowTitle}" 
                                                 FontSize="Large" 
                                                 TextColor="#9e4819"

@@ -529,7 +529,7 @@ namespace gardener.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Форма успешно отправлена.
+        ///   Looks up a localized string similar to Ваша заявка успешно отправлена, менеджер в ближайшее время вам перезвонит..
         /// </summary>
         internal static string Theformwassuccessfullysent {
             get {

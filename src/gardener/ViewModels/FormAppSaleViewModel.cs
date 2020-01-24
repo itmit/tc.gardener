@@ -42,6 +42,10 @@ namespace gardener.ViewModels
 
 					return;
 				}
+				if (IsBusy)
+				{
+					return;
+				}
 				IsBusy = true;
 				try
 				{

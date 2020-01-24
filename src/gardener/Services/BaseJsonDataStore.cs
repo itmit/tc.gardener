@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace gardener.Services
 {
-	public abstract class BaseJsonDataStore<T> : IDataStore<T>
+	public abstract class BaseJsonDataStore<T>
 	{
 		#region Data
 		#region Fields

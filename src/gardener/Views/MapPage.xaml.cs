@@ -49,6 +49,23 @@ namespace gardener.Views
 			}
 		}
 
+		/// <summary>Application developers can override this method to provide behavior when the back button is pressed.</summary>
+		/// <returns>To be added.</returns>
+		/// <remarks>To be added.</remarks>
+		protected override bool OnBackButtonPressed()
+		{
+			OpenRentPage();
+			return true;
+		}
+
+		private async void OpenRentPage()
+		{
+			if (Application.Current.MainPage is MainPage main)
+			{
+				await main.NavigateFromMenu(1);
+			}
+		}
+
 		private void ImageButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ListSalePage(BaseViewModel.Market.Blocks[0], 1));

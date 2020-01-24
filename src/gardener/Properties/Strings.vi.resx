@@ -326,8 +326,8 @@
     <comment>Текст</comment>
   </data>
   <data name="Theformwassuccessfullysent" xml:space="preserve">
-    <value>Đơn đã được gửi thành công</value>
-    <comment>Форма успешно отправлена</comment>
+    <value>Chúng tôi đã nhận được đăng ký của bạn. Nhân viên phụ trách sẽ gọi điện liên lạc trong thời gian gần nhất.</value>
+    <comment>Ваша заявка успешно отправлена, менеджер в ближайшее время вам перезвонит.</comment>
   </data>
   <data name="Thenewshoppingcenter" xml:space="preserve">
     <value>Trung tâm Thương mại mới</value>

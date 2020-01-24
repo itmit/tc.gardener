@@ -33,6 +33,8 @@ namespace gardener.iOS
 			Firebase.Core.App.Configure();
 
 			LoadApplication(new App());
+
+			// Register your app for remote notifications.
 			if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
 			{
 				// iOS 10 or later
@@ -41,8 +43,9 @@ namespace gardener.iOS
 					Console.WriteLine(granted);
 				});
 
-				// For iOS 10 display notification (sent via APNS)
 				UNUserNotificationCenter.Current.Delegate = this;
+
+				Messaging.SharedInstance.Delegate = this;
 			}
 			else
 			{
@@ -51,7 +54,6 @@ namespace gardener.iOS
 				var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
 				UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 			}
-
 			UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
 			return base.FinishedLaunching(app, options);

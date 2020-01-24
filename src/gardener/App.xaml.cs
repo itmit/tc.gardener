@@ -34,6 +34,14 @@ namespace gardener
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+			try
+			{
+				DependencyService.Get<ISubscribeTopicFireBase>()?.SubscribeToAllTopic();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+			}
 		}
 		#endregion
 	}
