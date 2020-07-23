@@ -13,12 +13,12 @@ namespace gardener.Services
 	/// <summary>
 	/// Представляет сервис для авторизации.
 	/// </summary>
-    public class AuthService
+    public class AuthService : BaseService
     {
         /// <summary>
         /// Задает адрес для авторизации
         /// </summary>
-        private const string Address = "https://sadovod-online.com/api/admin/login";
+        private const string Address = "{0}/api/admin/login";
 
         /// <summary>
         /// Отправляет введенные данные пользователем на сервер
@@ -28,26 +28,20 @@ namespace gardener.Services
         /// <returns></returns>
         public async Task<bool> LoginAsync(string login, string password)
         {
-            HttpResponseMessage response;
-            using (var client = new HttpClient())
+            var encodedContent = new FormUrlEncodedContent(new Dictionary<string, string>
             {
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var encodedContent = new FormUrlEncodedContent(new Dictionary<string, string>
                 {
-                    {
-                        "login", login
-                    },
-                    {
-                        "password", password
-                    }
-                });
-                response = await client.PostAsync(Address, encodedContent);
-            }
+                    "login", login
+                },
+                {
+                    "password", password
+                }
+            });
+            var response = await HttpClient.PostAsync(string.Format(Address, Domain), encodedContent);
             var jsonString = await response.Content.ReadAsStringAsync();
             Debug.WriteLine(jsonString);
 
-			return await Task.FromResult(response.IsSuccessStatusCode);
+			return response.IsSuccessStatusCode;
         }
     }
 }

@@ -8,79 +8,16 @@ using Newtonsoft.Json;
 
 namespace gardener.Services
 {
-	public class BidService
+	public class BidService : BaseService
 	{
-		private const string CreateBidForBuyUri = "https://sadovod-online.com/api/bidForSale";
-		private const string CreateBidForSaleUri = "https://sadovod-online.com/api/bidForBuy";
+		private const string CreateBidForBuyUri = "{0}/api/bidForSale";
+		private const string CreateBidForSaleUri = "{0}/api/bidForBuy";
 
 		public async Task<bool> CreateBidForBuy(Bid bid)
 		{
-			using (var client = new HttpClient())
-			{
-				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-				var response = await client.PostAsync(CreateBidForBuyUri, 
-												new FormUrlEncodedContent(new Dictionary<string, string>
-												{
-													{
-														"PlaceNumber", bid.PlaceNumber
-													},
-													{
-														"Name", bid.Name
-													},
-													{
-														"PhoneNumber", bid.PhoneNumber
-													},
-													{
-														"Block", bid.Block.OriginalTitle
-													},
-													{
-														"Row", bid.Row
-													},
-													{
-														"Floor", bid.Floor.ToString()
-													},
-													{
-														"Text", bid.Text
-													}
-												}));
-
-				string json = await response.Content.ReadAsStringAsync();
-
-				if (string.IsNullOrEmpty(json))
-				{
-					return false;
-				}
-
-				if (response.IsSuccessStatusCode)
-				{
-					return true;
-				}
-
-				var data = JsonConvert.DeserializeObject<JsonAuthDataResponse<string>>(json);
-				LastError = data.Data;
-				return false;
-			}
-		}
-
-		public string LastError
-		{
-			get;
-			set;
-		}
-
-		public async Task<bool> CreateBidForSale(Bid bid)
-		{
-			using (var client = new HttpClient())
-			{
-				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-				var response = await client.PostAsync(CreateBidForSaleUri,
+			var response = await HttpClient.PostAsync(string.Format(CreateBidForBuyUri, Domain), 
 													  new FormUrlEncodedContent(new Dictionary<string, string>
 													  {
-														  {
-															  "PlaceNumber", bid.PlaceNumber
-														  },
 														  {
 															  "Name", bid.Name
 														  },
@@ -101,22 +38,72 @@ namespace gardener.Services
 														  }
 													  }));
 
-				string json = await response.Content.ReadAsStringAsync();
+			var json = await response.Content.ReadAsStringAsync();
 
-				if (string.IsNullOrEmpty(json))
-				{
-					return false;
-				}
-
-				if (response.IsSuccessStatusCode)
-				{
-					return true;
-				}
-
-				var data = JsonConvert.DeserializeObject<JsonAuthDataResponse<string>>(json);
-				LastError = data.Data;
+			if (string.IsNullOrEmpty(json))
+			{
 				return false;
 			}
+
+			if (response.IsSuccessStatusCode)
+			{
+				return true;
+			}
+
+			var data = JsonConvert.DeserializeObject<JsonAuthDataResponse<string>>(json);
+			LastError = data.Data;
+			return false;
+		}
+
+		public string LastError
+		{
+			get;
+			private set;
+		}
+
+		public async Task<bool> CreateBidForSale(Bid bid)
+		{
+			var response = await HttpClient.PostAsync(string.Format(CreateBidForSaleUri, Domain),
+												  new FormUrlEncodedContent(new Dictionary<string, string>
+												  {
+													  {
+														  "PlaceNumber", bid.PlaceNumber
+													  },
+													  {
+														  "Name", bid.Name
+													  },
+													  {
+														  "PhoneNumber", bid.PhoneNumber
+													  },
+													  {
+														  "Block", bid.Block.OriginalTitle
+													  },
+													  {
+														  "Row", bid.Row
+													  },
+													  {
+														  "Floor", bid.Floor.ToString()
+													  },
+													  {
+														  "Text", bid.Text
+													  }
+												  }));
+
+			var json = await response.Content.ReadAsStringAsync();
+
+			if (string.IsNullOrEmpty(json))
+			{
+				return false;
+			}
+
+			if (response.IsSuccessStatusCode)
+			{
+				return true;
+			}
+
+			var data = JsonConvert.DeserializeObject<JsonAuthDataResponse<string>>(json);
+			LastError = data.Data;
+			return false;
 		}
 	}
 }

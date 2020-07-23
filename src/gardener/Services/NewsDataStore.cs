@@ -11,14 +11,8 @@ namespace gardener.Services
 	{
 		#region Data
 		#region Fields
-		private readonly Uri _itemsUri;
+		private const string NewsUri = "{0}/api/news";
 		#endregion
-		#endregion
-
-		#region .ctor
-		public NewsDataStore(Uri getItemsUri) => _itemsUri = getItemsUri;
-
-		public NewsDataStore() => _itemsUri = new Uri("https://sadovod-online.com/api/news");
 		#endregion
 
 		#region Public
@@ -35,7 +29,7 @@ namespace gardener.Services
 				return await Task.FromResult(Items);
 			}
 
-			var response = DownloadSerializedJsonData(_itemsUri);
+			var response = DownloadSerializedJsonData(new Uri(string.Format(NewsUri, Domain)));
 
 			if (!response.Success)
 			{
@@ -46,7 +40,7 @@ namespace gardener.Services
 
 			foreach (var item in Items)
 			{
-				item.ImageUrl = "http://" + _itemsUri.Host + item.ImageUrl;
+				item.ImageUrl = Domain + item.ImageUrl;
 			}
 
 			return Items;

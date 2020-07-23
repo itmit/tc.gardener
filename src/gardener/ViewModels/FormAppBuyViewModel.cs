@@ -264,8 +264,7 @@ namespace gardener.ViewModels
 			if (CrossConnectivity.Current.IsConnected)
 			{
 				var service = new BidService();
-				if (string.IsNullOrEmpty(_number)
-					|| string.IsNullOrEmpty(_row)
+				if (string.IsNullOrEmpty(_row)
 					|| string.IsNullOrEmpty(Name) 
 					|| string.IsNullOrEmpty(Text) 
 					|| string.IsNullOrEmpty(PhoneNumber))
@@ -283,7 +282,7 @@ namespace gardener.ViewModels
 				IsBusy = true;
 				try
 				{
-					if (await service.CreateBidForBuy(new Bid(_number, Name, PhoneNumber, _block, _row, _floor, Text)))
+					if (await service.CreateBidForBuy(new Bid(string.Empty, Name, PhoneNumber, _block, _row, _floor, Text)))
 					{
 						PhoneNumber = "";
 						Name = "";
